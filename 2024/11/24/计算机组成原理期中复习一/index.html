@@ -20,30 +20,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Running-Turtle">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="计算机组成原理复习选择题部分1，用移码来表示浮点数中的阶码2，各存储器的特点和全称： 1. ROM（Read-Only Memory， 只读存储器）  特点：固定编程，一次写入，无法更改内容。通常用于存储固件或操作系统引导代码（如 BIOS）。  与 EPROM 的关系：EPROM 是一种特殊的 ROM，允许擦除和重新编程。 2. EPROM（Erasable Programmable Read-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024&#x2F;11&#x2F;24">
+<meta property="og:url" content="http://example.com/2024/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0%E4%B8%80/index.html">
 <meta property="og:site_name" content="Running-Turtle">
-<meta property="og:description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+<meta property="og:description" content="计算机组成原理复习选择题部分1，用移码来表示浮点数中的阶码2，各存储器的特点和全称： 1. ROM（Read-Only Memory， 只读存储器）  特点：固定编程，一次写入，无法更改内容。通常用于存储固件或操作系统引导代码（如 BIOS）。  与 EPROM 的关系：EPROM 是一种特殊的 ROM，允许擦除和重新编程。 2. EPROM（Erasable Programmable Read-">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-24T04:56:57.000Z">
+<meta property="article:modified_time" content="2024-11-24T14:36:30.090Z">
 <meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="计算机组成原理">
+<meta property="article:tag" content="课业">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0%E4%B8%80/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Running-Turtle</title>
+  <title>2024/11/24 | Running-Turtle</title>
   
 
 
@@ -152,90 +156,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/24/2024-11-24/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/24/2024-11-24/" class="post-title-link" itemprop="url">2024/11/24</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-24 12:56:57 / 修改时间：14:03:23" itemprop="dateCreated datePublished" datetime="2024-11-24T12:56:57+08:00">2024-11-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="今日博客改进"><a href="#今日博客改进" class="headerlink" title="今日博客改进"></a>今日博客改进</h2><ul>
-<li>解决了图片不加载的问题</li>
-</ul>
-<p>解决方案 ：使用 <a target="_blank" rel="noopener" href="https://imgur.com/">Imgur: The magic of the Internet</a> 图床工具。</p>
-<ul>
-<li>解决了 LaTex 公式仅在预览页生效的问题</li>
-</ul>
-<p>解决方案 : 在 theme-config 配置中修改 mathjax 渲染方式 per_page 为 false，对全局进行渲染。</p>
-<ul>
-<li>添加了 live-2d 看板娘</li>
-</ul>
-<p>参见 <a target="_blank" rel="noopener" href="https://zenreal.github.io/posts/478/">Hexo NexT主題看板娘live2d安裝(可換裝) | 雲沐居</a> 文章。</p>
-<p>尝试换一个模型，但是失败了，就用原来的模型吧。</p>
-<h2 id="今日任务"><a href="#今日任务" class="headerlink" title="今日任务"></a>今日任务</h2><p>手机上弄吧。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -251,10 +175,9 @@
       <meta itemprop="name" content="Running-Turtle">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0%E4%B8%80/" class="post-title-link" itemprop="url">2024/11/24</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          2024/11/24
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -287,7 +210,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="计算机组成原理复习"><a href="#计算机组成原理复习" class="headerlink" title="计算机组成原理复习"></a>计算机组成原理复习</h1><h1 id="选择题部分"><a href="#选择题部分" class="headerlink" title="选择题部分"></a>选择题部分</h1><h2 id="1，用移码来表示浮点数中的阶码"><a href="#1，用移码来表示浮点数中的阶码" class="headerlink" title="1，用移码来表示浮点数中的阶码"></a>1，用<u>移码</u>来表示浮点数中的阶码</h2><h2 id="2，各存储器的特点和全称："><a href="#2，各存储器的特点和全称：" class="headerlink" title="2，各存储器的特点和全称："></a>2，各存储器的<strong>特点</strong>和<strong>全称</strong>：</h2><p> <strong>1. ROM（Read-Only Memory， 只读存储器）</strong></p>
+        <h1 id="计算机组成原理复习"><a href="#计算机组成原理复习" class="headerlink" title="计算机组成原理复习"></a>计算机组成原理复习</h1><h1 id="选择题部分"><a href="#选择题部分" class="headerlink" title="选择题部分"></a>选择题部分</h1><h2 id="1，用移码来表示浮点数中的阶码"><a href="#1，用移码来表示浮点数中的阶码" class="headerlink" title="1，用移码来表示浮点数中的阶码"></a>1，用<u>移码</u>来表示浮点数中的阶码</h2><h2 id="2，各存储器的特点和全称："><a href="#2，各存储器的特点和全称：" class="headerlink" title="2，各存储器的特点和全称："></a>2，各存储器的<strong>特点</strong>和<strong>全称</strong>：</h2><p> <strong>1. ROM（Read-Only Memory， 只读存储器）</strong></p>
 <ul>
 <li><p><strong>特点</strong>：固定编程，一次写入，无法更改内容。通常用于存储固件或操作系统引导代码（如 BIOS）。</p>
 </li>
@@ -453,254 +376,37 @@
 <p>答案 ： 10</p>
 <h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><p>见本地 word 文件。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
+              <a href="/tags/%E8%AF%BE%E4%B8%9A/" rel="tag"># 课业</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/23/2024-11-23/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/23/2024-11-23/" class="post-title-link" itemprop="url">2024/11/23</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-23 21:09:14 / 修改时间：21:26:11" itemprop="dateCreated datePublished" datetime="2024-11-23T21:09:14+08:00">2024-11-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Latex 测试 : $a$ , $b$ , $\frac {n*(n+1)}2 &#x3D; \sum_{i&#x3D;1}^n i$  。</p>
-<p>搭建了一下 <code>hexo</code> 博客，准备以后弄一下以下内容 :</p>
-<ul>
-<li><p>加密文章功能（非前端加密）</p>
-</li>
-<li><p>Yale University 心理学导论 categories</p>
-</li>
-<li><p>每日学习 categories &amp; tags</p>
-</li>
-</ul>
-<hr>
-<p>That’s all, when i learn how to encrypt an article, I will write some personal artilcles, but I believe it is still not safe, the best way is to write on local.</p>
-<p>In 2024年11月23日21:26:00，add mathjax to my website。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/11/23/2024-11-23/" rel="prev" title="2024/11/23">
+      <i class="fa fa-chevron-left"></i> 2024/11/23
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/11/24/2024-11-24/" rel="next" title="2024/11/24">
+      2024/11/24 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/23/%E6%B5%8B%E8%AF%95hexo%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%8A%9F%E8%83%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/23/%E6%B5%8B%E8%AF%95hexo%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">测试hexo博客写作功能</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-11-23 20:39:38" itemprop="dateCreated datePublished" datetime="2024-11-23T20:39:38+08:00">2024-11-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-24 22:36:31" itemprop="dateModified" datetime="2024-11-24T22:36:31+08:00">2024-11-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Test/" itemprop="url" rel="index"><span itemprop="name">Test</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Learned from this blog : <a target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&q=hexo%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0">ZhiHu</a></p>
-<p>Test of Blog Function.</p>
-<p>Write the md in local , and post like this :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<p>mathjax : $a$</p>
-<hr>
-<p>图片插入测试 :</p>
-<p><a target="_blank" rel="noopener" href="https://imgur.com/pWI9IuB"><img src="https://i.imgur.com/pWI9IuB.jpg" title="source: imgur.com" /></a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/23/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-23 17:13:18 / 修改时间：20:40:08" itemprop="dateCreated datePublished" datetime="2024-11-23T17:13:18+08:00">2024-11-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -753,6 +459,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">计算机组成原理复习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98%E9%83%A8%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">选择题部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E7%94%A8%E7%A7%BB%E7%A0%81%E6%9D%A5%E8%A1%A8%E7%A4%BA%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B8%AD%E7%9A%84%E9%98%B6%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">1，用移码来表示浮点数中的阶码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E5%90%84%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E5%85%A8%E7%A7%B0%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">2，各存储器的特点和全称：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-EPROM%EF%BC%88Erasable-Programmable-Read-Only-Memory%EF%BC%8C%E5%8F%AF%E6%93%A6%E9%99%A4%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8%EF%BC%89"><span class="nav-number">2.2.1.</span> <span class="nav-text">2. EPROM（Erasable Programmable Read-Only Memory，可擦除可编程只读存储器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-EEPROM%EF%BC%88Electrically-Erasable-Programmable-Read-Only-Memory%EF%BC%8C%E7%94%B5%E5%8F%AF%E6%93%A6%E9%99%A4%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8%EF%BC%89"><span class="nav-number">2.2.2.</span> <span class="nav-text">3. EEPROM（Electrically Erasable Programmable Read-Only Memory，电可擦除可编程只读存储器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Flash-Memory%EF%BC%88%E9%97%AA%E5%AD%98%EF%BC%8C%E5%9F%BA%E4%BA%8E-EEPROM-%E6%8A%80%E6%9C%AF%EF%BC%89"><span class="nav-number">2.2.3.</span> <span class="nav-text">4. Flash Memory（闪存，基于 EEPROM 技术）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.2.4.</span> <span class="nav-text">总结表格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E5%9C%A8%E4%B8%BB%E5%AD%98%E5%92%8C-CPU-%E4%B9%8B%E9%97%B4%E5%A2%9E%E5%8A%A0-cache-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF-%E8%A7%A3%E5%86%B3-CPU-%E5%92%8C%E4%B8%BB%E5%AD%98%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9F%E5%BA%A6%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98-%E3%80%82"><span class="nav-number">2.3.</span> <span class="nav-text">3，在主存和 CPU 之间增加 cache 存储器的目的是 解决 CPU 和主存之间的速度匹配问题 。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%8CI-O-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E4%B8%AD%EF%BC%8C%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F-%E7%94%B1%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E3%80%82"><span class="nav-number">2.4.</span> <span class="nav-text">4，I&#x2F;O 控制方式中，中断方式 由程序实现。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%EF%BC%8C%E9%87%87%E7%94%A8-DMA%EF%BC%8Cdirect-memory-access-%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E6%AF%8F%E4%BC%A0%E9%80%81%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A6%81%E5%8D%A0%E7%94%A8-%E4%B8%80%E4%B8%AA%E5%AD%98%E5%82%A8%E5%91%A8%E6%9C%9F-%E7%9A%84%E6%97%B6%E9%97%B4%E3%80%82"><span class="nav-number">2.5.</span> <span class="nav-text">5，采用 DMA，direct memory access 传输数据时，每传送一个数据要占用 一个存储周期 的时间。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%EF%BC%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%88%86%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">6，控制器分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%93%8D%E4%BD%9C%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Operation-Controller%EF%BC%89"><span class="nav-number">2.6.0.1.</span> <span class="nav-text">(1) 操作控制器（Operation Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AD%98%E5%82%A8%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Storage-Controller%EF%BC%89"><span class="nav-number">2.6.0.2.</span> <span class="nav-text">(2) 存储控制器（Storage Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Network-Controller%EF%BC%89"><span class="nav-number">2.6.0.3.</span> <span class="nav-text">(3) 网络控制器（Network Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%98%BE%E7%A4%BA%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Display-Controller%EF%BC%89"><span class="nav-number">2.6.0.4.</span> <span class="nav-text">(4) 显示控制器（Display Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-DMA-%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Direct-Memory-Access-Controller%EF%BC%89"><span class="nav-number">2.6.0.5.</span> <span class="nav-text">(5) DMA 控制器（Direct Memory Access Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E7%94%B5%E6%BA%90%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Power-Controller%EF%BC%89"><span class="nav-number">2.6.0.6.</span> <span class="nav-text">(6) 电源控制器（Power Controller）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-I-O-%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Input-Output-Controller%EF%BC%89"><span class="nav-number">2.6.0.7.</span> <span class="nav-text">(7) I&#x2F;O 控制器（Input&#x2F;Output Controller）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%EF%BC%8C%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6%E6%98%AF%E7%94%B1%E7%BB%9F%E4%B8%80%E6%97%B6%E5%BA%8F%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6%E7%9A%84%E6%96%B9%E5%BC%8F%E3%80%82"><span class="nav-number">2.7.</span> <span class="nav-text">7，同步控制是由统一时序信号控制的方式。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%EF%BC%8C%E7%9B%B8%E5%AE%B9%E6%80%A7%E4%B8%8E%E7%9B%B8%E6%96%A5%E6%80%A7%E5%BE%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">2.8.</span> <span class="nav-text">8，相容性与相斥性微操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9%EF%BC%8C%E5%90%8C%E6%AD%A5%E9%80%9A%E4%BF%A1%E4%B9%8B%E6%89%80%E4%BB%A5%E6%AF%94%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E5%85%B7%E6%9C%89%E8%BE%83%E9%AB%98%E7%9A%84%E4%BC%A0%E8%BE%93%E9%A2%91%E7%8E%87%E6%98%AF%E5%9B%A0%E4%B8%BA"><span class="nav-number">2.9.</span> <span class="nav-text">9，同步通信之所以比异步通信具有较高的传输频率是因为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87%E7%9A%84%E5%AD%98%E5%82%A8%E5%AE%B9%E9%87%8F%E4%B8%BA8K%C3%971%E4%BD%8D%EF%BC%8C%E5%88%99%E5%AE%83%E7%9A%84%E5%9C%B0%E5%9D%80%E7%BA%BF%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BA%BF%E5%BC%95%E8%84%9A%E7%9B%B8%E5%8A%A0%E7%9A%84%E5%92%8C%E4%B8%BA"><span class="nav-number">2.10.</span> <span class="nav-text">某存储器芯片的存储容量为8K×1位，则它的地址线和数据线引脚相加的和为</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">填空题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81%E6%8A%80%E6%9C%AF"><span class="nav-number">3.1.</span> <span class="nav-text">汉字编码技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">3.2.</span> <span class="nav-text">主存储器的性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DMA%E7%9F%A5%E8%AF%86"><span class="nav-number">3.3.</span> <span class="nav-text">DMA知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%E6%98%A0%E5%83%8F%E6%96%B9%E5%BC%8F%E6%8A%80%E6%9C%AF"><span class="nav-number">3.4.</span> <span class="nav-text">组相联映像方式技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0"><span class="nav-number">3.5.</span> <span class="nav-text">定点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%B8%8D%E7%9F%A5%E9%81%93"><span class="nav-number">3.6.</span> <span class="nav-text">完全不知道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%98%AF%E5%86%85%E5%AD%98"><span class="nav-number">3.7.</span> <span class="nav-text">还是内存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">简答题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
