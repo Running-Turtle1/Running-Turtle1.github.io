@@ -221,11 +221,33 @@
 <p>hexo 博客</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">graph LR             <span class="params">##</span> 方向 TBLR</span><br><span class="line">Csharp(C<span class="params">#</span> API)       <span class="params">##</span> 变量名(展示内容)</span><br><span class="line">Search(简历搜索)</span><br><span class="line">D(数据分析与报告)</span><br><span class="line">Split(使用NPL分词)</span><br><span class="line">Winform(Winform界面)</span><br><span class="line">G(打开并显示简历)</span><br><span class="line">Gpt(GPT API)</span><br><span class="line"></span><br><span class="line">D--&gt;Search            <span class="params">##</span> 连接箭头</span><br><span class="line">Search--&gt;Split</span><br><span class="line">Winform--&gt;D</span><br><span class="line">Winform--&gt;Search</span><br><span class="line">Winform--&gt;G</span><br><span class="line">subgraph 简历内容解析  <span class="params">##</span> subgraph 子图 + 子图名字</span><br><span class="line">  Csharp--&gt;Gpt</span><br><span class="line">end                  <span class="params">##</span> subgraph 结尾块</span><br><span class="line">Winform--&gt;Csharp</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">Csharp(C# API)</span><br><span class="line">Search(简历搜索)</span><br><span class="line">D(数据分析与报告)</span><br><span class="line">Split(使用NPL分词)</span><br><span class="line">Winform(Winform界面)</span><br><span class="line">G(打开并显示简历)</span><br><span class="line">Gpt(GPT API)</span><br><span class="line"></span><br><span class="line">D--&gt;Search</span><br><span class="line">Search--&gt;Split</span><br><span class="line">Winform--&gt;D</span><br><span class="line">Winform--&gt;Search</span><br><span class="line">Winform--&gt;G</span><br><span class="line">subgraph 简历内容解析</span><br><span class="line">  Csharp--&gt;Gpt</span><br><span class="line">end</span><br><span class="line">Winform--&gt;Csharp</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
+Csharp(C# API)
+Search(简历搜索)
+D(数据分析与报告)
+Split(使用NPL分词)
+Winform(Winform界面)
+G(打开并显示简历)
+Gpt(GPT API)
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(这是A) --&gt; B(这是B)</span><br><span class="line">B(这是B) --&gt; C(这是C)</span><br></pre></td></tr></table></figure>
+D-->Search
+Search-->Split
+Winform-->D
+Winform-->Search
+Winform-->G
+subgraph 简历内容解析
+  Csharp-->Gpt
+end
+Winform-->Csharp</pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(这是A)</span><br><span class="line">B(这是B)</span><br><span class="line">C(这是C)</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TB
+A(这是A) --> B(这是B)
+B(这是B) --> C(这是C)</pre>
+
+<pre class="mermaid">graph TB
+A(这是A)
+B(这是B)
+C(这是C)</pre>
 
       
     </div>
@@ -956,6 +978,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
