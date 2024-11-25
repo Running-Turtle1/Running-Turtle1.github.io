@@ -183,7 +183,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-11-25 16:16:16 / 修改时间：16:20:11" itemprop="dateCreated datePublished" datetime="2024-11-25T16:16:16+08:00">2024-11-25</time>
+              <time title="创建时间：2024-11-25 16:16:16 / 修改时间：16:26:52" itemprop="dateCreated datePublished" datetime="2024-11-25T16:16:16+08:00">2024-11-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,7 +206,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="任务栏"><a href="#任务栏" class="headerlink" title="任务栏"></a>任务栏</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] : 对钩任务栏</span><br><span class="line"><span class="bullet">-</span> [ ] : 待办任务</span><br></pre></td></tr></table></figure>
+          <h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>hexo 博客暂不支持 mermaid 在线渲染，但是了解语法即可。</p>
+<h2 id="任务栏"><a href="#任务栏" class="headerlink" title="任务栏"></a>任务栏</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] : 对钩任务栏</span><br><span class="line"><span class="bullet">-</span> [ ] : 待办任务</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><input disabled="" type="checkbox"> 
@@ -217,21 +218,14 @@
 </li>
 </ul>
 <h2 id="Mermaid-画图"><a href="#Mermaid-画图" class="headerlink" title="Mermaid 画图"></a>Mermaid 画图</h2><p>这个格式（Mermaid）可以在支持 Mermaid 渲染的 Markdown 编辑器或文档中进行可视化，像是 GitHub、GitLab 或一些在线 Markdown 编辑器（如 Obsidian）都支持这种图表。</p>
+<p>hexo 博客</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">graph LR             <span class="params">##</span> 方向 TBLR</span><br><span class="line">Csharp(C<span class="params">#</span> API)       <span class="params">##</span> 变量名(展示内容)</span><br><span class="line">Search(简历搜索)</span><br><span class="line">D(数据分析与报告)</span><br><span class="line">Split(使用NPL分词)</span><br><span class="line">Winform(Winform界面)</span><br><span class="line">G(打开并显示简历)</span><br><span class="line">Gpt(GPT API)</span><br><span class="line"></span><br><span class="line">D--&gt;Search            <span class="params">##</span> 连接箭头</span><br><span class="line">Search--&gt;Split</span><br><span class="line">Winform--&gt;D</span><br><span class="line">Winform--&gt;Search</span><br><span class="line">Winform--&gt;G</span><br><span class="line">subgraph 简历内容解析  <span class="params">##</span> subgraph 子图 + 子图名字</span><br><span class="line">  Csharp--&gt;Gpt</span><br><span class="line">end                  <span class="params">##</span> subgraph 结尾块</span><br><span class="line">Winform--&gt;Csharp</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">Csharp(C# API)</span><br><span class="line">Search(简历搜索)</span><br><span class="line">D(数据分析与报告)</span><br><span class="line">Split(使用NPL分词)</span><br><span class="line">Winform(Winform界面)</span><br><span class="line">G(打开并显示简历)</span><br><span class="line">Gpt(GPT API)</span><br><span class="line"></span><br><span class="line">D--&gt;Search</span><br><span class="line">Search--&gt;Split</span><br><span class="line">Winform--&gt;D</span><br><span class="line">Winform--&gt;Search</span><br><span class="line">Winform--&gt;G</span><br><span class="line">subgraph 简历内容解析</span><br><span class="line">  Csharp--&gt;Gpt</span><br><span class="line">end</span><br><span class="line">Winform--&gt;Csharp</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TB</span><br><span class="line">A(这是A)</span><br><span class="line">B(这是B)</span><br><span class="line">C(这是C)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(这是A) --&gt; B(这是B)</span><br><span class="line">B(这是B) --&gt; C(这是C)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```mermaid</span><br><span class="line">graph TB</span><br><span class="line">A(这是A)</span><br><span class="line">B(这是B)</span><br><span class="line">C(这是C)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(这是A) --&gt; B(这是B)</span><br><span class="line">B(这是B) --&gt; C(这是C)</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>[!tip] 一个小点</p>
-<p>以下是一些解释文件</p>
-</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(这是A)</span><br><span class="line">B(这是B)</span><br><span class="line">C(这是C)</span><br></pre></td></tr></table></figure>
 
       
     </div>
