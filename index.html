@@ -237,6 +237,132 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/" class="post-title-link" itemprop="url">并发性和并行性的区别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-18 22:43:10" itemprop="dateCreated datePublished" datetime="2024-12-18T22:43:10+08:00">2024-12-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-19 18:32:20" itemprop="dateModified" datetime="2024-12-19T18:32:20+08:00">2024-12-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="并发性和并行性的区别"><a href="#并发性和并行性的区别" class="headerlink" title="并发性和并行性的区别"></a>并发性和并行性的区别</h2><p>  <strong>并发性</strong> 和 <strong>并行性</strong> 是操作系统和计算机领域中两个常见的概念，它们虽然听起来相似，但有本质区别：</p>
+<h3 id="1-并发性（Concurrency）"><a href="#1-并发性（Concurrency）" class="headerlink" title="1. 并发性（Concurrency）"></a><strong>1. 并发性（Concurrency）</strong></h3><ul>
+<li><p><strong>概念</strong>：并发指的是<strong>在同一时间段内</strong>，有多个任务在执行，但这些任务可能是交替执行的（并非同时进行）。</p>
+</li>
+<li><p><strong>特点</strong>：主要通过<strong>时间片轮转</strong>等方式在多个任务间快速切换，看起来像是“同时执行”。通常用于<strong>单核处理器</strong>，因为单核 CPU 在同一时刻只能执行一个任务，只是通过调度来实现任务的交替执行。并发强调的是<strong>任务之间的交替与协调</strong>，而不是“真正的同时进行”。</p>
+</li>
+<li><p><strong>例子</strong>：在操作系统中，同时打开多个程序，比如下载文件的同时浏览网页，CPU 在这些任务之间快速切换。多个线程在一个 CPU 核心上交替执行任务。</p>
+<h3 id="2-并行性（Parallelism）"><a href="#2-并行性（Parallelism）" class="headerlink" title="2. 并行性（Parallelism）"></a><strong>2. 并行性（Parallelism）</strong></h3></li>
+<li><p><strong>概念</strong>：并行指的是<strong>在同一时刻</strong>，有多个任务在<strong>真正地同时执行</strong>。</p>
+</li>
+<li><p><strong>特点</strong>：需要<strong>多核处理器</strong>或多个物理 CPU 支持，每个任务可以被分配到不同的处理器核心上执行。并行强调的是<strong>真正的同时运行</strong>，不需要任务之间的时间片轮换。并行性可以显著提升计算效率。</p>
+</li>
+<li><p><strong>例子</strong>：在一台四核 CPU 的电脑上，有四个任务分别在四个核心上同时执行。在大数据计算中，将数据分成多个部分，由多个处理器同时进行计算。</p>
+<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a><strong>对比总结</strong></h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>比较点</th>
+<th>并发性（Concurrency）</th>
+<th>并行性（Parallelism）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>概念</strong></td>
+<td>任务交替执行，看起来同时进行</td>
+<td>任务真正同时执行</td>
+</tr>
+<tr>
+<td><strong>执行环境</strong></td>
+<td>单核处理器或时间片轮转</td>
+<td>多核处理器或多个 CPU 支持</td>
+</tr>
+<tr>
+<td><strong>重点</strong></td>
+<td>任务之间的<strong>协调</strong>与交替</td>
+<td>任务之间的<strong>同时执行</strong></td>
+</tr>
+<tr>
+<td><strong>表现形式</strong></td>
+<td>虚假的“同时”，实际是交替执行</td>
+<td>真正的物理层面“同时执行”</td>
+</tr>
+<tr>
+<td><strong>例子</strong></td>
+<td>单核 CPU 多线程切换任务</td>
+<td>多核 CPU 多个线程同时执行</td>
+</tr>
+</tbody></table>
+<h3 id="简单记忆："><a href="#简单记忆：" class="headerlink" title="简单记忆："></a><strong>简单记忆</strong>：</h3><ul>
+<li><strong>并发</strong>：看起来同时（交替执行），<strong>单核</strong>可以实现。</li>
+<li><strong>并行</strong>：真正在同时执行，依赖<strong>多核</strong>或多处理器。<br><strong>一句话总结</strong>：<strong>并发是逻辑上的同时执行，并行是物理上的同时执行。</strong></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/15/%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1183,133 +1309,6 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">基本分页存储管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-11 20:45:10" itemprop="dateCreated datePublished" datetime="2024-12-11T20:45:10+08:00">2024-12-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-12 15:05:11" itemprop="dateModified" datetime="2024-12-12T15:05:11+08:00">2024-12-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1，<strong>进程</strong>中的块称为<strong>页面</strong>或页（Page），<strong>内存</strong>中的块称为<strong>页框</strong>或页帧（Page Frame）。外存也以相同的单位进行划分，直接称为块或盘块（Block）。</p>
-<p>2，</p>
-<ul>
-<li>直接映射 ：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>标记</th>
-<th>Cache行号</th>
-<th>块内地址</th>
-</tr>
-</thead>
-</table>
-<ul>
-<li>全相联映射 ：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>标记（块号）</th>
-<th>块内地址</th>
-</tr>
-</thead>
-</table>
-<ul>
-<li>组相联映射 ：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>标记</th>
-<th>Cache组号</th>
-<th>块内地址</th>
-</tr>
-</thead>
-</table>
-<p>3，每一个 Cache 行会对应一个标记和有效位，标记用于指明 Cache 中的行来自主存的哪一块，有效位表示 Cache 行信息是否有效。</p>
-<p>4，大题</p>
-<p><img src="https://i.imgur.com/WJoB7RZ.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/wIlbBby.jpg" alt="Imgur"></p>
-<p>5，二级页表题目</p>
-<p><img src="https://imgur.com/uYItoPs.png" alt="Imgur"></p>
-<p>逻辑地址 $2^{16}$ 页，也就是 $2^{16}\times 2^{10}&#x3D;2^{26}B$ 。</p>
-<p>所以页目录号 + 页号 + 页内偏移量 一共 26 位。</p>
-<p>按字节编址，页大小为 $2^{10}B$ ，所以页内偏移量 10 位。</p>
-<p>页表项 $2B$ ，装满 $2^{10}$ 的页，所以一个二级页表有 $2^9$ 个页表项组成，即页号 9 位。</p>
-<p>还剩下 7 位留给一级页号，可以表示 $2^7&#x3D;128$ 个表项，代表着 $128$ 个二级页表。</p>
-<p>6，补充 ：</p>
-<p>逻辑地址 &#x3D; 页号 + 业内地址 ；</p>
-<p>物理地址 &#x3D; 块号 + 业内地址 。</p>
-<hr>
-<p>视频链接 ：</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i14y1d7Qt/">【操作系统】一个视频捋清楚基本分页存储管理_哔哩哔哩_bilibili</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1381,7 +1380,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
