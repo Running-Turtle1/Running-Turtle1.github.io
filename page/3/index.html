@@ -158,6 +158,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/09/Mermaid%20%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%20--%20%E7%B1%BB%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/09/Mermaid%20%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%20--%20%E7%B1%BB%E5%9B%BE/" class="post-title-link" itemprop="url">Mermaid 语法学习 -- 类图</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-09 23:00:00 / 修改时间：23:22:04" itemprop="dateCreated datePublished" datetime="2024-12-09T23:00:00+08:00">2024-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mermaid/" itemprop="url" rel="index"><span itemprop="name">Mermaid</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Mermaid-画类图"><a href="#Mermaid-画类图" class="headerlink" title="Mermaid 画类图"></a>Mermaid 画类图</h2><p>代码如下 ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataBaseOperation</span> &#123;</span><br><span class="line">    -connectionString : string</span><br><span class="line"></span><br><span class="line">    +<span class="built_in">DataBaseOperation</span>()</span><br><span class="line">    +<span class="built_in">ConnectionString</span>()string</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    +<span class="built_in">ExecuteDataSet</span>(in commandText : string)DataSet</span><br><span class="line">    +<span class="built_in">ExecuteDataSet</span>(in commandText : string, in commandType : CommandType)DataSet</span><br><span class="line">    +<span class="built_in">ExecuteDataSet</span>(in commandText : string, in commandType : CommandType, in parameters : params OracleParameter[])DataSet</span><br><span class="line"></span><br><span class="line">    +<span class="built_in">ExecuteReader</span>(in commandText : string)OracleDataReader</span><br><span class="line">    +<span class="built_in">ExecuteReader</span>(in commandText : string, in commandType : CommandType)OracleDataReader</span><br><span class="line">    +<span class="built_in">ExecuteReader</span>(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])OracleDataReader</span><br><span class="line"></span><br><span class="line">    +<span class="built_in">ExecuteScalar</span>(in commandText : string)object</span><br><span class="line">    +<span class="built_in">ExecuteScalar</span>(in commandText : string, in commandType : CommandType)object</span><br><span class="line">    +<span class="built_in">ExecuteScalar</span>(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])object</span><br><span class="line"></span><br><span class="line">    +<span class="built_in">ExecuteNonQuery</span>(in commandText : string)<span class="type">int</span></span><br><span class="line">    +<span class="built_in">ExecuteNonQuery</span>(in commandText : string, in commandType : CommandType)<span class="type">int</span></span><br><span class="line">    +<span class="built_in">ExecuteNonQuery</span>(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])<span class="type">int</span></span><br><span class="line"></span><br><span class="line">    +<span class="built_in">ExecuteSqls</span>(in sqlStrings : List&lt;string&gt;)<span class="type">int</span></span><br><span class="line">    +<span class="built_in">ExecuteSqls</span>(in sqlStrings : List&lt;string&gt;, in commandTypeList : List&lt;System.Data.CommandType&gt;)<span class="type">int</span></span><br><span class="line">    +<span class="built_in">ExecuteSqls</span>(in sqlStrings : List&lt;string&gt;, in commandTypeList : List&lt;System.Data.CommandType&gt;, in parametersList : List)<span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    +A : <span class="type">int</span>  </span><br><span class="line">    +<span class="built_in">B</span>()<span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DataBaseOperation --&gt; B</span><br><span class="line">DataBaseOperation ..&gt; B</span><br><span class="line">DataBaseOperation ..|&gt; B</span><br><span class="line">DataBaseOperation --|&gt; B</span><br></pre></td></tr></table></figure>
+
+<p>渲染失效的话，在 <a target="_blank" rel="noopener" href="https://www.min2k.com/tools/mermaid/">https://www.min2k.com/tools/mermaid/</a> 提交代码即可渲染</p>
+<pre class="mermaid">classDiagram
+class DataBaseOperation {
+    -connectionString : string
+
+    +DataBaseOperation()
+    +ConnectionString()string
+
+
+    +ExecuteDataSet(in commandText : string)DataSet
+    +ExecuteDataSet(in commandText : string, in commandType : CommandType)DataSet
+    +ExecuteDataSet(in commandText : string, in commandType : CommandType, in parameters : params OracleParameter[])DataSet
+
+    +ExecuteReader(in commandText : string)OracleDataReader
+    +ExecuteReader(in commandText : string, in commandType : CommandType)OracleDataReader
+    +ExecuteReader(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])OracleDataReader
+
+    +ExecuteScalar(in commandText : string)object
+    +ExecuteScalar(in commandText : string, in commandType : CommandType)object
+    +ExecuteScalar(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])object
+
+    +ExecuteNonQuery(in commandText : string)int
+    +ExecuteNonQuery(in commandText : string, in commandType : CommandType)int
+    +ExecuteNonQuery(in commandText : string, in commandType : CommandType, in parameters : OracleParameter[])int
+
+    +ExecuteSqls(in sqlStrings : List<string>)int
+    +ExecuteSqls(in sqlStrings : List<string>, in commandTypeList : List<System.Data.CommandType>)int
+    +ExecuteSqls(in sqlStrings : List<string>, in commandTypeList : List<System.Data.CommandType>, in parametersList : List)int
+}
+
+class B {
+    +A : int  
+    +B()int
+}
+
+DataBaseOperation --> B
+DataBaseOperation ..> B
+DataBaseOperation ..|> B
+DataBaseOperation --|> B</pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/08/2023%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E9%80%89%E8%AF%8D%E5%A1%AB%E7%A9%BA+%E9%95%BF%E7%AF%87%E9%98%85%E8%AF%BB%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1802,104 +1911,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/30/I-O%E6%96%B9%E5%BC%8F%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/30/I-O%E6%96%B9%E5%BC%8F%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">I-O方式习题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-30 14:00:00 / 修改时间：13:58:10" itemprop="dateCreated datePublished" datetime="2024-11-30T14:00:00+08:00">2024-11-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="中断向量、中断向量地址"><a href="#中断向量、中断向量地址" class="headerlink" title="中断向量、中断向量地址"></a>中断向量、中断向量地址</h2><p><strong>中断向量</strong>是中断服务程序的入口地址。</p>
-<p><strong>中断向量地址</strong>是内存中存放中断向量的地址，即中断服务程序入口地址的地址。</p>
-<h2 id="谁可以提出中断-？"><a href="#谁可以提出中断-？" class="headerlink" title="谁可以提出中断 ？"></a>谁可以提出中断 ？</h2><ul>
-<li><strong>外部事件</strong> √</li>
-</ul>
-<p>外部事件如按 ESC 退出运行的程序等，属于外中断。</p>
-<ul>
-<li><strong>虚拟存储器失效</strong> √</li>
-</ul>
-<p>虚拟存储器失效如缺页等，会引发缺页中断。</p>
-<ul>
-<li><strong>浮点数运算上溢</strong> √</li>
-</ul>
-<p>超出了浮点数表示范围，属于内中断</p>
-<ul>
-<li><strong>浮点数运算下溢</strong> ×</li>
-</ul>
-<p>直接当做机器零处理，不会引发中断。</p>
-<ul>
-<li><strong>Cache</strong> ×</li>
-</ul>
-<p>Cache 完全由硬件实现，不会涉及中断层面。</p>
-<h2 id="检查中断请求"><a href="#检查中断请求" class="headerlink" title="检查中断请求"></a>检查中断请求</h2><p>1，<strong>每条指令周期结束之后</strong>，CPU 会统一扫描各个中断源，然后进行判优来决定响应哪个中断源，而不是在每个指令的执行过程中这么做。</p>
-<p>2，CPU 会在<strong>每个存储周期结束后</strong>检查是否有 DMA 请求，而不是在执行执行过程的末尾这么做。</p>
-<h2 id="中断服务程序"><a href="#中断服务程序" class="headerlink" title="中断服务程序"></a>中断服务程序</h2><p>1，中断服务程序的最后指令通常是中断返回指令，与无条件转移指令不同，它不仅要修改 PC 值，而且要将 CPU 中的所有寄存器恢复到中断前的状态。</p>
-<h2 id="产生-DMA-请求"><a href="#产生-DMA-请求" class="headerlink" title="产生 DMA 请求"></a>产生 DMA 请求</h2><p>只有具有 DMA 接口的设备才能产生 DMA 请求，即使当前设备是高速设备或需要与主机批量交换数据，如果没有 MDA 接口，也不能产生 DMA 请求。</p>
-<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><p>访管指令 &gt; 程序性指令 &gt; 重新启动</p>
-<h2 id="中断请求"><a href="#中断请求" class="headerlink" title="中断请求"></a>中断请求</h2><p>1，在配有通道的计算机系统中，用户程序需要输入&#x2F;输出时，引发的中断是 （访管中断）。</p>
-<p>【解析】：用户需要输入&#x2F;输出时，需要调用 OS 提供的接口，此时会引发访管中断，系统由用户态转向核心态。</p>
-<p>2，在中断响应期间，CPU 主要完成关中断、保护断点、发中断响应信号并形成中断向量地址的工作，即中断隐指令。</p>
-<p>3，在中断响应期间，由中断隐指令将允许触发器置 0。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1971,7 +1982,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
