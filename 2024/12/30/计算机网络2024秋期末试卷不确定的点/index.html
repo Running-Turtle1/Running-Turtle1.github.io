@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="资源">
-<meta property="og:url" content="http://example.com/resources/index.html">
+  <meta name="description" content="TCP报文段的窗口字段的含义TCP报文段的窗口字段表示的是接收方的接收窗口 （蒙错了，蒙的发送方的接收窗口） 主机到另一个主机经过两个switch，一个router，几次ARP？不太好查 CSMA&#x2F;CD为什么不适用于无线网络 碰撞检测困难：  在无线网络中，设备之间的信号是通过空气传播的，信号会受到衰减和干扰。设备无法像有线网络中那样清晰地检测到碰撞，因为发送信号的设备可能无法接收到从其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络2024秋期末试卷不确定的点">
+<meta property="og:url" content="http://example.com/2024/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2024%E7%A7%8B%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E7%82%B9/index.html">
 <meta property="og:site_name" content="Running-Turtle">
-<meta property="og:description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+<meta property="og:description" content="TCP报文段的窗口字段的含义TCP报文段的窗口字段表示的是接收方的接收窗口 （蒙错了，蒙的发送方的接收窗口） 主机到另一个主机经过两个switch，一个router，几次ARP？不太好查 CSMA&#x2F;CD为什么不适用于无线网络 碰撞检测困难：  在无线网络中，设备之间的信号是通过空气传播的，信号会受到衰减和干扰。设备无法像有线网络中那样清晰地检测到碰撞，因为发送信号的设备可能无法接收到从其">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-10T14:07:08.000Z">
-<meta property="article:modified_time" content="2024-11-23T11:30:39.680Z">
+<meta property="article:published_time" content="2024-12-30T15:01:00.000Z">
+<meta property="article:modified_time" content="2024-12-30T15:01:52.804Z">
 <meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="课业">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/resources/">
+<link rel="canonical" href="http://example.com/2024/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2024%E7%A7%8B%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E7%82%B9/">
 
 
 <script id="page-configurations">
@@ -40,13 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>资源 | Running-Turtle
-</title>
+  <title>计算机网络2024秋期末试卷不确定的点 | Running-Turtle</title>
   
 
 
@@ -154,43 +155,115 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2024%E7%A7%8B%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络2024秋期末试卷不确定的点
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">资源
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2024-12-30 23:01:00 / 修改时间：23:01:52" itemprop="dateCreated datePublished" datetime="2024-12-30T23:01:00+08:00">2024-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="TCP报文段的窗口字段的含义"><a href="#TCP报文段的窗口字段的含义" class="headerlink" title="TCP报文段的窗口字段的含义"></a>TCP报文段的窗口字段的含义</h2><p>TCP报文段的窗口字段表示的是接收方的接收窗口</p>
+<p>（蒙错了，蒙的发送方的接收窗口）</p>
+<h2 id="主机到另一个主机经过两个switch，一个router，几次ARP？"><a href="#主机到另一个主机经过两个switch，一个router，几次ARP？" class="headerlink" title="主机到另一个主机经过两个switch，一个router，几次ARP？"></a>主机到另一个主机经过两个switch，一个router，几次ARP？</h2><p>不太好查</p>
+<h2 id="CSMA-CD为什么不适用于无线网络"><a href="#CSMA-CD为什么不适用于无线网络" class="headerlink" title="CSMA&#x2F;CD为什么不适用于无线网络"></a>CSMA&#x2F;CD为什么不适用于无线网络</h2><ul>
+<li><p><strong>碰撞检测困难</strong>：</p>
+<ul>
+<li>在无线网络中，设备之间的信号是通过空气传播的，信号会受到衰减和干扰。设备无法像有线网络中那样清晰地检测到碰撞，因为发送信号的设备可能无法接收到从其他设备发出的信号，尤其是在距离较远或信号被遮挡的情况下。这导致无法有效地判断是否发生了碰撞。</li>
+</ul>
+</li>
+<li><p><strong>隐蔽终端问题</strong>：</p>
+<ul>
+<li>在无线网络中，不同设备的信号传播范围有限，因此某些设备可能无法直接接收到其他设备的信号，这就出现了<strong>隐蔽终端问题</strong>（Hidden Terminal Problem）。即某些设备无法察觉到其他设备正在发送数据，可能导致它们在信道上同时发送数据而发生碰撞。</li>
+</ul>
+</li>
+<li><p><strong>信道共享</strong>：</p>
+<ul>
+<li>无线网络是共享信道的，每个设备都共享同一个频谱。在无线通信中，如果所有设备都使用 CSMA&#x2F;CD 的方式，频繁的碰撞和重试会导致网络效率低下。因此，无线网络通常采用其他机制（如 <strong>CSMA&#x2F;CA</strong>）来避免碰撞。</li>
+</ul>
+</li>
+</ul>
+<p>（自己就写了碰撞检测困难的问题，甚至没写CSMD&#x2F;CA更适合，因为自己没具体学这个协议，怕写错了）</p>
+<h2 id="NAT（网络地址转换）不允许使用-“广播地址”-或-“多播地址”-作为私有网络地址。"><a href="#NAT（网络地址转换）不允许使用-“广播地址”-或-“多播地址”-作为私有网络地址。" class="headerlink" title="NAT（网络地址转换）不允许使用 “广播地址” 或 “多播地址” 作为私有网络地址。"></a>NAT（网络地址转换）不允许使用 <strong>“广播地址”</strong> 或 <strong>“多播地址”</strong> 作为私有网络地址。</h2><p>感觉自己写错了。</p>
+<h2 id="配置访问互联网地址"><a href="#配置访问互联网地址" class="headerlink" title="配置访问互联网地址"></a>配置访问互联网地址</h2><p>蒙错了估计</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E4%B8%9A/" rel="tag"># 课业</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"># 计算机网络</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/12/30/%E8%AE%A1%E7%BD%91%E8%AF%95%E5%8D%B7%E4%BA%8C%E6%80%BB%E7%BB%93/" rel="prev" title="计网二试卷总结">
+      <i class="fa fa-chevron-left"></i> 计网二试卷总结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -241,6 +314,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E6%8A%A5%E6%96%87%E6%AE%B5%E7%9A%84%E7%AA%97%E5%8F%A3%E5%AD%97%E6%AE%B5%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">TCP报文段的窗口字段的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%9C%BA%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%B8%BB%E6%9C%BA%E7%BB%8F%E8%BF%87%E4%B8%A4%E4%B8%AAswitch%EF%BC%8C%E4%B8%80%E4%B8%AArouter%EF%BC%8C%E5%87%A0%E6%AC%A1ARP%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">主机到另一个主机经过两个switch，一个router，几次ARP？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSMA-CD%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E9%80%82%E7%94%A8%E4%BA%8E%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">CSMA&#x2F;CD为什么不适用于无线网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT%EF%BC%88%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%EF%BC%89%E4%B8%8D%E5%85%81%E8%AE%B8%E4%BD%BF%E7%94%A8-%E2%80%9C%E5%B9%BF%E6%92%AD%E5%9C%B0%E5%9D%80%E2%80%9D-%E6%88%96-%E2%80%9C%E5%A4%9A%E6%92%AD%E5%9C%B0%E5%9D%80%E2%80%9D-%E4%BD%9C%E4%B8%BA%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">NAT（网络地址转换）不允许使用 “广播地址” 或 “多播地址” 作为私有网络地址。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E4%BA%92%E8%81%94%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="nav-number">5.</span> <span class="nav-text">配置访问互联网地址</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
