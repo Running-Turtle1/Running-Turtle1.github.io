@@ -158,6 +158,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/05/Cache%E5%86%99%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/05/Cache%E5%86%99%E7%AD%96%E7%95%A5/" class="post-title-link" itemprop="url">Cache写策略</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-05 13:45:10" itemprop="dateCreated datePublished" datetime="2024-12-05T13:45:10+08:00">2024-12-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-12 15:10:14" itemprop="dateModified" datetime="2024-12-12T15:10:14+08:00">2024-12-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41587740/article/details/109104962">Cache写策略(全写法、写回法、写分配法、非写分配法、多级Cache)，参考王道 408</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47187147/article/details/126443193?ops_request_misc=%257B%2522request%255Fid%2522%253A%25229ff4a4bf6bd21f14e9d87f2d90547e69%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=9ff4a4bf6bd21f14e9d87f2d90547e69&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126443193-null-null.142%5Ev100%5Epc_search_result_base1&utm_term=cache%E7%BC%BA%E5%A4%B1%E7%8E%87&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_47187147/article/details/126443193?ops_request_misc=%257B%2522request%255Fid%2522%253A%25229ff4a4bf6bd21f14e9d87f2d90547e69%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=9ff4a4bf6bd21f14e9d87f2d90547e69&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126443193-null-null.142^v100^pc_search_result_base1&amp;utm_term=cache%E7%BC%BA%E5%A4%B1%E7%8E%87&amp;spm=1018.2226.3001.4187</a></p>
+<h2 id="什么是写命中-？"><a href="#什么是写命中-？" class="headerlink" title="什么是写命中 ？"></a>什么是写命中 ？</h2><p>“写命中”（Write Hit）是计算机缓存（Cache）中常用的术语，指的是在进行写操作时，数据已经存在于缓存中，因此可以直接在缓存中更新数据，而不需要访问主存（RAM）或更慢的存储设备。</p>
+<h2 id="直接映射方式"><a href="#直接映射方式" class="headerlink" title="直接映射方式"></a>直接映射方式</h2><blockquote>
+<p>1，Cache 16 KB，Cache 行大小为 16B，若主存与 Cache 地址用直接映像方式，则主存地址为 0x1234E8F8的单元装入 Cache 的地址是 ？</p>
+</blockquote>
+<p>对于直接映射，主存地址结构被划分为</p>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>Cache行号</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<p>主存有 32 位，装入 Cache 的地址就是低 14 位，即 10 位行号 + 4 位块内偏移。</p>
+<p>答案是 ：10 1000 1111 1000</p>
+<h2 id="补充知识一"><a href="#补充知识一" class="headerlink" title="补充知识一"></a>补充知识一</h2><p>一个块由若干字组成，CPU 与 Cache（或主存）间信息交互的单位是字，而 Cache 与主存间信息交互的单位是块。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/03/0x01_Sentence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1605,161 +1697,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/25/csharp%20%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E6%8B%96%E6%8B%BD%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/25/csharp%20%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E6%8B%96%E6%8B%BD%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">csharp 实现文件拖拽上传功能</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-25 20:05:57 / 修改时间：20:18:16" itemprop="dateCreated datePublished" datetime="2024-11-25T20:05:57+08:00">2024-11-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-%E7%AE%80%E5%8E%86%E8%A7%A3%E6%9E%90%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">C# 简历解析系统</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>以 C# 为例，假设选择 panel 控件，属性中设置 <code>AllowDrop</code> 为 ture，设计器中绑定 <code>DragEnter</code> 和 <code>DragDrop</code> 事件。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">panel1_DragEnter</span>(<span class="params"><span class="built_in">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 检查拖拽的内容是否为文件</span></span><br><span class="line">    <span class="keyword">if</span> (e.Data.GetDataPresent(DataFormats.FileDrop))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 检查是否是 .txt 文件</span></span><br><span class="line">        <span class="keyword">var</span> files = (<span class="built_in">string</span>[])e.Data.GetData(DataFormats.FileDrop);</span><br><span class="line">        <span class="keyword">if</span> (files != <span class="literal">null</span> &amp;&amp; files.Length &gt; <span class="number">0</span> &amp;&amp; Path.GetExtension(files[<span class="number">0</span>]).ToLower() == <span class="string">&quot;.txt&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            e.Effect = DragDropEffects.Copy; <span class="comment">// 设置拖拽效果为复制</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            e.Effect = DragDropEffects.None; <span class="comment">// 非 txt 文件禁止拖拽</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        e.Effect = DragDropEffects.None; <span class="comment">// 非文件拖拽禁止</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">panel1_DragDrop</span>(<span class="params"><span class="built_in">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取拖拽的文件</span></span><br><span class="line">    <span class="keyword">var</span> files = (<span class="built_in">string</span>[])e.Data.GetData(DataFormats.FileDrop);</span><br><span class="line">    <span class="keyword">if</span> (files != <span class="literal">null</span> &amp;&amp; files.Length &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> sourceFile = files[<span class="number">0</span>]; <span class="comment">// 只处理第一个文件</span></span><br><span class="line">        <span class="built_in">string</span> destinationPath = Path.Combine(Application.StartupPath, Path.GetFileName(sourceFile)); <span class="comment">// 保存到程序启动目录</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 复制文件到目标路径</span></span><br><span class="line">            File.Copy(sourceFile, destinationPath, <span class="literal">true</span>);</span><br><span class="line">            MessageBox.Show(<span class="string">$&quot;文件已成功保存到：<span class="subst">&#123;destinationPath&#125;</span>&quot;</span>, <span class="string">&quot;保存成功&quot;</span>, MessageBoxButtons.OK, MessageBoxIcon.Information);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        &#123;</span><br><span class="line">            MessageBox.Show(<span class="string">$&quot;保存文件时出错：<span class="subst">&#123;ex.Message&#125;</span>&quot;</span>, <span class="string">&quot;错误&quot;</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><ul>
-<li><code>DataFormats.FileDrop</code> 是什么 ？</li>
-</ul>
-<p>是拖放数据的一种标准格式，用来表示文件或文件夹路径。 </p>
-<p><strong>使用场景</strong>：在拖放文件到应用程序窗口时，用于检查拖放的数据是否是文件或文件夹的路径。</p>
-<hr>
-<h1 id="用户问题"><a href="#用户问题" class="headerlink" title="用户问题"></a>用户问题</h1><p>   DragEventArgs e<br>   有哪些属性 </p>
-<h1 id="chatGPT"><a href="#chatGPT" class="headerlink" title="chatGPT"></a>chatGPT</h1><p>   <code>DragEventArgs</code> 是 C# 中用于处理拖放操作的事件参数。它包含了与拖放事件相关的信息。以下是它的一些主要属性及其用途：</p>
-<h3 id="DragEventArgs-的属性"><a href="#DragEventArgs-的属性" class="headerlink" title="DragEventArgs 的属性"></a>DragEventArgs 的属性</h3><table>
-<thead>
-<tr>
-<th><strong>属性</strong></th>
-<th><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>AllowedEffect</strong></td>
-<td>指示拖放操作允许的效果（如 Copy, Move 或 Link 等）。可以通过此属性来限制拖放操作的类型。</td>
-</tr>
-<tr>
-<td><strong>Data</strong></td>
-<td>获取拖放操作携带的数据。通过 e.Data.GetData() 获取实际的拖放数据。例如，拖放文件时，e.Data.GetData(DataFormats.FileDrop) 返回一个文件路径数组。</td>
-</tr>
-<tr>
-<td><strong>Effect</strong></td>
-<td>指定拖放操作的实际效果（如 DragDropEffects.Copy、DragDropEffects.None）。可以在 DragEnter 或 DragOver 事件中设置，以指示拖放是否允许以及允许的操作类型。</td>
-</tr>
-<tr>
-<td><strong>KeyState</strong></td>
-<td>指示拖放操作期间按下的键（如 Ctrl、Shift 和鼠标按钮）。可以通过此属性来检测用户是否按住了某些修饰键。例如，判断是否按住 Ctrl 键时：(e.KeyState &amp; 8) !&#x3D; 0。</td>
-</tr>
-<tr>
-<td><strong>X</strong></td>
-<td>获取鼠标指针相对于屏幕左边缘的水平坐标（以像素为单位）。</td>
-</tr>
-<tr>
-<td><strong>Y</strong></td>
-<td>获取鼠标指针相对于屏幕顶边缘的垂直坐标（以像素为单位）。</td>
-</tr>
-</tbody></table>
-<h3 id="详细属性说明"><a href="#详细属性说明" class="headerlink" title="详细属性说明"></a>详细属性说明</h3><ol>
-<li><strong>AllowedEffect</strong></li>
-</ol>
-<ul>
-<li><p>类型：DragDropEffects</p>
-</li>
-<li><p>用于获取拖放源允许的效果。例如，如果拖放操作只允许复制文件，则此属性值可能为 DragDropEffects.Copy。</p>
-</li>
-</ul>
-<ol start="2">
-<li><strong>Data</strong></li>
-</ol>
-<ul>
-<li><p>类型：<code>IDataObject</code></p>
-</li>
-<li><p>包含拖放的数据。常用方法：GetData(string format)：根据格式获取拖放的数据。GetDataPresent(string format)：检查拖放的数据是否为指定格式。<strong>常见格式</strong>：DataFormats.FileDrop：拖放的文件列表。DataFormats.Text：拖放的文本数据。</p>
-</li>
-</ul>
-<ol start="3">
-<li><strong>Effect</strong></li>
-</ol>
-<ul>
-<li><p>类型：DragDropEffects</p>
-</li>
-<li><p>用于设置拖放的实际效果：DragDropEffects.None：不执行拖放。DragDropEffects.Copy：复制操作。DragDropEffects.Move：移动操作。</p>
-</li>
-</ul>
-<ol start="4">
-<li><strong>KeyState</strong></li>
-</ol>
-<ul>
-<li><p>类型：int</p>
-</li>
-<li><p>表示拖放操作期间按下的键。1：鼠标左键。2：鼠标右键。4：鼠标中键。8：Ctrl 键。16：Shift 键。32：Alt 键。</p>
-</li>
-</ul>
-<ol start="5">
-<li><strong>X 和 Y</strong></li>
-</ol>
-<ul>
-<li><p>类型：int</p>
-</li>
-<li><p>分别表示鼠标的水平和垂直屏幕坐标。这可以用于显示工具提示或动态调整拖放目标的位置。</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1831,7 +1768,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1871,7 +1808,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
