@@ -158,6 +158,295 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">基本分页存储管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-11 20:45:10" itemprop="dateCreated datePublished" datetime="2024-12-11T20:45:10+08:00">2024-12-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-20 20:33:54" itemprop="dateModified" datetime="2024-12-20T20:33:54+08:00">2024-12-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1，<strong>进程</strong>中的块称为<strong>页面</strong>或页（Page），<strong>内存</strong>中的块称为<strong>页框</strong>或页帧（Page Frame）。外存也以相同的单位进行划分，直接称为块或盘块（Block）。</p>
+<p>2，</p>
+<ul>
+<li>直接映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>Cache行号</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>全相联映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记（块号）</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>组相联映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>Cache组号</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<p>3，每一个 Cache 行会对应一个标记和有效位，标记用于指明 Cache 中的行来自主存的哪一块，有效位表示 Cache 行信息是否有效。</p>
+<p>4，大题</p>
+<p><img src="https://i.imgur.com/WJoB7RZ.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/wIlbBby.jpg" alt="Imgur"></p>
+<p>5，二级页表题目</p>
+<p><img src="https://imgur.com/uYItoPs.png" alt="Imgur"></p>
+<p><strong>B</strong> </p>
+<p>逻辑地址 $2^{16}$ 页，也就是 $2^{16}\times 2^{10}&#x3D;2^{26}B$ 。</p>
+<p>所以页目录号 + 页号 + 页内偏移量 一共 26 位。</p>
+<p>按字节编址，页大小为 $2^{10}B$ ，所以页内偏移量 10 位。</p>
+<p>页表项 $2B$ ，装满 $2^{10}$ 的页，所以一个二级页表有 $2^9$ 个页表项组成，即页号 9 位。</p>
+<p>还剩下 26 - 10 - 9 &#x3D; 7 位留给一级页号，可以表示 $2^7&#x3D;128$ 个表项，代表着 $128$ 个二级页表。 </p>
+<p>6，补充 ：</p>
+<p>逻辑地址 &#x3D; 页号 + 页内地址 ；</p>
+<p>物理地址 &#x3D; 块号 + 页内地址 。</p>
+<hr>
+<p>视频链接 ：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i14y1d7Qt/">【操作系统】一个视频捋清楚基本分页存储管理_哔哩哔哩_bilibili</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/11/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">页面置换算法-CLOCK算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-11 20:45:10" itemprop="dateCreated datePublished" datetime="2024-12-11T20:45:10+08:00">2024-12-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-12 16:12:35" itemprop="dateModified" datetime="2024-12-12T16:12:35+08:00">2024-12-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CLOCK算法"><a href="#CLOCK算法" class="headerlink" title="CLOCK算法"></a>CLOCK算法</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LZ421z7vJ/?vd_source=cdddf6b462dc99204224a6ed9c8e2636">Clock置换算法原理+例题讲解_哔哩哔哩_bilibili</a></p>
+<p>1，为每个页面设置一个访问位，当某页被访问时，将其访问位设为 1，指针位置不变。</p>
+<p>2，需要置换一个页面时，检查当前指针所在页的访问位，如果是 0，将该页换出，指针指向下一个位置 ；如果是 1，将访问位设为 0，指针指向下一个位置。</p>
+<p>3，初始时指针指向第一个空页面，装入新页面时，指针指向下一个位置。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/11/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" class="post-title-link" itemprop="url">流水线技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-11 15:06:10 / 修改时间：15:07:37" itemprop="dateCreated datePublished" datetime="2024-12-11T15:06:10+08:00">2024-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="五段基本流水线"><a href="#五段基本流水线" class="headerlink" title="五段基本流水线"></a>五段基本流水线</h2><p>IF 取指 $\rightarrow$ ID 译码 &amp; 取数 $\rightarrow$ EX 执行 $\rightarrow$ MEM 访存 $\rightarrow$ WB 写回寄存器。 </p>
+<h2 id="数据通路"><a href="#数据通路" class="headerlink" title="数据通路"></a>数据通路</h2><p>数据在功能部件之间传送的路径被称为<strong>数据通路</strong> ，包括数据通路上流经的部件，如程序计数器，ALU，通用寄存器、状态寄存器、异常和中断处理逻辑等。</p>
+<p>数据通路由控制部件控制，控制部件根据每条指令功能的不同生成对数据通路的控制信号，因此，数据通路不包括控制部件。</p>
+<h2 id="流水线的-CPI"><a href="#流水线的-CPI" class="headerlink" title="流水线的 CPI"></a>流水线的 CPI</h2><p>下列处理器类型，理想情况下 CPI 为 1 的是 ：</p>
+<p>I. 单周期 CPU </p>
+<p>II. 多周期 CPU</p>
+<p>III. 基本流水线 CPU</p>
+<p>IV. 超标量流水线 CPU</p>
+<p><strong>解答 :</strong> </p>
+<p>对于单周期 CPU，令指令周期 &#x3D; 时钟周期，CPI &#x3D; 1。</p>
+<p>对于多周期 CPU，CPU 执行过程分为几个阶段，每个阶段用一个时钟完成，每种指令所用的时钟数可以不同，CPI &gt; 1。</p>
+<p>对于基本流水线 CPU，令每个时钟周期流出一条指令，CPI &#x3D; 1。</p>
+<p>对于超标量流水 CPU，每个时钟周期流出多条指令，CPI &lt; 1。 </p>
+<h2 id="程序控制类指令的功能"><a href="#程序控制类指令的功能" class="headerlink" title="程序控制类指令的功能"></a>程序控制类指令的功能</h2><p>程序控制类指令的功能是<u>改变程序的执行顺序</u> 。</p>
+<h2 id="RISC-机器一定是流水-CPU"><a href="#RISC-机器一定是流水-CPU" class="headerlink" title="RISC 机器一定是流水 CPU"></a>RISC 机器一定是流水 CPU</h2><p>流水 CPU 是以 <strong>时间并行性</strong> 为原理构造的处理器，是一种非常 <strong>经济适用</strong> 的并行技术。</p>
+<h2 id="指令周期"><a href="#指令周期" class="headerlink" title="指令周期"></a>指令周期</h2><p>1，<strong>指令周期</strong> ： 取值周期，间址周期，执行周期，中断周期。</p>
+<p>2，指令周期常用若干机器周期表示，一个机器周期又包含若干时钟周期（也称为节拍或T周期，它是 CPU 操作的最基本单位）。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/09/Mermaid%20%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%20--%20%E7%B1%BB%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1265,652 +1554,6 @@ DataBaseOperation --|> B</pre>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/02/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8B%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/02/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8B%EF%BC%89/" class="post-title-link" itemprop="url">2021年6月英语第二套（下）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-02 17:21:00" itemprop="dateCreated datePublished" datetime="2024-12-02T17:21:00+08:00">2024-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 15:53:28" itemprop="dateModified" datetime="2024-12-13T15:53:28+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="0x01-words"><a href="#0x01-words" class="headerlink" title="0x01 words"></a>0x01 words</h2><p>1，It was already crumbling before the fire.</p>
-<p>crumble &#x2F;ˈkrʌmb(ə)l&#x2F; v. 崩裂，坍塌</p>
-<p>在大火之前，它已经摇摇欲坠了 </p>
-<p>2，The cathedral is owned by the French state and has been （at the center of a years-long dispute） over who should finance （restoration work） for the collapsing <del>&#x2F;kəˈlæpsɪŋ&#x2F;</del> staircases, crumbling statues and cracked walls.</p>
-<ul>
-<li><p>ca the dral &#x2F;kəˈθiːdrəl&#x2F; n. 大教堂</p>
-</li>
-<li><p>the French state 法国政府</p>
-</li>
-<li><p>dispute n. 争论 v. 对 … 提出质疑</p>
-</li>
-<li><p>re store &#x2F;rɪˈstɔːr&#x2F; v. 恢复，修复</p>
-</li>
-<li><p>res to ra tion <strong>&#x2F;ˌrestəˈreɪʃn&#x2F;</strong> （对艺术品、建筑等的）修复；</p>
-</li>
-<li><p>s ta tue &#x2F;ˈstætʃuː&#x2F; n. 雕像</p>
-</li>
-<li><p>crack v. 破裂，裂开 n. 裂缝，裂纹</p>
-</li>
-</ul>
-<p>这座大教堂归法国政府所有，多年来一直是谁应该为坍塌的楼梯、摇摇欲坠的雕像和破裂的墙壁的修复工作提供资金的争论焦点。</p>
-<h2 id="0x02-words"><a href="#0x02-words" class="headerlink" title="0x02 words"></a>0x02 words</h2><p>1，precision in visual perception 视觉感知的精确性</p>
-<ul>
-<li><p>perception    n. 看法，认识 ；感觉，感知</p>
-</li>
-<li><p>visual perception</p>
-</li>
-</ul>
-<p>视觉感知：指人类通过眼睛感知和理解周围环境的能力，包括颜色、形状、大小、距离、运动等方面的感知。</p>
-<p>2，subtlety of representation 表现的微妙性</p>
-<ul>
-<li><p>sub tle ty     &#x2F;ˈsʌtəlti&#x2F; n. 细微差别，微妙之处</p>
-</li>
-<li><p>re pre sen tation &#x2F;ˌrep<strong>rɪ</strong>zenˈteɪʃ(ə)n&#x2F; n. 代理人，代表 ；描绘，表现</p>
-</li>
-<li><p>re pre sent &#x2F;ˌreprɪˈzent&#x2F;    v. 代表</p>
-</li>
-</ul>
-<p>3，sensitivity to cognitive stimulation 对认知刺激的敏感性</p>
-<ul>
-<li><p>sensitivity &#x2F;ˌsensəˈtɪvəti&#x2F; n. （对细节或质量的）感知，觉察；（对新情况的）灵敏度；敏感</p>
-</li>
-<li><p>cog ni tive &#x2F;ˈkɑːɡnətɪv&#x2F;     adj. 认识的，认知的</p>
-</li>
-<li><p>s ti mu lation     &#x2F;ˌstɪmjuˈleɪʃ(ə)n&#x2F;      n. 刺激，激励</p>
-</li>
-</ul>
-<h2 id="0x03-words"><a href="#0x03-words" class="headerlink" title="0x03 words"></a>0x03 words</h2><p>1，They present a false picture of the autonomy cars provide.</p>
-<ul>
-<li>au to no my &#x2F;ɔːˈtɑːnəmi&#x2F; n.自治，自治权；独立自主，自主权</li>
-</ul>
-<p>他们错误的展现了汽车带给人们的自主性。</p>
-<p>2，delightful adj. 令人愉快的，宜人的</p>
-<p>3，detachment &#x2F;dɪˈtætʃmənt&#x2F; n. 客观，冷漠，超然。</p>
-<ul>
-<li>detachment from 与……的脱离：指从某个人、组织、信仰或情感中分离出来，不再与之有联系或依赖。</li>
-</ul>
-<p>4，Technological innovation should be properly regulated.</p>
-<ul>
-<li><p>involution n. （年老或长期不用时，如生育期后的子宫）衰退，退化；</p>
-</li>
-<li><p>innovation n. 新事物，新方法；革新，创新</p>
-</li>
-<li><p>reg u late &#x2F;ˈreɡjuleɪt&#x2F; v. （用规则条例）控制，管理；调节，</p>
-</li>
-</ul>
-<p>适当规范技术创新。</p>
-<h2 id="0x04-Translation"><a href="#0x04-Translation" class="headerlink" title="0x04 Translation"></a>0x04 Translation</h2><blockquote>
-<p>青海是国西北部的一个省份，平均海拔3000米以上，大部分地区为高山和平原。青海省得名于全国最大的咸水湖青海湖。青海湖被誉为“中国最美的湖泊”，是最受欢迎的旅游景点之一，也是摄影师和艺术家的天堂。<br>青海山川壮丽，地大物博，石油和天然气储量丰富，省内许多城市的经在石油和天然气工业带动下得到了长足发展。青海尤以水资源丰富而闻名，是中国三大河流长江黄河和澜沧江的发源地，在中国的水生态中发挥着重要作用。</p>
-</blockquote>
-<p>Qinghai is a province in <strong>northwes<u>tern</u></strong> China with an <strong>average altitude</strong> of more than 3,000 meters, and most areas of the province are high mountains and <strong>plateaus</strong>. The province <strong>is named after</strong> Qinghai Lake, the largest <strong>saltwater lake</strong> in China. Known as the most beautiful lake in China, Qinghai Lake is one of the most popular <strong>tourist attractions</strong> and a <strong>paradise</strong> for <strong>photographers</strong> and artists.</p>
-<p><u>Qinghai features <strong>magnificent</strong> landscapes, vast <strong>territory</strong></u>, as well as abundant oil and <strong>natural gas</strong> resources. The oil and natural gas industry has given <strong>impetus</strong> （&#x2F;ˈɪmpɪtəs&#x2F; n. 动力） to the <strong>substantial</strong> economic growth of many cities within the province. Qinghai is especially <strong>renowned</strong> for its rich water resources. It serves as the <strong>headstream</strong> （源头） of China’s three rivers, <strong><u>namely</u></strong> <strong>the Yangtze River, the Yellow River, and the Lancang River</strong>, which play a <strong>vital</strong> role in China’s water <strong>ecosystem</strong>.</p>
-<ul>
-<li><p>p la teau &#x2F;plæˈtoʊ&#x2F; n. 高原</p>
-</li>
-<li><p>be adjacent to &#x2F;əˈdʒeɪs(ə)nt&#x2F; 与 … 相邻</p>
-</li>
-<li><p>inland salt lake 内陆盐湖</p>
-</li>
-<li><p>compact adj. 小型的，袖珍的 ；紧凑的</p>
-</li>
-<li><p>live in a compact community ：聚居</p>
-</li>
-<li><p>altitude &#x2F;ˈæltɪtuːd&#x2F; n. 海拔高度 ；高地</p>
-</li>
-<li><p>altitude sickness 高原反应</p>
-</li>
-<li><p>intangible cultural heritage 非物质文化遗产</p>
-</li>
-<li><p>Qinghai features magnificent landscapes, vast territory.</p>
-</li>
-</ul>
-<p>feature : 以 … 为特色</p>
-<p>magnificent : adj. 宏伟的，壮丽的</p>
-<p>ter ri tory ：领土，版图，领地</p>
-<p>青海省山川壮丽，地大物博。</p>
-<ul>
-<li>substantial</li>
-</ul>
-<p>large in amount, value or importance 大量的；价值巨大的；重大的</p>
-<ul>
-<li>renown &#x2F;rɪˈnaʊn&#x2F; n. 名誉，声望 v. 使有声望</li>
-</ul>
-<p>renowned for 以……而闻名：因某种特定的品质、能力或成就而广为人知或赞誉。</p>
-<ul>
-<li>namely adv.即，也就是</li>
-</ul>
-<h2 id="0x05-Composition"><a href="#0x05-Composition" class="headerlink" title="0x05 Composition"></a>0x05 Composition</h2><p><strong>结构框图：</strong>  </p>
-<ol>
-<li>第1段依据描述柱状图，根据图表反映的趋势。</li>
-<li>第2段具体阐述出现这一趋势的原因。</li>
-<li>第3段总结全文，重申自己的观点。</li>
-</ol>
-<p><strong>参考范文</strong><br><strong>China’s Achievements in Higher Education</strong></p>
-<ol>
-<li><p><strong>[1]</strong> <strong><u>The above chart shows that</u></strong> the past three decades have seen great progress in China’s higher education. According to the data from the <strong>Ministry</strong> （&#x2F;ˈmɪnɪstri&#x2F; 部） of Education, China’s <strong>gross enrolment ratio</strong> in higher education has <strong>increased from 3.4% in 1990 to 51.6%</strong> in 2019.</p>
-</li>
-<li><p><strong>[2]</strong> <strong><u>The reasons accounting for this phenomenon can be listed as follows.</u></strong> <strong>[3]</strong> <strong><u>For one thing</u></strong>, during the last thirty years, with the strong support of our country, the <strong>reform（改革）</strong> and development of higher education have made significant achievements in all aspects, including the system of <strong>recruitment</strong>, fees charging and graduates job-placing, ensuring that all citizens have access to higher education. <strong>[4]</strong> <strong><u>For another,</u></strong> in order to promote the quality of higher education, <strong>educational administrative departments</strong> （教育行政部门）at various <u>（&#x2F;ˈveriəs&#x2F;）</u>levels and local governments have actively explored measures and ways to increase educational <strong>expenditure</strong> （&#x2F;ɪkˈspendɪtʃər&#x2F; 经费）and improve schooling conditions and the quality of <strong>faculty</strong>. <strong>[5]</strong> Besides, with the improvement of living standards, there has been a great change in people’s ideas about education, and they are becoming increasingly aware of the <strong>necessity</strong> of receiving higher education.</p>
-</li>
-<li><p><strong>[6]</strong> Therefore, China’s achievements in higher education <strong>are the result of many factors</strong>, and I believe that the achievements is bound to <strong>have a far-reaching impact on</strong> the whole society.</p>
-</li>
-</ol>
-<ul>
-<li><p>recruit  <strong>&#x2F;rɪˈkruːt&#x2F;</strong> v. 招聘</p>
-</li>
-<li><p>faculty n. 机能；天赋，才能 ;&lt;美&gt; 全体教员；&lt;旧&gt;（某行业，尤指医学行业的）全体从业人员；</p>
-</li>
-<li><p><strong>The quality of faculty</strong> 指的是 <strong>教师队伍的质量</strong></p>
-</li>
-<li><p>I believe that the achievements is bound to have a far-reaching impact on the whole society.</p>
-<p>我相信，这些成就必将对整个社会产生深远的影响。</p>
-</li>
-<li><p>be bound to</p>
-</li>
-</ul>
-<p>注定会，必然会：表示某种情况或结果是不可避免的，一定会发生。</p>
-<ul>
-<li><p>far-reaching 影响深远的，波及广泛的</p>
-</li>
-<li><p>graduates job-placing ：毕业生就业安排</p>
-</li>
-</ul>
-<hr>
-<p><strong>话题词汇汇总：</strong> </p>
-<ul>
-<li><p><strong>academic activities</strong> 学术活动</p>
-</li>
-<li><p><strong>graduate student&#x2F;postgraduate</strong> 研究生</p>
-</li>
-<li><p><strong>diploma&#x2F;graduation certificate</strong> 毕业证书</p>
-</li>
-<li><p><strong>tuition (fee)</strong> 学费</p>
-</li>
-<li><p><strong>scholarship&#x2F;fellowship</strong> 奖学金</p>
-</li>
-<li><p><strong><u>board expenses 伙食费</u></strong>  </p>
-</li>
-<li><p><strong>input in education</strong> 教育投入</p>
-</li>
-<li><p><strong>optimize the teaching staff</strong> 优化师资队伍</p>
-</li>
-<li><p><strong>(interest-free) bank loan</strong> (免息)助学贷款</p>
-</li>
-<li><p><strong>universal education</strong> 普及教育<br>vocational adj. 职业的，职业技术的，业务知识的<br>vocational education<br>职业教育：通过理论教学和实践经验的结合，为特定职业提供培训的教育。</p>
-<p>（标答错了一个小点，misunderstanding 了 vocational education &amp; universal education)</p>
-</li>
-</ul>
-<p>范文语言流畅，数据引用合理，并通过<strong>For one thing, for another, Besides</strong>等逻辑词清晰组织原因分析。</p>
-<ul>
-<li>Gross enrolment ratio</li>
-</ul>
-<p>毛入学率（毛入学率，指某学年度某级教育在校生数占相应学龄人口总数比例，标志教育相对规模和教育机会，是衡量教育发展水平的重要指标）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/02/0x01_%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/02/0x01_%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">0x01_单词</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-02 08:21:33" itemprop="dateCreated datePublished" datetime="2024-12-02T08:21:33+08:00">2024-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 16:24:45" itemprop="dateModified" datetime="2024-12-13T16:24:45+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">英文练习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>musk，麝香</p>
-</li>
-<li><p>diar rhea &#x2F;ˌdaɪəˈriːə&#x2F; 拉肚子</p>
-</li>
-<li><p>sit by 袖手旁观</p>
-</li>
-<li><p>UV 紫外线的</p>
-</li>
-<li><p>erasure &#x2F;ɪˈreɪʒər&#x2F; n. 擦除</p>
-</li>
-<li><p>senior student 大四学生 &#x2F; 高年级学生：指在学校中处于较高年级的学生，通常是指高中或大学的学生。</p>
-</li>
-<li><p>abnormal 反常的 ；</p>
-</li>
-<li><p>psycho &#x2F;ˈsaɪkoʊ&#x2F; n. 精神病患者；精神病人</p>
-</li>
-<li><p>ap pre ci ate &#x2F;əˈpriːʃieɪt&#x2F; v. 欣赏，感激</p>
-</li>
-<li><p>grateful adj. 感激的，感恩的</p>
-</li>
-<li><p>Image Hosting 图床</p>
-</li>
-</ul>
-<p>hosting 指服务，托管的意思</p>
-<ul>
-<li><p>execute &#x2F;ˈeksɪkjuːt&#x2F; 执行</p>
-</li>
-<li><p>branch : 分支</p>
-</li>
-<li><p>jungle : 丛林</p>
-</li>
-<li><p>merely : 仅仅，只 &#x2F;ˈmɪrli&#x2F; 密 而 类</p>
-</li>
-<li><p>presence ： n. 出席，存在 &#x2F;ˈprez(ə)ns&#x2F;</p>
-</li>
-<li><p>purchase &#x2F;ˈpɜːrtʃəs&#x2F; n&#x2F;v 购买</p>
-</li>
-<li><p>charge : 购买</p>
-</li>
-<li><p>a vio nics &#x2F;ˌeɪviˈɑːnɪks&#x2F; n. 航空电子设备</p>
-</li>
-<li><p>in ci dent &#x2F;ˈɪnsɪdənt&#x2F; n. 时间 ； 事故</p>
-</li>
-<li><p>col li sion   &#x2F;kəˈlɪʒ(ə)n&#x2F; n. 碰撞</p>
-</li>
-<li><p>access &#x2F;ˈækses&#x2F; n. 入口 v. 接近</p>
-</li>
-<li><p>cycle &#x2F;ˈsaɪk(ə)l&#x2F;  n. 自行车，循环</p>
-</li>
-<li><p>institute n. 学院，研究所，协会 v. 制定（制度、规则等）</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/01/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8A%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/01/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8A%EF%BC%89/" class="post-title-link" itemprop="url">2021年6月英语第二套（上）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-01 22:39:00" itemprop="dateCreated datePublished" datetime="2024-12-01T22:39:00+08:00">2024-12-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 15:53:37" itemprop="dateModified" datetime="2024-12-13T15:53:37+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="The-First-Group"><a href="#The-First-Group" class="headerlink" title="The First Group"></a>The First Group</h2><p>1，I don’t miss having managers who diliver blunt，harsh feedback in the name of efficiency.</p>
-<p>blunt &#x2F;blʌnt&#x2F;</p>
-<p>harsh &#x2F;hɑːrʃ&#x2F;</p>
-<p>我不怀念那些以效率的名义提供直率、严厉反馈的经理。</p>
-<p>2，staff turnover 员工流动率：指员工离职和新员工入职的比率。</p>
-<p>3，(The problem with a company culture) that (prizes directness above all else) is that (it creates a toxic culture of brilliant jerks) that (drives people out and erodes itself from within)。</p>
-<ul>
-<li><p>toxic &#x2F;ˈtɑːksɪk&#x2F; adj. 有毒的</p>
-</li>
-<li><p>erode &#x2F;ɪˈroʊd&#x2F; v.侵蚀，腐蚀；削弱，降低</p>
-</li>
-</ul>
-<p>看重直接胜于一切的公司文化的问题在于，它创造了一种由聪明的混蛋组成的有毒文化，这种文化会把人赶出去，并从内部侵蚀自己。</p>
-<p>4，compassion &#x2F;kəmˈpæʃ(ə)n&#x2F; n. 同情，怜悯</p>
-<p>5，ac com mo dating adj. 乐于助人的；肯通融的；随和的，温顺的</p>
-<p>ac com mo date</p>
-<p>v. 为……提供住宿；容纳，</p>
-<p>6，It seems to help us to course correct, improve and meet challenges while also building teams that collaborate and care for one another.</p>
-<ul>
-<li><p>correct the course 纠正航向</p>
-</li>
-<li><p>col la bo rate &#x2F;kəˈlæbəreɪt&#x2F; v. 合作，协作</p>
-</li>
-</ul>
-<p>它似乎能帮助我们纠正错误，提高水平，迎接挑战，同时也能建立起相互协作、相互关心的团队。</p>
-<p>7，mutual trust</p>
-<p>相互信任：指两个或多个人之间建立的相互信赖和信任的关系。</p>
-<p>8，parenting n. 养育儿女</p>
-<p>9，col lea gue &#x2F;ˈkɑːliːɡ&#x2F; n. 同事，同僚</p>
-<h2 id="The-Second-Group"><a href="#The-Second-Group" class="headerlink" title="The Second Group"></a>The Second Group</h2><p>1，ac com mo dation n. 住宿安排</p>
-<p>2, spot &#x2F;spɑːt&#x2F; <del>si bao te</del> n. 地点 ; 场所</p>
-<p>3，indecision &#x2F;ˌɪndɪˈsɪʒn&#x2F;</p>
-<p>n. 优柔寡断；犹豫不决</p>
-<p>4，Essentially, we have this tendency to keep stretching out the decision-making<br>process.   Because as human beings, we are hard-wired to optimize.</p>
-<ul>
-<li><p>es sen tial ly adv. 本质上</p>
-</li>
-<li><p>s tre tch out 延长</p>
-</li>
-<li><p>hard-wired adj. [计] 硬连线的，硬接线的；&lt;非正式&gt;天生的，固有的</p>
-</li>
-</ul>
-<p>从本质上讲，我们倾向于延长决策时间的过程。因为作为人类，我们天生就会优化。</p>
-<p>5，cus to mi zation &#x2F;ˈkʌstəmaɪzeɪʃən&#x2F; n. 定制</p>
-<p>6，It is an aliment of abundance.</p>
-<ul>
-<li><p>aliment &#x2F;ˈælɪmənt&#x2F; n. 滋养品；食物</p>
-</li>
-<li><p>nou rish ment &#x2F;ˈ<strong>nɜ</strong>ːrɪʃmənt&#x2F; n. 滋养品，营养</p>
-</li>
-<li><p>a bun dance n. 大量，丰富</p>
-</li>
-</ul>
-<p>它是一种丰富的营养</p>
-<p>7，repeat &#x2F;rɪˈpiːt&#x2F;</p>
-<p>repeated &#x2F;rɪˈpiːtɪd&#x2F; adj. 重复的，反复发生的</p>
-<p>8，But for more important matters, I think gut instinct might be overrated. When you have 30 odd options, trusting your gut is not practical. What you need to do is research —-  have a process, invest time exploring your options, and eliminate as many things as you can. The most toxic part of decision making is going over the same options time and time again.</p>
-<p>但在更重要的事情上，我认为直觉可能被高估了。当你有30多种选择时，相信自己的直觉是不现实的。你需要做的是研究——有一个过程，花时间探索你的选择，尽可能多地消除一些东西。做决定最有害的部分是一次又一次地考虑同样的选择。</p>
-<ul>
-<li><p>gut instinct &#x2F;ɡʌt ˈɪns<strong>tɪŋ</strong>kt&#x2F; n. 直觉</p>
-</li>
-<li><p>overrate v. 高估</p>
-</li>
-<li><p>eliminate 剔除，根除；对……不予考虑</p>
-</li>
-</ul>
-<h2 id="The-Third-Group"><a href="#The-Third-Group" class="headerlink" title="The Third Group"></a>The Third Group</h2><p>1，cor re lation &#x2F;ˌkɔː<strong>rə</strong>ˈleɪʃ(ə)n&#x2F; n. 相互关系，关联；相关量</p>
-<p>2，af fluent  &#x2F;ˈæfluənt&#x2F; adj. 富裕的，富足的</p>
-<p>3，assert &#x2F;əˈsɜːrt&#x2F; v. 坚称，断言；</p>
-<p>4，con sci en tious</p>
-<p>&#x2F;ˌkɑːnʃiˈenʃəs&#x2F;</p>
-<p>adj. 认真的，勤勤恳恳的；</p>
-<ul>
-<li><p>ear nest &#x2F;ˈɜːrnɪst&#x2F; adj. 认真的，诚挚的</p>
-</li>
-<li><p>in dus trious  &#x2F;ɪnˈdʌstriəs&#x2F; adj. 勤劳的，勤奋的</p>
-</li>
-</ul>
-<h2 id="The-Fourth-Group"><a href="#The-Fourth-Group" class="headerlink" title="The Fourth Group"></a>The Fourth Group</h2><p>1，The New York Times ridiculed his theory that rockets could be utilized for space exploration.</p>
-<p>《纽约时报》嘲笑他认为火箭可以用于太空探索的理论</p>
-<ul>
-<li><p>ri dic ule &#x2F;ˈrɪdɪkjuːl&#x2F;  <u>n&#x2F;v</u> 嘲笑，奚落</p>
-</li>
-<li><p>ri dic ulous &#x2F;rɪˈdɪkjələs&#x2F; adj. 可笑的，荒谬的</p>
-</li>
-<li><p>u ti lize  &#x2F;ˈjuːtəlaɪz&#x2F; v. 使用，利用</p>
-</li>
-</ul>
-<p>2，He was granted over 200 patents</p>
-<ul>
-<li><p>patent &#x2F;ˈpæt(ə)nt&#x2F; n. 专利</p>
-</li>
-<li><p>grant v. 授予 n. 补助金，拨款</p>
-</li>
-</ul>
-<p>他获得了200多项专利</p>
-<h2 id="The-fifth-Group"><a href="#The-fifth-Group" class="headerlink" title="The fifth Group"></a>The fifth Group</h2><p>1，work for a new venture</p>
-<p>为新创企业工作：加入一家新成立的公司或创业公司，为其工作。</p>
-<p>2，What becomes set in the firm’s culture is a contagious collection of affirmative and positive emotions which are usually shared around the team.</p>
-<ul>
-<li><p>set in 缝入：特指将小部分缝入大件物品中，如在连衣裙的袖子上缝入。</p>
-<p>变得确立：指某种情况或状态逐渐确立或形成。</p>
-</li>
-<li><p>con ta gious &#x2F;<strong>kən</strong>ˈteɪdʒəs&#x2F; <del>啃</del> adj. 具有感染力的</p>
-</li>
-<li><p>af firm v. 断言，证实，宣称拥护</p>
-</li>
-<li><p>af fir mative &#x2F;əˈfɜːrmətɪv&#x2F; adj. 肯定的，同意的；</p>
-</li>
-</ul>
-<p>在公司文化中形成的是一种具有感染力的肯定和积极情绪的集合，这种情绪通常在团队中分享。</p>
-<p>3，team cohension and alertness</p>
-<ul>
-<li>cohesion &#x2F;koʊˈhiːʒ(ə)n&#x2F; n. 凝聚力</li>
-</ul>
-<p>团队凝聚力和警觉性</p>
-<h2 id="The-Sixth-Group"><a href="#The-Sixth-Group" class="headerlink" title="The Sixth Group"></a>The Sixth Group</h2><p>1，ageing</p>
-<p> n. （材料自然或人为的）老化；变老，衰老</p>
-<p>adj. 变老的，上了年纪的；到了使用寿命的</p>
-<p> 2，the speculation centers around the idea that …</p>
-<ul>
-<li>s pec u lation &#x2F;ˌspekjuˈleɪʃ(ə)n&#x2F; n. 猜测，投机</li>
-</ul>
-<p>猜测的焦点是 …</p>
-<p>3，Human cells have a limited reproductive ability</p>
-<ul>
-<li>re pro duc tive adj. 生殖的，繁殖的；</li>
-</ul>
-<p>人类细胞的繁殖能力有限</p>
-<h2 id="The-Seventh-Group"><a href="#The-Seventh-Group" class="headerlink" title="The Seventh Group"></a>The Seventh Group</h2><p>1，Much to their frustration , managers often struggle to get their staff to comply with even simple instructions</p>
-<ul>
-<li><p>f rus tra tion n. 沮丧</p>
-</li>
-<li><p>comply with 遵守，遵循：按照规定、要求或命令执行或履行。</p>
-</li>
-</ul>
-<p>令经理们非常沮丧的是，他们常常很难让员工遵守哪怕是简单的指示</p>
-<ul>
-<li>re luc tant &#x2F;rɪˈlʌktənt&#x2F; adj. 勉强的，不情愿的</li>
-</ul>
-<p>2，in ten tion n. 目的，意图</p>
-<p>in ten tio nal ly &#x2F;ɪnˈtenʃənəli&#x2F; adv. 故意地，有意地</p>
-<p>3，stub born &#x2F;ˈstʌbərn&#x2F; adj. 倔强的</p>
-<p>stub born ness n. 倔强；顽强；棘手</p>
-<p>4，unheed</p>
-<p>vt.故意忽视，不理会，无视</p>
-<p>n.不注意，疏忽</p>
-<p>unheard adj. 听不到的；未被倾听的；不予理睬的</p>
-<h2 id="The-Eighth-Group"><a href="#The-Eighth-Group" class="headerlink" title="The Eighth Group"></a>The Eighth Group</h2><p>1，I am always baffled when I walk into a pharmacy and see shelves bursting with various vitamins &#x2F;ˈvɪtəmɪn&#x2F;, extracts and other supplements.</p>
-<ul>
-<li><p>baffle &#x2F;ˈbæf(ə)l&#x2F; v. 使困惑 ；挡板</p>
-</li>
-<li><p>phar macy &#x2F;ˈfɑːrməsi&#x2F; n. 药店；（医院的）药房，配药室；</p>
-</li>
-<li><p>burst with 充满，充溢</p>
-</li>
-</ul>
-<p>当我走进药店，看到货架上摆满了各种维生素、提取物和其他补品时，我总是感到困惑</p>
-<p>2，If calories taken in are less than expanded , weight shall be lost.</p>
-<ul>
-<li>expand v. 扩大，增加</li>
-</ul>
-<p>如果摄入的热量少于增加的热量，体重就会减少</p>
-<p>3, Despite the abundance of (financial products，services and solutions) geared towards accumulating wealth，it all begins with the same equation.</p>
-<ul>
-<li>geared towards 面向，针对：指某事物或活动专门设计或适用于特定的目标群体或需求。</li>
-<li>ac cu mu late &#x2F;əˈkjuːmjəleɪt&#x2F;</li>
-<li>e qua tion  &#x2F;ɪˈkweɪʒ(ə)n&#x2F; n. 等式，方程（式）</li>
-</ul>
-<p>尽管有大量的金融产品、服务和解决方案旨在积累财富，但这一切都始于同一个等式</p>
-<p>(我觉得改成 formula [数] 公式 会更好一些，但是英语就无所谓了。)</p>
-<p>4，It was quite a <strong>feat</strong>，given where she had been two years  earlier.</p>
-<p>考虑到她两年前的处境，这是相当了不起的成就</p>
-<p>5，en vi sa ge &#x2F;ɪnˈvɪzɪdʒ&#x2F; v. 设想，展望</p>
-<p>6，sob 抽泣</p>
-<p>7,  as to nish ment &#x2F;əˈstɒ<strong>nɪ</strong>ʃmənt&#x2F; n. 惊讶，惊愕</p>
-<p>8，nou rish ment &#x2F;ˈ<strong>nɜ</strong>ːrɪʃmənt. n. 营养</p>
-<p>9，plight n. 困境</p>
-<p>10，Creating a gap between her income and spending required a paradigm shift and entailed sacrifice and commitment but by going into financial lockdown，he gained financial independence.</p>
-<ul>
-<li><p>paradigm &#x2F;ˈpærədaɪm&#x2F; n. 典范，范例</p>
-</li>
-<li><p>paradigm shift 典范转移 范式转移 范式转换 范式转变</p>
-</li>
-<li><p>entail v. 需要</p>
-</li>
-<li><p>commitment 承诺</p>
-</li>
-</ul>
-<p>在她的收入和支出之间创造差距需要一种模式的转变，需要牺牲和承诺，但通过进入财务封锁，他获得了财务独立。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1982,7 +1625,7 @@ DataBaseOperation --|> B</pre>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
