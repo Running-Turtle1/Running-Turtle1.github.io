@@ -158,6 +158,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/20/%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/20/%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/" class="post-title-link" itemprop="url">进程的地址空间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-20 20:25:00 / 修改时间：20:26:09" itemprop="dateCreated datePublished" datetime="2024-12-20T20:25:00+08:00">2024-12-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="进程的地址空间"><a href="#进程的地址空间" class="headerlink" title="进程的地址空间"></a>进程的地址空间</h2><h3 id="地址空间的组成"><a href="#地址空间的组成" class="headerlink" title="地址空间的组成"></a>地址空间的组成</h3><table>
+<thead>
+<tr>
+<th>区域</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>代码段（Text Segment）</strong></td>
+<td>存放可执行程序的代码（指令），通常是只读的，以防止程序错误修改自身代码。</td>
+</tr>
+<tr>
+<td><strong>数据段（Data Segment）</strong></td>
+<td>存放已初始化的全局变量和静态变量。</td>
+</tr>
+<tr>
+<td><strong>BSS 段（BSS Segment）</strong></td>
+<td>存放未初始化的全局变量和静态变量，初始化为 0。</td>
+</tr>
+<tr>
+<td><strong>堆（Heap）</strong></td>
+<td>动态内存分配区（如通过 malloc 或 new 分配的内存），从低地址向高地址扩展。</td>
+</tr>
+<tr>
+<td><strong>栈（Stack）</strong></td>
+<td>用于函数调用时保存局部变量、返回地址等，从高地址向低地址扩展。</td>
+</tr>
+<tr>
+<td><strong>内核空间（Kernel Space）</strong></td>
+<td>一部分地址空间通常被保留给内核，用于操作系统管理，用户进程无法直接访问。</td>
+</tr>
+</tbody></table>
+<h3 id="地址空间布局"><a href="#地址空间布局" class="headerlink" title="地址空间布局"></a>地址空间布局</h3><ul>
+<li>操作系统通常为进程提供固定的地址空间布局，例如：</li>
+</ul>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">低地址</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| 代码段             |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| 数据段             |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| BSS 段            |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| 堆                |</span><br><span class="line">| (向高地址增长)     |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| 未使用空间         |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">| 栈                |</span><br><span class="line">| (向低地址增长)     |</span><br><span class="line"><span class="addition">+--------------------+</span></span><br><span class="line">高地址</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E7%AE%97%E6%B3%95-RR-Round%20Robin%20%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%B1%E6%9D%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1028,132 +1131,6 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/12/2024_12_12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/12/2024_12_12/" class="post-title-link" itemprop="url">2024_12_12 Essay</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-12 22:56:00" itemprop="dateCreated datePublished" datetime="2024-12-12T22:56:00+08:00">2024-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 15:52:31" itemprop="dateModified" datetime="2024-12-13T15:52:31+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">英文练习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>I’ve realized that I’ve been ignoring a fundamental trait of mine: <strong>efficiency + excessive simulation + error correction.</strong> These three are indispensable if I want to achieve great success in a particular field.</p>
-<p>Efficiency comes first. In fact, <strong>efficiency + the right direction</strong> is enough on its own. However, we also need a methodology, and the simplest and most straightforward approach is <strong>excessive simulation + error correction.</strong> Just keep repeating the process. At first glance, this might seem to contradict efficiency—if efficiency is optimal, we should only focus on doing what truly matters. But the reality is, we often don’t know exactly what we should do. That’s why excessive simulation becomes the easiest and most effective mode of action.</p>
-<p>Excessive simulation requires training resources, and these resources inherently determine the training direction. Incorrect training resources lead to an incorrect direction, which can be highly detrimental.</p>
-<p>Take preparing for the CET-6 exam as an example. It’s clear that I’ve done some over-simulation here, but in uncertain situations, this actually turns out to be the best choice. For any specific word, I can’t be sure whether it’s useful or not. So, whenever I finish a CET-6 paper, I record all the words I don’t know from that test.</p>
-<p>The results have been very noticeable. I’ve learned a large number of CET-6 vocabulary words and feel like my scores have improved significantly. In the past, I would take the exam completely unprepared,  barely managing to score above 500. This time, I’ve set a more modest goal: around <strong>550.</strong></p>
-<p>Even though I’m feeling confident, but in listening, cloze tests, and writing, there still present a lot of uncertainty. Plus, the CET-6 exam has an element of subjectivity, and luck can play a role in the outcome.</p>
-<p>For now, I’ll write more essays and practice listening. I feel like this can be conducive to my strengths.</p>
-<p>(Though honestly, I think cramming for the CET-6 is kind of stupid. But as an individual, I don’t really have a choice—grad school applications demand it. If I manage to score close to 600, it would definitely be a major advantage.)</p>
-<p>by gpt —- (In fact, it can’t understand a lot of terminologies)</p>
-<hr>
-<ul>
-<li><p>dispensable  &#x2F;dɪˈspensəb(ə)l&#x2F;  adj. 不必要的，可有可无的</p>
-</li>
-<li><p>indispensable adj&#x2F;n 不可或缺的，必需的 (应该就是 necessary)</p>
-</li>
-<li><p>me tho do logy  &#x2F;ˌmeθəˈdɑːlədʒi&#x2F;  n. 方法论</p>
-</li>
-<li><p>simp lest  &#x2F;ˈsɪmplɪst&#x2F;  adj. 最简单的，单纯的</p>
-</li>
-<li><p>at first glance &#x2F;ɡlæns&#x2F; 乍一看</p>
-</li>
-<li><p>inherent adj. 内在的，固有的</p>
-</li>
-<li><p>detrimental &#x2F;<strong>ˌde</strong>trɪˈment(ə)l&#x2F; adj. 有害的，不利的 (bad 的替换词)</p>
-</li>
-<li><p>cloze test 填空测试</p>
-</li>
-<li><p>uncertainty n. 犹豫，无把握；拿不定的事，令人无把握的局面；紧张不安</p>
-</li>
-<li><p>considerable &#x2F;kənˈsɪdərəb(ə)l&#x2F; adj. 相当大的，相当重要的</p>
-<p>The project wasted a considerable amount of time and money.那项工程耗费了相当多的时间和资金。</p>
-<p>Damage to the building was considerable.对这栋建筑物的损坏相当严重。</p>
-</li>
-<li><p>cram for 为考试而临时死记硬背：在考试前短时间内集中学习和记忆知识点。(carm 就是填鸭，应该就是硬塞知识的意思吧)</p>
-</li>
-<li><p>grad school application  研究生院申请</p>
-</li>
-<li><p>terminology n. （某学科的）术语；有特别含义的用语，专门用语；术语学</p>
-</li>
-</ul>
-<hr>
-<p>我发现自己忽略自己的一个基本属性，效率+过量模拟+纠错属性，想在一个领域上得到很高的成绩，这三者是缺一不可的。</p>
-<p>效率是第一位的，其实效率+正确的方向就可以了。但是还需要方法论，最简单粗暴的就是直接过量模拟+纠错，重复即可。乍看这也许跟效率相违背，如果效率最佳，显然只需要去完成自己应该完成的，但事实是我们往往不知道自己应该做什么。所以直接过量模拟就是最轻松的模式。</p>
-<p>过量模拟就需要训练资源，训练资源实际上也就代表着训练方向，错误的训练资源就是错误的方向，坏处颇多。</p>
-<p>以刷六级题目为例，显然自己有点超量模拟了，但实际上这是在盲目情况下的最优选择，对于某一个特定的单词，我并不确定他是否是有用的，只好刷到一套六级试卷，就把这套试卷不会的全部记下来了。</p>
-<p>效果是很显著的，我学会了大量六级单词，感觉提分了很多。以前都是毫无准备，直接裸考，只能 500 分露头。这次目标定低一点，550分左右吧。</p>
-<p>虽然牛逼吹完了，但是听力、选词填空、作文依然还是有很大的不确定性，何况六级是花卷，对于考生的运气还是有一定考究的。</p>
-<p>最近，多写点东西，然后模拟听力，感觉优势在我。</p>
-<p>（其实我感觉刷六级很傻逼，但是作为个人我也没办法，保研需要嘛，能刷到 600 分附近也算是一大优势了，</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1225,7 +1202,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1238,7 +1215,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
