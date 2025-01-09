@@ -158,6 +158,186 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E7%AE%97%E6%B3%95-RR-Round%20Robin%20%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%B1%E6%9D%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/19/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E7%AE%97%E6%B3%95-RR-Round%20Robin%20%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%B1%E6%9D%A5/" class="post-title-link" itemprop="url">时间片轮转算法-RR-Round Robin 名称的由来</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-19 19:36:00 / 修改时间：19:38:39" itemprop="dateCreated datePublished" datetime="2024-12-19T19:36:00+08:00">2024-12-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="时间片轮转算法-RR-Round-Robin-名称的由来"><a href="#时间片轮转算法-RR-Round-Robin-名称的由来" class="headerlink" title="时间片轮转算法-RR-Round Robin 名称的由来"></a>时间片轮转算法-RR-Round Robin 名称的由来</h2><p><strong>Round Robin（轮转调度）</strong> 这个名字来源于它的调度方式，**”Round”**  和 <strong>“Robin”</strong> 分别反映了该算法的两个特点：</p>
+<h3 id="1-Round（轮转）"><a href="#1-Round（轮转）" class="headerlink" title="1. Round（轮转）"></a>1. <strong>Round（轮转）</strong></h3><ul>
+<li><p>“Round” 代表了一个<strong>循环</strong>的概念。在 Round Robin 调度算法中，系统将时间分配给每个进程一个固定的时间片（time slice 或 quantum）。每当一个进程的时间片耗尽后，操作系统就会将 CPU 从该进程切换到下一个等待的进程，直到所有进程都被执行完。</p>
+</li>
+<li><p>这个过程是<strong>循环</strong>的，即每个进程轮流获得 CPU 时间。系统会按顺序循环地分配 CPU 给各个进程，保证每个进程都能公平地执行。</p>
+<h3 id="2-Robin（罗宾）"><a href="#2-Robin（罗宾）" class="headerlink" title="2. Robin（罗宾）"></a>2. <strong>Robin（罗宾）</strong></h3></li>
+<li><p><strong>“Robin”</strong> 的部分来自于 <strong>“Robin Hood”</strong> 的传统，传说中“Robin Hood”是一个公平的角色，他从富人那里“取走”财富，分给贫困的人。类似地，<strong>Round Robin</strong> 算法公平地为所有进程分配 CPU 时间片，不偏不倚地轮流执行每个进程。</p>
+</li>
+<li><p>另外，这个名字也可能与早期一些编程实践中的名称约定或约定俗成的习惯有关，类似于“轮转”（round-robin）的一种组织方式。</p>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. <strong>总结</strong></h3></li>
+</ul>
+<p>所以，<strong>Round Robin</strong> 这个名字强调了<strong>公平的、按顺序循环</strong>调度进程的思想。每个进程都轮流得到 CPU 时间，并且每次时间片耗尽后就被换到下一个进程，直到所有进程都完成任务。</p>
+<p>这个名字形象地体现了调度算法的 <strong>“轮流”</strong> 特性和 <strong>公平性</strong> 。 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E4%B8%BA%E4%BB%80%E4%B9%88FCFS%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%9C%89%E5%88%A9%E4%BA%8ECPU%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A%E8%80%8C%E4%B8%8D%E5%88%A9%E4%BA%8EI-O%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/19/%E4%B8%BA%E4%BB%80%E4%B9%88FCFS%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%9C%89%E5%88%A9%E4%BA%8ECPU%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A%E8%80%8C%E4%B8%8D%E5%88%A9%E4%BA%8EI-O%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A/" class="post-title-link" itemprop="url">为什么FCFS作业调度算法有利于CPU繁忙型作业而不利于I-O繁忙型作业</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-19 19:11:00 / 修改时间：19:13:02" itemprop="dateCreated datePublished" datetime="2024-12-19T19:11:00+08:00">2024-12-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="为什么-FCFS-有利于CPU繁忙任务，不利于-IO-繁忙任务"><a href="#为什么-FCFS-有利于CPU繁忙任务，不利于-IO-繁忙任务" class="headerlink" title="为什么 FCFS 有利于CPU繁忙任务，不利于 IO 繁忙任务"></a>为什么 FCFS 有利于CPU繁忙任务，不利于 IO 繁忙任务</h2><p><strong>FCFS（First-Come, First-Served）</strong>（先来先服务）是一种非常简单的调度算法，其中进程按提交的顺序依次执行。每个进程的执行时间由它自己所需要的 CPU 时间来决定，并且每个进程执行完后才会开始下一个进程。FCFS 在某些情况下对 CPU 繁忙任务有利，但对 IO 繁忙任务不太友好，原因如下：</p>
+<h3 id="1-CPU-繁忙任务"><a href="#1-CPU-繁忙任务" class="headerlink" title="1. CPU 繁忙任务"></a>1. <strong>CPU 繁忙任务</strong></h3><ul>
+<li><p><strong>CPU 繁忙任务</strong>是指那些大多数时间都在进行计算和处理的任务，它们需要大量的 CPU 时间，较少依赖于 IO 操作（如磁盘读写、网络通信等）。</p>
+</li>
+<li><p>在 FCFS 调度下，CPU 繁忙任务执行时，操作系统会把 CPU 时间分配给它，直到任务执行完成。这种情况下，由于进程不进行 IO 操作，它不会频繁地阻塞等待 IO 完成，从而不会造成上下文切换的浪费。因此，CPU 繁忙任务可以在一个较长的时间段内连续使用 CPU，避免了调度的延迟。</p>
+<h3 id="2-IO-繁忙任务"><a href="#2-IO-繁忙任务" class="headerlink" title="2. IO 繁忙任务"></a>2. <strong>IO 繁忙任务</strong></h3></li>
+<li><p><strong>IO 繁忙任务</strong>则是那些大部分时间都在等待 IO 操作（如磁盘读取、网络数据传输等）完成的任务。它们在等待 IO 操作期间不需要占用 CPU，因此存在着大量的 CPU 空闲时间。</p>
+</li>
+<li><p>在 FCFS 算法中，IO 繁忙任务通常会等待其他进程完成其 CPU 计算任务。由于 FCFS 只是按提交顺序来调度进程，不考虑进程的 IO 状况，这会导致以下问题：<strong>阻塞其他进程</strong>：当一个 IO 繁忙任务开始执行时，可能会很快进入等待 IO 操作的状态，而 CPU 继续被该任务占用，直到它完成。这会导致 CPU 长时间空闲，而其他正在等待的进程无法得到执行机会。<strong>低效的资源利用</strong>：由于进程按顺序执行，并且没有考虑进程的 IO 特性，CPU 在 IO 繁忙进程等待时浪费了很多时间。而如果调度算法能动态考虑进程的状态，调度一个正在需要 CPU 的任务，就能更好地利用 CPU 资源。</p>
+<h3 id="3-举例说明"><a href="#3-举例说明" class="headerlink" title="3. 举例说明"></a>3. <strong>举例说明</strong></h3></li>
+</ul>
+<p>假设有三个进程 A、B 和 C，其中：</p>
+<ul>
+<li><strong>A</strong>是 CPU 繁忙任务，执行时间为 10 秒。</li>
+<li><strong>B</strong>是 IO 繁忙任务，执行时间为 1 秒，之后会等待 IO 操作 5 秒，然后继续执行 1 秒。</li>
+<li><strong>C</strong>是 CPU 繁忙任务，执行时间为 8 秒。<br>如果这些进程按 FCFS 排队：</li>
+</ul>
+<ol>
+<li><strong>进程 A</strong>先开始执行，执行 10 秒完成。</li>
+<li>接下来，<strong>进程 B</strong>开始执行，执行 1 秒后进入 IO 等待状态（5 秒）。</li>
+<li>然后是 <strong>进程 C</strong>，它会使用 CPU 完成它的计算。<br>在此过程中，<strong>进程 B</strong> 在等待 IO 的 5 秒期间，CPU 是空闲的，但由于 FCFS，操作系统不会立即调度进程 C 来使用空闲的 CPU 时间，而是等到进程 B 完成等待后才继续执行。</li>
+</ol>
+<h3 id="4-对比其他算法"><a href="#4-对比其他算法" class="headerlink" title="4. 对比其他算法"></a>4. <strong>对比其他算法</strong></h3><p>相比之下，像 <strong>SJF（Shortest Job First）</strong>、<strong>Round Robin（RR）</strong> 等调度算法会考虑到不同进程的特性：</p>
+<ul>
+<li><p><strong>SJF</strong> 优先执行 CPU 繁忙的任务，但即使对于 IO 繁忙任务，它也不会让其占用 CPU 过长时间。</p>
+</li>
+<li><p><strong>Round Robin</strong> 会分配一个时间片，每个进程运行固定的时间，轮流使用 CPU 资源。这可以避免 IO 繁忙任务长期占用 CPU，从而提高 CPU 的利用率。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3></li>
+<li><p><strong>FCFS</strong> 对于 CPU 繁忙任务有利，因为这些任务能够充分利用 CPU，避免频繁的上下文切换。</p>
+</li>
+<li><p><strong>FCFS</strong> 不利于 IO 繁忙任务，因为它不会在 IO 繁忙任务等待期间调度其他任务，从而导致 CPU 利用率低下，浪费了大量的空闲时间。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E4%BD%9C%E4%B8%9A%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -974,329 +1154,6 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/12/2023%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E5%90%AC%E5%8A%9B)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/12/2023%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E5%90%AC%E5%8A%9B)/" class="post-title-link" itemprop="url">2023年6月英语六级第二套（听力)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-12 21:30:00" itemprop="dateCreated datePublished" datetime="2024-12-12T21:30:00+08:00">2024-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 16:14:08" itemprop="dateModified" datetime="2024-12-13T16:14:08+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Section-A"><a href="#Section-A" class="headerlink" title="Section A"></a>Section A</h2><p>1，the marriage of design and engineering 设计与工程的结合</p>
-<p>实际就是，the integration of ……</p>
-<p>这么写，算是用作比喻吧。</p>
-<p>2，the fruits of my labor</p>
-<p>直译为 “我的劳动成果”。</p>
-<p>3，material &#x2F;məˈtɪriəl&#x2F;</p>
-<p>n. 衣料，布料；材料，原料；素材</p>
-<p>adj. 物质的，非精神上的；</p>
-<ul>
-<li>immaterial adj. 非物质的，无形的</li>
-</ul>
-<p>4，And the legacies you build will last much longer than any of us mortals.</p>
-<ul>
-<li><p>legacy n.遗产，遗赠物；遗留问题，后遗症</p>
-</li>
-<li><p>mortal 译为普通人即可。（当然这个单词还有终有一死的意思）</p>
-</li>
-<li><p>immortal adj. 不死的，永存的；不朽的</p>
-</li>
-</ul>
-<p>你所创造的遗产将比我们任何人都更长久。</p>
-<p>5，groundbreaking research</p>
-<p>开创性研究：指在某一领域或某一问题上具有创新性和开创性的研究。</p>
-<h2 id="Section-B"><a href="#Section-B" class="headerlink" title="Section B"></a>Section B</h2><p>1，He has a high public profile</p>
-<ul>
-<li>profile 个人档案 ；公众形象 ；侧面（或轮廓）</li>
-</ul>
-<p>他在公众中知名度很高</p>
-<p>2，He has occasionly been <strong>harassed</strong> by his fans</p>
-<ul>
-<li><p>occasionly 偶尔</p>
-</li>
-<li><p>harass &#x2F;ˈhærəs&#x2F; v. 骚扰；不断攻击（敌人）</p>
-</li>
-</ul>
-<p>他偶尔会被粉丝骚扰。</p>
-<p>3，<strong>discreet</strong></p>
-<p>adj. 谨慎的，周到的；小巧的，不引人注意的</p>
-<p>He was always very discreet about his love affairs.</p>
-<p>他对两性关系一向谨小慎微。</p>
-<p>4，I am fully fluent in English and Spanish and have a working proficiency in French</p>
-<p>“我精通英语和西班牙语，并且能熟练使用法语。”</p>
-<ul>
-<li><p>proficient &#x2F;prəˈfɪʃ(ə)nt&#x2F; adj. 熟练的，精通的</p>
-</li>
-<li><p>proficiency n. 熟练，精通</p>
-</li>
-</ul>
-<h2 id="Section-C"><a href="#Section-C" class="headerlink" title="Section C"></a>Section C</h2><p>1，have lots of appeal 有很多吸引力</p>
-<p>2，deprive &#x2F;dɪˈpraɪv&#x2F; v. 剥夺，使丧失；免去……的职务（尤指圣职）</p>
-<ul>
-<li><p>deprived adj. 贫困的，穷苦的，（物质上和文化上）严重匮乏的；（人）丧失的，被剥夺的</p>
-</li>
-<li><p>deprived children 贫困儿童</p>
-</li>
-<li><p>deprived area 贫困地区</p>
-</li>
-</ul>
-<p>3，de vas tate &#x2F;ˈdevəsteɪt&#x2F; v. 毁坏，破坏；使极度震惊，使伤心欲绝</p>
-<ul>
-<li>devastating adj. 毁灭性的，极具破坏力的</li>
-</ul>
-<h2 id="Section-C-1"><a href="#Section-C-1" class="headerlink" title="Section C"></a>Section C</h2><p>1，lifespan &#x2F;ˈlaɪfspæn&#x2F; n. （人或动物的）寿命；使用期，有效期</p>
-<p>2，ma nu fac tory &#x2F;ˌmænjəˈfæktəri&#x2F; n. 制造厂，工厂</p>
-<ul>
-<li>manufacture</li>
-</ul>
-<p>v. （用机器大量）生产，制造；编造，捏造；生成，产生（一种物质）</p>
-<p>n. 大量制造，批量生产；工业品；制造业</p>
-<p>3，Take the due caution in upgrading their products</p>
-<ul>
-<li>due 预期的，应有的，到期的</li>
-</ul>
-<p>在升级他们的产品时，采取应有的谨慎态度。</p>
-<p>4，substitute &#x2F;ˈsʌbstɪtuːt&#x2F;</p>
-<p>n. 替代品，代替物；（体育比赛中的）替补队员</p>
-<p>v. 用……代替；（比赛中）替换（运动员）；代替（某人的工作）</p>
-<p>5，take the initiative 带头</p>
-<p>相当于 take the lead 了，之前不知道 take the inititive 有这个意思，感觉可以用到作文里面，基本上可以把所有 should 换成 take the initiative</p>
-<ul>
-<li>initiative n. 措施，倡议；主动性，积极性</li>
-</ul>
-<h2 id="Section-D"><a href="#Section-D" class="headerlink" title="Section D"></a>Section D</h2><p>1，cyber loaf 摸鱼的意思，loaf 是 （v. 游荡，闲逛）的意思</p>
-<p>类似于 slack off 吧，不过 cyber loaf 更特指 Internet 摸鱼了。</p>
-<p>2，intervention n. 干预，介入</p>
-<p>3，hy po the sis &#x2F;haɪˈpɑː<strong>θə</strong>sɪs&#x2F; n. 假说，假设；</p>
-<h2 id="Section-E"><a href="#Section-E" class="headerlink" title="Section E"></a>Section E</h2><p>1，treeless adj. 无树木的</p>
-<p>注意 less 直接就是没有</p>
-<ul>
-<li><strong>Hopeless</strong>（没有希望的）</li>
-<li><strong>Careless</strong>（粗心的）</li>
-<li><strong>Fearless</strong>（无畏的）</li>
-<li><strong>Endless</strong>（无尽的）</li>
-<li><strong>Harmless</strong>（无害的）</li>
-<li><strong>Powerless</strong>（无力的）</li>
-<li><strong>Shameless</strong>（不知羞耻的）</li>
-<li><strong>Restless</strong>（不安的）</li>
-<li><strong>Useless</strong>（无用的）</li>
-<li><strong>Nameless</strong>（无名的）</li>
-</ul>
-<p>2，prosper v. 繁荣，成功；蓬勃发展，健康成长</p>
-<p>prosperous &#x2F;ˈprɑːspərəs&#x2F; adj. 繁荣的，富足的</p>
-<p>prosperity &#x2F;prɑːˈsperəti&#x2F; n. 繁荣，成功</p>
-<p>3，aes the tic &#x2F;esˈθetɪk&#x2F;</p>
-<p>什么啥 b 单词。</p>
-<p>adj. 审美的，美学的；美的，艺术的</p>
-<p>n. 美感，审美观；美学（aesthetics）；美术理论</p>
-<p>4，as toun ding &#x2F;əˈstaʊndɪŋ&#x2F; adj. 令人震惊的；令人惊骇的</p>
-<p>为什么不用 as to nishing &#x2F;əˈstɑːnɪʃɪŋ&#x2F; ?</p>
-<h2 id="Section-F"><a href="#Section-F" class="headerlink" title="Section F"></a>Section F</h2><p><strong>“What has called into question the ‘out of Africa’ model?”</strong> </p>
-<p>这句话的意思是：“是什么因素对‘走出非洲’模型提出了质疑？”</p>
-<p>这里的“’out of Africa’ model”指的是一种关于人类起源的科学模型，主要假设现代人类（智人）最初起源于非洲，并且在大约6万年前从非洲迁移到世界其他地方。这个模型在考古学和人类学中有着广泛的支持，但近年来也受到一些新的证据和研究的挑战。</p>
-<p>所以，这句话是在询问，是什么因素或研究结果使得“走出非洲”这一理论受到质疑或被重新评估。</p>
-<p>“<strong>Call into</strong>“ 是一个短语，通常用于表达“引发质疑”或“对…提出疑问”的意思。当我们说 “call into question” 时，意思是对某个观点、理论、事实或假设提出怀疑或质疑。</p>
-<p>例如：</p>
-<ul>
-<li><strong>“The new evidence calls into question the accuracy of the report.”</strong><br>（新证据对报告的准确性提出了质疑。）</li>
-</ul>
-<p>“Call into” 后面通常接一个名词或名词短语，表示被质疑的对象。</p>
-<p>I made a example :</p>
-<p><strong>The blood in his room has called into question whether he is the murderer</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/12/%E7%A7%91%E6%99%AE%E4%B8%80%EF%BC%88%E6%B5%81%E5%AA%92%E4%BD%93+%E8%AF%97+Base64%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/12/%E7%A7%91%E6%99%AE%E4%B8%80%EF%BC%88%E6%B5%81%E5%AA%92%E4%BD%93+%E8%AF%97+Base64%EF%BC%89/" class="post-title-link" itemprop="url">科普一（流媒体+诗+Base64）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-12 19:30:00 / 修改时间：19:32:21" itemprop="dateCreated datePublished" datetime="2024-12-12T19:30:00+08:00">2024-12-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E6%99%AE/" itemprop="url" rel="index"><span itemprop="name">科普</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="流媒体服务"><a href="#流媒体服务" class="headerlink" title="流媒体服务"></a>流媒体服务</h2><p>流媒体指的是一种通过互联网实时传输音频或视频内容的方式，而不是像传统的下载那样先保存到本地再播放。比如说像<strong>Netflix</strong>、<strong>Spotify</strong>等，它们提供的是实时播放的内容，我们不需要等着下载完才能观看或听取。</p>
-<h2 id="元稹-《菊花》"><a href="#元稹-《菊花》" class="headerlink" title="元稹 《菊花》"></a>元稹 《菊花》</h2><hr>
-<p>$$<br>秋丛绕舍似陶家，遍绕篱边日渐斜。 \\<br>不是花中偏爱菊，此花开尽更无花。<br>$$</p>
-<hr>
-<p><strong>译文</strong><br>一丛一丛的秋菊环绕着房屋好似到了<a target="_blank" rel="noopener" href="https://www.gushiwen.cn/authorv_07d17f8539d7.aspx">陶渊明</a>的家。绕着篱笆观赏菊花，不知不觉太阳已经快落山了。<br>不是因为百花中偏爱菊花，只是因为菊花开过之后再无花可赏。</p>
-<p><strong>注释</strong><br>秋丛：指丛丛秋菊。<br>舍（shè）：居住的房子。<br>陶家：陶渊明的家。陶，指东晋<a target="_blank" rel="noopener" href="https://www.gushiwen.cn/mingju/juv_3d5d164a4223.aspx">诗</a>人陶渊明。<br>遍绕：环绕一遍。<br>篱（lí）：篱笆。<br>日渐斜（xiá）：太阳渐渐落山。斜，倾斜。因古诗需与上一句押韵，所以应读xiá。<br>尽：完。<br>更（gèng）：再。</p>
-<h2 id="Base64-编码"><a href="#Base64-编码" class="headerlink" title="Base64 编码"></a>Base64 编码</h2><p><strong>Base64 编码</strong>是一种将二进制数据转换为 ASCII 字符串的编码方式。它通常用于在网络中传输二进制数据（如图片、音频文件、文件等），因为某些协议（例如电子邮件、HTTP）要求文本数据不包含控制字符，而二进制数据往往无法直接传输。</p>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>Base64 编码的原理是将每三个字节（24 位）的二进制数据分成四组，每组6位（4个字符），并用一个字符集来表示每个6位的值。这个字符集包括了 A-Z、a-z、0-9，以及加号 (+) 和斜杠 (&#x2F;)。对于二进制数据的不足部分，Base64 会使用等号 (&#x3D;) 来进行填充。</p>
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><ol>
-<li><strong>将数据转换为二进制</strong>：首先，将输入的原始数据（如文本或文件）转换为二进制格式。</li>
-<li><strong>分成 6 位一组</strong>：每三个字节（24 位）数据分成四个6位组（即每6位一组）。</li>
-<li><strong>查找字符</strong>：用 Base64 字符集的字符来替换这些6位组，得到4个字符。</li>
-<li><strong>处理填充</strong>：如果数据的总字节数不能被3整除，Base64 会在编码结果的末尾用一个或两个等号 (&#x3D;) 作为填充，表示这些缺失的字节。</li>
-</ol>
-<h3 id="Base64-字符集"><a href="#Base64-字符集" class="headerlink" title="Base64 字符集"></a>Base64 字符集</h3><p>Base64 编码使用一个64个字符的字符集，通常如下所示：</p>
-<p>复制代码</p>
-<p><code>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</code></p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>假设我们要对字符串 “Man” 进行 Base64 编码：</p>
-<ol>
-<li><p>“Man” 的 ASCII 值：</p>
-<ul>
-<li>M -&gt; 77</li>
-<li>a -&gt; 97</li>
-<li>n -&gt; 110</li>
-</ul>
-</li>
-<li><p>将这些 ASCII 值转换为二进制：</p>
-<p>makefile</p>
-<p>复制代码</p>
-<p><code>M = 77  -&gt; 01001101 a = 97  -&gt; 01100001 n = 110 -&gt; 01101110</code></p>
-</li>
-<li><p>将这些二进制数拼接起来：</p>
-<p><code>01001101 01100001 01101110</code></p>
-</li>
-<li><p>分成 6 位一组：</p>
-<p><code>010011 010110 000101 101110</code></p>
-</li>
-<li><p>将每组6位数转换为对应的 Base64 字符：</p>
-<ul>
-<li>010011 -&gt; 19 -&gt; T</li>
-<li>010110 -&gt; 22 -&gt; W</li>
-<li>000101 -&gt; 5 -&gt; F</li>
-<li>101110 -&gt; 46 -&gt; u</li>
-</ul>
-</li>
-</ol>
-<p>因此，”Man” 的 Base64 编码结果是 **”TWFu”**。</p>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li><strong>电子邮件附件</strong>：Base64 编码可以将图片、文档等文件转为文本，以便通过邮件发送。</li>
-<li><strong>Web 开发</strong>：在 URL 或 HTTP 请求中传输图片、文件等二进制数据时，常常使用 Base64 编码。</li>
-<li><strong>API 调用</strong>：许多 Web API 在处理文件上传或返回文件数据时，会使用 Base64 编码。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Base64 是一种将二进制数据转换为文本数据的编码方式，广泛用于传输二进制数据（如图像、文件等），能够保证数据的完整性，避免特殊字符的干扰。它的主要优点是能将二进制数据转化为可打印的 ASCII 字符集，适合于文本协议的传输，但也导致编码后的数据比原始数据要大约 33%（每 3 字节数据会增加 4 字节的编码）。</p>
-<ul>
-<li><strong>ASCII</strong> 只能表示文本字符，无法直接传输二进制数据。</li>
-<li><strong>Base64 编码</strong>将二进制数据转换为 ASCII 字符串，确保数据的安全传输。</li>
-<li>Base64 主要用于文本协议（如电子邮件、Web 开发、API 调用等），避免二进制数据中的不可见字符引起的传输问题。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1368,7 +1225,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1381,7 +1238,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
