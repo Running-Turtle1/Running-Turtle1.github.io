@@ -183,7 +183,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-01-09 11:49:00 / 修改时间：11:56:19" itemprop="dateCreated datePublished" datetime="2025-01-09T11:49:00+08:00">2025-01-09</time>
+              <time title="创建时间：2025-01-09 11:49:00 / 修改时间：12:04:52" itemprop="dateCreated datePublished" datetime="2025-01-09T11:49:00+08:00">2025-01-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,15 +229,51 @@
 <p>返回删除学生信息结果</p>
 <p>@DeleteMapping(“&#x2F;delete&#x2F;{username}”)</p>
 </li>
-<li><pre><code class="java">public Result&lt;?&gt; findPage(
-@RequestParam(defaultValue = &quot;1&quot;) Integer pageNum,
-@RequestParam(defaultValue = &quot;10&quot;) Integer pageSize,
-@RequestParam(defaultValue = &quot;&quot;) String search)
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  返回查询结果，使用了 Page 工具类</span><br><span class="line">  </span><br><span class="line">  @GetMapping(&quot;/find&quot;)</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)` </span><br><span class="line">  </span><br><span class="line">  学生登录</span><br><span class="line">  </span><br><span class="line">  @PostMapping(&quot;/login&quot;)</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; stuNum()` </span><br><span class="line">  </span><br><span class="line">  主页顶部：学生统计</span><br><span class="line">  </span><br><span class="line">  @GetMapping(&quot;/stuNum&quot;)</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; exist(@PathVariable String value)` </span><br><span class="line">  </span><br><span class="line">  床位信息，查询是否存在该学生  </span><br><span class="line">  </span><br><span class="line">  床位信息，查询床位上的学生信息</span><br><span class="line">  </span><br><span class="line">  @GetMapping(&quot;/exist/&#123;value&#125;&quot;)</span><br><span class="line"></span><br><span class="line">### DormManagerController</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; add(@RequestBody DormManager dormManager)` </span><br><span class="line">  </span><br><span class="line">  作用 ：添加管理员</span><br><span class="line">  </span><br><span class="line">  返回值 ：添加结果</span><br><span class="line">  </span><br><span class="line">  @PostMapping(&quot;/add&quot;)</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; update(@RequestBody DormManager dormManager)` </span><br><span class="line">  </span><br><span class="line">  作用 ：管理员信息更新</span><br><span class="line">  </span><br><span class="line">  返回值 ：更新结果</span><br><span class="line">  </span><br><span class="line">  @PutMapping(&quot;/update&quot;)</span><br><span class="line"></span><br><span class="line">- `public Result&lt;?&gt; delete(@PathVariable String username)` </span><br><span class="line">  </span><br><span class="line">  作用 ：删除宿管信息</span><br><span class="line">  </span><br><span class="line">  返回值 ：删除结果</span><br><span class="line">  </span><br><span class="line">  @DeleteMapping(&quot;/delete/&#123;username&#125;&quot;)</span><br><span class="line"></span><br><span class="line">- ```java</span><br><span class="line">   public Result&lt;?&gt; findPage(</span><br><span class="line">   @RequestParam(defaultValue = &quot;1&quot;) Integer pageNum,</span><br><span class="line">  @RequestParam(defaultValue = &quot;10&quot;) Integer pageSize,</span><br><span class="line">  @RequestParam(defaultValue = &quot;&quot;) String search)</span><br></pre></td></tr></table></figure>
-
-返回查询信息的结果，使用了 Page 工具类
-</code></pre>
+<li><p>查询学生信息</p>
 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Result&lt;?&gt; findPage(</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;1&quot;)</span> Integer pageNum,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;10&quot;)</span> Integer pageSize,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;&quot;)</span> String search)</span><br></pre></td></tr></table></figure>
+
+<p>  返回查询结果，使用了 Page 工具类</p>
+<p>  @GetMapping(“&#x2F;find”)</p>
+<ul>
+<li><p><code>public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)</code> </p>
+<p>学生登录</p>
+<p>@PostMapping(“&#x2F;login”)</p>
+</li>
+<li><p><code>public Result&lt;?&gt; stuNum()</code> </p>
+<p>主页顶部：学生统计</p>
+<p>@GetMapping(“&#x2F;stuNum”)</p>
+</li>
+<li><p><code>public Result&lt;?&gt; exist(@PathVariable String value)</code> </p>
+<p>床位信息，查询是否存在该学生  </p>
+<p>床位信息，查询床位上的学生信息</p>
+<p>@GetMapping(“&#x2F;exist&#x2F;{value}”)</p>
+</li>
+</ul>
+<h3 id="DormManagerController"><a href="#DormManagerController" class="headerlink" title="DormManagerController"></a>DormManagerController</h3><ul>
+<li><p><code>public Result&lt;?&gt; add(@RequestBody DormManager dormManager)</code> </p>
+<p>作用 ：添加管理员</p>
+<p>返回值 ：添加结果</p>
+<p>@PostMapping(“&#x2F;add”)</p>
+</li>
+<li><p><code>public Result&lt;?&gt; update(@RequestBody DormManager dormManager)</code> </p>
+<p>作用 ：管理员信息更新</p>
+<p>返回值 ：更新结果</p>
+<p>@PutMapping(“&#x2F;update”)</p>
+</li>
+<li><p><code>public Result&lt;?&gt; delete(@PathVariable String username)</code> </p>
+<p>作用 ：删除宿管信息</p>
+<p>返回值 ：删除结果</p>
+<p>@DeleteMapping(“&#x2F;delete&#x2F;{username}”)</p>
+</li>
+<li><p>查询宿管信息</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> Result&lt;?&gt; findPage(</span><br><span class="line"> <span class="meta">@RequestParam(defaultValue = &quot;1&quot;)</span> Integer pageNum,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;10&quot;)</span> Integer pageSize,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;&quot;)</span> String search)</span><br></pre></td></tr></table></figure>
+
+<p>  返回查询信息的结果，使用了 Page 工具类</p>
+<ul>
 <li><p><code>public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)</code> </p>
 <p>作用 ：宿管登录</p>
 <p>返回值 ：登录结果（如果登录成功，记录 session）</p>
@@ -792,160 +828,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/01/08/Java%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">Java注解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-01-08 17:36:00" itemprop="dateCreated datePublished" datetime="2025-01-08T17:36:00+08:00">2025-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-01-09 10:54:09" itemprop="dateModified" datetime="2025-01-09T10:54:09+08:00">2025-01-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p><code>@RestController</code> 是 Spring 框架中用来标注一个类为 <strong>RESTful Web服务控制器</strong> 的注解。它是 <code>@Controller</code> 和 <code>@ResponseBody</code> 的组合，主要用来处理 HTTP 请求并返回数据而不是视图。</p>
-<p><strong>作用与特点：</strong></p>
-<ol>
-<li><strong>定义控制器类</strong>将类标记为一个控制器，用于接收和处理 HTTP 请求。</li>
-<li><strong>自动将返回值转换为 JSON&#x2F;XML：</strong><code>@RestController</code> 自动将控制器方法的返回值序列化为 JSON 或 XML 格式，通过 HTTP 响应返回给客户端。</li>
-</ol>
-<ul>
-<li>这是因为它隐含了 @ResponseBody 注解。</li>
-</ul>
-<ol start="3">
-<li><strong>简化代码</strong>无需在每个方法上显式使用 <code>@ResponseBody</code>，整个类的所有方法默认都将返回数据而不是视图。<br><strong>常见用法:</strong></li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个简单字符串</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个对象，自动序列化为 JSON</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例解析：</strong></p>
-<ol>
-<li><p>&#x2F;api&#x2F;hello 返回的是字符串 “Hello, World!”，被序列化为 HTTP 响应体。</p>
-</li>
-<li><p>&#x2F;api&#x2F;user 返回的是 User 对象，会自动被序列化为 JSON，例如：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"> <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alice@example.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>等效写法：</strong><br>如果使用 <code>@Controller</code>，需要配合 <code>@ResponseBody</code>，代码会显得冗长：</p>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>总结：</strong><code>@RestController</code> 适用于构建 RESTful API，简化开发流程，是 Spring Web 的重要注解之一。如果你的控制器方法大部分是返回数据而不是视图，使用 <code>@RestController</code> 会非常方便。</p>
-<h2 id="Data-注解"><a href="#Data-注解" class="headerlink" title="@Data 注解"></a>@Data 注解</h2><ul>
-<li><p><strong>作用：</strong> 自动生成以下方法：Getter 和 Setter 方法（为所有成员变量）toString() 方法equals() 和 hashCode() 方法canEqual() 方法（用于子类验证）</p>
-</li>
-<li><p><strong>优势：</strong> 减少手写 Getter、Setter 等方法的繁琐代码。</p>
-</li>
-<li><p><strong>等效代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String code;</span><br><span class="line">  <span class="keyword">private</span> String msg;</span><br><span class="line">  <span class="keyword">private</span> T data;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getCode</span><span class="params">()</span> &#123; <span class="keyword">return</span> code; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCode</span><span class="params">(String code)</span> &#123; <span class="built_in">this</span>.code = code; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getMsg</span><span class="params">()</span> &#123; <span class="keyword">return</span> msg; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMsg</span><span class="params">(String msg)</span> &#123; <span class="built_in">this</span>.msg = msg; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">getData</span><span class="params">()</span> &#123; <span class="keyword">return</span> data; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(T data)</span> &#123; <span class="built_in">this</span>.data = data; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;Result&#123;&quot;</span> +</span><br><span class="line">             <span class="string">&quot;code=&#x27;&quot;</span> + code + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, msg=&#x27;&quot;</span> + msg + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, data=&quot;</span> + data +</span><br><span class="line">             <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">      <span class="comment">// equals 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="comment">// hashCode 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="AllArgsConstructor注解"><a href="#AllArgsConstructor注解" class="headerlink" title="@AllArgsConstructor注解"></a>@AllArgsConstructor注解</h2><ul>
-<li><p><strong>作用：</strong> 自动生成一个包含所有成员变量的构造方法。</p>
-</li>
-<li><p><strong>生成的代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">(String code, String msg, T data)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.code = code;</span><br><span class="line">  <span class="built_in">this</span>.msg = msg;</span><br><span class="line">  <span class="built_in">this</span>.data = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>用途：</strong> 方便在创建对象时直接初始化所有属性。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;(<span class="string">&quot;0&quot;</span>, <span class="string">&quot;成功&quot;</span>, <span class="string">&quot;数据&quot;</span>);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="NoArgsConstructor-注解"><a href="#NoArgsConstructor-注解" class="headerlink" title="@NoArgsConstructor 注解"></a>@NoArgsConstructor 注解</h2><ul>
-<li><p><strong>作用：</strong> 自动生成一个无参构造方法。</p>
-</li>
-<li><p><strong>生成的代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">()</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>用途：</strong> 提供无参构造器支持，例如需要通过反射或框架（如 Spring）创建对象时。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;();</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="Resource注解"><a href="#Resource注解" class="headerlink" title="@Resource注解"></a>@Resource注解</h2><p><code>@Resource</code> 是 Java 中用于依赖注入的一个注解，它主要用于自动装配资源（如 Bean 或组件），在 Java EE（现在的 Jakarta EE）和 Spring 等框架中得到广泛使用。该注解通常用于标记成员变量、方法或构造函数，指示容器（如 Spring 或应用服务器）需要自动注入指定的资源。</p>
-<h3 id="主要特性："><a href="#主要特性：" class="headerlink" title="主要特性："></a>主要特性：</h3><ul>
-<li><p><strong>自动注入</strong>：@Resource 自动装配资源，可以通过名称或类型来注入。</p>
-</li>
-<li><p><strong>名称默认匹配</strong>：@Resource 默认根据字段名或方法名来进行资源名称匹配。如果没有找到匹配的名称，它会根据类型来注入。</p>
-</li>
-<li><p><strong>可以用于字段、方法、构造函数</strong>：可以用于类的成员变量（字段）、setter 方法或构造函数。</p>
-<h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3></li>
-</ul>
-<h4 id="1-注入字段："><a href="#1-注入字段：" class="headerlink" title="1. 注入字段："></a>1. 注入字段：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>@Resource</code> 注解会根据 <code>dataSource</code> 字段的名称自动注入一个 <code>DataSource</code> 类型的资源。</p>
-<h4 id="2-注入方法："><a href="#2-注入方法：" class="headerlink" title="2. 注入方法："></a>2. 注入方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDataSource</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>@Resource</code> 注解被用在了 setter 方法上，容器会自动注入所需的 <code>DataSource</code>。</p>
-<h4 id="3-注入构造函数："><a href="#3-注入构造函数：" class="headerlink" title="3. 注入构造函数："></a>3. 注入构造函数：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyService</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>@Resource</code> 注解应用于构造函数，自动注入 <code>DataSource</code>。</p>
-<h3 id="注解的属性："><a href="#注解的属性：" class="headerlink" title="注解的属性："></a>注解的属性：</h3><ul>
-<li><p>name：指定资源的名称，用于自定义资源名称的匹配。例如：@Resource(name&#x3D;”myDataSource”)</p>
-</li>
-<li><p>type：指定资源的类型，通常不需要显式设置，容器会根据字段的类型自动注入。</p>
-<h3 id="与-Autowired-比较："><a href="#与-Autowired-比较：" class="headerlink" title="与 @Autowired 比较："></a>与 @Autowired 比较：</h3></li>
-<li><p>@Autowired 是 Spring 框架提供的注解，它主要通过类型来进行依赖注入。与 @Resource 注解相比，@Autowired 主要依据类型进行注入，并且在没有找到唯一匹配的 Bean 时会抛出异常，除非配合 @Qualifier 使用指定 Bean 名称。</p>
-</li>
-<li><p>@Resource 默认通过名称进行注入，只有在没有找到合适的名称匹配时才会通过类型来进行匹配。</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1474,10 +1356,92 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/07/SpringBoot%E5%85%A5%E9%97%A8Demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/07/SpringBoot%E5%85%A5%E9%97%A8Demo/" class="post-title-link" itemprop="url">SpringBoot入门Demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-07 12:44:00" itemprop="dateCreated datePublished" datetime="2025-01-07T12:44:00+08:00">2025-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-08 16:04:14" itemprop="dateModified" datetime="2025-01-08T16:04:14+08:00">2025-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gm411m7i6">从0到1开发一个SpringBoot入门Demo</a></p>
+<h2 id="项目打包方法"><a href="#项目打包方法" class="headerlink" title="项目打包方法"></a>项目打包方法</h2><ul>
+<li><p>终端输入 <code>mvn clean install</code> 命令，等待控制台输出 BUILD SUCCESS，在 target 目录生成一个 <code>.jar</code> 包</p>
+</li>
+<li><p>复制 <code>.jar</code> 包的路径，例如 <code>/Users/evan/IdeaProjects/boot-demo/target/1.jar</code> ，控制台输入 <code>cd /Users/evan/IdeaProjects/boot-demo/target/</code> ，输入 <code>ll</code> 可以查看内容。</p>
+</li>
+<li><p>使用 <code>java -jar 1.jar</code> 即可运行启动应用，直接访问项目 ；也可以修改端口，<code>java -jar 1.jar --server.port=8081</code></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1545,7 +1509,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
