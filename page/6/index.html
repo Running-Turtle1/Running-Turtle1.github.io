@@ -158,6 +158,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/30/I-O%E6%96%B9%E5%BC%8F%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/30/I-O%E6%96%B9%E5%BC%8F%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">I-O方式习题总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-30 14:00:00 / 修改时间：13:58:10" itemprop="dateCreated datePublished" datetime="2024-11-30T14:00:00+08:00">2024-11-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="中断向量、中断向量地址"><a href="#中断向量、中断向量地址" class="headerlink" title="中断向量、中断向量地址"></a>中断向量、中断向量地址</h2><p><strong>中断向量</strong>是中断服务程序的入口地址。</p>
+<p><strong>中断向量地址</strong>是内存中存放中断向量的地址，即中断服务程序入口地址的地址。</p>
+<h2 id="谁可以提出中断-？"><a href="#谁可以提出中断-？" class="headerlink" title="谁可以提出中断 ？"></a>谁可以提出中断 ？</h2><ul>
+<li><strong>外部事件</strong> √</li>
+</ul>
+<p>外部事件如按 ESC 退出运行的程序等，属于外中断。</p>
+<ul>
+<li><strong>虚拟存储器失效</strong> √</li>
+</ul>
+<p>虚拟存储器失效如缺页等，会引发缺页中断。</p>
+<ul>
+<li><strong>浮点数运算上溢</strong> √</li>
+</ul>
+<p>超出了浮点数表示范围，属于内中断</p>
+<ul>
+<li><strong>浮点数运算下溢</strong> ×</li>
+</ul>
+<p>直接当做机器零处理，不会引发中断。</p>
+<ul>
+<li><strong>Cache</strong> ×</li>
+</ul>
+<p>Cache 完全由硬件实现，不会涉及中断层面。</p>
+<h2 id="检查中断请求"><a href="#检查中断请求" class="headerlink" title="检查中断请求"></a>检查中断请求</h2><p>1，<strong>每条指令周期结束之后</strong>，CPU 会统一扫描各个中断源，然后进行判优来决定响应哪个中断源，而不是在每个指令的执行过程中这么做。</p>
+<p>2，CPU 会在<strong>每个存储周期结束后</strong>检查是否有 DMA 请求，而不是在执行执行过程的末尾这么做。</p>
+<h2 id="中断服务程序"><a href="#中断服务程序" class="headerlink" title="中断服务程序"></a>中断服务程序</h2><p>1，中断服务程序的最后指令通常是中断返回指令，与无条件转移指令不同，它不仅要修改 PC 值，而且要将 CPU 中的所有寄存器恢复到中断前的状态。</p>
+<h2 id="产生-DMA-请求"><a href="#产生-DMA-请求" class="headerlink" title="产生 DMA 请求"></a>产生 DMA 请求</h2><p>只有具有 DMA 接口的设备才能产生 DMA 请求，即使当前设备是高速设备或需要与主机批量交换数据，如果没有 MDA 接口，也不能产生 DMA 请求。</p>
+<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><p>访管指令 &gt; 程序性指令 &gt; 重新启动</p>
+<h2 id="中断请求"><a href="#中断请求" class="headerlink" title="中断请求"></a>中断请求</h2><p>1，在配有通道的计算机系统中，用户程序需要输入&#x2F;输出时，引发的中断是 （访管中断）。</p>
+<p>【解析】：用户需要输入&#x2F;输出时，需要调用 OS 提供的接口，此时会引发访管中断，系统由用户态转向核心态。</p>
+<p>2，在中断响应期间，CPU 主要完成关中断、保护断点、发中断响应信号并形成中断向量地址的工作，即中断隐指令。</p>
+<p>3，在中断响应期间，由中断隐指令将允许触发器置 0。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/27/0x01_%E4%BD%9C%E6%96%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1460,86 +1558,6 @@ C(这是C)</pre>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/23/2024-11-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/23/2024-11-23/" class="post-title-link" itemprop="url">2024/11/23</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-23 21:09:14 / 修改时间：21:26:11" itemprop="dateCreated datePublished" datetime="2024-11-23T21:09:14+08:00">2024-11-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Latex 测试 : $a$ , $b$ , $\frac {n*(n+1)}2 &#x3D; \sum_{i&#x3D;1}^n i$  。</p>
-<p>搭建了一下 <code>hexo</code> 博客，准备以后弄一下以下内容 :</p>
-<ul>
-<li><p>加密文章功能（非前端加密）</p>
-</li>
-<li><p>Yale University 心理学导论 categories</p>
-</li>
-<li><p>每日学习 categories &amp; tags</p>
-</li>
-</ul>
-<hr>
-<p>That’s all, when i learn how to encrypt an article, I will write some personal artilcles, but I believe it is still not safe, the best way is to write on local.</p>
-<p>In 2024年11月23日21:26:00，add mathjax to my website。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1611,7 +1629,7 @@ C(这是C)</pre>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
