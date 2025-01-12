@@ -158,6 +158,213 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%B0%A2%E5%B8%8C%E4%BB%81%E7%AC%AC8%E7%89%88%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%B0%A2%E5%B8%8C%E4%BB%81%E7%AC%AC8%E7%89%88%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" class="post-title-link" itemprop="url">计算机网络谢希仁第8版部分习题答案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-29 15:48:06" itemprop="dateCreated datePublished" datetime="2024-12-29T15:48:06+08:00">2024-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-30 14:25:13" itemprop="dateModified" datetime="2024-12-30T14:25:13+08:00">2024-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="4-19"><a href="#4-19" class="headerlink" title="4-19"></a>4-19</h2><blockquote>
+<p>某单位分配到一个地址块，129.250&#x2F;16。该单位有4000台机器，平均分布在16个不同的地点。试给每一个地点分配一个地址块，并算出每个地址块中IP地址的最小值和最大值</p>
+</blockquote>
+<p>给定的地址块是 129.250.0.0&#x2F;16，划分为 16 个子网，从主机号里面借 4 位，选择的子网掩码是 &#x2F;20，每个子网提供 4096 个地址。</p>
+<table>
+<thead>
+<tr>
+<th align="center">子网编号</th>
+<th align="center">子网地址</th>
+<th align="center">最小IP地址</th>
+<th align="center">最大IP地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">129.250.0.0&#x2F;20</td>
+<td align="center">129.250.0.0</td>
+<td align="center">129.250.15.255</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">129.250.16.0&#x2F;20</td>
+<td align="center">129.250.16.0</td>
+<td align="center">129.250.31.255</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">129.250.32.0&#x2F;20</td>
+<td align="center">129.250.32.0</td>
+<td align="center">129.250.47.255</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">129.250.48.0&#x2F;20</td>
+<td align="center">129.250.48.0</td>
+<td align="center">129.250.63.255</td>
+</tr>
+<tr>
+<td align="center">……</td>
+<td align="center">……</td>
+<td align="center">……</td>
+<td align="center">……</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">129.250.240.0&#x2F;20</td>
+<td align="center">129.250.240.0</td>
+<td align="center">129.250.255.255</td>
+</tr>
+</tbody></table>
+<h2 id="4-20"><a href="#4-20" class="headerlink" title="4-20"></a>4-20</h2><blockquote>
+<p>一个数据报长度4000字节（固定首部长度）。现在经过一个网络传送，但此网络能够传送的最大数据长度为1500字节。试问应该划分为几个短些的数据包片？各个数据报片的数据字段长度、片偏移字段长度和MF标志应为何值？</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据报片</th>
+<th>数据字段长度 (字节)</th>
+<th>片偏移 (单位：8字节)</th>
+<th>MF (More Fragments 标志)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1480</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1480</td>
+<td>185</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1020</td>
+<td>370</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h2 id="5-38"><a href="#5-38" class="headerlink" title="5-38"></a>5-38</h2><p>注意执行慢开始的时候，如果 $2\times cwnd &gt; ssthresh$ , 则下一个 RTT 后的  $\text{cwnd}$ 等于 $\text{ssthresh}$，而不等于 $2\times cwnd$ ，即 $\text{cwnd}$  不能越过 $\text{ssthresh}$ 值。</p>
+<table>
+<thead>
+<tr>
+<th>RTT</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cwnd</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>RTT</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>cwnd</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RTT</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td></td>
+<td>4</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/24/%E5%86%85%E6%A0%B8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%89%B9%E5%BE%81-%E9%93%BE%E6%8E%A5%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1056,85 +1263,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/15/%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/15/%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">六级总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-15 13:11:38 / 修改时间：13:13:06" itemprop="dateCreated datePublished" datetime="2024-12-15T13:11:38+08:00">2024-12-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>开学的时候就想准备六级了，一直就是拖拖拖。</p>
-<p>找了个六级网课，就上了五六个小时的单词课。</p>
-<p>记下来的单词还没背多少，背的考六级的时候也忘了。</p>
-<p>六级前一两周开始做试卷，整理单词跟博客，感觉起了不小作用，起码学了很多单词。</p>
-<p>听力就练了几个。</p>
-<p>对了对答案，感觉听力应该在 200 分以上 ；写作的话，拿不准，感觉 180 - 220 都有可能 ；阅读没做好，最后一篇错了三个，恐怕成为伏笔了，估计也就 180 - 210 之间的水平了。</p>
-<p>只要不出什么岔子（比如考号填错了），550 应该问题不大，算是达标了。其实我还挺想上 600 的，但是一两个星期就想提 100 分，感觉还是挺夸张的。</p>
-<p>等结果吧，还早着呢，Let the bullets fly for a while.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1206,14 +1334,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
