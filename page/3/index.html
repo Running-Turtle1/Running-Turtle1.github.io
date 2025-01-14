@@ -158,6 +158,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/29/%E8%AE%A1%E7%BD%91%E8%AF%95%E5%8D%B7%E4%B8%80%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/29/%E8%AE%A1%E7%BD%91%E8%AF%95%E5%8D%B7%E4%B8%80%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计网一试卷总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-29 19:21:00 / 修改时间：19:17:06" itemprop="dateCreated datePublished" datetime="2024-12-29T19:21:00+08:00">2024-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h2><blockquote>
+<p>以太网帧FCS字段的功能是（  A ）    </p>
+<p>A. 差错检测             B. 确保数据按照顺序到达   </p>
+<p>C. 流量控制             D. 标识本地网络中的设备</p>
+</blockquote>
+<p>FCS 字段，就是 Frame Check Sequence，用于差错检测，一般用 CRC 计算生成 FCS 字段。 </p>
+<p>Ethernet 帧格式 ：</p>
+<table>
+<thead>
+<tr>
+<th>前导符</th>
+<th>起始符</th>
+<th>目MAC地址</th>
+<th>源MAC地址</th>
+<th>类型&#x2F;长度</th>
+<th>数据</th>
+<th>PAD</th>
+<th>CRC</th>
+</tr>
+</thead>
+</table>
+<h2 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h2><blockquote>
+<p>当进入网络的数据流量超过网络的载送能力时，将引起网络的吞吐率急剧下降，这时必须启用网络（ <strong>拥塞控制</strong> ）。</p>
+</blockquote>
+<p><strong>拥塞控制</strong>的作用对象是<strong>网络中的所有设备</strong>（如路由器、交换机等），它通过调节发送方的发送速率来避免网络中某个部分因过载而导致的性能下降。</p>
+<p><strong>流量控制</strong>的作用对象是<strong>接收方</strong>，确保接收方能够跟得上发送方的速度，不会因缓冲区满而丢弃数据。<strong>流量控制是为防止接收方缓冲区溢出所需要的。</strong></p>
+<h2 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h2><blockquote>
+<p>以太网技术规范不包括（A ）。</p>
+<p>A. 网络层 B. 物理层 C. 数据链路层 D. 介质访问控制层</p>
+</blockquote>
+<p>以太网的技术规范主要有以下三个层次 ：</p>
+<ul>
+<li><strong>物理层（Physical Layer）</strong>：定义了网络的硬件设备和传输媒介的标准，例如电缆、光纤、网络接口等。</li>
+<li><strong>数据链路层（Data Link Layer）</strong>：负责在两个直接相连的设备之间传输数据帧，包括数据的封装、错误检测等。</li>
+<li><strong>介质访问控制层（MAC Layer）</strong>：是数据链路层的一部分，负责管理设备如何访问传输介质以及如何控制冲突等。</li>
+</ul>
+<h2 id="物理层接口的特性"><a href="#物理层接口的特性" class="headerlink" title="物理层接口的特性"></a>物理层接口的特性</h2><ul>
+<li><p><strong>机械特性</strong>：接线器的形状和尺寸、引脚数目和排列、固定和锁定装置等。</p>
+</li>
+<li><p><strong>电气特性</strong>：电压范围。</p>
+</li>
+<li><p><strong>功能特性</strong>：指明某条线上的出现的某一电平的电压有何意义。</p>
+</li>
+<li><p><strong>过程特性</strong>：指明对于不同功能的各种可能事件的出现顺序。</p>
+</li>
+</ul>
+<h2 id="题目四"><a href="#题目四" class="headerlink" title="题目四"></a>题目四</h2><blockquote>
+<p>当前因特网IP的版本是( )。<br> A. IPv6 B. IPv3 C. IPv4 D. IPv5</p>
+</blockquote>
+<p><strong>当前因特网的版本是 IPV4.</strong> </p>
+<h2 id="TCP三次握手、四次挥手"><a href="#TCP三次握手、四次挥手" class="headerlink" title="TCP三次握手、四次挥手"></a>TCP三次握手、四次挥手</h2><p><strong>1、建立连接</strong></p>
+<p>（1）SYN &#x3D; 1，seq &#x3D; x</p>
+<p>（2）SYN &#x3D; 1, ACK &#x3D; 1, seq &#x3D; y, ack &#x3D; x + 1</p>
+<p>（3）ACK &#x3D; 1，ack &#x3D; y + 1, seq &#x3D; x + 1</p>
+<p><strong>2、释放连接</strong> </p>
+<p>（1）FIN &#x3D; 1, seq &#x3D; u</p>
+<p>（2）ACK &#x3D; 1, seq &#x3D; v, ack &#x3D; u + 1</p>
+<p>（3）FIN &#x3D; 1, ACK &#x3D; 1, seq &#x3D; w, ack &#x3D; u + 1</p>
+<p>（4）ACK &#x3D; 1, seq &#x3D; u + 1, ack &#x3D; w + 1</p>
+<h2 id="计算机网络最基本的功能是数据通信，最主要的功能是资源共享"><a href="#计算机网络最基本的功能是数据通信，最主要的功能是资源共享" class="headerlink" title="计算机网络最基本的功能是数据通信，最主要的功能是资源共享"></a>计算机网络最基本的功能是数据通信，最主要的功能是资源共享</h2><h2 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA&#x2F;CD"></a>CSMA&#x2F;CD</h2><p>在使用CSMA&#x2F;CD协议时，一个站不可能同时发送和接收。</p>
+<h2 id="数据链路层的三个基本功能"><a href="#数据链路层的三个基本功能" class="headerlink" title="数据链路层的三个基本功能"></a>数据链路层的三个基本功能</h2><p><strong>（1）封装成帧</strong> ：将分组封装成帧</p>
+<p><strong>（2）透明传输</strong> ：避免消息符号跟帧定界符号混淆</p>
+<p><strong>（3）差错检测</strong> ：防止出错的无效数据帧继续传播</p>
+<h2 id="RIP和OSPF路由信息交换方式的不同"><a href="#RIP和OSPF路由信息交换方式的不同" class="headerlink" title="RIP和OSPF路由信息交换方式的不同"></a>RIP和OSPF路由信息交换方式的不同</h2><p>（1）RIP是<strong>距离向量</strong>路由协议 ；OSPF是<strong>链路状态</strong>路由协议</p>
+<p>（2）RIP仅向相邻路由器发送信息，发出的路由信息为该路由器的路由表 ；OSPF向本自己系统内所有路由器发送信息，发送的路由信息为该路由器的链路状态信息</p>
+<p>（3）RIP定期和相邻路由器交换信息 ；OSPF只有链路状态信息发生变化时才洪泛信息</p>
+<h2 id="针对支持子网掩码的路由器，写出IP分组转发的算法"><a href="#针对支持子网掩码的路由器，写出IP分组转发的算法" class="headerlink" title="针对支持子网掩码的路由器，写出IP分组转发的算法"></a>针对支持子网掩码的路由器，写出IP分组转发的算法</h2><p>1、从收到的分组的首部提取目的IP地址 D。</p>
+<p>2、先用各网络的子网掩码和D逐位相与，看是否匹配。如果匹配，直接交付分组 ；否则，间接交付，执行 3</p>
+<p>3、若路由表中有目的地址为 D 的特定主机路由，则将分组传送给指明的下一条路由器 ；否则，执行 4</p>
+<p>4、对路由表中的每一行的子网掩码和 D 逐位相“与”，若其结果与该行的目的网络地址匹配，则将分组传送给该行指明的下一跳路由器；否则，执行 5。</p>
+<p>5、若路由表中有一个默认路由，则将分组传送给路由表中所指明的默认路由器；否则，执行 6。</p>
+<p>6、 报告转发分组出错。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%B0%A2%E5%B8%8C%E4%BB%81%E7%AC%AC8%E7%89%88%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1137,132 +1276,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/" class="post-title-link" itemprop="url">并发性和并行性的区别</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-18 22:43:10" itemprop="dateCreated datePublished" datetime="2024-12-18T22:43:10+08:00">2024-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-19 18:32:20" itemprop="dateModified" datetime="2024-12-19T18:32:20+08:00">2024-12-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="并发性和并行性的区别"><a href="#并发性和并行性的区别" class="headerlink" title="并发性和并行性的区别"></a>并发性和并行性的区别</h2><p>  <strong>并发性</strong> 和 <strong>并行性</strong> 是操作系统和计算机领域中两个常见的概念，它们虽然听起来相似，但有本质区别：</p>
-<h3 id="1-并发性（Concurrency）"><a href="#1-并发性（Concurrency）" class="headerlink" title="1. 并发性（Concurrency）"></a><strong>1. 并发性（Concurrency）</strong></h3><ul>
-<li><p><strong>概念</strong>：并发指的是<strong>在同一时间段内</strong>，有多个任务在执行，但这些任务可能是交替执行的（并非同时进行）。</p>
-</li>
-<li><p><strong>特点</strong>：主要通过<strong>时间片轮转</strong>等方式在多个任务间快速切换，看起来像是“同时执行”。通常用于<strong>单核处理器</strong>，因为单核 CPU 在同一时刻只能执行一个任务，只是通过调度来实现任务的交替执行。并发强调的是<strong>任务之间的交替与协调</strong>，而不是“真正的同时进行”。</p>
-</li>
-<li><p><strong>例子</strong>：在操作系统中，同时打开多个程序，比如下载文件的同时浏览网页，CPU 在这些任务之间快速切换。多个线程在一个 CPU 核心上交替执行任务。</p>
-<h3 id="2-并行性（Parallelism）"><a href="#2-并行性（Parallelism）" class="headerlink" title="2. 并行性（Parallelism）"></a><strong>2. 并行性（Parallelism）</strong></h3></li>
-<li><p><strong>概念</strong>：并行指的是<strong>在同一时刻</strong>，有多个任务在<strong>真正地同时执行</strong>。</p>
-</li>
-<li><p><strong>特点</strong>：需要<strong>多核处理器</strong>或多个物理 CPU 支持，每个任务可以被分配到不同的处理器核心上执行。并行强调的是<strong>真正的同时运行</strong>，不需要任务之间的时间片轮换。并行性可以显著提升计算效率。</p>
-</li>
-<li><p><strong>例子</strong>：在一台四核 CPU 的电脑上，有四个任务分别在四个核心上同时执行。在大数据计算中，将数据分成多个部分，由多个处理器同时进行计算。</p>
-<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a><strong>对比总结</strong></h3></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>比较点</th>
-<th>并发性（Concurrency）</th>
-<th>并行性（Parallelism）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>概念</strong></td>
-<td>任务交替执行，看起来同时进行</td>
-<td>任务真正同时执行</td>
-</tr>
-<tr>
-<td><strong>执行环境</strong></td>
-<td>单核处理器或时间片轮转</td>
-<td>多核处理器或多个 CPU 支持</td>
-</tr>
-<tr>
-<td><strong>重点</strong></td>
-<td>任务之间的<strong>协调</strong>与交替</td>
-<td>任务之间的<strong>同时执行</strong></td>
-</tr>
-<tr>
-<td><strong>表现形式</strong></td>
-<td>虚假的“同时”，实际是交替执行</td>
-<td>真正的物理层面“同时执行”</td>
-</tr>
-<tr>
-<td><strong>例子</strong></td>
-<td>单核 CPU 多线程切换任务</td>
-<td>多核 CPU 多个线程同时执行</td>
-</tr>
-</tbody></table>
-<h3 id="简单记忆："><a href="#简单记忆：" class="headerlink" title="简单记忆："></a><strong>简单记忆</strong>：</h3><ul>
-<li><strong>并发</strong>：看起来同时（交替执行），<strong>单核</strong>可以实现。</li>
-<li><strong>并行</strong>：真正在同时执行，依赖<strong>多核</strong>或多处理器。<br><strong>一句话总结</strong>：<strong>并发是逻辑上的同时执行，并行是物理上的同时执行。</strong></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1334,20 +1347,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -158,6 +158,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/14/Frobenius%20%E5%AE%9A%E7%90%86%E4%B8%8EP8646/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/14/Frobenius%20%E5%AE%9A%E7%90%86%E4%B8%8EP8646/" class="post-title-link" itemprop="url">Frobenius定理与P8646</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-14 09:35:00 / 修改时间：09:35:08" itemprop="dateCreated datePublished" datetime="2025-01-14T09:35:00+08:00">2025-01-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Frobenius-定理"><a href="#Frobenius-定理" class="headerlink" title="Frobenius 定理"></a>Frobenius 定理</h2><h3 id="核心内容"><a href="#核心内容" class="headerlink" title="核心内容"></a>核心内容</h3><p>对于两个正整数 $a$ 和 $b$ （假设 $\gcd(a, b) &#x3D; 1$），考虑以下整数线性组合：</p>
+<p>$$<br>S &#x3D; {ax + by \mid x, y \geq 0},<br>$$</p>
+<p>即使用 $a$ 和 $b$ 的非负整数线性组合能够表示的所有正整数。根据 Frobenius 定理，有以下结论：</p>
+<ol>
+<li><p><strong>能表示的最小正整数</strong>：如果 $\gcd(a, b) &#x3D; 1$，则最小能表示的正整数为 $\min(a, b)$。</p>
+</li>
+<li><p><strong>不能表示的最大正整数</strong>：形如 $ax + by$ 的线性组合不能表示的最大正整数为：</p>
+<p>$$<br>N &#x3D; ab - a - b.<br>$$</p>
+</li>
+<li><p><strong>不能表示的正整数个数</strong>：不能表示的正整数的总个数为：</p>
+<p>$$<br>\frac{(a-1)(b-1)}{2}.<br>$$</p>
+</li>
+</ol>
+<h3 id="推广到多个变量"><a href="#推广到多个变量" class="headerlink" title="推广到多个变量"></a>推广到多个变量</h3><p>对于 $a_1, a_2, \ldots, a_k$，$k &gt; 2$，若 $\gcd(a_1, a_2, \ldots, a_k) &#x3D; 1$，仍然有：</p>
+<ul>
+<li><p>$ax_1 + bx_2 + \cdots$ 表示的正整数集合是有限缺口的；</p>
+</li>
+<li><p>但无法通过闭式公式直接确定所有不可表示的数。</p>
+</li>
+</ul>
+<h2 id="P8646-蓝桥杯-2017-省-AB-包子凑数"><a href="#P8646-蓝桥杯-2017-省-AB-包子凑数" class="headerlink" title="P8646 [蓝桥杯 2017 省 AB] 包子凑数"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8646">P8646 [蓝桥杯 2017 省 AB] 包子凑数</a></h2><blockquote>
+<p>小明几乎每天早晨都会在一家包子铺吃早餐。他发现这家包子铺有 $N$ 种蒸笼，其中第 $i$ 种蒸笼恰好能放 $A_i$ 个包子。每种蒸笼都有非常多笼，可以认为是无限笼。</p>
+<p>每当有顾客想买 $X$ 个包子，卖包子的大叔就会迅速选出若干笼包子来，使得这若干笼中恰好一共有 $X$ 个包子。比如一共有 $3$ 种蒸笼，分别能放 $3$ 、 $4$ 和 $5$ 个包子。当顾客想买 $11$ 个包子时，大叔就会选 $2$ 笼 $3$ 个的再加 $1$ 笼 $5$ 个的（也可能选出 $1$ 笼 $3$ 个的再加 $2$ 笼 $4$ 个的）。</p>
+<p>当然有时包子大叔无论如何也凑不出顾客想买的数量。比如一共有 $3$ 种蒸笼，分别能放 $4$ 、 $5$ 和 $6$ 个包子。而顾客想买 $7$ 个包子时，大叔就凑不出来了。</p>
+<p>小明想知道一共有多少种数目是包子大叔凑不出来的。</p>
+</blockquote>
+<p>由裴蜀定理，可以得出，必须 $\gcd_{i&#x3D;1}^nA_i&#x3D;1$ 才能凑出所有数，不然只能凑出一些 $kg$ 的形式。</p>
+<p>满足了 $g&#x3D;1$ 之后，由 <em>Fronebius 定理</em>，我们知道这题不能构造的数是有限的，就是说 $A_1x_1+A_2x_2+\cdots$ 表示的正整数是有限缺口的。</p>
+<p>考虑用完全背包求一下能表示哪些数，一共有 $\max&#x3D;100$ 个数据，我们将第二维尽量放大，精准需要多大很难用数学推导出来，1 S 的时限内，可以将第二维放宽到 $10^6$ ，可以通过题目。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, g = <span class="number">0</span>;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(<span class="number">1E6</span>)</span>, <span class="title">a</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;x : a) &#123;</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        g = __gcd(g, x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(g != <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;INF\n&quot;</span>;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;x : a) &#123; <span class="comment">// 100</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">1E6</span>; j ++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(f[j] &amp;&amp; j + x &lt;= (<span class="type">int</span>)<span class="number">1E6</span>) f[j + x] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1E6</span>; i ++) &#123;</span><br><span class="line">        res += !f[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; res &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/12/2025-01-12%20%E5%B4%82%E5%B1%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1306,114 +1402,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/01/08/Java%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">Java注释规范</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-01-08 17:05:00 / 修改时间：17:04:57" itemprop="dateCreated datePublished" datetime="2025-01-08T17:05:00+08:00">2025-01-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在 Java 中，注释的规范化不仅能够提高代码的可读性，还能帮助开发团队更好地维护项目。以下是 Java 注释的规范和建议：</p>
-<h2 id="1-注释的基本类型"><a href="#1-注释的基本类型" class="headerlink" title="1. 注释的基本类型"></a><strong>1. 注释的基本类型</strong></h2><p>Java 支持以下三种类型的注释：</p>
-<ul>
-<li><p><strong>单行注释</strong>：使用 &#x2F;&#x2F; 开头。</p>
-</li>
-<li><p><strong>多行注释</strong>：使用 &#x2F;* … *&#x2F;。</p>
-</li>
-<li><p><strong>文档注释</strong>：使用 &#x2F;** … *&#x2F;，通常用于生成 JavaDoc 文档。</p>
-<h2 id="2-注释的用途"><a href="#2-注释的用途" class="headerlink" title="2. 注释的用途"></a><strong>2. 注释的用途</strong></h2></li>
-</ul>
-<h3 id="必要时注释，而非注释所有内容"><a href="#必要时注释，而非注释所有内容" class="headerlink" title="必要时注释，而非注释所有内容"></a><strong>必要时注释，而非注释所有内容</strong></h3><ul>
-<li><p><strong>注释的重点</strong>：注释应该解释 “为什么”（逻辑、设计意图），而不是 “怎么做”（代码本身已经解释 “怎么做”）。</p>
-</li>
-<li><p><strong>避免冗余注释</strong>：代码本身清晰易懂时不需要注释。</p>
-<h2 id="3-单行注释规范"><a href="#3-单行注释规范" class="headerlink" title="3. 单行注释规范"></a><strong>3. 单行注释规范</strong></h2></li>
-<li><p><strong>用于描述简单的逻辑或特殊处理</strong>。</p>
-</li>
-<li><p><strong>位置</strong>：通常放在代码行的上方，也可放在代码右侧（不建议太长）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检查用户是否已登录</span></span><br><span class="line"><span class="keyword">if</span> (user.isLoggedIn()) &#123;</span><br><span class="line">  System.out.println(<span class="string">&quot;User is logged in.&quot;</span>); <span class="comment">// 输出登录信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="4-多行注释规范"><a href="#4-多行注释规范" class="headerlink" title="4. 多行注释规范"></a><strong>4. 多行注释规范</strong></h2><ul>
-<li><p><strong>用于描述复杂逻辑</strong>或<strong>屏蔽代码块</strong>（屏蔽代码块仅在调试时临时使用，调试完成后应删除）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 以下代码段用于初始化数据库连接，</span></span><br><span class="line"><span class="comment">* 包括加载驱动程序、创建连接以及设置属性。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">  <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(DB_URL, USER, PASS);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="5-文档注释规范"><a href="#5-文档注释规范" class="headerlink" title="5. 文档注释规范"></a><strong>5. 文档注释规范</strong></h2><ul>
-<li><p><strong>用于类、方法、接口、枚举等 API 元素的说明</strong>。</p>
-</li>
-<li><p><strong>工具</strong>：可以使用 IDE 生成 JavaDoc 或通过 javadoc 工具生成 HTML 文档。</p>
-<h3 id="文档注释模板"><a href="#文档注释模板" class="headerlink" title="文档注释模板"></a><strong>文档注释模板</strong></h3></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 描述类/方法的功能。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 作者</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 版本</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 起始版本</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> 参数名 参数说明（仅针对方法）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 返回值说明（仅针对方法）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> 异常类型 异常说明（仅针对方法）</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文档注释示例"><a href="#文档注释示例" class="headerlink" title="文档注释示例"></a><strong>文档注释示例</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户类，包含用户的基本信息。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Wei</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2025-01-08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用户名。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取用户名。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 用户名。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置用户名。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> username 新用户名。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IllegalArgumentException 如果用户名为空。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (username == <span class="literal">null</span> || username.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;用户名不能为空！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-注释规范建议"><a href="#6-注释规范建议" class="headerlink" title="6. 注释规范建议"></a><strong>6. 注释规范建议</strong></h2><ol>
-<li><strong>保持一致性</strong>：确保整个项目的注释风格统一。</li>
-<li><strong>避免过度注释</strong>：注释应恰到好处，避免解释每一行代码。</li>
-<li><strong>及时更新注释</strong>：修改代码时，确保注释与代码一致。</li>
-<li><strong>语言清晰简洁</strong>：使用专业术语，避免冗长复杂的描述。</li>
-<li><strong>注释内容格式化</strong>：采用合理的缩进和换行，使注释结构清晰。<br>通过遵循上述规范，可以显著提高 Java 代码的可维护性和团队协作效率。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1485,20 +1473,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
