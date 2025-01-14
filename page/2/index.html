@@ -158,6 +158,160 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/" class="post-title-link" itemprop="url">Java注解-RestController-Data-AllArgs-NoArgs-Resource</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-08 17:36:00" itemprop="dateCreated datePublished" datetime="2025-01-08T17:36:00+08:00">2025-01-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-09 13:31:07" itemprop="dateModified" datetime="2025-01-09T13:31:07+08:00">2025-01-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p><code>@RestController</code> 是 Spring 框架中用来标注一个类为 <strong>RESTful Web服务控制器</strong> 的注解。它是 <code>@Controller</code> 和 <code>@ResponseBody</code> 的组合，主要用来处理 HTTP 请求并返回数据而不是视图。</p>
+<p><strong>作用与特点：</strong></p>
+<ol>
+<li><strong>定义控制器类</strong>将类标记为一个控制器，用于接收和处理 HTTP 请求。</li>
+<li><strong>自动将返回值转换为 JSON&#x2F;XML：</strong><code>@RestController</code> 自动将控制器方法的返回值序列化为 JSON 或 XML 格式，通过 HTTP 响应返回给客户端。</li>
+</ol>
+<ul>
+<li>这是因为它隐含了 @ResponseBody 注解。</li>
+</ul>
+<ol start="3">
+<li><strong>简化代码</strong>无需在每个方法上显式使用 <code>@ResponseBody</code>，整个类的所有方法默认都将返回数据而不是视图。<br><strong>常见用法:</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个简单字符串</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个对象，自动序列化为 JSON</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例解析：</strong></p>
+<ol>
+<li><p>&#x2F;api&#x2F;hello 返回的是字符串 “Hello, World!”，被序列化为 HTTP 响应体。</p>
+</li>
+<li><p>&#x2F;api&#x2F;user 返回的是 User 对象，会自动被序列化为 JSON，例如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"> <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alice@example.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>等效写法：</strong><br>如果使用 <code>@Controller</code>，需要配合 <code>@ResponseBody</code>，代码会显得冗长：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong><code>@RestController</code> 适用于构建 RESTful API，简化开发流程，是 Spring Web 的重要注解之一。如果你的控制器方法大部分是返回数据而不是视图，使用 <code>@RestController</code> 会非常方便。</p>
+<h2 id="Data-注解"><a href="#Data-注解" class="headerlink" title="@Data 注解"></a>@Data 注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成以下方法：Getter 和 Setter 方法（为所有成员变量）toString() 方法equals() 和 hashCode() 方法canEqual() 方法（用于子类验证）</p>
+</li>
+<li><p><strong>优势：</strong> 减少手写 Getter、Setter 等方法的繁琐代码。</p>
+</li>
+<li><p><strong>等效代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String code;</span><br><span class="line">  <span class="keyword">private</span> String msg;</span><br><span class="line">  <span class="keyword">private</span> T data;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getCode</span><span class="params">()</span> &#123; <span class="keyword">return</span> code; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCode</span><span class="params">(String code)</span> &#123; <span class="built_in">this</span>.code = code; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getMsg</span><span class="params">()</span> &#123; <span class="keyword">return</span> msg; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMsg</span><span class="params">(String msg)</span> &#123; <span class="built_in">this</span>.msg = msg; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">getData</span><span class="params">()</span> &#123; <span class="keyword">return</span> data; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(T data)</span> &#123; <span class="built_in">this</span>.data = data; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;Result&#123;&quot;</span> +</span><br><span class="line">             <span class="string">&quot;code=&#x27;&quot;</span> + code + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, msg=&#x27;&quot;</span> + msg + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, data=&quot;</span> + data +</span><br><span class="line">             <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">      <span class="comment">// equals 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="comment">// hashCode 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="AllArgsConstructor注解"><a href="#AllArgsConstructor注解" class="headerlink" title="@AllArgsConstructor注解"></a>@AllArgsConstructor注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成一个包含所有成员变量的构造方法。</p>
+</li>
+<li><p><strong>生成的代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">(String code, String msg, T data)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.code = code;</span><br><span class="line">  <span class="built_in">this</span>.msg = msg;</span><br><span class="line">  <span class="built_in">this</span>.data = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>用途：</strong> 方便在创建对象时直接初始化所有属性。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;(<span class="string">&quot;0&quot;</span>, <span class="string">&quot;成功&quot;</span>, <span class="string">&quot;数据&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="NoArgsConstructor-注解"><a href="#NoArgsConstructor-注解" class="headerlink" title="@NoArgsConstructor 注解"></a>@NoArgsConstructor 注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成一个无参构造方法。</p>
+</li>
+<li><p><strong>生成的代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">()</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>用途：</strong> 提供无参构造器支持，例如需要通过反射或框架（如 Spring）创建对象时。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Resource注解"><a href="#Resource注解" class="headerlink" title="@Resource注解"></a>@Resource注解</h2><p><code>@Resource</code> 是 Java 中用于依赖注入的一个注解，它主要用于自动装配资源（如 Bean 或组件），在 Java EE（现在的 Jakarta EE）和 Spring 等框架中得到广泛使用。该注解通常用于标记成员变量、方法或构造函数，指示容器（如 Spring 或应用服务器）需要自动注入指定的资源。</p>
+<h3 id="主要特性："><a href="#主要特性：" class="headerlink" title="主要特性："></a>主要特性：</h3><ul>
+<li><p><strong>自动注入</strong>：@Resource 自动装配资源，可以通过名称或类型来注入。</p>
+</li>
+<li><p><strong>名称默认匹配</strong>：@Resource 默认根据字段名或方法名来进行资源名称匹配。如果没有找到匹配的名称，它会根据类型来注入。</p>
+</li>
+<li><p><strong>可以用于字段、方法、构造函数</strong>：可以用于类的成员变量（字段）、setter 方法或构造函数。</p>
+<h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3></li>
+</ul>
+<h4 id="1-注入字段："><a href="#1-注入字段：" class="headerlink" title="1. 注入字段："></a>1. 注入字段：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解会根据 <code>dataSource</code> 字段的名称自动注入一个 <code>DataSource</code> 类型的资源。</p>
+<h4 id="2-注入方法："><a href="#2-注入方法：" class="headerlink" title="2. 注入方法："></a>2. 注入方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDataSource</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解被用在了 setter 方法上，容器会自动注入所需的 <code>DataSource</code>。</p>
+<h4 id="3-注入构造函数："><a href="#3-注入构造函数：" class="headerlink" title="3. 注入构造函数："></a>3. 注入构造函数：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyService</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解应用于构造函数，自动注入 <code>DataSource</code>。</p>
+<h3 id="注解的属性："><a href="#注解的属性：" class="headerlink" title="注解的属性："></a>注解的属性：</h3><ul>
+<li><p>name：指定资源的名称，用于自定义资源名称的匹配。例如：@Resource(name&#x3D;”myDataSource”)</p>
+</li>
+<li><p>type：指定资源的类型，通常不需要显式设置，容器会根据字段的类型自动注入。</p>
+<h3 id="与-Autowired-比较："><a href="#与-Autowired-比较：" class="headerlink" title="与 @Autowired 比较："></a>与 @Autowired 比较：</h3></li>
+<li><p>@Autowired 是 Spring 框架提供的注解，它主要通过类型来进行依赖注入。与 @Resource 注解相比，@Autowired 主要依据类型进行注入，并且在没有找到唯一匹配的 Bean 时会抛出异常，除非配合 @Qualifier 使用指定 Bean 名称。</p>
+</li>
+<li><p>@Resource 默认通过名称进行注入，只有在没有找到合适的名称匹配时才会通过类型来进行匹配。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1166,100 +1320,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/30/%E8%AE%A1%E7%BD%91%E8%AF%95%E5%8D%B7%E4%BA%8C%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/30/%E8%AE%A1%E7%BD%91%E8%AF%95%E5%8D%B7%E4%BA%8C%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计网二试卷总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-30 08:21:00 / 修改时间：14:25:50" itemprop="dateCreated datePublished" datetime="2024-12-30T08:21:00+08:00">2024-12-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="网络协议三要素"><a href="#网络协议三要素" class="headerlink" title="网络协议三要素"></a>网络协议三要素</h2><p>语法、语义和时序</p>
-<h2 id="PING使用的是-ICMP-报文的哪个类型-？"><a href="#PING使用的是-ICMP-报文的哪个类型-？" class="headerlink" title="PING使用的是 ICMP 报文的哪个类型 ？"></a>PING使用的是 ICMP 报文的哪个类型 ？</h2><p>回送请求或回答</p>
-<h2 id="TCP-IP是一个工业标准而非国际标准"><a href="#TCP-IP是一个工业标准而非国际标准" class="headerlink" title="TCP&#x2F;IP是一个工业标准而非国际标准"></a>TCP&#x2F;IP是一个工业标准而非国际标准</h2><h2 id="数据链路层三个任务"><a href="#数据链路层三个任务" class="headerlink" title="数据链路层三个任务"></a>数据链路层三个任务</h2><p>（1）封装成帧</p>
-<p>（2）透明传输</p>
-<p>（3）差错检测</p>
-<h2 id="广播域和冲突域"><a href="#广播域和冲突域" class="headerlink" title="广播域和冲突域"></a>广播域和冲突域</h2><h3 id="1-广播域-Broadcast-Domain"><a href="#1-广播域-Broadcast-Domain" class="headerlink" title="1. 广播域 (Broadcast Domain)"></a><strong>1. 广播域 (Broadcast Domain)</strong></h3><ul>
-<li><strong>定义</strong>：广播域是指通过广播数据帧（如 ARP 请求）可以被传播到的所有网络设备的范围。</li>
-<li><strong>特点</strong>：<ul>
-<li>所有同一广播域内的设备都会接收到广播帧。</li>
-<li>通过路由器可以隔离广播域，交换机不会隔离广播域。</li>
-</ul>
-</li>
-<li><strong>影响因素</strong>：<ul>
-<li>设备过多会导致广播流量增大，影响网络性能。</li>
-<li>VLAN（虚拟局域网）可以创建多个独立的广播域。</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-冲突域-Collision-Domain"><a href="#2-冲突域-Collision-Domain" class="headerlink" title="2. 冲突域 (Collision Domain)"></a><strong>2. 冲突域 (Collision Domain)</strong></h3><ul>
-<li><strong>定义</strong>：冲突域是指在使用共享传输介质的网络中，多个设备可能同时发送数据，导致数据冲突的范围。</li>
-<li><strong>特点</strong>：<ul>
-<li>常见于传统的集线器（Hub）或使用共享以太网的网络中。</li>
-<li>交换机（Switch）可以隔离冲突域，每个端口是一个独立的冲突域。</li>
-<li>数据冲突会导致重传，降低网络效率。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1331,20 +1391,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

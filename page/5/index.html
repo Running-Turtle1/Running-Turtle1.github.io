@@ -158,6 +158,134 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/11/%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">基本分页存储管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-11 20:45:10" itemprop="dateCreated datePublished" datetime="2024-12-11T20:45:10+08:00">2024-12-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-20 20:33:54" itemprop="dateModified" datetime="2024-12-20T20:33:54+08:00">2024-12-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1，<strong>进程</strong>中的块称为<strong>页面</strong>或页（Page），<strong>内存</strong>中的块称为<strong>页框</strong>或页帧（Page Frame）。外存也以相同的单位进行划分，直接称为块或盘块（Block）。</p>
+<p>2，</p>
+<ul>
+<li>直接映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>Cache行号</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>全相联映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记（块号）</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>组相联映射 ：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>Cache组号</th>
+<th>块内地址</th>
+</tr>
+</thead>
+</table>
+<p>3，每一个 Cache 行会对应一个标记和有效位，标记用于指明 Cache 中的行来自主存的哪一块，有效位表示 Cache 行信息是否有效。</p>
+<p>4，大题</p>
+<p><img src="https://i.imgur.com/WJoB7RZ.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/wIlbBby.jpg" alt="Imgur"></p>
+<p>5，二级页表题目</p>
+<p><img src="https://imgur.com/uYItoPs.png" alt="Imgur"></p>
+<p><strong>B</strong> </p>
+<p>逻辑地址 $2^{16}$ 页，也就是 $2^{16}\times 2^{10}&#x3D;2^{26}B$ 。</p>
+<p>所以页目录号 + 页号 + 页内偏移量 一共 26 位。</p>
+<p>按字节编址，页大小为 $2^{10}B$ ，所以页内偏移量 10 位。</p>
+<p>页表项 $2B$ ，装满 $2^{10}$ 的页，所以一个二级页表有 $2^9$ 个页表项组成，即页号 9 位。</p>
+<p>还剩下 26 - 10 - 9 &#x3D; 7 位留给一级页号，可以表示 $2^7&#x3D;128$ 个表项，代表着 $128$ 个二级页表。 </p>
+<p>6，补充 ：</p>
+<p>逻辑地址 &#x3D; 页号 + 页内地址 ；</p>
+<p>物理地址 &#x3D; 块号 + 页内地址 。</p>
+<hr>
+<p>视频链接 ：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i14y1d7Qt/">【操作系统】一个视频捋清楚基本分页存储管理_哔哩哔哩_bilibili</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1426,255 +1554,6 @@ DataBaseOperation --|> B</pre>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/02/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8B%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/02/2021%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E4%B8%8B%EF%BC%89/" class="post-title-link" itemprop="url">2021年6月英语第二套（下）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-02 17:21:00" itemprop="dateCreated datePublished" datetime="2024-12-02T17:21:00+08:00">2024-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 15:53:28" itemprop="dateModified" datetime="2024-12-13T15:53:28+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="0x01-words"><a href="#0x01-words" class="headerlink" title="0x01 words"></a>0x01 words</h2><p>1，It was already crumbling before the fire.</p>
-<p>crumble &#x2F;ˈkrʌmb(ə)l&#x2F; v. 崩裂，坍塌</p>
-<p>在大火之前，它已经摇摇欲坠了 </p>
-<p>2，The cathedral is owned by the French state and has been （at the center of a years-long dispute） over who should finance （restoration work） for the collapsing <del>&#x2F;kəˈlæpsɪŋ&#x2F;</del> staircases, crumbling statues and cracked walls.</p>
-<ul>
-<li><p>ca the dral &#x2F;kəˈθiːdrəl&#x2F; n. 大教堂</p>
-</li>
-<li><p>the French state 法国政府</p>
-</li>
-<li><p>dispute n. 争论 v. 对 … 提出质疑</p>
-</li>
-<li><p>re store &#x2F;rɪˈstɔːr&#x2F; v. 恢复，修复</p>
-</li>
-<li><p>res to ra tion <strong>&#x2F;ˌrestəˈreɪʃn&#x2F;</strong> （对艺术品、建筑等的）修复；</p>
-</li>
-<li><p>s ta tue &#x2F;ˈstætʃuː&#x2F; n. 雕像</p>
-</li>
-<li><p>crack v. 破裂，裂开 n. 裂缝，裂纹</p>
-</li>
-</ul>
-<p>这座大教堂归法国政府所有，多年来一直是谁应该为坍塌的楼梯、摇摇欲坠的雕像和破裂的墙壁的修复工作提供资金的争论焦点。</p>
-<h2 id="0x02-words"><a href="#0x02-words" class="headerlink" title="0x02 words"></a>0x02 words</h2><p>1，precision in visual perception 视觉感知的精确性</p>
-<ul>
-<li><p>perception    n. 看法，认识 ；感觉，感知</p>
-</li>
-<li><p>visual perception</p>
-</li>
-</ul>
-<p>视觉感知：指人类通过眼睛感知和理解周围环境的能力，包括颜色、形状、大小、距离、运动等方面的感知。</p>
-<p>2，subtlety of representation 表现的微妙性</p>
-<ul>
-<li><p>sub tle ty     &#x2F;ˈsʌtəlti&#x2F; n. 细微差别，微妙之处</p>
-</li>
-<li><p>re pre sen tation &#x2F;ˌrep<strong>rɪ</strong>zenˈteɪʃ(ə)n&#x2F; n. 代理人，代表 ；描绘，表现</p>
-</li>
-<li><p>re pre sent &#x2F;ˌreprɪˈzent&#x2F;    v. 代表</p>
-</li>
-</ul>
-<p>3，sensitivity to cognitive stimulation 对认知刺激的敏感性</p>
-<ul>
-<li><p>sensitivity &#x2F;ˌsensəˈtɪvəti&#x2F; n. （对细节或质量的）感知，觉察；（对新情况的）灵敏度；敏感</p>
-</li>
-<li><p>cog ni tive &#x2F;ˈkɑːɡnətɪv&#x2F;     adj. 认识的，认知的</p>
-</li>
-<li><p>s ti mu lation     &#x2F;ˌstɪmjuˈleɪʃ(ə)n&#x2F;      n. 刺激，激励</p>
-</li>
-</ul>
-<h2 id="0x03-words"><a href="#0x03-words" class="headerlink" title="0x03 words"></a>0x03 words</h2><p>1，They present a false picture of the autonomy cars provide.</p>
-<ul>
-<li>au to no my &#x2F;ɔːˈtɑːnəmi&#x2F; n.自治，自治权；独立自主，自主权</li>
-</ul>
-<p>他们错误的展现了汽车带给人们的自主性。</p>
-<p>2，delightful adj. 令人愉快的，宜人的</p>
-<p>3，detachment &#x2F;dɪˈtætʃmənt&#x2F; n. 客观，冷漠，超然。</p>
-<ul>
-<li>detachment from 与……的脱离：指从某个人、组织、信仰或情感中分离出来，不再与之有联系或依赖。</li>
-</ul>
-<p>4，Technological innovation should be properly regulated.</p>
-<ul>
-<li><p>involution n. （年老或长期不用时，如生育期后的子宫）衰退，退化；</p>
-</li>
-<li><p>innovation n. 新事物，新方法；革新，创新</p>
-</li>
-<li><p>reg u late &#x2F;ˈreɡjuleɪt&#x2F; v. （用规则条例）控制，管理；调节，</p>
-</li>
-</ul>
-<p>适当规范技术创新。</p>
-<h2 id="0x04-Translation"><a href="#0x04-Translation" class="headerlink" title="0x04 Translation"></a>0x04 Translation</h2><blockquote>
-<p>青海是国西北部的一个省份，平均海拔3000米以上，大部分地区为高山和平原。青海省得名于全国最大的咸水湖青海湖。青海湖被誉为“中国最美的湖泊”，是最受欢迎的旅游景点之一，也是摄影师和艺术家的天堂。<br>青海山川壮丽，地大物博，石油和天然气储量丰富，省内许多城市的经在石油和天然气工业带动下得到了长足发展。青海尤以水资源丰富而闻名，是中国三大河流长江黄河和澜沧江的发源地，在中国的水生态中发挥着重要作用。</p>
-</blockquote>
-<p>Qinghai is a province in <strong>northwes<u>tern</u></strong> China with an <strong>average altitude</strong> of more than 3,000 meters, and most areas of the province are high mountains and <strong>plateaus</strong>. The province <strong>is named after</strong> Qinghai Lake, the largest <strong>saltwater lake</strong> in China. Known as the most beautiful lake in China, Qinghai Lake is one of the most popular <strong>tourist attractions</strong> and a <strong>paradise</strong> for <strong>photographers</strong> and artists.</p>
-<p><u>Qinghai features <strong>magnificent</strong> landscapes, vast <strong>territory</strong></u>, as well as abundant oil and <strong>natural gas</strong> resources. The oil and natural gas industry has given <strong>impetus</strong> （&#x2F;ˈɪmpɪtəs&#x2F; n. 动力） to the <strong>substantial</strong> economic growth of many cities within the province. Qinghai is especially <strong>renowned</strong> for its rich water resources. It serves as the <strong>headstream</strong> （源头） of China’s three rivers, <strong><u>namely</u></strong> <strong>the Yangtze River, the Yellow River, and the Lancang River</strong>, which play a <strong>vital</strong> role in China’s water <strong>ecosystem</strong>.</p>
-<ul>
-<li><p>p la teau &#x2F;plæˈtoʊ&#x2F; n. 高原</p>
-</li>
-<li><p>be adjacent to &#x2F;əˈdʒeɪs(ə)nt&#x2F; 与 … 相邻</p>
-</li>
-<li><p>inland salt lake 内陆盐湖</p>
-</li>
-<li><p>compact adj. 小型的，袖珍的 ；紧凑的</p>
-</li>
-<li><p>live in a compact community ：聚居</p>
-</li>
-<li><p>altitude &#x2F;ˈæltɪtuːd&#x2F; n. 海拔高度 ；高地</p>
-</li>
-<li><p>altitude sickness 高原反应</p>
-</li>
-<li><p>intangible cultural heritage 非物质文化遗产</p>
-</li>
-<li><p>Qinghai features magnificent landscapes, vast territory.</p>
-</li>
-</ul>
-<p>feature : 以 … 为特色</p>
-<p>magnificent : adj. 宏伟的，壮丽的</p>
-<p>ter ri tory ：领土，版图，领地</p>
-<p>青海省山川壮丽，地大物博。</p>
-<ul>
-<li>substantial</li>
-</ul>
-<p>large in amount, value or importance 大量的；价值巨大的；重大的</p>
-<ul>
-<li>renown &#x2F;rɪˈnaʊn&#x2F; n. 名誉，声望 v. 使有声望</li>
-</ul>
-<p>renowned for 以……而闻名：因某种特定的品质、能力或成就而广为人知或赞誉。</p>
-<ul>
-<li>namely adv.即，也就是</li>
-</ul>
-<h2 id="0x05-Composition"><a href="#0x05-Composition" class="headerlink" title="0x05 Composition"></a>0x05 Composition</h2><p><strong>结构框图：</strong>  </p>
-<ol>
-<li>第1段依据描述柱状图，根据图表反映的趋势。</li>
-<li>第2段具体阐述出现这一趋势的原因。</li>
-<li>第3段总结全文，重申自己的观点。</li>
-</ol>
-<p><strong>参考范文</strong><br><strong>China’s Achievements in Higher Education</strong></p>
-<ol>
-<li><p><strong>[1]</strong> <strong><u>The above chart shows that</u></strong> the past three decades have seen great progress in China’s higher education. According to the data from the <strong>Ministry</strong> （&#x2F;ˈmɪnɪstri&#x2F; 部） of Education, China’s <strong>gross enrolment ratio</strong> in higher education has <strong>increased from 3.4% in 1990 to 51.6%</strong> in 2019.</p>
-</li>
-<li><p><strong>[2]</strong> <strong><u>The reasons accounting for this phenomenon can be listed as follows.</u></strong> <strong>[3]</strong> <strong><u>For one thing</u></strong>, during the last thirty years, with the strong support of our country, the <strong>reform（改革）</strong> and development of higher education have made significant achievements in all aspects, including the system of <strong>recruitment</strong>, fees charging and graduates job-placing, ensuring that all citizens have access to higher education. <strong>[4]</strong> <strong><u>For another,</u></strong> in order to promote the quality of higher education, <strong>educational administrative departments</strong> （教育行政部门）at various <u>（&#x2F;ˈveriəs&#x2F;）</u>levels and local governments have actively explored measures and ways to increase educational <strong>expenditure</strong> （&#x2F;ɪkˈspendɪtʃər&#x2F; 经费）and improve schooling conditions and the quality of <strong>faculty</strong>. <strong>[5]</strong> Besides, with the improvement of living standards, there has been a great change in people’s ideas about education, and they are becoming increasingly aware of the <strong>necessity</strong> of receiving higher education.</p>
-</li>
-<li><p><strong>[6]</strong> Therefore, China’s achievements in higher education <strong>are the result of many factors</strong>, and I believe that the achievements is bound to <strong>have a far-reaching impact on</strong> the whole society.</p>
-</li>
-</ol>
-<ul>
-<li><p>recruit  <strong>&#x2F;rɪˈkruːt&#x2F;</strong> v. 招聘</p>
-</li>
-<li><p>faculty n. 机能；天赋，才能 ;&lt;美&gt; 全体教员；&lt;旧&gt;（某行业，尤指医学行业的）全体从业人员；</p>
-</li>
-<li><p><strong>The quality of faculty</strong> 指的是 <strong>教师队伍的质量</strong></p>
-</li>
-<li><p>I believe that the achievements is bound to have a far-reaching impact on the whole society.</p>
-<p>我相信，这些成就必将对整个社会产生深远的影响。</p>
-</li>
-<li><p>be bound to</p>
-</li>
-</ul>
-<p>注定会，必然会：表示某种情况或结果是不可避免的，一定会发生。</p>
-<ul>
-<li><p>far-reaching 影响深远的，波及广泛的</p>
-</li>
-<li><p>graduates job-placing ：毕业生就业安排</p>
-</li>
-</ul>
-<hr>
-<p><strong>话题词汇汇总：</strong> </p>
-<ul>
-<li><p><strong>academic activities</strong> 学术活动</p>
-</li>
-<li><p><strong>graduate student&#x2F;postgraduate</strong> 研究生</p>
-</li>
-<li><p><strong>diploma&#x2F;graduation certificate</strong> 毕业证书</p>
-</li>
-<li><p><strong>tuition (fee)</strong> 学费</p>
-</li>
-<li><p><strong>scholarship&#x2F;fellowship</strong> 奖学金</p>
-</li>
-<li><p><strong><u>board expenses 伙食费</u></strong>  </p>
-</li>
-<li><p><strong>input in education</strong> 教育投入</p>
-</li>
-<li><p><strong>optimize the teaching staff</strong> 优化师资队伍</p>
-</li>
-<li><p><strong>(interest-free) bank loan</strong> (免息)助学贷款</p>
-</li>
-<li><p><strong>universal education</strong> 普及教育<br>vocational adj. 职业的，职业技术的，业务知识的<br>vocational education<br>职业教育：通过理论教学和实践经验的结合，为特定职业提供培训的教育。</p>
-<p>（标答错了一个小点，misunderstanding 了 vocational education &amp; universal education)</p>
-</li>
-</ul>
-<p>范文语言流畅，数据引用合理，并通过<strong>For one thing, for another, Besides</strong>等逻辑词清晰组织原因分析。</p>
-<ul>
-<li>Gross enrolment ratio</li>
-</ul>
-<p>毛入学率（毛入学率，指某学年度某级教育在校生数占相应学龄人口总数比例，标志教育相对规模和教育机会，是衡量教育发展水平的重要指标）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1746,20 +1625,20 @@ DataBaseOperation --|> B</pre>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
