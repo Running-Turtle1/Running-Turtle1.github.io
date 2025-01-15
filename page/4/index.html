@@ -158,6 +158,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E7%AE%97%E6%B3%95-RR-Round%20Robin%20%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%B1%E6%9D%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/19/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E7%AE%97%E6%B3%95-RR-Round%20Robin%20%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%B1%E6%9D%A5/" class="post-title-link" itemprop="url">时间片轮转算法-RR-Round Robin 名称的由来</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-19 19:36:00 / 修改时间：19:38:39" itemprop="dateCreated datePublished" datetime="2024-12-19T19:36:00+08:00">2024-12-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="时间片轮转算法-RR-Round-Robin-名称的由来"><a href="#时间片轮转算法-RR-Round-Robin-名称的由来" class="headerlink" title="时间片轮转算法-RR-Round Robin 名称的由来"></a>时间片轮转算法-RR-Round Robin 名称的由来</h2><p><strong>Round Robin（轮转调度）</strong> 这个名字来源于它的调度方式，**”Round”**  和 <strong>“Robin”</strong> 分别反映了该算法的两个特点：</p>
+<h3 id="1-Round（轮转）"><a href="#1-Round（轮转）" class="headerlink" title="1. Round（轮转）"></a>1. <strong>Round（轮转）</strong></h3><ul>
+<li><p>“Round” 代表了一个<strong>循环</strong>的概念。在 Round Robin 调度算法中，系统将时间分配给每个进程一个固定的时间片（time slice 或 quantum）。每当一个进程的时间片耗尽后，操作系统就会将 CPU 从该进程切换到下一个等待的进程，直到所有进程都被执行完。</p>
+</li>
+<li><p>这个过程是<strong>循环</strong>的，即每个进程轮流获得 CPU 时间。系统会按顺序循环地分配 CPU 给各个进程，保证每个进程都能公平地执行。</p>
+<h3 id="2-Robin（罗宾）"><a href="#2-Robin（罗宾）" class="headerlink" title="2. Robin（罗宾）"></a>2. <strong>Robin（罗宾）</strong></h3></li>
+<li><p><strong>“Robin”</strong> 的部分来自于 <strong>“Robin Hood”</strong> 的传统，传说中“Robin Hood”是一个公平的角色，他从富人那里“取走”财富，分给贫困的人。类似地，<strong>Round Robin</strong> 算法公平地为所有进程分配 CPU 时间片，不偏不倚地轮流执行每个进程。</p>
+</li>
+<li><p>另外，这个名字也可能与早期一些编程实践中的名称约定或约定俗成的习惯有关，类似于“轮转”（round-robin）的一种组织方式。</p>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. <strong>总结</strong></h3></li>
+</ul>
+<p>所以，<strong>Round Robin</strong> 这个名字强调了<strong>公平的、按顺序循环</strong>调度进程的思想。每个进程都轮流得到 CPU 时间，并且每次时间片耗尽后就被换到下一个进程，直到所有进程都完成任务。</p>
+<p>这个名字形象地体现了调度算法的 <strong>“轮流”</strong> 特性和 <strong>公平性</strong> 。 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/19/%E4%B8%BA%E4%BB%80%E4%B9%88FCFS%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%9C%89%E5%88%A9%E4%BA%8ECPU%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A%E8%80%8C%E4%B8%8D%E5%88%A9%E4%BA%8EI-O%E7%B9%81%E5%BF%99%E5%9E%8B%E4%BD%9C%E4%B8%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1074,204 +1154,6 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/12/2023%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E5%90%AC%E5%8A%9B)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/12/2023%E5%B9%B46%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E7%AC%AC%E4%BA%8C%E5%A5%97%EF%BC%88%E5%90%AC%E5%8A%9B)/" class="post-title-link" itemprop="url">2023年6月英语六级第二套（听力)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-12 21:30:00" itemprop="dateCreated datePublished" datetime="2024-12-12T21:30:00+08:00">2024-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 16:14:08" itemprop="dateModified" datetime="2024-12-13T16:14:08+08:00">2024-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD/%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Section-A"><a href="#Section-A" class="headerlink" title="Section A"></a>Section A</h2><p>1，the marriage of design and engineering 设计与工程的结合</p>
-<p>实际就是，the integration of ……</p>
-<p>这么写，算是用作比喻吧。</p>
-<p>2，the fruits of my labor</p>
-<p>直译为 “我的劳动成果”。</p>
-<p>3，material &#x2F;məˈtɪriəl&#x2F;</p>
-<p>n. 衣料，布料；材料，原料；素材</p>
-<p>adj. 物质的，非精神上的；</p>
-<ul>
-<li>immaterial adj. 非物质的，无形的</li>
-</ul>
-<p>4，And the legacies you build will last much longer than any of us mortals.</p>
-<ul>
-<li><p>legacy n.遗产，遗赠物；遗留问题，后遗症</p>
-</li>
-<li><p>mortal 译为普通人即可。（当然这个单词还有终有一死的意思）</p>
-</li>
-<li><p>immortal adj. 不死的，永存的；不朽的</p>
-</li>
-</ul>
-<p>你所创造的遗产将比我们任何人都更长久。</p>
-<p>5，groundbreaking research</p>
-<p>开创性研究：指在某一领域或某一问题上具有创新性和开创性的研究。</p>
-<h2 id="Section-B"><a href="#Section-B" class="headerlink" title="Section B"></a>Section B</h2><p>1，He has a high public profile</p>
-<ul>
-<li>profile 个人档案 ；公众形象 ；侧面（或轮廓）</li>
-</ul>
-<p>他在公众中知名度很高</p>
-<p>2，He has occasionly been <strong>harassed</strong> by his fans</p>
-<ul>
-<li><p>occasionly 偶尔</p>
-</li>
-<li><p>harass &#x2F;ˈhærəs&#x2F; v. 骚扰；不断攻击（敌人）</p>
-</li>
-</ul>
-<p>他偶尔会被粉丝骚扰。</p>
-<p>3，<strong>discreet</strong></p>
-<p>adj. 谨慎的，周到的；小巧的，不引人注意的</p>
-<p>He was always very discreet about his love affairs.</p>
-<p>他对两性关系一向谨小慎微。</p>
-<p>4，I am fully fluent in English and Spanish and have a working proficiency in French</p>
-<p>“我精通英语和西班牙语，并且能熟练使用法语。”</p>
-<ul>
-<li><p>proficient &#x2F;prəˈfɪʃ(ə)nt&#x2F; adj. 熟练的，精通的</p>
-</li>
-<li><p>proficiency n. 熟练，精通</p>
-</li>
-</ul>
-<h2 id="Section-C"><a href="#Section-C" class="headerlink" title="Section C"></a>Section C</h2><p>1，have lots of appeal 有很多吸引力</p>
-<p>2，deprive &#x2F;dɪˈpraɪv&#x2F; v. 剥夺，使丧失；免去……的职务（尤指圣职）</p>
-<ul>
-<li><p>deprived adj. 贫困的，穷苦的，（物质上和文化上）严重匮乏的；（人）丧失的，被剥夺的</p>
-</li>
-<li><p>deprived children 贫困儿童</p>
-</li>
-<li><p>deprived area 贫困地区</p>
-</li>
-</ul>
-<p>3，de vas tate &#x2F;ˈdevəsteɪt&#x2F; v. 毁坏，破坏；使极度震惊，使伤心欲绝</p>
-<ul>
-<li>devastating adj. 毁灭性的，极具破坏力的</li>
-</ul>
-<h2 id="Section-C-1"><a href="#Section-C-1" class="headerlink" title="Section C"></a>Section C</h2><p>1，lifespan &#x2F;ˈlaɪfspæn&#x2F; n. （人或动物的）寿命；使用期，有效期</p>
-<p>2，ma nu fac tory &#x2F;ˌmænjəˈfæktəri&#x2F; n. 制造厂，工厂</p>
-<ul>
-<li>manufacture</li>
-</ul>
-<p>v. （用机器大量）生产，制造；编造，捏造；生成，产生（一种物质）</p>
-<p>n. 大量制造，批量生产；工业品；制造业</p>
-<p>3，Take the due caution in upgrading their products</p>
-<ul>
-<li>due 预期的，应有的，到期的</li>
-</ul>
-<p>在升级他们的产品时，采取应有的谨慎态度。</p>
-<p>4，substitute &#x2F;ˈsʌbstɪtuːt&#x2F;</p>
-<p>n. 替代品，代替物；（体育比赛中的）替补队员</p>
-<p>v. 用……代替；（比赛中）替换（运动员）；代替（某人的工作）</p>
-<p>5，take the initiative 带头</p>
-<p>相当于 take the lead 了，之前不知道 take the inititive 有这个意思，感觉可以用到作文里面，基本上可以把所有 should 换成 take the initiative</p>
-<ul>
-<li>initiative n. 措施，倡议；主动性，积极性</li>
-</ul>
-<h2 id="Section-D"><a href="#Section-D" class="headerlink" title="Section D"></a>Section D</h2><p>1，cyber loaf 摸鱼的意思，loaf 是 （v. 游荡，闲逛）的意思</p>
-<p>类似于 slack off 吧，不过 cyber loaf 更特指 Internet 摸鱼了。</p>
-<p>2，intervention n. 干预，介入</p>
-<p>3，hy po the sis &#x2F;haɪˈpɑː<strong>θə</strong>sɪs&#x2F; n. 假说，假设；</p>
-<h2 id="Section-E"><a href="#Section-E" class="headerlink" title="Section E"></a>Section E</h2><p>1，treeless adj. 无树木的</p>
-<p>注意 less 直接就是没有</p>
-<ul>
-<li><strong>Hopeless</strong>（没有希望的）</li>
-<li><strong>Careless</strong>（粗心的）</li>
-<li><strong>Fearless</strong>（无畏的）</li>
-<li><strong>Endless</strong>（无尽的）</li>
-<li><strong>Harmless</strong>（无害的）</li>
-<li><strong>Powerless</strong>（无力的）</li>
-<li><strong>Shameless</strong>（不知羞耻的）</li>
-<li><strong>Restless</strong>（不安的）</li>
-<li><strong>Useless</strong>（无用的）</li>
-<li><strong>Nameless</strong>（无名的）</li>
-</ul>
-<p>2，prosper v. 繁荣，成功；蓬勃发展，健康成长</p>
-<p>prosperous &#x2F;ˈprɑːspərəs&#x2F; adj. 繁荣的，富足的</p>
-<p>prosperity &#x2F;prɑːˈsperəti&#x2F; n. 繁荣，成功</p>
-<p>3，aes the tic &#x2F;esˈθetɪk&#x2F;</p>
-<p>什么啥 b 单词。</p>
-<p>adj. 审美的，美学的；美的，艺术的</p>
-<p>n. 美感，审美观；美学（aesthetics）；美术理论</p>
-<p>4，as toun ding &#x2F;əˈstaʊndɪŋ&#x2F; adj. 令人震惊的；令人惊骇的</p>
-<p>为什么不用 as to nishing &#x2F;əˈstɑːnɪʃɪŋ&#x2F; ?</p>
-<h2 id="Section-F"><a href="#Section-F" class="headerlink" title="Section F"></a>Section F</h2><p><strong>“What has called into question the ‘out of Africa’ model?”</strong> </p>
-<p>这句话的意思是：“是什么因素对‘走出非洲’模型提出了质疑？”</p>
-<p>这里的“’out of Africa’ model”指的是一种关于人类起源的科学模型，主要假设现代人类（智人）最初起源于非洲，并且在大约6万年前从非洲迁移到世界其他地方。这个模型在考古学和人类学中有着广泛的支持，但近年来也受到一些新的证据和研究的挑战。</p>
-<p>所以，这句话是在询问，是什么因素或研究结果使得“走出非洲”这一理论受到质疑或被重新评估。</p>
-<p>“<strong>Call into</strong>“ 是一个短语，通常用于表达“引发质疑”或“对…提出疑问”的意思。当我们说 “call into question” 时，意思是对某个观点、理论、事实或假设提出怀疑或质疑。</p>
-<p>例如：</p>
-<ul>
-<li><strong>“The new evidence calls into question the accuracy of the report.”</strong><br>（新证据对报告的准确性提出了质疑。）</li>
-</ul>
-<p>“Call into” 后面通常接一个名词或名词短语，表示被质疑的对象。</p>
-<p>I made a example :</p>
-<p><strong>The blood in his room has called into question whether he is the murderer</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1343,7 +1225,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1356,7 +1238,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
