@@ -158,6 +158,148 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">2025-01-17 市南</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-17 20:30:00 / 修改时间：20:33:19" itemprop="dateCreated datePublished" datetime="2025-01-17T20:30:00+08:00">2025-01-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/25%E5%AF%92%E5%81%87%E6%95%99%E5%9F%B9/" itemprop="url" rel="index"><span itemprop="name">25寒假教培</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>没有必要顺着做，讲完树形DP的几道题目就可以讲树上背包的内容然后做树上背包的题，最后尽量做这个题单就可以，如果没做完题单把剩的题标记一下，如果有补充的新题也可以记录一下发我，尽量让学生自己想出来正确的状态和转移，或者给他们指出来为什么他们想的是错的。</p>
+<p>10:30–12:15</p>
+<p>下午1:30–5:15</p>
+<p>树形背包、树形DP是什么，以及树上背包题单</p>
+<p>树形DP 树上背包 DAG上的DP</p>
+<h2 id="P1352-没有上司的舞会-树形DP-√"><a href="#P1352-没有上司的舞会-树形DP-√" class="headerlink" title="P1352 没有上司的舞会 树形DP √"></a>P1352 没有上司的舞会 树形DP √</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1352">https://www.luogu.com.cn/problem/P1352</a></p>
+<p>状态表示</p>
+<ul>
+<li><p><code>f[u][1]</code> 表示以 <code>u</code> 为根节点的子树并且包括 <code>u</code> 的总快乐指数</p>
+</li>
+<li><p><code>f[u][0]</code> 表示以 <code>u</code> 为根节点的子树并且不包括 <code>u</code> 的总快乐指数</p>
+</li>
+</ul>
+<p>状态计算</p>
+<ul>
+<li><p>选 <code>u</code> , $f[u][1]+&#x3D;\sum f[son][0]$ </p>
+</li>
+<li><p>不选 <code>u</code> , $f[u][0]+&#x3D;\sum max(f[son][1],;f[son][0])$</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>&#123;</span><br><span class="line">    f[u][<span class="number">1</span>]=r[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=h[u]; i!=<span class="number">-1</span>; i=ne[i])&#123;</span><br><span class="line">        <span class="type">int</span> v=e[i];</span><br><span class="line">        <span class="built_in">dfs</span>(v);</span><br><span class="line">        f[u][<span class="number">0</span>]+=<span class="built_in">max</span>(f[v][<span class="number">1</span>], f[v][<span class="number">0</span>]);</span><br><span class="line">        f[u][<span class="number">1</span>]+=f[v][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>通过 DFS，在返回上一层时更新当前结点的最优解。</p>
+<p>、、树形DP经典题目。</p>
+<p>、、$dp_{u,0&#x2F;1}$ 代表是否选节点 u，以节点 u 为根的子树能得到的最大快乐值。</p>
+<h2 id="P4084-USACO17DEC-Barn-Painting-G-树形-DP-√"><a href="#P4084-USACO17DEC-Barn-Painting-G-树形-DP-√" class="headerlink" title="P4084 USACO17DEC] Barn Painting G 树形 DP √"></a>P4084 USACO17DEC] Barn Painting G 树形 DP √</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4084">https://www.luogu.com.cn/problem/P4084</a></p>
+<blockquote>
+<p>n 个结点的树，k 个结点染色了，剩下的结点每个可以染色 3 种，求最终方案数 ？</p>
+</blockquote>
+<p>设 $dp_{u,0&#x2F;1&#x2F;2}$ 表示以 u 为根的子树，染色为 0&#x2F;1&#x2F;2 的方案数。</p>
+<p>$dp_{u,c}*&#x3D;dp_{v,1&#x2F;2&#x2F;3}$ ，注意染色不能相同，注意初始化问题</p>
+<h2 id="P2016-战略游戏-树形DP√"><a href="#P2016-战略游戏-树形DP√" class="headerlink" title="P2016 战略游戏 树形DP√"></a>P2016 战略游戏 树形DP√</h2><blockquote>
+<p>最少点覆盖所有边问题</p>
+</blockquote>
+<p>$dp_{u,0&#x2F;1}$ 表示以 u 为根的子树，是否选择在 u 点布置士兵，覆盖子树所有边的最小方案数。</p>
+<h2 id="P1122-最大子树和-树形DP-√"><a href="#P1122-最大子树和-树形DP-√" class="headerlink" title="P1122 最大子树和 树形DP √"></a>P1122 最大子树和 树形DP √</h2><blockquote>
+<p>求最大子树和</p>
+</blockquote>
+<p>设 $dp_u$ 是以 u 为根的最大子树，那么答案一定是 $\max dp_i$ </p>
+<p><strong>注意这里答案不一定是 $dp_1$</strong> 。 </p>
+<p>对于以根 r 为根的树来说，答案的联通块一定是以其中某一个点作为根节点的包括一部分点的子树、所以可以枚举 $dp_i$ 。</p>
+<h2 id="P3478-换根DP例题-√"><a href="#P3478-换根DP例题-√" class="headerlink" title="P3478 换根DP例题 √"></a>P3478 换根DP例题 √</h2><p>换根DP入门文章</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/2084665478">https://zhuanlan.zhihu.com/p/2084665478</a> 有详细讲换根DP。</p>
+<h2 id="P2986-换根DP应用-√"><a href="#P2986-换根DP应用-√" class="headerlink" title="P2986 换根DP应用 √"></a>P2986 换根DP应用 √</h2><p>先考虑 f, $cow_u$ 表示 $T_1$ 中以 u 为根的奶牛的数量之和。</p>
+<p>$f_u&#x3D;\sum(f_v + w\times cow_v)$ </p>
+<p>$g_v&#x3D;g_u-cow_v\times w + (sumCow-cow_v)\times w$</p>
+<h2 id="CF1689C-思维-树形DP-√"><a href="#CF1689C-思维-树形DP-√" class="headerlink" title="CF1689C 思维 + 树形DP √"></a>CF1689C 思维 + 树形DP √</h2><p>acyclic 无环的</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1689/C">Problem - 1689C - Codeforces</a> </p>
+<p>可以发现题目给定的是一个二叉树。</p>
+<p>设 $dp_u$ 表示以 u 为根的子树，u 感染了，最多 save 几个。</p>
+<p>若 $out_u&#x3D;1$ , 拯救 $son_u-2$ 个（删儿子）</p>
+<p>若 $out_u&#x3D;0$ , 0 个</p>
+<p>若 $out_u&#x3D;2$ ，删左儿子或者右儿子</p>
+<h2 id="CF1092F-换根DP-基础换根的式子"><a href="#CF1092F-换根DP-基础换根的式子" class="headerlink" title="CF1092F 换根DP , 基础换根的式子"></a>CF1092F 换根DP , 基础换根的式子</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    sa[u] = a[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        <span class="built_in">dfs1</span>(v, u);</span><br><span class="line">        sa[u] += sa[v];</span><br><span class="line">        f[u] += f[v] + sa[v];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        g[v] = g[u] + suma - <span class="number">2</span> * sa[v];</span><br><span class="line">        <span class="built_in">dfs2</span>(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CF1693B"><a href="#CF1693B" class="headerlink" title="CF1693B"></a>CF1693B</h2><h2 id="P2052-道路修建-树形DP-√"><a href="#P2052-道路修建-树形DP-√" class="headerlink" title="P2052 道路修建 树形DP √"></a>P2052 道路修建 树形DP √</h2><p>设 $son_u$ 表示以 $u$ 为根的子树有多少个点。</p>
+<p>对于道路 $(u,v,w)$ ，u 为父节点，费用是 $w*|(n-son_v)-son_v|$ 。</p>
+<h2 id="CF120F"><a href="#CF120F" class="headerlink" title="CF120F"></a>CF120F</h2><h2 id="P2015-树形背包例题二-√"><a href="#P2015-树形背包例题二-√" class="headerlink" title="P2015 树形背包例题二 √"></a>P2015 树形背包例题二 √</h2><p>读题。以 1 为根的子树。</p>
+<p>对于 (u,v), 选择 v，就得选择 u，所以树形背包，就是有依赖的一种树形DP。</p>
+<p>设 $f_{u,x}$ 表示以 u 为根的苹果树，保留 x 个枝条的最大苹果树。</p>
+<p>先枚举 x，对于每个 v 点，类似于 01 背包，枚举每个点的决策-即每个点选多少个体积来用，</p>
+<p>所以 $f_{u,x}&#x3D;max(f_{v,s}+f_{u,x-s},f_{u,x})$ ，这是一般的树形背包的形式，本题保留的树枝，想让 u 跟 v 连接，至少保留一根树枝。</p>
+<p>$f_{u,x}&#x3D;\max(f_{u,x},f_{v,s}+f_{u,x-s})$ 。</p>
+<h2 id="CF212E"><a href="#CF212E" class="headerlink" title="CF212E"></a>CF212E</h2><h2 id="AT-abc287-f"><a href="#AT-abc287-f" class="headerlink" title="AT_abc287_f"></a>AT_abc287_f</h2><h2 id="AT-abc207-f"><a href="#AT-abc207-f" class="headerlink" title="AT_abc207_f"></a>AT_abc207_f</h2><h2 id="CF815C"><a href="#CF815C" class="headerlink" title="CF815C"></a>CF815C</h2><h2 id="P1272-树形背包题目-√"><a href="#P1272-树形背包题目-√" class="headerlink" title="P1272 树形背包题目 √"></a>P1272 树形背包题目 √</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_72060925/article/details/129442749">https://blog.csdn.net/weixin_72060925/article/details/129442749</a></p>
+<p>设 $f_{u,x}$ 表示保留以 u 为根的子树的 x 个点，最少删多少条边。</p>
+<p>$f_{u,1}&#x3D;e_u.size()$ ，即删除该点的所有出边以及其与父节点的边。</p>
+<p>$f_{u,i}&#x3D;\min (f_{u,i},(f_{v,j}-1)+(f_{u,i-j}-1))$ 。</p>
+<p> 为什么 -1，$f_{v,j}$ 表示删边的时候，默认删除了 $(u,v)$ ，对于 $f_{u,i-j}$ 同理。即它们的值都多算了 1，所以需要减一。</p>
+<p>$\text{res}&#x3D;\min_i f_{i,P}$ </p>
+<img src="https://i-blog.csdnimg.cn/blog_migrate/f55e53be64ecaa2832096418e3f8abe2.jpeg#pic_center" alt="在这里插入图片描述">
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * f[u][i] 表示以 u 为根的子树, 保留 i 个点, 最少删除多少条边 ?</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    son[u] = <span class="number">1</span>;</span><br><span class="line">    f[u][<span class="number">1</span>] = (<span class="type">int</span>)(e[u].<span class="built_in">size</span>()); <span class="comment">// 只保留 u, 需要删多少边</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        <span class="built_in">dfs</span>(v, u);</span><br><span class="line">        son[u] += son[v];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = son[u]; i &gt;= <span class="number">1</span>; i --) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= son[v] &amp;&amp; j &lt; i; j ++)&#123;</span><br><span class="line">                f[u][i] = <span class="built_in">min</span>(f[u][i], (f[u][i - j] - <span class="number">1</span>) + (f[v][j] - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; P;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i ++) &#123;</span><br><span class="line">        <span class="type">int</span> x, y;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        e[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">        e[y].<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++) &#123;</span><br><span class="line">            f[i][j] = <span class="number">1E9</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> res = <span class="number">2E9</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        res = <span class="built_in">min</span>(res, f[i][P]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="补充题目"><a href="#补充题目" class="headerlink" title="补充题目"></a>补充题目</h1><h2 id="有依赖的背包问题-树形背包例题引入√"><a href="#有依赖的背包问题-树形背包例题引入√" class="headerlink" title="有依赖的背包问题 树形背包例题引入√"></a>有依赖的背包问题 树形背包例题引入√</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/10/">10. 有依赖的背包问题 - AcWing题库</a></p>
+<p>作为树上背包的模板例题引入。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/15/%E5%8D%95%E8%B0%83%E6%A0%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1148,89 +1290,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/09/Junit%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3-Test-BeforeEach-AfterEach/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/01/09/Junit%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3-Test-BeforeEach-AfterEach/" class="post-title-link" itemprop="url">Junit相关注解-Test-BeforeEach-AfterEach</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-01-09 11:03:00 / 修改时间：11:03:54" itemprop="dateCreated datePublished" datetime="2025-01-09T11:03:00+08:00">2025-01-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><p>使用相关注解，需要首先在 <code>pom.xml</code> 引入依赖。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">5.10</span><span class="number">.0</span>&lt;/version&gt; &lt;!-- 具体版本号根据需要选择 --&gt;</span><br><span class="line">        &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt; </span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">4.12</span>&lt;/version&gt;</span><br><span class="line">        &lt;scope&gt;compile&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>在引入依赖之后，使用方法如下 ：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.AfterEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Execute before every Test method&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addTest</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">A</span> <span class="operator">=</span> <span class="number">3</span>, B = <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> A + B;</span><br><span class="line">        assertEquals(<span class="number">5</span>, result, <span class="string">&quot;结果应该是5&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">subTest</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">A</span> <span class="operator">=</span> <span class="number">3</span>, B = <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> A - B;</span><br><span class="line">        assertEquals(<span class="number">1</span>, result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// Main method can be used to run other logic if needed, but not for tests</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterEach</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Execute after every Test method&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>注意可以运行每个测试函数，控制台会输入 Test passed的相关信息</strong> </p>
-</li>
-<li><p>右键点击文件夹或者包，选择 <code>Run Tests in xxx</code> 即可运行全部测试方法。</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1298,7 +1361,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1311,7 +1374,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
