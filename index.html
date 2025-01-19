@@ -158,6 +158,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/19/Codeforces%20Round%20997%20(Div.%202)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/19/Codeforces%20Round%20997%20(Div.%202)/" class="post-title-link" itemprop="url">Codeforces Round 997 (Div. 2)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-19 18:30:00 / 修改时间：18:26:36" itemprop="dateCreated datePublished" datetime="2025-01-19T18:30:00+08:00">2025-01-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Online-Contest/" itemprop="url" rel="index"><span itemprop="name">Online Contest</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Codeforces-Round-997-Div-2"><a href="#Codeforces-Round-997-Div-2" class="headerlink" title="Codeforces Round 997 (Div. 2)"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2056">Codeforces Round 997 (Div. 2)</a></h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>求的是 perimeter, 看成 area 了。</p>
+<p>一道 A 卡了 26 min</p>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>思路跟答案完全不一样。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>用样例构造答案过了。没看正解</p>
+<h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p>做了很久，推了个式子最后发现不能用。</p>
+<p>正难则反，考虑用 $\frac {n*(n+1)} 2$ 来减掉不合法的方案数。</p>
+<p>假设一个连续子数组中 $\leq x$ 的数为 $-1$ , $&gt;x$ 的数为 $1$ 。</p>
+<p>那么如果这个连续子数组的和为 0，这个数组就是一个不合法数组。</p>
+<p>首先这么构造一定排除了奇数。对于偶数来讲，会把 $x$ 正好卡到 $\frac {len} 2$ 的位置，且 $\frac{len} 2 + 1$ 正好是 $&gt;x$ 的数。</p>
+<p>然后枚举 $x$ ，维护前缀和快速求 $s_{j\sim i}&#x3D;0$ 的数量。</p>
+<p>注意对于 [1, 2, 6, 6] 这个不合法数组会在 $2\leq x\leq 6$ 时各被算一遍答案。</p>
+<p>我们考虑只在遇到 $a_i&#x3D;x$ 时再添加前缀和。</p>
+<p>这样枚举到区间和为 0 的，一定就包含了 $x$ ，且 $x$ 是 -1 中的最大元素，就一定保证这个数是被按照 $x$ 来计数的。</p>
+<p>参考题解 : <a target="_blank" rel="noopener" href="https://www.cnblogs.com/maburb/p/18677876">Codeforces Round 997 (Div. 2) - maburb - 博客园</a> </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> ans = n * (n + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x = <span class="number">1</span>; x &lt;= <span class="number">10</span>; x ++) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sum</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + (a[i] &lt;= x ? <span class="number">-1</span> : <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cnt</span><span class="params">(<span class="number">2</span> * n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i] == x) &#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; i) &#123;</span><br><span class="line">                    cnt[sum[j] + n] ++;</span><br><span class="line">                    j ++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans -= cnt[sum[i] + n];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1p6wwe3EQw/?spm_id_from=333.1387.homepage.video_card.click">2025-01-17 22-33-03 div2_哔哩哔哩_bilibili</a> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1084,212 +1168,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/09/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/01/09/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">宿舍管理系统-后端代码解析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-01-09 11:49:00 / 修改时间：12:04:52" itemprop="dateCreated datePublished" datetime="2025-01-09T11:49:00+08:00">2025-01-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">项目学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h2><h3 id="AdminController"><a href="#AdminController" class="headerlink" title="AdminController"></a>AdminController</h3><ul>
-<li><p><code>public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)</code> </p>
-<p>返回管理员登录结果（如果登录成功记录到 session）</p>
-<p>@PostMapping(“&#x2F;login”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; update(@RequestBody Admin admin)</code> </p>
-<p>返回修改结果</p>
-<p>@PutMapping(“&#x2F;update”)</p>
-</li>
-</ul>
-<h3 id="StudentController"><a href="#StudentController" class="headerlink" title="StudentController"></a>StudentController</h3><ul>
-<li><p><code>public Result&lt;?&gt; add(@RequestBody Student student)</code> </p>
-<p>返回学生登录结果</p>
-<p>@PostMapping(“&#x2F;add”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; update(@RequestBody Student student)</code> </p>
-<p>返回学生信息更新结果</p>
-<p>@PutMapping(“&#x2F;update”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; delete(@PathVariable String username)</code> </p>
-<p>返回删除学生信息结果</p>
-<p>@DeleteMapping(“&#x2F;delete&#x2F;{username}”)</p>
-</li>
-<li><p>查询学生信息</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Result&lt;?&gt; findPage(</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;1&quot;)</span> Integer pageNum,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;10&quot;)</span> Integer pageSize,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;&quot;)</span> String search)</span><br></pre></td></tr></table></figure>
-
-<p>  返回查询结果，使用了 Page 工具类</p>
-<p>  @GetMapping(“&#x2F;find”)</p>
-<ul>
-<li><p><code>public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)</code> </p>
-<p>学生登录</p>
-<p>@PostMapping(“&#x2F;login”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; stuNum()</code> </p>
-<p>主页顶部：学生统计</p>
-<p>@GetMapping(“&#x2F;stuNum”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; exist(@PathVariable String value)</code> </p>
-<p>床位信息，查询是否存在该学生  </p>
-<p>床位信息，查询床位上的学生信息</p>
-<p>@GetMapping(“&#x2F;exist&#x2F;{value}”)</p>
-</li>
-</ul>
-<h3 id="DormManagerController"><a href="#DormManagerController" class="headerlink" title="DormManagerController"></a>DormManagerController</h3><ul>
-<li><p><code>public Result&lt;?&gt; add(@RequestBody DormManager dormManager)</code> </p>
-<p>作用 ：添加管理员</p>
-<p>返回值 ：添加结果</p>
-<p>@PostMapping(“&#x2F;add”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; update(@RequestBody DormManager dormManager)</code> </p>
-<p>作用 ：管理员信息更新</p>
-<p>返回值 ：更新结果</p>
-<p>@PutMapping(“&#x2F;update”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; delete(@PathVariable String username)</code> </p>
-<p>作用 ：删除宿管信息</p>
-<p>返回值 ：删除结果</p>
-<p>@DeleteMapping(“&#x2F;delete&#x2F;{username}”)</p>
-</li>
-<li><p>查询宿管信息</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> Result&lt;?&gt; findPage(</span><br><span class="line"> <span class="meta">@RequestParam(defaultValue = &quot;1&quot;)</span> Integer pageNum,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;10&quot;)</span> Integer pageSize,</span><br><span class="line"><span class="meta">@RequestParam(defaultValue = &quot;&quot;)</span> String search)</span><br></pre></td></tr></table></figure>
-
-<p>  返回查询信息的结果，使用了 Page 工具类</p>
-<ul>
-<li><p><code>public Result&lt;?&gt; login(@RequestBody User user, HttpSession session)</code> </p>
-<p>作用 ：宿管登录</p>
-<p>返回值 ：登录结果（如果登录成功，记录 session）</p>
-<p>@PostMapping(“&#x2F;login”)</p>
-</li>
-</ul>
-<h3 id="MainController"><a href="#MainController" class="headerlink" title="MainController"></a>MainController</h3><ul>
-<li><p><code>public Result&lt;?&gt; loadIdentity(HttpSession session)</code> </p>
-<p>获取身份信息</p>
-<p>@GetMapping(“&#x2F;loadIdentity”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; loadUserInfo(HttpSession session)</code> </p>
-<p>获取个人信息（从 Session 中获得，登录成功会存入对应的实体类）</p>
-<p>@GetMapping(“&#x2F;loadUserInfo”)</p>
-</li>
-<li><p><code>public Result&lt;?&gt; signOut(HttpSession session)</code> </p>
-<p>退出登录（销毁 Session 信息）</p>
-<p>@GetMapping(“&#x2F;signOut”)</p>
-</li>
-</ul>
-<h3 id="DormRoomController"><a href="#DormRoomController" class="headerlink" title="DormRoomController"></a>DormRoomController</h3><ul>
-<li><p>房间的增删改查</p>
-</li>
-<li><p>空宿舍统计</p>
-</li>
-<li><p>删除学生床位信息</p>
-</li>
-<li><p>查询学生是否已经有床位</p>
-</li>
-<li><p>统计住宿人数</p>
-</li>
-<li><p>住宿分布人数</p>
-</li>
-<li><p>学生功能（我的宿舍）</p>
-</li>
-<li><p>检查房间是否满员</p>
-</li>
-<li><p>检查床位是否已经有人</p>
-</li>
-<li><p>检查房间是否存在</p>
-</li>
-</ul>
-<h3 id="DormBuildController"><a href="#DormBuildController" class="headerlink" title="DormBuildController"></a>DormBuildController</h3><ul>
-<li>楼宇的增删改查及获取信息</li>
-</ul>
-<h3 id="AdjustRoomController"><a href="#AdjustRoomController" class="headerlink" title="AdjustRoomController"></a>AdjustRoomController</h3><ul>
-<li>调宿信息的增删改查</li>
-</ul>
-<h3 id="VisitorController"><a href="#VisitorController" class="headerlink" title="VisitorController"></a>VisitorController</h3><ul>
-<li>访客信息的增删改查</li>
-</ul>
-<h3 id="RepairController"><a href="#RepairController" class="headerlink" title="RepairController"></a>RepairController</h3><ul>
-<li><p>报修信息的增删改查</p>
-</li>
-<li><p>首页报修统计</p>
-</li>
-<li><p>个人申请报修的查询</p>
-</li>
-</ul>
-<h3 id="NoticeController"><a href="#NoticeController" class="headerlink" title="NoticeController"></a>NoticeController</h3><ul>
-<li><p>公告的增删改查</p>
-</li>
-<li><p>首页公告展示</p>
-</li>
-</ul>
-<h3 id="FileController"><a href="#FileController" class="headerlink" title="FileController"></a>FileController</h3><p>管理头像文件，在前端并没有看到对应功能</p>
-<h2 id="DAO层"><a href="#DAO层" class="headerlink" title="DAO层"></a>DAO层</h2><p>DAO层使用的是 <code>BaseMapper</code> 接口，已经提供了常用的 CRUD 操作方法。</p>
-<p>貌似使用的 mabatis-Plus 生成的实现类</p>
-<h2 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h2><p>主要就是一些简单的 sql 逻辑了。（也不一定）</p>
-<p>之后如果要用到类似功能再回来看吧。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>还是很典型的三层架构开发，通过这个项目学习了很多 Javaweb 的知识，以后有什么不会的，也可以从这个项目的代码中拿来借鉴。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1361,20 +1239,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

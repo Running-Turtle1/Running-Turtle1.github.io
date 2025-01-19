@@ -158,6 +158,128 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/07/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/07/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">控制反转与依赖注入</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-07 10:09:00" itemprop="dateCreated datePublished" datetime="2025-01-07T10:09:00+08:00">2025-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-08 16:04:49" itemprop="dateModified" datetime="2025-01-08T16:04:49+08:00">2025-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="什么是-IoC"><a href="#什么是-IoC" class="headerlink" title="什么是 IoC"></a>什么是 IoC</h3><p>1 IOC 是控制反转， Inversion of Control。<br>2 控制反转不是一种语法，不是类或方法，它是一种设计模式<br>3 当A类依赖于B类，如果不使用控制反转，A类要主动创建B类的对象，也就是new B类，这时候控制权在A类的手中，这就是主动控制； 使用控制反转，A类只要声明自己需要B类，而控制权交给Spring容器，Spring容器在A需要B类的时候为其注入B类即可，这时候控制权在Spring容器手中，即控制反转了。<br>4 好处是什么呢？控制反转后A类与B类的耦合性就降低了，程序更加灵活。<br>5 比如，一家公司为了卫生和清洁，需要有人打扫卫生，这家公司可以自己聘用一个保洁，就是将管理保洁的权利控制在自己手中，自己new一个保洁，那么这个保洁请假、调休、年终福利、婚丧嫁娶都要操心，太麻烦了，公司和这个保洁紧紧地绑在 一起，给公司带了了很大的负担。<br>公司决定采用控制反转模式，将保洁管理的权限交给物业来做，自己需要保洁的时候，由物业来分配一个保洁即可，公司和保洁直接就就没有什么关系了，松耦合了，这时候物业公司就是Spring容器，公司将保洁的控制权反转给了物业公司，当公司需要保洁的时候，物业公司将一个保洁注入到公司即可。<br>这就是控制反转模式。</p>
+<p>IoC，Inversion of Control 作为一种设计模式，主要通过解耦组件之间的依赖关系，提升代码的可维护性、可扩展性和测试性。以下是 IoC 好处的一些实例及具体体现：</p>
+<h3 id="实例-1：可替换的数据库访问层"><a href="#实例-1：可替换的数据库访问层" class="headerlink" title="实例 1：可替换的数据库访问层"></a><strong>实例 1：可替换的数据库访问层</strong></h3><ul>
+<li><p><strong>场景</strong>：在开发一个多数据库支持的系统时，例如需要支持 MySQL 和 MongoDB。</p>
+</li>
+<li><p><strong>实现</strong>：<br>使用接口来抽象数据库操作逻辑，例如定义一个 <code>DatabaseService</code> 接口。然后实现 <code>MySQLDatabaseService</code> 和 <code>MongoDBDatabaseService</code> 两个具体类。<br>通过 IoC 容器将具体实现注入业务层代码中。</p>
+</li>
+<li><p><strong>体现的好处</strong>：<strong>灵活性</strong>：切换数据库实现时，只需要更改注入配置，而不需要修改业务代码。<strong>可测试性</strong>：在单元测试时，可以注入一个 Mock 的 DatabaseService，无需真实数据库环境。</p>
+</li>
+</ul>
+<h3 id="实例-2：解耦日志记录模块"><a href="#实例-2：解耦日志记录模块" class="headerlink" title="实例 2：解耦日志记录模块"></a><strong>实例 2：解耦日志记录模块</strong></h3><ul>
+<li><p><strong>场景</strong>：应用需要支持不同的日志库（如 Log4j、SLF4J 或自定义日志系统）。</p>
+</li>
+<li><p><strong>实现</strong>：<br>定义一个 <code>Logger</code> 接口，并提供多个实现类，如 <code>Log4jLogger</code> 和 <code>SLF4JLogger</code>。通过 IoC 容器将具体实现注入需要记录日志的模块。</p>
+</li>
+<li><p><strong>体现的好处</strong>：<strong>解耦</strong>：模块依赖于 Logger 接口，而非具体实现，日志实现的变更不会影响业务逻辑。<strong>可扩展性</strong>：可以轻松添加新的日志实现，无需修改现有代码。</p>
+</li>
+</ul>
+<h3 id="实例-3：实现可扩展的通知服务"><a href="#实例-3：实现可扩展的通知服务" class="headerlink" title="实例 3：实现可扩展的通知服务"></a><strong>实例 3：实现可扩展的通知服务</strong></h3><ul>
+<li><p><strong>场景</strong>：在系统中需要向用户发送多种类型的通知，例如短信、邮件、微信消息等。</p>
+</li>
+<li><p><strong>实现</strong>：<br>通过定义一个 <code>NotificationService</code> 接口，将 <code>SMSNotificationService</code>、<code>EmailNotificationService</code> 和 <code>WeChatNotificationService</code> 等实现类注入不同的上下文。</p>
+</li>
+<li><p><strong>体现的好处</strong>：<strong>开闭原则</strong>：新增通知方式时，只需增加实现类和注入配置，不需更改原有代码。<strong>可测试性</strong>：测试时可以注入 Mock 实现，而不触发实际通知发送。</p>
+</li>
+</ul>
+<h3 id="实例-4：Web-应用中的控制器与服务解耦"><a href="#实例-4：Web-应用中的控制器与服务解耦" class="headerlink" title="实例 4：Web 应用中的控制器与服务解耦"></a><strong>实例 4：Web 应用中的控制器与服务解耦</strong></h3><ul>
+<li><p><strong>场景</strong>：Web 控制器需要调用业务逻辑，但不同业务逻辑模块可能会发生变动。</p>
+</li>
+<li><p><strong>实现</strong>：<br>控制器通过依赖注入方式获取服务对象，而不是直接创建具体服务类实例。例如，使用 Spring 框架时，控制器通过 <code>@Autowired</code> 注解获取服务实例。</p>
+</li>
+<li><p><strong>体现的好处</strong>：<strong>职责单一</strong>：控制器只负责调用服务，服务的实现逻辑可以独立修改。<strong>便于测试</strong>：控制器的单元测试中，可以注入模拟服务，而无需真实服务逻辑。</p>
+</li>
+</ul>
+<h3 id="实例-5：动态替换算法实现"><a href="#实例-5：动态替换算法实现" class="headerlink" title="实例 5：动态替换算法实现"></a><strong>实例 5：动态替换算法实现</strong></h3><ul>
+<li><p><strong>场景</strong>：在一个搜索应用中，不同场景下需要使用不同的排序算法（如按相关性排序或按时间排序）。</p>
+</li>
+<li><p><strong>实现</strong>：<br>定义一个 <code>SortAlgorithm</code> 接口，通过 IoC 容器注入 <code>RelevanceSort</code> 或 <code>TimeSort</code> 的实现到搜索模块。</p>
+</li>
+<li><p><strong>体现的好处</strong>：<strong>易于扩展</strong>：添加新的排序算法时，不需要修改现有代码。<strong>降低耦合</strong>：搜索模块只依赖于抽象接口，而与具体排序实现无关。</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>IoC 的核心好处通过以下方面体现：</p>
+<ol>
+<li><strong>代码解耦</strong>：模块之间通过接口交互，降低直接依赖。</li>
+<li><strong>易于扩展</strong>：新增功能时只需实现接口并配置注入，无需修改已有逻辑。</li>
+<li><strong>提高测试性</strong>：通过注入 Mock 实现，单元测试无需依赖外部系统。</li>
+<li><strong>统一管理依赖</strong>：依赖由 IoC 容器管理，简化了对象的创建和生命周期管理。<br>这些好处在实际项目中大大提升了开发效率和代码质量，同时也让项目更容易维护和扩展。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/04/%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1257,81 +1379,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/22/%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/22/%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86/" class="post-title-link" itemprop="url">网站合集</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-22 19:47:00" itemprop="dateCreated datePublished" datetime="2024-12-22T19:47:00+08:00">2024-12-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-01-14 17:06:00" itemprop="dateModified" datetime="2025-01-14T17:06:00+08:00">2025-01-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">工具合集</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1、<a target="_blank" rel="noopener" href="https://rubiks-cube-solver.com/">魔方求解网站</a> </p>
-<img src="data:image/png;base64,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" title="" alt="" data-align="center">
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1403,20 +1450,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
