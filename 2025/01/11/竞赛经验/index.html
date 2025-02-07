@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="竞赛经验算法类竞赛概述以下比赛均属于同一类比赛 —- 算法类比赛。 这类比赛的赛题形式是一样的。 形式如下 ：  题目描述  给你两个整数 a，b，求 a + b 题目输入描述  $1\leq a,b\leq 2147483647$  题目输出描述  输出 $a+b$ 的和  你需要根据你选的编程语言完成这道题目，这里以 C++ 为例 ： 12345678910#include&lt;bits&#x2F;s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="竞赛经验">
+<meta property="og:url" content="http://example.com/2025/01/11/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Running-Turtle">
+<meta property="og:description" content="竞赛经验算法类竞赛概述以下比赛均属于同一类比赛 —- 算法类比赛。 这类比赛的赛题形式是一样的。 形式如下 ：  题目描述  给你两个整数 a，b，求 a + b 题目输入描述  $1\leq a,b\leq 2147483647$  题目输出描述  输出 $a+b$ 的和  你需要根据你选的编程语言完成这道题目，这里以 C++ 为例 ： 12345678910#include&lt;bits&#x2F;s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-11T07:49:00.000Z">
+<meta property="article:modified_time" content="2025-01-11T08:02:18.826Z">
+<meta property="article:author" content="Wei Pengchao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/01/11/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>竞赛经验 | Running-Turtle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Running-Turtle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/11/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          竞赛经验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-11 15:49:00 / 修改时间：16:02:18" itemprop="dateCreated datePublished" datetime="2025-01-11T15:49:00+08:00">2025-01-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">经验分享</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="竞赛经验"><a href="#竞赛经验" class="headerlink" title="竞赛经验"></a>竞赛经验</h1><h2 id="算法类竞赛"><a href="#算法类竞赛" class="headerlink" title="算法类竞赛"></a>算法类竞赛</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>以下比赛均属于同一类比赛 —- 算法类比赛。</p>
+<p>这类比赛的赛题形式是一样的。</p>
+<p>形式如下 ：</p>
+<blockquote>
+<p><strong>题目描述</strong> </p>
+<p>给你两个整数 a，b，求 a + b</p>
+<p><strong>题目输入描述</strong> </p>
+<p>$1\leq a,b\leq 2147483647$ </p>
+<p><strong>题目输出描述</strong> </p>
+<p>输出 $a+b$ 的和</p>
+</blockquote>
+<p>你需要根据你选的编程语言完成这道题目，这里以 C++ 为例 ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>赛制分为以下三种：</p>
+<ul>
+<li>OI</li>
+</ul>
+<p>题目存在部分分（即通过几个测试用例取得对应的分数）</p>
+<p>不允许在线评测（只能本地评测，没有在线评测机返回结果）</p>
+<p>所有提交以最后一次提交为准，按照总得分排名</p>
+<ul>
+<li>ACM</li>
+</ul>
+<p>题目没有部分分（必须通过所有测试用例）</p>
+<p>允许在线评测（评测机会返回程序运行结果，例如 <strong>结果错误WA</strong> ，<strong>代码超时TLE</strong> 等，提交错误会罚时）</p>
+<p>按照 <strong>通过题目数量 + 罚时</strong> 来排名</p>
+<ul>
+<li>IOI</li>
+</ul>
+<p>最友好的赛制 ：题目具有部分分 + 允许在线评测 + 按照总分排名</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129311302">关于赛制问题更详细的说明</a> </p>
+<h3 id="蓝桥杯大赛（每年下半学期，4月省赛，六月国赛）"><a href="#蓝桥杯大赛（每年下半学期，4月省赛，六月国赛）" class="headerlink" title="蓝桥杯大赛（每年下半学期，4月省赛，六月国赛）"></a>蓝桥杯大赛（每年下半学期，4月省赛，六月国赛）</h3><p><a href="%5Bhttps://dasai.lanqiao.cn/%5D(https://dasai.lanqiao.cn/)">大赛官网</a> </p>
+<p>蓝桥杯的赛道很多，这里讲的是<strong>程序设计竞赛赛道</strong>。</p>
+<p>根据编程语言，程序设计竞赛赛道又分为 C&#x2F;C++, python 等语言。</p>
+<p>选择自己擅长的语言即可，python的优势是赛道压力小，C&#x2F;C++的优势是作为算法竞赛的主流语言（实际只包括 C++，很少有人用 C)，无论学习的资源还是题目的分享，都比较全面。</p>
+<p>个人赛，省一晋级国赛。</p>
+<p>国赛一、二、三等奖的比例是 10%, 20%, 30%。保底优胜奖。</p>
+<p>OI赛制</p>
+<h3 id="睿抗机器人开发者大赛（暑假）"><a href="#睿抗机器人开发者大赛（暑假）" class="headerlink" title="睿抗机器人开发者大赛（暑假）"></a>睿抗机器人开发者大赛（暑假）</h3><p>同样分为许多赛道，以程序设计赛道为例 ：</p>
+<ul>
+<li><p>难度较低，具有语法基础也能拿奖。</p>
+</li>
+<li><p>省二即可晋级国赛</p>
+</li>
+<li><p>国赛 99% 获奖率，前 99% 都至少国三（2024年）</p>
+</li>
+</ul>
+<h3 id="团体程序设计天梯赛（每年下半学期）"><a href="#团体程序设计天梯赛（每年下半学期）" class="headerlink" title="团体程序设计天梯赛（每年下半学期）"></a>团体程序设计天梯赛（每年下半学期）</h3><p>10 人一组，按照总分排名，IOI赛制。</p>
+<p>需要联系学校指导老师报名</p>
+<h3 id="百度之星大赛（暑假）"><a href="#百度之星大赛（暑假）" class="headerlink" title="百度之星大赛（暑假）"></a>百度之星大赛（暑假）</h3><p>ACM赛制，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Category:OIer">OIer</a> 比较多，难度较高，推荐 1 ~ 2 年的算法竞赛训练经验。</p>
+<h3 id="ACM-ICPC竞赛（每年上半学期）"><a href="#ACM-ICPC竞赛（每年上半学期）" class="headerlink" title="ACM-ICPC竞赛（每年上半学期）"></a>ACM-ICPC竞赛（每年上半学期）</h3><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B">维基百科-国际大学生程序设计竞赛</a></p>
+<p>现在一般给ACM比赛叫做XCPC类比赛（以前叫ACM是因为这个比赛的赞助商是ACM）。</p>
+<p>XCPC又分为 ICPC 跟 CCPC，其中 ICPC 是指 International Collegiate Programming Contest，CCPC是指 China Collegiate Programming Contest。</p>
+<p>比赛难度系数高，含金量与认可度也较高，但是投入的时间跟回报很难成正比。</p>
+<p>ACM 赛制。</p>
+<h3 id="训练方法"><a href="#训练方法" class="headerlink" title="训练方法"></a>训练方法</h3><p>算法竞赛的训练方法是一致的，就是刷题。</p>
+<p><strong>一个比较好的入门路径是，先学一遍基础算法，刷对应的题目，然后就开始在网上打公开赛，遇到不会的题目，学习对应的算法和专题。</strong> </p>
+<p>学基础算法，可以看书，也可以看网课。</p>
+<p>书的话 ：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/640217341/answer/42320998575">打算学习算法打算法竞赛(acm)哪些书比较推荐？ - 知乎</a> </p>
+<p>算法竞赛的<strong>网课培训</strong>网站五花八门，各有优劣 ：</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/">Acwing(便宜，质量适中)</a> </p>
+<p>代码源（没用过，听说可以）</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/">洛谷(太贵，做初高中OIer培训)</a> </p>
+<p><strong>竞赛的网站如下 ：</strong> </p>
+<p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/">牛客竞赛</a> : 中文题面，新手期可以做，题目良莠不齐，题目审核不严格</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/">codeforces</a> : 最强大最好用的题库以及比赛平台，英文题目，缺点是东欧时区，在线比赛想打一般都是 22:35 开始，要打到凌晨一两点</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/">AtCoder</a> ：类似于 codeforces，日本人创建的，比赛时间友好，题目质量高。</p>
+<p>实际上，比赛做 cf 跟 atcoder 就够用了。</p>
+<p><strong>经验贴 :</strong>   </p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26823471/answer/2423361138">经验贴</a> </p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/651241833">又一篇算法竞赛阶段总结和经验分享 - 知乎</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/446107435/answer/3634728365">算法竞赛小白如何入门？ - 知乎</a> </p>
+<h2 id="其余竞赛"><a href="#其余竞赛" class="headerlink" title="其余竞赛"></a>其余竞赛</h2><h3 id="英语竞赛"><a href="#英语竞赛" class="headerlink" title="英语竞赛"></a>英语竞赛</h3><p>词达人，全国大学生英语竞赛，外研社杯</p>
+<h3 id="全国大学生数学竞赛"><a href="#全国大学生数学竞赛" class="headerlink" title="全国大学生数学竞赛"></a>全国大学生数学竞赛</h3><p>比赛貌似分为初赛跟决赛。难度不在一个量级。</p>
+<h3 id="大唐杯"><a href="#大唐杯" class="headerlink" title="大唐杯"></a>大唐杯</h3><p>据说考试形式变化大，有时候线下，有时候线上。线上的话，作弊的情况就比较严重了。</p>
+<h3 id="其余比赛"><a href="#其余比赛" class="headerlink" title="其余比赛"></a>其余比赛</h3><p>山东省科技节一系列赛事。</p>
+<p>计算机设计大赛。</p>
+<p>挑战杯。</p>
+<p>大创。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/01/09/vue3%E5%85%A5%E9%97%A8/" rel="prev" title="Vue3入门">
+      <i class="fa fa-chevron-left"></i> Vue3入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/01/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E7%BD%91%E8%AF%BE%E5%92%8C%E5%9B%BE%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="next" title="算法竞赛网课和算法书推荐">
+      算法竞赛网课和算法书推荐 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">竞赛经验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%B1%BB%E7%AB%9E%E8%B5%9B"><span class="nav-number">1.1.</span> <span class="nav-text">算法类竞赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%EF%BC%88%E6%AF%8F%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%EF%BC%8C4%E6%9C%88%E7%9C%81%E8%B5%9B%EF%BC%8C%E5%85%AD%E6%9C%88%E5%9B%BD%E8%B5%9B%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">蓝桥杯大赛（每年下半学期，4月省赛，六月国赛）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9D%BF%E6%8A%97%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E8%B5%9B%EF%BC%88%E6%9A%91%E5%81%87%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">睿抗机器人开发者大赛（暑假）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B%EF%BC%88%E6%AF%8F%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">团体程序设计天梯赛（每年下半学期）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%E5%A4%A7%E8%B5%9B%EF%BC%88%E6%9A%91%E5%81%87%EF%BC%89"><span class="nav-number">1.1.5.</span> <span class="nav-text">百度之星大赛（暑假）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ACM-ICPC%E7%AB%9E%E8%B5%9B%EF%BC%88%E6%AF%8F%E5%B9%B4%E4%B8%8A%E5%8D%8A%E5%AD%A6%E6%9C%9F%EF%BC%89"><span class="nav-number">1.1.6.</span> <span class="nav-text">ACM-ICPC竞赛（每年上半学期）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.7.</span> <span class="nav-text">训练方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BD%99%E7%AB%9E%E8%B5%9B"><span class="nav-number">1.2.</span> <span class="nav-text">其余竞赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD%E7%AB%9E%E8%B5%9B"><span class="nav-number">1.2.1.</span> <span class="nav-text">英语竞赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B"><span class="nav-number">1.2.2.</span> <span class="nav-text">全国大学生数学竞赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%94%90%E6%9D%AF"><span class="nav-number">1.2.3.</span> <span class="nav-text">大唐杯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BD%99%E6%AF%94%E8%B5%9B"><span class="nav-number">1.2.4.</span> <span class="nav-text">其余比赛</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wei Pengchao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wei Pengchao</p>
+  <div class="site-description" itemprop="description">十年饮冰，热血难凉，千载暗室，一灯即明。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/2301_78527293" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;2301_78527293" rel="noopener" target="_blank"><i class=" fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Running-Turtle1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Running-Turtle1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/92-64-51-48-85" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;92-64-51-48-85" rel="noopener" target="_blank"><i class=" fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/running_Turtle" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" title="NowCoder-Account1 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;869502418" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/731494261" title="NowCoder-Account2 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;731494261" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/running_Turtle" title="Atcoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Atcoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/786103" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;786103" rel="noopener" target="_blank"><i class=" fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/record/244655/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;record&#x2F;244655&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/2179648471180844" title="稀土掘金 → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;2179648471180844" rel="noopener" target="_blank"><i class=" fa-fw"></i>稀土掘金</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3546379267869027" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3546379267869027" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wei Pengchao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

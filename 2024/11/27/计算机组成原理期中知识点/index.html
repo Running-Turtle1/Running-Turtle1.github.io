@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1，指令译码器是对 （指令的操作码字段）进行译码。2，IR ：Instrcution Register，指令寄存器，存放欲执行的指令。&#x2F;ˈredʒɪstər&#x2F;3, 为了便于实现多级中断，保存现场信息最有效的办法是采用（   堆栈  ）。4，由编译程序将多条指令组合成一条指令，这种技术称做（   超长指令字技术  ）。5， 中央处理器（CPU）是指（  运算器、控制器和Cache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理期中知识点">
+<meta property="og:url" content="http://example.com/2024/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="Running-Turtle">
+<meta property="og:description" content="1，指令译码器是对 （指令的操作码字段）进行译码。2，IR ：Instrcution Register，指令寄存器，存放欲执行的指令。&#x2F;ˈredʒɪstər&#x2F;3, 为了便于实现多级中断，保存现场信息最有效的办法是采用（   堆栈  ）。4，由编译程序将多条指令组合成一条指令，这种技术称做（   超长指令字技术  ）。5， 中央处理器（CPU）是指（  运算器、控制器和Cache">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-27T12:46:10.000Z">
+<meta property="article:modified_time" content="2024-11-28T01:06:53.027Z">
+<meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="课业">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机组成原理期中知识点 | Running-Turtle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Running-Turtle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机组成原理期中知识点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-27 20:46:10" itemprop="dateCreated datePublished" datetime="2024-11-27T20:46:10+08:00">2024-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-28 09:06:53" itemprop="dateModified" datetime="2024-11-28T09:06:53+08:00">2024-11-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1，指令译码器是对-（指令的操作码字段）进行译码。"><a href="#1，指令译码器是对-（指令的操作码字段）进行译码。" class="headerlink" title="1，指令译码器是对 （指令的操作码字段）进行译码。"></a>1，指令译码器是对 （指令的操作码字段）进行译码。</h3><h3 id="2，IR-：Instrcution-Register，指令寄存器，存放欲执行的指令。-ˈredʒɪstər"><a href="#2，IR-：Instrcution-Register，指令寄存器，存放欲执行的指令。-ˈredʒɪstər" class="headerlink" title="2，IR ：Instrcution Register，指令寄存器，存放欲执行的指令。&#x2F;ˈredʒɪstər&#x2F;"></a>2，IR ：Instrcution Register，指令寄存器，存放欲执行的指令。&#x2F;ˈredʒɪstər&#x2F;</h3><h3 id="3-为了便于实现多级中断，保存现场信息最有效的办法是采用（-堆栈-）。"><a href="#3-为了便于实现多级中断，保存现场信息最有效的办法是采用（-堆栈-）。" class="headerlink" title="3, 为了便于实现多级中断，保存现场信息最有效的办法是采用（   堆栈  ）。"></a>3, 为了便于实现多级中断，保存现场信息最有效的办法是采用（   堆栈  ）。</h3><h3 id="4，由编译程序将多条指令组合成一条指令，这种技术称做（-超长指令字技术-）。"><a href="#4，由编译程序将多条指令组合成一条指令，这种技术称做（-超长指令字技术-）。" class="headerlink" title="4，由编译程序将多条指令组合成一条指令，这种技术称做（   超长指令字技术  ）。"></a>4，由编译程序将多条指令组合成一条指令，这种技术称做（   超长指令字技术  ）。</h3><h3 id="5，-中央处理器（CPU）是指（-运算器、控制器和Cache-）。"><a href="#5，-中央处理器（CPU）是指（-运算器、控制器和Cache-）。" class="headerlink" title="5， 中央处理器（CPU）是指（  运算器、控制器和Cache   ）。"></a>5， 中央处理器（CPU）是指（  运算器、控制器和Cache   ）。</h3><h3 id="6，运算器的主要功能是进行-（算数逻辑运算）。"><a href="#6，运算器的主要功能是进行-（算数逻辑运算）。" class="headerlink" title="6，运算器的主要功能是进行 （算数逻辑运算）。"></a>6，运算器的主要功能是进行 （算数逻辑运算）。</h3><h3 id="7，-某计算机的指令流水线由四个功能段组成，分别完成取指、取数、运算和传送结果操作。若完成上述操作的时间依次为9ns，10ns，6ns和8ns。则流水线的操作周期应设计为（-10ns-）。"><a href="#7，-某计算机的指令流水线由四个功能段组成，分别完成取指、取数、运算和传送结果操作。若完成上述操作的时间依次为9ns，10ns，6ns和8ns。则流水线的操作周期应设计为（-10ns-）。" class="headerlink" title="7，### 某计算机的指令流水线由四个功能段组成，分别完成取指、取数、运算和传送结果操作。若完成上述操作的时间依次为9ns，10ns，6ns和8ns。则流水线的操作周期应设计为（   10ns ）。"></a>7，### 某计算机的指令流水线由四个功能段组成，分别完成取指、取数、运算和传送结果操作。若完成上述操作的时间依次为9ns，10ns，6ns和8ns。则流水线的操作周期应设计为（   10ns ）。</h3><p><strong>解析：</strong> 流水线的操作周期取所有阶段中耗时最长的操作。</p>
+<h3 id="10-单选题-2分-以下叙述中错误的是（-A-）。"><a href="#10-单选题-2分-以下叙述中错误的是（-A-）。" class="headerlink" title="10. (单选题, 2分) 以下叙述中错误的是（   A ）。"></a>10. (单选题, 2分) 以下叙述中错误的是（   A ）。</h3><p>A</p>
+<p>为了进行取指操作，控制器需要得到相应的指令</p>
+<p>B</p>
+<p>指令周期的第一个操作是取指令</p>
+<p>C</p>
+<p>取指操作是控制器自动进行的</p>
+<p>D</p>
+<p>指令执行时有些操作是相同或相似的，如取指令、取操作数地址等</p>
+<p><strong>解析</strong> ：取指操作由控制器自动进行。</p>
+<h3 id="18-单选题-2分-假设不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（-B-）"><a href="#18-单选题-2分-假设不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（-B-）" class="headerlink" title="18. (单选题, 2分) 假设不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（  B ）"></a>18. (单选题, 2分) 假设不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（  B ）</h3><p>A</p>
+<p>每个指令周期一定大于或等于一个CPU时钟周期</p>
+<p>B</p>
+<p>空操作指令的指令周期中任何寄存器的内容都不会被改变</p>
+<p>C</p>
+<p>每个指令周期中CPU都至少访问内存一次</p>
+<p>D</p>
+<p>当前程序在每条指令执行结束时都可能被外部中断打断</p>
+<p><strong>解析</strong> ：</p>
+<p><strong>开中断状态</strong> 是指计算机的处理器允许响应外部或内部的<strong>中断请求</strong>的运行状态。在这种状态下，CPU可以随时被中断信号打断，去执行与中断请求相关的处理任务。</p>
+<p>因为不采用Cache和指令预取技术，每一个指令周期至少会出现取指令操作，至少访问内存一次，所以 C 正确。</p>
+<p>CPU 时钟周期是最小的时间单位，所以每个指令周期一定 $\geq $ 一个 CPU 时钟周期，A 正确。</p>
+<p>B，空指令也是指令，$(PC)+1\rightarrow PC$ ，显然错误。</p>
+<p>D，处于开中断状态。</p>
+<h3 id="24-单选题-2分-一条指令从主存取出到执行完成所需的CPU周期至少（-两个-）。"><a href="#24-单选题-2分-一条指令从主存取出到执行完成所需的CPU周期至少（-两个-）。" class="headerlink" title="24. (单选题, 2分) 一条指令从主存取出到执行完成所需的CPU周期至少（  两个   ）。"></a>24. (单选题, 2分) 一条指令从主存取出到执行完成所需的CPU周期至少（  两个   ）。</h3><p><strong>不会</strong> 。</p>
+<h3 id="26-单选题-2分-从取指令开始，到指令执行完成所需的时间，称之为（-指令周期-）。"><a href="#26-单选题-2分-从取指令开始，到指令执行完成所需的时间，称之为（-指令周期-）。" class="headerlink" title="26. (单选题, 2分) 从取指令开始，到指令执行完成所需的时间，称之为（   指令周期 ）。"></a>26. (单选题, 2分) 从取指令开始，到指令执行完成所需的时间，称之为（   指令周期 ）。</h3><h3 id="32-单选题-2分-计算机操作的最小时间单位是（-时钟周期-）。"><a href="#32-单选题-2分-计算机操作的最小时间单位是（-时钟周期-）。" class="headerlink" title="32. (单选题, 2分) 计算机操作的最小时间单位是（  时钟周期  ）。"></a>32. (单选题, 2分) 计算机操作的最小时间单位是（  时钟周期  ）。</h3><h3 id="25-单选题-2分-流水CPU是由一系列叫做“段”的处理线路所组成，和具有m个并行部件的CPU相比，一个m段流水CPU（-C-）"><a href="#25-单选题-2分-流水CPU是由一系列叫做“段”的处理线路所组成，和具有m个并行部件的CPU相比，一个m段流水CPU（-C-）" class="headerlink" title="25. (单选题, 2分) 流水CPU是由一系列叫做“段”的处理线路所组成，和具有m个并行部件的CPU相比，一个m段流水CPU（  C  ）"></a>25. (单选题, 2分) 流水CPU是由一系列叫做“段”的处理线路所组成，和具有m个并行部件的CPU相比，一个m段流水CPU（  C  ）</h3><p>A</p>
+<p>不具备同等水平的吞吐能力</p>
+<p>B</p>
+<p>吞吐能力大于前者的吞吐能力</p>
+<p>C</p>
+<p>具备同等水平的吞吐能力</p>
+<p>D</p>
+<p>吞吐能力小于前者的吞吐能力</p>
+<p><strong>不会</strong> 。</p>
+<h3 id="19-单选题-2分-下列关于RISC的叙述中，错误的是（-A-）。"><a href="#19-单选题-2分-下列关于RISC的叙述中，错误的是（-A-）。" class="headerlink" title="19. (单选题, 2分) 下列关于RISC的叙述中，错误的是（  A  ）。"></a>19. (单选题, 2分) 下列关于RISC的叙述中，错误的是（  A  ）。</h3><p>A</p>
+<p>RISC普遍采用微程序控制器</p>
+<p>B</p>
+<p>RISC的内部通用寄存器数量相对CISC多</p>
+<p>C</p>
+<p>RISC的指令数、寻址方式和指令格式相对CISC少</p>
+<p>D</p>
+<p>RISC大多数指令在一个时钟周期内完成</p>
+<p><strong>解析</strong> ：</p>
+<p>A，RISC（精简指令集计算机）通常使用组合逻辑控制而不是微程序控制，以提高指令执行速度。</p>
+<p>B，RISC 内部通用寄存器数量相对较多，以减少对存储器的访问次数。</p>
+<p>C，RISC 的指令集精简，指令数、寻址方式和指令格式种类相对较少。</p>
+<p>D，RISC 的大多数指令能在一个时钟周期内完成，以提高处理速度。</p>
+<p>补充 ：RISC只有取数&#x2F;存数指令访问存储器，其余指令的操作均在寄存器之间进行。</p>
+<p>RISC 思想主要基于的是 <strong>减少指令的复杂程度</strong> 。</p>
+<h3 id="指令周期、机器周期"><a href="#指令周期、机器周期" class="headerlink" title="指令周期、机器周期"></a>指令周期、机器周期</h3><p>指令周期 ：CPU 从主存中取出并执行一条指令的时间。</p>
+<p>指令周期常用若干机器周期表示，一个机器周期又包含若干时钟周期（也称为节拍或T周期，它是 CPU 操作的最基本单位）</p>
+<p> 由于CPU内部操作的速度较快，而CPU访问一次存储器的时间较长，因此机器周期通常由（  <strong><u>存取周期</u></strong>  ）来确定。</p>
+<h3 id="28-单选题-2分-以下关于RISC机器中正确的是（-A-）。"><a href="#28-单选题-2分-以下关于RISC机器中正确的是（-A-）。" class="headerlink" title="28. (单选题, 2分) 以下关于RISC机器中正确的是（ A   ）。"></a>28. (单选题, 2分) 以下关于RISC机器中正确的是（ A   ）。</h3><p>A</p>
+<p>RISC机器一定是流水CPU</p>
+<p>B</p>
+<p>RISC机器有复杂的指令系统</p>
+<p>C</p>
+<p>CPU配备很少的通用寄存器</p>
+<p>D</p>
+<p>RISC不一定是流水CPU</p>
+<p><strong>不会</strong> 。</p>
+<h3 id="8-单选题-2分-采用同步控制的目的是（-）。"><a href="#8-单选题-2分-采用同步控制的目的是（-）。" class="headerlink" title="8. (单选题, 2分) 采用同步控制的目的是（    ）。"></a>8. (单选题, 2分) 采用同步控制的目的是（    ）。</h3><p>A</p>
+<p>简化控制时序</p>
+<h3 id="23-单选题-2分-程序计数器的位数取决于（-存储器的容量-）。"><a href="#23-单选题-2分-程序计数器的位数取决于（-存储器的容量-）。" class="headerlink" title="23. (单选题, 2分) 程序计数器的位数取决于（ 存储器的容量 ）。"></a>23. (单选题, 2分) 程序计数器的位数取决于（ 存储器的容量 ）。</h3><h3 id="33-单选题-2分-指令寄存器的位数取决于（-指令字长-）。"><a href="#33-单选题-2分-指令寄存器的位数取决于（-指令字长-）。" class="headerlink" title="33. (单选题, 2分) 指令寄存器的位数取决于（ 指令字长   ）。"></a>33. (单选题, 2分) 指令寄存器的位数取决于（ 指令字长   ）。</h3><h3 id="15-单选题-2分-当前设计高性能计算机的重要技术是（-C-）。"><a href="#15-单选题-2分-当前设计高性能计算机的重要技术是（-C-）。" class="headerlink" title="15. (单选题, 2分) 当前设计高性能计算机的重要技术是（ C    ）。"></a>15. (单选题, 2分) 当前设计高性能计算机的重要技术是（ C    ）。</h3><p>A</p>
+<p>采用非冯诺依曼</p>
+<p>B</p>
+<p> 提高CPU主频</p>
+<p>C</p>
+<p>采用并行处理技术</p>
+<p>D</p>
+<p>扩大主存容量</p>
+<h3 id="39-单选题-2分-以下关于机器周期的叙述中，错误的是（-D-）。"><a href="#39-单选题-2分-以下关于机器周期的叙述中，错误的是（-D-）。" class="headerlink" title="39. (单选题, 2分) 以下关于机器周期的叙述中，错误的是（ D   ）。"></a>39. (单选题, 2分) 以下关于机器周期的叙述中，错误的是（ D   ）。</h3><p>A</p>
+<p>通常把通过一次总线事务访问一次主存或I&#x2F;O的时间定为一个机器周期</p>
+<p>B</p>
+<p>不同的指令周期所包含的机器周期数可能不同</p>
+<p>C</p>
+<p>一个指令周期包含多个机器周期</p>
+<p>D</p>
+<p>每个指令周期都包含一个中断响应机器周期</p>
+<p><strong>指令周期</strong> ： 取指周期，间址周期，执行周期，中断周期。</p>
+<p>D</p>
+<p>运算器、控制器和主存储器</p>
+<h3 id="22-单选题-2分-异步控制常用于（-）。"><a href="#22-单选题-2分-异步控制常用于（-）。" class="headerlink" title="22. (单选题, 2分) 异步控制常用于（    ）。"></a>22. (单选题, 2分) 异步控制常用于（    ）。</h3><p>A</p>
+<p>CPU访问外围设备时</p>
+<p><strong>不会</strong> </p>
+<h3 id="31-单选题-2分-下列不会引起指令流水阻塞的是（-D-）。"><a href="#31-单选题-2分-下列不会引起指令流水阻塞的是（-D-）。" class="headerlink" title="31. (单选题, 2分) 下列不会引起指令流水阻塞的是（ D   ）。"></a>31. (单选题, 2分) 下列不会引起指令流水阻塞的是（ D   ）。</h3><p>A</p>
+<p>资源冲突</p>
+<p>B</p>
+<p>数据相关</p>
+<p>C</p>
+<p>条件转移</p>
+<p>D</p>
+<p>数据旁路</p>
+<p><strong>不会</strong> </p>
+<h3 id="46-填空题-2分"><a href="#46-填空题-2分" class="headerlink" title="46. (填空题, 2分)"></a>46. (填空题, 2分)</h3><p>操作控制器的功能是根据指令操作码和（ 时序信号      ），产生各种操作控制信号，从而完成（     取指令  ）和执行指令的控制。</p>
+<h3 id="45-填空题-2分-由CPU外部的硬件信号引发的中断分为-可屏蔽中断-和-不可屏蔽中断-。"><a href="#45-填空题-2分-由CPU外部的硬件信号引发的中断分为-可屏蔽中断-和-不可屏蔽中断-。" class="headerlink" title="45. (填空题, 2分) 由CPU外部的硬件信号引发的中断分为     可屏蔽中断     和   不可屏蔽中断      。"></a>45. (填空题, 2分) 由CPU外部的硬件信号引发的中断分为     <u>可屏蔽中断</u>     和   <u>不可屏蔽中断</u>      。</h3><h3 id="41-填空题-2分-不同机器有不同的-指令系统-，RISC是-CISC-的改进。"><a href="#41-填空题-2分-不同机器有不同的-指令系统-，RISC是-CISC-的改进。" class="headerlink" title="41. (填空题, 2分) 不同机器有不同的     指令系统    ，RISC是  CISC       的改进。"></a>41. (填空题, 2分) 不同机器有不同的     指令系统    ，RISC是  CISC       的改进。</h3><h3 id="47-填空题-2分-中断屏蔽的作用有二个，即（-）和（-）。"><a href="#47-填空题-2分-中断屏蔽的作用有二个，即（-）和（-）。" class="headerlink" title="47. (填空题, 2分) 中断屏蔽的作用有二个，即（        ）和（        ）。"></a>47. (填空题, 2分) 中断屏蔽的作用有二个，即（        ）和（        ）。</h3><p>多重中断 ；改变中断处理次序</p>
+<h3 id="50-填空题-2分-取指周期从内存中读出的信息是-执行周期从内存中读出的信息是-。"><a href="#50-填空题-2分-取指周期从内存中读出的信息是-执行周期从内存中读出的信息是-。" class="headerlink" title="50. (填空题, 2分) 取指周期从内存中读出的信息是         ,执行周期从内存中读出的信息是         。"></a>50. (填空题, 2分) 取指周期从内存中读出的信息是         ,执行周期从内存中读出的信息是         。</h3><p>指令</p>
+<p>数据</p>
+<h3 id="48-填空题-2分"><a href="#48-填空题-2分" class="headerlink" title="48. (填空题, 2分)"></a>48. (填空题, 2分)</h3><p>在中断服务中，开中断的目的是允许（        ），一个中断向量对应一个（        ）。</p>
+<p>中断嵌套</p>
+<p>中断服务程序的入口地址</p>
+<h3 id="43-填空题-2分-保存当前正在执行的指令的寄存器称为（-），保存当前正在执行的指令的地址的寄存器称为（-）。"><a href="#43-填空题-2分-保存当前正在执行的指令的寄存器称为（-），保存当前正在执行的指令的地址的寄存器称为（-）。" class="headerlink" title="43. (填空题, 2分) 保存当前正在执行的指令的寄存器称为（        ），保存当前正在执行的指令的地址的寄存器称为（        ）。"></a>43. (填空题, 2分) 保存当前正在执行的指令的寄存器称为（        ），保存当前正在执行的指令的地址的寄存器称为（        ）。</h3><p>指令寄存器</p>
+<p>程序计数器</p>
+<h3 id="42-填空题-2分-流水CPU是以（-）为原理构造的处理器，是一种非常（-）的并行技术。"><a href="#42-填空题-2分-流水CPU是以（-）为原理构造的处理器，是一种非常（-）的并行技术。" class="headerlink" title="42. (填空题, 2分) 流水CPU是以（       ）为原理构造的处理器，是一种非常（       ）的并行技术。"></a>42. (填空题, 2分) 流水CPU是以（       ）为原理构造的处理器，是一种非常（       ）的并行技术。</h3><p>时间并行性</p>
+<p>经济适用</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E4%B8%9A/" rel="tag"># 课业</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%98%E5%82%A8%E5%99%A8%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" rel="prev" title="计算机组成原理存储器相关知识">
+      <i class="fa fa-chevron-left"></i> 计算机组成原理存储器相关知识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/11/27/0x01_%E4%BD%9C%E6%96%87/" rel="next" title="0x01_作文">
+      0x01_作文 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%8C%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81%E5%99%A8%E6%98%AF%E5%AF%B9-%EF%BC%88%E6%8C%87%E4%BB%A4%E7%9A%84%E6%93%8D%E4%BD%9C%E7%A0%81%E5%AD%97%E6%AE%B5%EF%BC%89%E8%BF%9B%E8%A1%8C%E8%AF%91%E7%A0%81%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">1，指令译码器是对 （指令的操作码字段）进行译码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%8CIR-%EF%BC%9AInstrcution-Register%EF%BC%8C%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%8C%E5%AD%98%E6%94%BE%E6%AC%B2%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8C%87%E4%BB%A4%E3%80%82-%CB%88red%CA%92%C9%AAst%C9%99r"><span class="nav-number">2.</span> <span class="nav-text">2，IR ：Instrcution Register，指令寄存器，存放欲执行的指令。&#x2F;ˈredʒɪstər&#x2F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%BA%E4%BA%86%E4%BE%BF%E4%BA%8E%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%A7%E4%B8%AD%E6%96%AD%EF%BC%8C%E4%BF%9D%E5%AD%98%E7%8E%B0%E5%9C%BA%E4%BF%A1%E6%81%AF%E6%9C%80%E6%9C%89%E6%95%88%E7%9A%84%E5%8A%9E%E6%B3%95%E6%98%AF%E9%87%87%E7%94%A8%EF%BC%88-%E5%A0%86%E6%A0%88-%EF%BC%89%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">3, 为了便于实现多级中断，保存现场信息最有效的办法是采用（   堆栈  ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%EF%BC%8C%E7%94%B1%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E5%B0%86%E5%A4%9A%E6%9D%A1%E6%8C%87%E4%BB%A4%E7%BB%84%E5%90%88%E6%88%90%E4%B8%80%E6%9D%A1%E6%8C%87%E4%BB%A4%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%8A%80%E6%9C%AF%E7%A7%B0%E5%81%9A%EF%BC%88-%E8%B6%85%E9%95%BF%E6%8C%87%E4%BB%A4%E5%AD%97%E6%8A%80%E6%9C%AF-%EF%BC%89%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">4，由编译程序将多条指令组合成一条指令，这种技术称做（   超长指令字技术  ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%EF%BC%8C-%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%88CPU%EF%BC%89%E6%98%AF%E6%8C%87%EF%BC%88-%E8%BF%90%E7%AE%97%E5%99%A8%E3%80%81%E6%8E%A7%E5%88%B6%E5%99%A8%E5%92%8CCache-%EF%BC%89%E3%80%82"><span class="nav-number">5.</span> <span class="nav-text">5， 中央处理器（CPU）是指（  运算器、控制器和Cache   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%EF%BC%8C%E8%BF%90%E7%AE%97%E5%99%A8%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E6%98%AF%E8%BF%9B%E8%A1%8C-%EF%BC%88%E7%AE%97%E6%95%B0%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%EF%BC%89%E3%80%82"><span class="nav-number">6.</span> <span class="nav-text">6，运算器的主要功能是进行 （算数逻辑运算）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%EF%BC%8C-%E6%9F%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%94%B1%E5%9B%9B%E4%B8%AA%E5%8A%9F%E8%83%BD%E6%AE%B5%E7%BB%84%E6%88%90%EF%BC%8C%E5%88%86%E5%88%AB%E5%AE%8C%E6%88%90%E5%8F%96%E6%8C%87%E3%80%81%E5%8F%96%E6%95%B0%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E4%BC%A0%E9%80%81%E7%BB%93%E6%9E%9C%E6%93%8D%E4%BD%9C%E3%80%82%E8%8B%A5%E5%AE%8C%E6%88%90%E4%B8%8A%E8%BF%B0%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E4%BE%9D%E6%AC%A1%E4%B8%BA9ns%EF%BC%8C10ns%EF%BC%8C6ns%E5%92%8C8ns%E3%80%82%E5%88%99%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%A8%E6%9C%9F%E5%BA%94%E8%AE%BE%E8%AE%A1%E4%B8%BA%EF%BC%88-10ns-%EF%BC%89%E3%80%82"><span class="nav-number">7.</span> <span class="nav-text">7，### 某计算机的指令流水线由四个功能段组成，分别完成取指、取数、运算和传送结果操作。若完成上述操作的时间依次为9ns，10ns，6ns和8ns。则流水线的操作周期应设计为（   10ns ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%BB%A5%E4%B8%8B%E5%8F%99%E8%BF%B0%E4%B8%AD%E9%94%99%E8%AF%AF%E7%9A%84%E6%98%AF%EF%BC%88-A-%EF%BC%89%E3%80%82"><span class="nav-number">8.</span> <span class="nav-text">10. (单选题, 2分) 以下叙述中错误的是（   A ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E5%81%87%E8%AE%BE%E4%B8%8D%E9%87%87%E7%94%A8Cache%E5%92%8C%E6%8C%87%E4%BB%A4%E9%A2%84%E5%8F%96%E6%8A%80%E6%9C%AF%EF%BC%8C%E4%B8%94%E6%9C%BA%E5%99%A8%E5%A4%84%E4%BA%8E%E2%80%9C%E5%BC%80%E4%B8%AD%E6%96%AD%E2%80%9D%E7%8A%B6%E6%80%81%EF%BC%8C%E5%88%99%E5%9C%A8%E4%B8%8B%E5%88%97%E6%9C%89%E5%85%B3%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8F%99%E8%BF%B0%E4%B8%AD%EF%BC%8C%E9%94%99%E8%AF%AF%E7%9A%84%E6%98%AF%EF%BC%88-B-%EF%BC%89"><span class="nav-number">9.</span> <span class="nav-text">18. (单选题, 2分) 假设不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（  B ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%B8%80%E6%9D%A1%E6%8C%87%E4%BB%A4%E4%BB%8E%E4%B8%BB%E5%AD%98%E5%8F%96%E5%87%BA%E5%88%B0%E6%89%A7%E8%A1%8C%E5%AE%8C%E6%88%90%E6%89%80%E9%9C%80%E7%9A%84CPU%E5%91%A8%E6%9C%9F%E8%87%B3%E5%B0%91%EF%BC%88-%E4%B8%A4%E4%B8%AA-%EF%BC%89%E3%80%82"><span class="nav-number">10.</span> <span class="nav-text">24. (单选题, 2分) 一条指令从主存取出到执行完成所需的CPU周期至少（  两个   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%BB%8E%E5%8F%96%E6%8C%87%E4%BB%A4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%88%B0%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%AE%8C%E6%88%90%E6%89%80%E9%9C%80%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%8C%E7%A7%B0%E4%B9%8B%E4%B8%BA%EF%BC%88-%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F-%EF%BC%89%E3%80%82"><span class="nav-number">11.</span> <span class="nav-text">26. (单选题, 2分) 从取指令开始，到指令执行完成所需的时间，称之为（   指令周期 ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%9A%84%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%8D%95%E4%BD%8D%E6%98%AF%EF%BC%88-%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F-%EF%BC%89%E3%80%82"><span class="nav-number">12.</span> <span class="nav-text">32. (单选题, 2分) 计算机操作的最小时间单位是（  时钟周期  ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E6%B5%81%E6%B0%B4CPU%E6%98%AF%E7%94%B1%E4%B8%80%E7%B3%BB%E5%88%97%E5%8F%AB%E5%81%9A%E2%80%9C%E6%AE%B5%E2%80%9D%E7%9A%84%E5%A4%84%E7%90%86%E7%BA%BF%E8%B7%AF%E6%89%80%E7%BB%84%E6%88%90%EF%BC%8C%E5%92%8C%E5%85%B7%E6%9C%89m%E4%B8%AA%E5%B9%B6%E8%A1%8C%E9%83%A8%E4%BB%B6%E7%9A%84CPU%E7%9B%B8%E6%AF%94%EF%BC%8C%E4%B8%80%E4%B8%AAm%E6%AE%B5%E6%B5%81%E6%B0%B4CPU%EF%BC%88-C-%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">25. (单选题, 2分) 流水CPU是由一系列叫做“段”的处理线路所组成，和具有m个并行部件的CPU相比，一个m段流水CPU（  C  ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8ERISC%E7%9A%84%E5%8F%99%E8%BF%B0%E4%B8%AD%EF%BC%8C%E9%94%99%E8%AF%AF%E7%9A%84%E6%98%AF%EF%BC%88-A-%EF%BC%89%E3%80%82"><span class="nav-number">14.</span> <span class="nav-text">19. (单选题, 2分) 下列关于RISC的叙述中，错误的是（  A  ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E3%80%81%E6%9C%BA%E5%99%A8%E5%91%A8%E6%9C%9F"><span class="nav-number">15.</span> <span class="nav-text">指令周期、机器周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%BB%A5%E4%B8%8B%E5%85%B3%E4%BA%8ERISC%E6%9C%BA%E5%99%A8%E4%B8%AD%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF%EF%BC%88-A-%EF%BC%89%E3%80%82"><span class="nav-number">16.</span> <span class="nav-text">28. (单选题, 2分) 以下关于RISC机器中正确的是（ A   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E9%87%87%E7%94%A8%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%EF%BC%88-%EF%BC%89%E3%80%82"><span class="nav-number">17.</span> <span class="nav-text">8. (单选题, 2分) 采用同步控制的目的是（    ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E4%BD%8D%E6%95%B0%E5%8F%96%E5%86%B3%E4%BA%8E%EF%BC%88-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%AE%B9%E9%87%8F-%EF%BC%89%E3%80%82"><span class="nav-number">18.</span> <span class="nav-text">23. (单选题, 2分) 程序计数器的位数取决于（ 存储器的容量 ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E4%BD%8D%E6%95%B0%E5%8F%96%E5%86%B3%E4%BA%8E%EF%BC%88-%E6%8C%87%E4%BB%A4%E5%AD%97%E9%95%BF-%EF%BC%89%E3%80%82"><span class="nav-number">19.</span> <span class="nav-text">33. (单选题, 2分) 指令寄存器的位数取决于（ 指令字长   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E5%BD%93%E5%89%8D%E8%AE%BE%E8%AE%A1%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E9%87%8D%E8%A6%81%E6%8A%80%E6%9C%AF%E6%98%AF%EF%BC%88-C-%EF%BC%89%E3%80%82"><span class="nav-number">20.</span> <span class="nav-text">15. (单选题, 2分) 当前设计高性能计算机的重要技术是（ C    ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%BB%A5%E4%B8%8B%E5%85%B3%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%91%A8%E6%9C%9F%E7%9A%84%E5%8F%99%E8%BF%B0%E4%B8%AD%EF%BC%8C%E9%94%99%E8%AF%AF%E7%9A%84%E6%98%AF%EF%BC%88-D-%EF%BC%89%E3%80%82"><span class="nav-number">21.</span> <span class="nav-text">39. (单选题, 2分) 以下关于机器周期的叙述中，错误的是（ D   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E5%BC%82%E6%AD%A5%E6%8E%A7%E5%88%B6%E5%B8%B8%E7%94%A8%E4%BA%8E%EF%BC%88-%EF%BC%89%E3%80%82"><span class="nav-number">22.</span> <span class="nav-text">22. (单选题, 2分) 异步控制常用于（    ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E5%8D%95%E9%80%89%E9%A2%98-2%E5%88%86-%E4%B8%8B%E5%88%97%E4%B8%8D%E4%BC%9A%E5%BC%95%E8%B5%B7%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E9%98%BB%E5%A1%9E%E7%9A%84%E6%98%AF%EF%BC%88-D-%EF%BC%89%E3%80%82"><span class="nav-number">23.</span> <span class="nav-text">31. (单选题, 2分) 下列不会引起指令流水阻塞的是（ D   ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86"><span class="nav-number">24.</span> <span class="nav-text">46. (填空题, 2分)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E7%94%B1CPU%E5%A4%96%E9%83%A8%E7%9A%84%E7%A1%AC%E4%BB%B6%E4%BF%A1%E5%8F%B7%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%AD%E6%96%AD%E5%88%86%E4%B8%BA-%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD-%E5%92%8C-%E4%B8%8D%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD-%E3%80%82"><span class="nav-number">25.</span> <span class="nav-text">45. (填空题, 2分) 由CPU外部的硬件信号引发的中断分为     可屏蔽中断     和   不可屏蔽中断      。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#41-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E4%B8%8D%E5%90%8C%E6%9C%BA%E5%99%A8%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%EF%BC%8CRISC%E6%98%AF-CISC-%E7%9A%84%E6%94%B9%E8%BF%9B%E3%80%82"><span class="nav-number">26.</span> <span class="nav-text">41. (填空题, 2分) 不同机器有不同的     指令系统    ，RISC是  CISC       的改进。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E7%9A%84%E4%BD%9C%E7%94%A8%E6%9C%89%E4%BA%8C%E4%B8%AA%EF%BC%8C%E5%8D%B3%EF%BC%88-%EF%BC%89%E5%92%8C%EF%BC%88-%EF%BC%89%E3%80%82"><span class="nav-number">27.</span> <span class="nav-text">47. (填空题, 2分) 中断屏蔽的作用有二个，即（        ）和（        ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E5%8F%96%E6%8C%87%E5%91%A8%E6%9C%9F%E4%BB%8E%E5%86%85%E5%AD%98%E4%B8%AD%E8%AF%BB%E5%87%BA%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF-%E6%89%A7%E8%A1%8C%E5%91%A8%E6%9C%9F%E4%BB%8E%E5%86%85%E5%AD%98%E4%B8%AD%E8%AF%BB%E5%87%BA%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF-%E3%80%82"><span class="nav-number">28.</span> <span class="nav-text">50. (填空题, 2分) 取指周期从内存中读出的信息是         ,执行周期从内存中读出的信息是         。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86"><span class="nav-number">29.</span> <span class="nav-text">48. (填空题, 2分)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E4%BF%9D%E5%AD%98%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8C%87%E4%BB%A4%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%B0%E4%B8%BA%EF%BC%88-%EF%BC%89%EF%BC%8C%E4%BF%9D%E5%AD%98%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8C%87%E4%BB%A4%E7%9A%84%E5%9C%B0%E5%9D%80%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%B0%E4%B8%BA%EF%BC%88-%EF%BC%89%E3%80%82"><span class="nav-number">30.</span> <span class="nav-text">43. (填空题, 2分) 保存当前正在执行的指令的寄存器称为（        ），保存当前正在执行的指令的地址的寄存器称为（        ）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-%E5%A1%AB%E7%A9%BA%E9%A2%98-2%E5%88%86-%E6%B5%81%E6%B0%B4CPU%E6%98%AF%E4%BB%A5%EF%BC%88-%EF%BC%89%E4%B8%BA%E5%8E%9F%E7%90%86%E6%9E%84%E9%80%A0%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E9%9D%9E%E5%B8%B8%EF%BC%88-%EF%BC%89%E7%9A%84%E5%B9%B6%E8%A1%8C%E6%8A%80%E6%9C%AF%E3%80%82"><span class="nav-number">31.</span> <span class="nav-text">42. (填空题, 2分) 流水CPU是以（       ）为原理构造的处理器，是一种非常（       ）的并行技术。</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wei Pengchao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wei Pengchao</p>
+  <div class="site-description" itemprop="description">十年饮冰，热血难凉，千载暗室，一灯即明。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/2301_78527293" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;2301_78527293" rel="noopener" target="_blank"><i class=" fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Running-Turtle1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Running-Turtle1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/92-64-51-48-85" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;92-64-51-48-85" rel="noopener" target="_blank"><i class=" fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/running_Turtle" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" title="NowCoder-Account1 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;869502418" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/731494261" title="NowCoder-Account2 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;731494261" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/running_Turtle" title="Atcoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Atcoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/786103" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;786103" rel="noopener" target="_blank"><i class=" fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/record/244655/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;record&#x2F;244655&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/2179648471180844" title="稀土掘金 → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;2179648471180844" rel="noopener" target="_blank"><i class=" fa-fw"></i>稀土掘金</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3546379267869027" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3546379267869027" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wei Pengchao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

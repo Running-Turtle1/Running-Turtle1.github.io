@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="没有必要顺着做，讲完树形DP的几道题目就可以讲树上背包的内容然后做树上背包的题，最后尽量做这个题单就可以，如果没做完题单把剩的题标记一下，如果有补充的新题也可以记录一下发我，尽量让学生自己想出来正确的状态和转移，或者给他们指出来为什么他们想的是错的。 10:30–12:15 下午1:30–5:15 树形背包、树形DP是什么，以及树上背包题单 树形DP 树上背包 DAG上的DP P1352 没有上司">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-01-17 市南">
+<meta property="og:url" content="http://example.com/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/index.html">
+<meta property="og:site_name" content="Running-Turtle">
+<meta property="og:description" content="没有必要顺着做，讲完树形DP的几道题目就可以讲树上背包的内容然后做树上背包的题，最后尽量做这个题单就可以，如果没做完题单把剩的题标记一下，如果有补充的新题也可以记录一下发我，尽量让学生自己想出来正确的状态和转移，或者给他们指出来为什么他们想的是错的。 10:30–12:15 下午1:30–5:15 树形背包、树形DP是什么，以及树上背包题单 树形DP 树上背包 DAG上的DP P1352 没有上司">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/f55e53be64ecaa2832096418e3f8abe2.jpeg#pic_center">
+<meta property="article:published_time" content="2025-01-17T12:30:00.000Z">
+<meta property="article:modified_time" content="2025-01-17T12:33:19.838Z">
+<meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="树上背包">
+<meta property="article:tag" content="树形DP">
+<meta property="article:tag" content="换根DP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/f55e53be64ecaa2832096418e3f8abe2.jpeg#pic_center">
+
+<link rel="canonical" href="http://example.com/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2025-01-17 市南 | Running-Turtle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Running-Turtle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/17/1-17%E8%A1%A5%E8%AF%BE%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2025-01-17 市南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-17 20:30:00 / 修改时间：20:33:19" itemprop="dateCreated datePublished" datetime="2025-01-17T20:30:00+08:00">2025-01-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/25%E5%AF%92%E5%81%87%E6%95%99%E5%9F%B9/" itemprop="url" rel="index"><span itemprop="name">25寒假教培</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>没有必要顺着做，讲完树形DP的几道题目就可以讲树上背包的内容然后做树上背包的题，最后尽量做这个题单就可以，如果没做完题单把剩的题标记一下，如果有补充的新题也可以记录一下发我，尽量让学生自己想出来正确的状态和转移，或者给他们指出来为什么他们想的是错的。</p>
+<p>10:30–12:15</p>
+<p>下午1:30–5:15</p>
+<p>树形背包、树形DP是什么，以及树上背包题单</p>
+<p>树形DP 树上背包 DAG上的DP</p>
+<h2 id="P1352-没有上司的舞会-树形DP-√"><a href="#P1352-没有上司的舞会-树形DP-√" class="headerlink" title="P1352 没有上司的舞会 树形DP √"></a>P1352 没有上司的舞会 树形DP √</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1352">https://www.luogu.com.cn/problem/P1352</a></p>
+<p>状态表示</p>
+<ul>
+<li><p><code>f[u][1]</code> 表示以 <code>u</code> 为根节点的子树并且包括 <code>u</code> 的总快乐指数</p>
+</li>
+<li><p><code>f[u][0]</code> 表示以 <code>u</code> 为根节点的子树并且不包括 <code>u</code> 的总快乐指数</p>
+</li>
+</ul>
+<p>状态计算</p>
+<ul>
+<li><p>选 <code>u</code> , $f[u][1]+&#x3D;\sum f[son][0]$ </p>
+</li>
+<li><p>不选 <code>u</code> , $f[u][0]+&#x3D;\sum max(f[son][1],;f[son][0])$</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>&#123;</span><br><span class="line">    f[u][<span class="number">1</span>]=r[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=h[u]; i!=<span class="number">-1</span>; i=ne[i])&#123;</span><br><span class="line">        <span class="type">int</span> v=e[i];</span><br><span class="line">        <span class="built_in">dfs</span>(v);</span><br><span class="line">        f[u][<span class="number">0</span>]+=<span class="built_in">max</span>(f[v][<span class="number">1</span>], f[v][<span class="number">0</span>]);</span><br><span class="line">        f[u][<span class="number">1</span>]+=f[v][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>通过 DFS，在返回上一层时更新当前结点的最优解。</p>
+<p>、、树形DP经典题目。</p>
+<p>、、$dp_{u,0&#x2F;1}$ 代表是否选节点 u，以节点 u 为根的子树能得到的最大快乐值。</p>
+<h2 id="P4084-USACO17DEC-Barn-Painting-G-树形-DP-√"><a href="#P4084-USACO17DEC-Barn-Painting-G-树形-DP-√" class="headerlink" title="P4084 USACO17DEC] Barn Painting G 树形 DP √"></a>P4084 USACO17DEC] Barn Painting G 树形 DP √</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4084">https://www.luogu.com.cn/problem/P4084</a></p>
+<blockquote>
+<p>n 个结点的树，k 个结点染色了，剩下的结点每个可以染色 3 种，求最终方案数 ？</p>
+</blockquote>
+<p>设 $dp_{u,0&#x2F;1&#x2F;2}$ 表示以 u 为根的子树，染色为 0&#x2F;1&#x2F;2 的方案数。</p>
+<p>$dp_{u,c}*&#x3D;dp_{v,1&#x2F;2&#x2F;3}$ ，注意染色不能相同，注意初始化问题</p>
+<h2 id="P2016-战略游戏-树形DP√"><a href="#P2016-战略游戏-树形DP√" class="headerlink" title="P2016 战略游戏 树形DP√"></a>P2016 战略游戏 树形DP√</h2><blockquote>
+<p>最少点覆盖所有边问题</p>
+</blockquote>
+<p>$dp_{u,0&#x2F;1}$ 表示以 u 为根的子树，是否选择在 u 点布置士兵，覆盖子树所有边的最小方案数。</p>
+<h2 id="P1122-最大子树和-树形DP-√"><a href="#P1122-最大子树和-树形DP-√" class="headerlink" title="P1122 最大子树和 树形DP √"></a>P1122 最大子树和 树形DP √</h2><blockquote>
+<p>求最大子树和</p>
+</blockquote>
+<p>设 $dp_u$ 是以 u 为根的最大子树，那么答案一定是 $\max dp_i$ </p>
+<p><strong>注意这里答案不一定是 $dp_1$</strong> 。 </p>
+<p>对于以根 r 为根的树来说，答案的联通块一定是以其中某一个点作为根节点的包括一部分点的子树、所以可以枚举 $dp_i$ 。</p>
+<h2 id="P3478-换根DP例题-√"><a href="#P3478-换根DP例题-√" class="headerlink" title="P3478 换根DP例题 √"></a>P3478 换根DP例题 √</h2><p>换根DP入门文章</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/2084665478">https://zhuanlan.zhihu.com/p/2084665478</a> 有详细讲换根DP。</p>
+<h2 id="P2986-换根DP应用-√"><a href="#P2986-换根DP应用-√" class="headerlink" title="P2986 换根DP应用 √"></a>P2986 换根DP应用 √</h2><p>先考虑 f, $cow_u$ 表示 $T_1$ 中以 u 为根的奶牛的数量之和。</p>
+<p>$f_u&#x3D;\sum(f_v + w\times cow_v)$ </p>
+<p>$g_v&#x3D;g_u-cow_v\times w + (sumCow-cow_v)\times w$</p>
+<h2 id="CF1689C-思维-树形DP-√"><a href="#CF1689C-思维-树形DP-√" class="headerlink" title="CF1689C 思维 + 树形DP √"></a>CF1689C 思维 + 树形DP √</h2><p>acyclic 无环的</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1689/C">Problem - 1689C - Codeforces</a> </p>
+<p>可以发现题目给定的是一个二叉树。</p>
+<p>设 $dp_u$ 表示以 u 为根的子树，u 感染了，最多 save 几个。</p>
+<p>若 $out_u&#x3D;1$ , 拯救 $son_u-2$ 个（删儿子）</p>
+<p>若 $out_u&#x3D;0$ , 0 个</p>
+<p>若 $out_u&#x3D;2$ ，删左儿子或者右儿子</p>
+<h2 id="CF1092F-换根DP-基础换根的式子"><a href="#CF1092F-换根DP-基础换根的式子" class="headerlink" title="CF1092F 换根DP , 基础换根的式子"></a>CF1092F 换根DP , 基础换根的式子</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    sa[u] = a[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        <span class="built_in">dfs1</span>(v, u);</span><br><span class="line">        sa[u] += sa[v];</span><br><span class="line">        f[u] += f[v] + sa[v];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        g[v] = g[u] + suma - <span class="number">2</span> * sa[v];</span><br><span class="line">        <span class="built_in">dfs2</span>(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CF1693B"><a href="#CF1693B" class="headerlink" title="CF1693B"></a>CF1693B</h2><h2 id="P2052-道路修建-树形DP-√"><a href="#P2052-道路修建-树形DP-√" class="headerlink" title="P2052 道路修建 树形DP √"></a>P2052 道路修建 树形DP √</h2><p>设 $son_u$ 表示以 $u$ 为根的子树有多少个点。</p>
+<p>对于道路 $(u,v,w)$ ，u 为父节点，费用是 $w*|(n-son_v)-son_v|$ 。</p>
+<h2 id="CF120F"><a href="#CF120F" class="headerlink" title="CF120F"></a>CF120F</h2><h2 id="P2015-树形背包例题二-√"><a href="#P2015-树形背包例题二-√" class="headerlink" title="P2015 树形背包例题二 √"></a>P2015 树形背包例题二 √</h2><p>读题。以 1 为根的子树。</p>
+<p>对于 (u,v), 选择 v，就得选择 u，所以树形背包，就是有依赖的一种树形DP。</p>
+<p>设 $f_{u,x}$ 表示以 u 为根的苹果树，保留 x 个枝条的最大苹果树。</p>
+<p>先枚举 x，对于每个 v 点，类似于 01 背包，枚举每个点的决策-即每个点选多少个体积来用，</p>
+<p>所以 $f_{u,x}&#x3D;max(f_{v,s}+f_{u,x-s},f_{u,x})$ ，这是一般的树形背包的形式，本题保留的树枝，想让 u 跟 v 连接，至少保留一根树枝。</p>
+<p>$f_{u,x}&#x3D;\max(f_{u,x},f_{v,s}+f_{u,x-s})$ 。</p>
+<h2 id="CF212E"><a href="#CF212E" class="headerlink" title="CF212E"></a>CF212E</h2><h2 id="AT-abc287-f"><a href="#AT-abc287-f" class="headerlink" title="AT_abc287_f"></a>AT_abc287_f</h2><h2 id="AT-abc207-f"><a href="#AT-abc207-f" class="headerlink" title="AT_abc207_f"></a>AT_abc207_f</h2><h2 id="CF815C"><a href="#CF815C" class="headerlink" title="CF815C"></a>CF815C</h2><h2 id="P1272-树形背包题目-√"><a href="#P1272-树形背包题目-√" class="headerlink" title="P1272 树形背包题目 √"></a>P1272 树形背包题目 √</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_72060925/article/details/129442749">https://blog.csdn.net/weixin_72060925/article/details/129442749</a></p>
+<p>设 $f_{u,x}$ 表示保留以 u 为根的子树的 x 个点，最少删多少条边。</p>
+<p>$f_{u,1}&#x3D;e_u.size()$ ，即删除该点的所有出边以及其与父节点的边。</p>
+<p>$f_{u,i}&#x3D;\min (f_{u,i},(f_{v,j}-1)+(f_{u,i-j}-1))$ 。</p>
+<p> 为什么 -1，$f_{v,j}$ 表示删边的时候，默认删除了 $(u,v)$ ，对于 $f_{u,i-j}$ 同理。即它们的值都多算了 1，所以需要减一。</p>
+<p>$\text{res}&#x3D;\min_i f_{i,P}$ </p>
+<img src="https://i-blog.csdnimg.cn/blog_migrate/f55e53be64ecaa2832096418e3f8abe2.jpeg#pic_center" alt="在这里插入图片描述">
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * f[u][i] 表示以 u 为根的子树, 保留 i 个点, 最少删除多少条边 ?</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    son[u] = <span class="number">1</span>;</span><br><span class="line">    f[u][<span class="number">1</span>] = (<span class="type">int</span>)(e[u].<span class="built_in">size</span>()); <span class="comment">// 只保留 u, 需要删多少边</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : e[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span> ;</span><br><span class="line">        <span class="built_in">dfs</span>(v, u);</span><br><span class="line">        son[u] += son[v];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = son[u]; i &gt;= <span class="number">1</span>; i --) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= son[v] &amp;&amp; j &lt; i; j ++)&#123;</span><br><span class="line">                f[u][i] = <span class="built_in">min</span>(f[u][i], (f[u][i - j] - <span class="number">1</span>) + (f[v][j] - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; P;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i ++) &#123;</span><br><span class="line">        <span class="type">int</span> x, y;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        e[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">        e[y].<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++) &#123;</span><br><span class="line">            f[i][j] = <span class="number">1E9</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> res = <span class="number">2E9</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        res = <span class="built_in">min</span>(res, f[i][P]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="补充题目"><a href="#补充题目" class="headerlink" title="补充题目"></a>补充题目</h1><h2 id="有依赖的背包问题-树形背包例题引入√"><a href="#有依赖的背包问题-树形背包例题引入√" class="headerlink" title="有依赖的背包问题 树形背包例题引入√"></a>有依赖的背包问题 树形背包例题引入√</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/10/">10. 有依赖的背包问题 - AcWing题库</a></p>
+<p>作为树上背包的模板例题引入。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A0%91%E4%B8%8A%E8%83%8C%E5%8C%85/" rel="tag"># 树上背包</a>
+              <a href="/tags/%E6%A0%91%E5%BD%A2DP/" rel="tag"># 树形DP</a>
+              <a href="/tags/%E6%8D%A2%E6%A0%B9DP/" rel="tag"># 换根DP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/01/15/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="prev" title="单调栈">
+      <i class="fa fa-chevron-left"></i> 单调栈
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/01/19/Codeforces%20Round%20997%20(Div.%202)/" rel="next" title="Codeforces Round 997 (Div. 2)">
+      Codeforces Round 997 (Div. 2) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1352-%E6%B2%A1%E6%9C%89%E4%B8%8A%E5%8F%B8%E7%9A%84%E8%88%9E%E4%BC%9A-%E6%A0%91%E5%BD%A2DP-%E2%88%9A"><span class="nav-number">1.</span> <span class="nav-text">P1352 没有上司的舞会 树形DP √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4084-USACO17DEC-Barn-Painting-G-%E6%A0%91%E5%BD%A2-DP-%E2%88%9A"><span class="nav-number">2.</span> <span class="nav-text">P4084 USACO17DEC] Barn Painting G 树形 DP √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2016-%E6%88%98%E7%95%A5%E6%B8%B8%E6%88%8F-%E6%A0%91%E5%BD%A2DP%E2%88%9A"><span class="nav-number">3.</span> <span class="nav-text">P2016 战略游戏 树形DP√</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P1122-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%A0%91%E5%92%8C-%E6%A0%91%E5%BD%A2DP-%E2%88%9A"><span class="nav-number">4.</span> <span class="nav-text">P1122 最大子树和 树形DP √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P3478-%E6%8D%A2%E6%A0%B9DP%E4%BE%8B%E9%A2%98-%E2%88%9A"><span class="nav-number">5.</span> <span class="nav-text">P3478 换根DP例题 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2986-%E6%8D%A2%E6%A0%B9DP%E5%BA%94%E7%94%A8-%E2%88%9A"><span class="nav-number">6.</span> <span class="nav-text">P2986 换根DP应用 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF1689C-%E6%80%9D%E7%BB%B4-%E6%A0%91%E5%BD%A2DP-%E2%88%9A"><span class="nav-number">7.</span> <span class="nav-text">CF1689C 思维 + 树形DP √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF1092F-%E6%8D%A2%E6%A0%B9DP-%E5%9F%BA%E7%A1%80%E6%8D%A2%E6%A0%B9%E7%9A%84%E5%BC%8F%E5%AD%90"><span class="nav-number">8.</span> <span class="nav-text">CF1092F 换根DP , 基础换根的式子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF1693B"><span class="nav-number">9.</span> <span class="nav-text">CF1693B</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2052-%E9%81%93%E8%B7%AF%E4%BF%AE%E5%BB%BA-%E6%A0%91%E5%BD%A2DP-%E2%88%9A"><span class="nav-number">10.</span> <span class="nav-text">P2052 道路修建 树形DP √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF120F"><span class="nav-number">11.</span> <span class="nav-text">CF120F</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2015-%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E4%BE%8B%E9%A2%98%E4%BA%8C-%E2%88%9A"><span class="nav-number">12.</span> <span class="nav-text">P2015 树形背包例题二 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF212E"><span class="nav-number">13.</span> <span class="nav-text">CF212E</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AT-abc287-f"><span class="nav-number">14.</span> <span class="nav-text">AT_abc287_f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AT-abc207-f"><span class="nav-number">15.</span> <span class="nav-text">AT_abc207_f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CF815C"><span class="nav-number">16.</span> <span class="nav-text">CF815C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P1272-%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E9%A2%98%E7%9B%AE-%E2%88%9A"><span class="nav-number">17.</span> <span class="nav-text">P1272 树形背包题目 √</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E9%A2%98%E7%9B%AE"><span class="nav-number"></span> <span class="nav-text">补充题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E4%BE%9D%E8%B5%96%E7%9A%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E4%BE%8B%E9%A2%98%E5%BC%95%E5%85%A5%E2%88%9A"><span class="nav-number">1.</span> <span class="nav-text">有依赖的背包问题 树形背包例题引入√</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wei Pengchao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wei Pengchao</p>
+  <div class="site-description" itemprop="description">十年饮冰，热血难凉，千载暗室，一灯即明。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/2301_78527293" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;2301_78527293" rel="noopener" target="_blank"><i class=" fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Running-Turtle1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Running-Turtle1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/92-64-51-48-85" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;92-64-51-48-85" rel="noopener" target="_blank"><i class=" fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/running_Turtle" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" title="NowCoder-Account1 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;869502418" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/731494261" title="NowCoder-Account2 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;731494261" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/running_Turtle" title="Atcoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Atcoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/786103" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;786103" rel="noopener" target="_blank"><i class=" fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/record/244655/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;record&#x2F;244655&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/2179648471180844" title="稀土掘金 → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;2179648471180844" rel="noopener" target="_blank"><i class=" fa-fw"></i>稀土掘金</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3546379267869027" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3546379267869027" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wei Pengchao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="@RestController@RestController 是 Spring 框架中用来标注一个类为 RESTful Web服务控制器 的注解。它是 @Controller 和 @ResponseBody 的组合，主要用来处理 HTTP 请求并返回数据而不是视图。 作用与特点：  定义控制器类将类标记为一个控制器，用于接收和处理 HTTP 请求。 自动将返回值转换为 JSON&#x2F;XML：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java注解-RestController-Data-AllArgs-NoArgs-Resource">
+<meta property="og:url" content="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/index.html">
+<meta property="og:site_name" content="Running-Turtle">
+<meta property="og:description" content="@RestController@RestController 是 Spring 框架中用来标注一个类为 RESTful Web服务控制器 的注解。它是 @Controller 和 @ResponseBody 的组合，主要用来处理 HTTP 请求并返回数据而不是视图。 作用与特点：  定义控制器类将类标记为一个控制器，用于接收和处理 HTTP 请求。 自动将返回值转换为 JSON&#x2F;XML：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-08T09:36:00.000Z">
+<meta property="article:modified_time" content="2025-01-09T05:31:07.820Z">
+<meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="JavaWeb">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java注解-RestController-Data-AllArgs-NoArgs-Resource | Running-Turtle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Running-Turtle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/08/Java%E6%B3%A8%E8%A7%A3-RestController-Data-AllArgs-NoArgs-Resource/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java注解-RestController-Data-AllArgs-NoArgs-Resource
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-08 17:36:00" itemprop="dateCreated datePublished" datetime="2025-01-08T17:36:00+08:00">2025-01-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-09 13:31:07" itemprop="dateModified" datetime="2025-01-09T13:31:07+08:00">2025-01-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p><code>@RestController</code> 是 Spring 框架中用来标注一个类为 <strong>RESTful Web服务控制器</strong> 的注解。它是 <code>@Controller</code> 和 <code>@ResponseBody</code> 的组合，主要用来处理 HTTP 请求并返回数据而不是视图。</p>
+<p><strong>作用与特点：</strong></p>
+<ol>
+<li><strong>定义控制器类</strong>将类标记为一个控制器，用于接收和处理 HTTP 请求。</li>
+<li><strong>自动将返回值转换为 JSON&#x2F;XML：</strong><code>@RestController</code> 自动将控制器方法的返回值序列化为 JSON 或 XML 格式，通过 HTTP 响应返回给客户端。</li>
+</ol>
+<ul>
+<li>这是因为它隐含了 @ResponseBody 注解。</li>
+</ul>
+<ol start="3">
+<li><strong>简化代码</strong>无需在每个方法上显式使用 <code>@ResponseBody</code>，整个类的所有方法默认都将返回数据而不是视图。<br><strong>常见用法:</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个简单字符串</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// GET 请求：返回一个对象，自动序列化为 JSON</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例解析：</strong></p>
+<ol>
+<li><p>&#x2F;api&#x2F;hello 返回的是字符串 “Hello, World!”，被序列化为 HTTP 响应体。</p>
+</li>
+<li><p>&#x2F;api&#x2F;user 返回的是 User 对象，会自动被序列化为 JSON，例如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"> <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alice@example.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>等效写法：</strong><br>如果使用 <code>@Controller</code>，需要配合 <code>@ResponseBody</code>，代码会显得冗长：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;alice@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong><code>@RestController</code> 适用于构建 RESTful API，简化开发流程，是 Spring Web 的重要注解之一。如果你的控制器方法大部分是返回数据而不是视图，使用 <code>@RestController</code> 会非常方便。</p>
+<h2 id="Data-注解"><a href="#Data-注解" class="headerlink" title="@Data 注解"></a>@Data 注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成以下方法：Getter 和 Setter 方法（为所有成员变量）toString() 方法equals() 和 hashCode() 方法canEqual() 方法（用于子类验证）</p>
+</li>
+<li><p><strong>优势：</strong> 减少手写 Getter、Setter 等方法的繁琐代码。</p>
+</li>
+<li><p><strong>等效代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String code;</span><br><span class="line">  <span class="keyword">private</span> String msg;</span><br><span class="line">  <span class="keyword">private</span> T data;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getCode</span><span class="params">()</span> &#123; <span class="keyword">return</span> code; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCode</span><span class="params">(String code)</span> &#123; <span class="built_in">this</span>.code = code; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getMsg</span><span class="params">()</span> &#123; <span class="keyword">return</span> msg; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMsg</span><span class="params">(String msg)</span> &#123; <span class="built_in">this</span>.msg = msg; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">getData</span><span class="params">()</span> &#123; <span class="keyword">return</span> data; &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(T data)</span> &#123; <span class="built_in">this</span>.data = data; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;Result&#123;&quot;</span> +</span><br><span class="line">             <span class="string">&quot;code=&#x27;&quot;</span> + code + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, msg=&#x27;&quot;</span> + msg + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">             <span class="string">&quot;, data=&quot;</span> + data +</span><br><span class="line">             <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">      <span class="comment">// equals 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="comment">// hashCode 方法实现</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="AllArgsConstructor注解"><a href="#AllArgsConstructor注解" class="headerlink" title="@AllArgsConstructor注解"></a>@AllArgsConstructor注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成一个包含所有成员变量的构造方法。</p>
+</li>
+<li><p><strong>生成的代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">(String code, String msg, T data)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.code = code;</span><br><span class="line">  <span class="built_in">this</span>.msg = msg;</span><br><span class="line">  <span class="built_in">this</span>.data = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>用途：</strong> 方便在创建对象时直接初始化所有属性。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;(<span class="string">&quot;0&quot;</span>, <span class="string">&quot;成功&quot;</span>, <span class="string">&quot;数据&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="NoArgsConstructor-注解"><a href="#NoArgsConstructor-注解" class="headerlink" title="@NoArgsConstructor 注解"></a>@NoArgsConstructor 注解</h2><ul>
+<li><p><strong>作用：</strong> 自动生成一个无参构造方法。</p>
+</li>
+<li><p><strong>生成的代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Result</span><span class="params">()</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>用途：</strong> 提供无参构造器支持，例如需要通过反射或框架（如 Spring）创建对象时。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result</span>&lt;&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Resource注解"><a href="#Resource注解" class="headerlink" title="@Resource注解"></a>@Resource注解</h2><p><code>@Resource</code> 是 Java 中用于依赖注入的一个注解，它主要用于自动装配资源（如 Bean 或组件），在 Java EE（现在的 Jakarta EE）和 Spring 等框架中得到广泛使用。该注解通常用于标记成员变量、方法或构造函数，指示容器（如 Spring 或应用服务器）需要自动注入指定的资源。</p>
+<h3 id="主要特性："><a href="#主要特性：" class="headerlink" title="主要特性："></a>主要特性：</h3><ul>
+<li><p><strong>自动注入</strong>：@Resource 自动装配资源，可以通过名称或类型来注入。</p>
+</li>
+<li><p><strong>名称默认匹配</strong>：@Resource 默认根据字段名或方法名来进行资源名称匹配。如果没有找到匹配的名称，它会根据类型来注入。</p>
+</li>
+<li><p><strong>可以用于字段、方法、构造函数</strong>：可以用于类的成员变量（字段）、setter 方法或构造函数。</p>
+<h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3></li>
+</ul>
+<h4 id="1-注入字段："><a href="#1-注入字段：" class="headerlink" title="1. 注入字段："></a>1. 注入字段：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解会根据 <code>dataSource</code> 字段的名称自动注入一个 <code>DataSource</code> 类型的资源。</p>
+<h4 id="2-注入方法："><a href="#2-注入方法：" class="headerlink" title="2. 注入方法："></a>2. 注入方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDataSource</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解被用在了 setter 方法上，容器会自动注入所需的 <code>DataSource</code>。</p>
+<h4 id="3-注入构造函数："><a href="#3-注入构造函数：" class="headerlink" title="3. 注入构造函数："></a>3. 注入构造函数：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyService</span><span class="params">(DataSource dataSource)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dataSource = dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@Resource</code> 注解应用于构造函数，自动注入 <code>DataSource</code>。</p>
+<h3 id="注解的属性："><a href="#注解的属性：" class="headerlink" title="注解的属性："></a>注解的属性：</h3><ul>
+<li><p>name：指定资源的名称，用于自定义资源名称的匹配。例如：@Resource(name&#x3D;”myDataSource”)</p>
+</li>
+<li><p>type：指定资源的类型，通常不需要显式设置，容器会根据字段的类型自动注入。</p>
+<h3 id="与-Autowired-比较："><a href="#与-Autowired-比较：" class="headerlink" title="与 @Autowired 比较："></a>与 @Autowired 比较：</h3></li>
+<li><p>@Autowired 是 Spring 框架提供的注解，它主要通过类型来进行依赖注入。与 @Resource 注解相比，@Autowired 主要依据类型进行注入，并且在没有找到唯一匹配的 Bean 时会抛出异常，除非配合 @Qualifier 使用指定 Bean 名称。</p>
+</li>
+<li><p>@Resource 默认通过名称进行注入，只有在没有找到合适的名称匹配时才会通过类型来进行匹配。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaWeb/" rel="tag"># JavaWeb</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/01/08/Java%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" rel="prev" title="Java注释规范">
+      <i class="fa fa-chevron-left"></i> Java注释规范
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/01/08/Java%E6%B3%9B%E5%9E%8B/" rel="next" title="Java泛型">
+      Java泛型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RestController"><span class="nav-number">1.</span> <span class="nav-text">@RestController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">@Data 注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AllArgsConstructor%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">@AllArgsConstructor注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoArgsConstructor-%E6%B3%A8%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">@NoArgsConstructor 注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource%E6%B3%A8%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">@Resource注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">主要特性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="nav-number">5.2.</span> <span class="nav-text">使用示例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%B3%A8%E5%85%A5%E5%AD%97%E6%AE%B5%EF%BC%9A"><span class="nav-number">5.2.1.</span> <span class="nav-text">1. 注入字段：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%B3%A8%E5%85%A5%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">5.2.2.</span> <span class="nav-text">2. 注入方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B3%A8%E5%85%A5%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">5.2.3.</span> <span class="nav-text">3. 注入构造函数：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="nav-number">5.3.</span> <span class="nav-text">注解的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E-Autowired-%E6%AF%94%E8%BE%83%EF%BC%9A"><span class="nav-number">5.4.</span> <span class="nav-text">与 @Autowired 比较：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wei Pengchao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wei Pengchao</p>
+  <div class="site-description" itemprop="description">十年饮冰，热血难凉，千载暗室，一灯即明。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/2301_78527293" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;2301_78527293" rel="noopener" target="_blank"><i class=" fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Running-Turtle1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Running-Turtle1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/92-64-51-48-85" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;92-64-51-48-85" rel="noopener" target="_blank"><i class=" fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/running_Turtle" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" title="NowCoder-Account1 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;869502418" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/731494261" title="NowCoder-Account2 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;731494261" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/running_Turtle" title="Atcoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Atcoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/786103" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;786103" rel="noopener" target="_blank"><i class=" fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/record/244655/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;record&#x2F;244655&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/2179648471180844" title="稀土掘金 → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;2179648471180844" rel="noopener" target="_blank"><i class=" fa-fw"></i>稀土掘金</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3546379267869027" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3546379267869027" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wei Pengchao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

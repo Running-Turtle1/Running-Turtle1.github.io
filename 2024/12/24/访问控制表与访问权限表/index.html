@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E9%93%81%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%98%E5%A3%AB-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解 ？ 这个问题涉及操作系统中两种不同的权限管理方式：访问控制表（Access Control List, ACL） 和 访问权限表（Access Rights Table）。理解两者的区别需要从权限管理的角度来看。 1. 访问控制表（ACL）——以文件为中心 定义：访问控制表是以文件为单位维护的权限信息。每个文件对应一个访问控制表，记录了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="访问控制表与访问权限表">
+<meta property="og:url" content="http://example.com/2024/12/24/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8/index.html">
+<meta property="og:site_name" content="Running-Turtle">
+<meta property="og:description" content="访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解 ？ 这个问题涉及操作系统中两种不同的权限管理方式：访问控制表（Access Control List, ACL） 和 访问权限表（Access Rights Table）。理解两者的区别需要从权限管理的角度来看。 1. 访问控制表（ACL）——以文件为中心 定义：访问控制表是以文件为单位维护的权限信息。每个文件对应一个访问控制表，记录了">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-24T06:52:00.000Z">
+<meta property="article:modified_time" content="2024-12-24T06:52:49.141Z">
+<meta property="article:author" content="Wei Pengchao">
+<meta property="article:tag" content="操作系统原理">
+<meta property="article:tag" content="课业">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/12/24/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>访问控制表与访问权限表 | Running-Turtle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Running-Turtle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/24/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          访问控制表与访问权限表
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-24 14:52:00 / 修改时间：14:52:49" itemprop="dateCreated datePublished" datetime="2024-12-24T14:52:00+08:00">2024-12-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解-？"><a href="#访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解-？" class="headerlink" title="访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解 ？"></a>访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解 ？</h2><p> 这个问题涉及操作系统中两种不同的权限管理方式：<strong>访问控制表（Access Control List, ACL）</strong> 和 <strong>访问权限表（Access Rights Table）</strong>。理解两者的区别需要从权限管理的角度来看。</p>
+<h3 id="1-访问控制表（ACL）——以文件为中心"><a href="#1-访问控制表（ACL）——以文件为中心" class="headerlink" title="1. 访问控制表（ACL）——以文件为中心"></a>1. <strong>访问控制表（ACL）——以文件为中心</strong></h3><ul>
+<li><p><strong>定义</strong>：访问控制表是以文件为单位维护的权限信息。每个文件对应一个访问控制表，记录了哪些用户或用户组对该文件具有何种权限。</p>
+</li>
+<li><p><strong>特点</strong>：<strong>以文件为中心</strong>：每个文件都携带一张表，描述了能访问该文件的用户及其权限。<strong>权限细粒度高</strong>：可以精确地定义某个文件对不同用户或用户组的访问权限（如读取、写入、执行）。<strong>实现形式</strong>：每个文件通常附带一个 ACL，类似于下面的结构：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件 <span class="selector-tag">A</span> 的访问控制表：</span><br><span class="line">用户 U1：读、写</span><br><span class="line">用户 U2：只读</span><br><span class="line">用户组 G1：读、写、执行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>适用场景</strong>：文件数量较少，用户数量较多时。每个文件可能有不同的访问权限设置。例如：Linux 文件系统的权限管理中，ls -l 显示的文件权限就类似于 ACL。</p>
+<h3 id="2-访问权限表（Access-Rights-Table）——以用户为中心"><a href="#2-访问权限表（Access-Rights-Table）——以用户为中心" class="headerlink" title="2. 访问权限表（Access Rights Table）——以用户为中心"></a>2. <strong>访问权限表（Access Rights Table）——以用户为中心</strong></h3></li>
+<li><p><strong>定义</strong>：访问权限表是以用户为单位维护的权限信息。每个用户对应一个访问权限表，记录了该用户对哪些文件拥有何种权限。</p>
+</li>
+<li><p><strong>特点</strong>：<strong>以用户为中心</strong>：每个用户都携带一张表，描述了他能访问的文件及权限。<strong>集中化管理</strong>：权限信息与用户绑定，更易于查询某个用户的权限。<strong>实现形式</strong>：每个用户通常附带一个权限表，类似于下面的结构：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用户 U1 的访问权限表：</span><br><span class="line">文件 <span class="selector-tag">A</span>：读、写</span><br><span class="line">文件 <span class="selector-tag">B</span>：只读</span><br><span class="line">文件 C：执行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>适用场景</strong>：用户数量较少，文件数量较多时。权限管理需要以用户为核心。例如：在数据库管理系统中，用户权限管理通常以用户为中心，记录每个用户对数据库表的操作权限。</p>
+<h3 id="理解方式"><a href="#理解方式" class="headerlink" title="理解方式"></a>理解方式</h3></li>
+</ul>
+<p>两种权限管理方式从管理视角和实现方式上有根本性的区别：</p>
+<ol>
+<li><strong>访问控制表（ACL）</strong> 是站在文件的角度，问“这个文件允许哪些用户访问？”</li>
+</ol>
+<ul>
+<li>假如有 100 个用户和 10 个文件，ACL 为每个文件维护一张表，总共有 10 张表，每张表可能包含多行用户信息。</li>
+</ul>
+<ol start="2">
+<li><strong>访问权限表</strong> 是站在用户的角度，问“这个用户可以访问哪些文件？”</li>
+</ol>
+<ul>
+<li><p>假如有 100 个用户和 10 个文件，访问权限表为每个用户维护一张表，总共有 100 张表，每张表可能包含多行文件信息。</p>
+<h3 id="举例对比"><a href="#举例对比" class="headerlink" title="举例对比"></a>举例对比</h3></li>
+</ul>
+<p>假设有 3 个文件（A、B、C）和 2 个用户（U1、U2）：</p>
+<h4 id="访问控制表（ACL）"><a href="#访问控制表（ACL）" class="headerlink" title="访问控制表（ACL）"></a><strong>访问控制表（ACL）</strong></h4><ul>
+<li><p>文件 A 的 ACL：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">U1: 读、写</span></span><br><span class="line"><span class="section">U2: 读</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件 B 的 ACL：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">U1: 读</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件 C 的 ACL：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">U2: 写</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="访问权限表"><a href="#访问权限表" class="headerlink" title="访问权限表"></a><strong>访问权限表</strong></h4></li>
+<li><p>用户 U1 的访问权限表：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">文件</span> <span class="attr">A:</span> <span class="string">读、写</span></span><br><span class="line"><span class="string">文件</span> <span class="attr">B:</span> <span class="string">读</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用户 U2 的访问权限表：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">文件</span> <span class="attr">A:</span> <span class="string">读</span></span><br><span class="line"><span class="string">文件</span> <span class="attr">C:</span> <span class="string">写</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="优缺点对比"><a href="#优缺点对比" class="headerlink" title="优缺点对比"></a>优缺点对比</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>方式</strong></th>
+<th><strong>优点</strong></th>
+<th><strong>缺点</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>访问控制表（ACL）</strong></td>
+<td>适合权限粒度精细的场景，便于按文件查看用户权限。</td>
+<td>如果用户数量多，每个文件的 ACL 会很长，增加管理开销。</td>
+</tr>
+<tr>
+<td><strong>访问权限表</strong></td>
+<td>适合权限集中在用户上的场景，便于快速查询某个用户的所有权限。</td>
+<td>如果文件数量多，每个用户的权限表会很长，增加管理开销。</td>
+</tr>
+</tbody></table>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>ACL 是以文件为中心的权限管理方式，关注的是“文件的用户权限”</strong>。</li>
+<li><strong>访问权限表是以用户为中心的权限管理方式，关注的是“用户的文件权限”</strong>。两种方式可以结合使用，根据具体场景选择最适合的方式进行权限管理。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag"># 操作系统原理</a>
+              <a href="/tags/%E8%AF%BE%E4%B8%9A/" rel="tag"># 课业</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/12/22/%E7%BB%B4%E5%90%BE%E5%B0%94%E8%AF%AD/" rel="prev" title="维吾尔语 - 你好">
+      <i class="fa fa-chevron-left"></i> 维吾尔语 - 你好
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/12/24/%E5%86%85%E6%A0%B8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%89%B9%E5%BE%81-%E9%93%BE%E6%8E%A5%E6%96%B9%E5%BC%8F/" rel="next" title="内核-操作系统特征-链接方式">
+      内核-操作系统特征-链接方式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%E6%98%AF%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BB%BA%E7%AB%8B%E7%9A%84%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8%E6%98%AF%E4%BB%A5%E4%BB%A5%E7%94%A8%E6%88%B7%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3-%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">访问控制表是以文件建立的，访问权限表是以以用户建立的如何理解 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%EF%BC%88ACL%EF%BC%89%E2%80%94%E2%80%94%E4%BB%A5%E6%96%87%E4%BB%B6%E4%B8%BA%E4%B8%AD%E5%BF%83"><span class="nav-number">1.1.</span> <span class="nav-text">1. 访问控制表（ACL）——以文件为中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8%EF%BC%88Access-Rights-Table%EF%BC%89%E2%80%94%E2%80%94%E4%BB%A5%E7%94%A8%E6%88%B7%E4%B8%BA%E4%B8%AD%E5%BF%83"><span class="nav-number">1.2.</span> <span class="nav-text">2. 访问权限表（Access Rights Table）——以用户为中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">理解方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BE%E4%BE%8B%E5%AF%B9%E6%AF%94"><span class="nav-number">1.4.</span> <span class="nav-text">举例对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E8%A1%A8%EF%BC%88ACL%EF%BC%89"><span class="nav-number">1.4.1.</span> <span class="nav-text">访问控制表（ACL）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%A1%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">访问权限表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94"><span class="nav-number">1.5.</span> <span class="nav-text">优缺点对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wei Pengchao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wei Pengchao</p>
+  <div class="site-description" itemprop="description">十年饮冰，热血难凉，千载暗室，一灯即明。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/2301_78527293" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;2301_78527293" rel="noopener" target="_blank"><i class=" fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Running-Turtle1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Running-Turtle1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/92-64-51-48-85" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;92-64-51-48-85" rel="noopener" target="_blank"><i class=" fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/running_Turtle" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" title="NowCoder-Account1 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;869502418" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ac.nowcoder.com/acm/contest/profile/731494261" title="NowCoder-Account2 → https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;profile&#x2F;731494261" rel="noopener" target="_blank"><i class=" fa-fw"></i>NowCoder-Account2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/running_Turtle" title="Atcoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;running_Turtle" rel="noopener" target="_blank"><i class=" fa-fw"></i>Atcoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/786103" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;786103" rel="noopener" target="_blank"><i class=" fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/record/244655/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;record&#x2F;244655&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/2179648471180844" title="稀土掘金 → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;2179648471180844" rel="noopener" target="_blank"><i class=" fa-fw"></i>稀土掘金</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3546379267869027" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3546379267869027" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wei Pengchao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
