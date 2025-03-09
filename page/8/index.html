@@ -163,6 +163,244 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0%E4%B8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0%E4%B8%80/" class="post-title-link" itemprop="url">计算机组成原理期中复习一</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-24 21:56:57" itemprop="dateCreated datePublished" datetime="2024-11-24T21:56:57+08:00">2024-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-25 08:04:14" itemprop="dateModified" datetime="2024-11-25T08:04:14+08:00">2024-11-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机组成原理复习"><a href="#计算机组成原理复习" class="headerlink" title="计算机组成原理复习"></a>计算机组成原理复习</h1><h1 id="选择题部分"><a href="#选择题部分" class="headerlink" title="选择题部分"></a>选择题部分</h1><h2 id="1，用移码来表示浮点数中的阶码"><a href="#1，用移码来表示浮点数中的阶码" class="headerlink" title="1，用移码来表示浮点数中的阶码"></a>1，用<u>移码</u>来表示浮点数中的阶码</h2><h2 id="2，各存储器的特点和全称："><a href="#2，各存储器的特点和全称：" class="headerlink" title="2，各存储器的特点和全称："></a>2，各存储器的<strong>特点</strong>和<strong>全称</strong>：</h2><p> <strong>1. ROM（Read-Only Memory， 只读存储器）</strong></p>
+<ul>
+<li><p><strong>特点</strong>：固定编程，一次写入，无法更改内容。通常用于存储固件或操作系统引导代码（如 BIOS）。</p>
+</li>
+<li><p><strong>与 EPROM 的关系</strong>：EPROM 是一种特殊的 ROM，允许擦除和重新编程。</p>
+<h3 id="2-EPROM（Erasable-Programmable-Read-Only-Memory，可擦除可编程只读存储器）"><a href="#2-EPROM（Erasable-Programmable-Read-Only-Memory，可擦除可编程只读存储器）" class="headerlink" title="2. EPROM（Erasable Programmable Read-Only Memory，可擦除可编程只读存储器）"></a><strong>2. EPROM（Erasable Programmable Read-Only Memory，可擦除可编程只读存储器）</strong></h3></li>
+<li><p><strong>特点</strong>：可通过紫外线擦除数据并重新编程。非易失性，断电后数据仍能保存。擦除和编程次数有限（约 1000 次）。</p>
+</li>
+<li><p><strong>与 EEPROM 的关系</strong>：EEPROM 是 EPROM 的改进版本，支持更灵活的擦除方式。</p>
+<h3 id="3-EEPROM（Electrically-Erasable-Programmable-Read-Only-Memory，电可擦除可编程只读存储器）"><a href="#3-EEPROM（Electrically-Erasable-Programmable-Read-Only-Memory，电可擦除可编程只读存储器）" class="headerlink" title="3. EEPROM（Electrically Erasable Programmable Read-Only Memory，电可擦除可编程只读存储器）"></a><strong>3. EEPROM（Electrically Erasable Programmable Read-Only Memory，电可擦除可编程只读存储器）</strong></h3></li>
+<li><p><strong>特点</strong>：支持通过电信号擦除和编程，无需紫外线。擦除方式更灵活，可逐字节操作（不需要全芯片擦除）。寿命较 EPROM 长（约 10,000~100,000 次擦写）。</p>
+</li>
+<li><p><strong>与 EPROM 的关系</strong>：EEPROM 是 EPROM 的改进版本，更加便捷高效。</p>
+<h3 id="4-Flash-Memory（闪存，基于-EEPROM-技术）"><a href="#4-Flash-Memory（闪存，基于-EEPROM-技术）" class="headerlink" title="4. Flash Memory（闪存，基于 EEPROM 技术）"></a><strong>4. Flash Memory（闪存，基于 EEPROM 技术）</strong></h3></li>
+<li><p><strong>特点</strong>：基于 EEPROM，但更高效，支持快速擦除和重写。通常以块为单位擦除，而非逐字节擦除。广泛应用于 USB 闪存盘、SSD、手机存储等现代设备。</p>
+</li>
+<li><p><strong>与 EEPROM 的关系</strong>：Flash Memory 是一种更高级的 EEPROM，拥有更高密度和更快速度。</p>
+<h3 id="总结表格"><a href="#总结表格" class="headerlink" title="总结表格"></a><strong>总结表格</strong></h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>存储器类型</strong></th>
+<th><strong>全称</strong></th>
+<th><strong>特点</strong></th>
+<th><strong>与 EPROM 的关系</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ROM</strong></td>
+<td>Read-Only Memory</td>
+<td>固定编程，无法更改内容。常用于存储固件或引导代码。</td>
+<td>EPROM 是一种可擦除和可编程的 ROM</td>
+</tr>
+<tr>
+<td><strong>EPROM</strong></td>
+<td>Erasable Programmable Read-Only Memory</td>
+<td>可擦除可编程，通过紫外线擦除，非易失性。</td>
+<td>——</td>
+</tr>
+<tr>
+<td><strong>EEPROM</strong></td>
+<td>Electrically Erasable Programmable Read-Only Memory</td>
+<td>电可擦除，擦除方式灵活，可逐字节操作，寿命较长。</td>
+<td>EEPROM 是 EPROM 的改进版本，无需紫外线擦除</td>
+</tr>
+<tr>
+<td><strong>Flash Memory</strong></td>
+<td>——（基于 EEPROM 技术）</td>
+<td>支持快速擦除和重写，通常以块为单位擦除，广泛应用于现代设备。</td>
+<td>Flash 是一种更高级的 EEPROM，应用更广泛</td>
+</tr>
+</tbody></table>
+<h2 id="3，在主存和-CPU-之间增加-cache-存储器的目的是-解决-CPU-和主存之间的速度匹配问题-。"><a href="#3，在主存和-CPU-之间增加-cache-存储器的目的是-解决-CPU-和主存之间的速度匹配问题-。" class="headerlink" title="3，在主存和 CPU 之间增加 cache 存储器的目的是 解决 CPU 和主存之间的速度匹配问题 。"></a>3，在主存和 CPU 之间增加 cache 存储器的目的是 <u>解决 CPU 和主存之间的速度匹配问题</u> 。</h2><h2 id="4，I-O-控制方式中，中断方式-由程序实现。"><a href="#4，I-O-控制方式中，中断方式-由程序实现。" class="headerlink" title="4，I&#x2F;O 控制方式中，中断方式 由程序实现。"></a>4，I&#x2F;O 控制方式中，<u>中断方式</u> 由程序实现。</h2><h2 id="5，采用-DMA，direct-memory-access-传输数据时，每传送一个数据要占用-一个存储周期-的时间。"><a href="#5，采用-DMA，direct-memory-access-传输数据时，每传送一个数据要占用-一个存储周期-的时间。" class="headerlink" title="5，采用 DMA，direct memory access 传输数据时，每传送一个数据要占用 一个存储周期 的时间。"></a>5，采用 DMA，direct memory access 传输数据时，每传送一个数据要占用 <u>一个存储周期</u> 的时间。</h2><h2 id="6，控制器分类"><a href="#6，控制器分类" class="headerlink" title="6，控制器分类"></a>6，控制器分类</h2><p>以下是控制器的主要分类及其特点：</p>
+<h4 id="1-操作控制器（Operation-Controller）"><a href="#1-操作控制器（Operation-Controller）" class="headerlink" title="(1) 操作控制器（Operation Controller）"></a><strong>(1) 操作控制器（Operation Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>控制和管理设备的操作，例如启动、停止、加速等。</li>
+<li>典型应用于机器人、数控机床和自动化流水线等场景。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>侧重于操作逻辑的实时性和准确性。</li>
+<li>与传感器和执行器密切配合。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-存储控制器（Storage-Controller）"><a href="#2-存储控制器（Storage-Controller）" class="headerlink" title="(2) 存储控制器（Storage Controller）"></a><strong>(2) 存储控制器（Storage Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理数据在存储设备（如硬盘、SSD）与主机之间的传输。</li>
+<li>负责任务如读写数据、缓存管理和错误纠正（如 RAID）。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>高效的数据管理，通常集成于存储设备中，例如 NVMe 控制器。</li>
+<li>确保数据可靠性和性能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-网络控制器（Network-Controller）"><a href="#3-网络控制器（Network-Controller）" class="headerlink" title="(3) 网络控制器（Network Controller）"></a><strong>(3) 网络控制器（Network Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理网络接口和数据包的传输。</li>
+<li>负责网络连接的初始化、协议解析及数据转发。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>包括无线网卡控制器、有线网卡控制器等。</li>
+<li>提供高速数据传输支持，通常硬件加速。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-显示控制器（Display-Controller）"><a href="#4-显示控制器（Display-Controller）" class="headerlink" title="(4) 显示控制器（Display Controller）"></a><strong>(4) 显示控制器（Display Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>负责图像数据的处理和传输，将其输出到显示设备（如显示器）。</li>
+<li>包括 GPU 和专用的显示控制器。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>侧重于图形渲染、高分辨率支持和色彩处理。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-DMA-控制器（Direct-Memory-Access-Controller）"><a href="#5-DMA-控制器（Direct-Memory-Access-Controller）" class="headerlink" title="(5) DMA 控制器（Direct Memory Access Controller）"></a><strong>(5) DMA 控制器（Direct Memory Access Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理内存与设备间的大数据传输。</li>
+<li>减少 CPU 参与，提升系统性能。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>常用于磁盘、网卡、显卡等高数据吞吐量设备。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-电源控制器（Power-Controller）"><a href="#6-电源控制器（Power-Controller）" class="headerlink" title="(6) 电源控制器（Power Controller）"></a><strong>(6) 电源控制器（Power Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理系统供电、设备电源状态及能耗。</li>
+<li>包括电池管理、休眠唤醒等功能。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>提高能效并延长设备寿命。</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-I-O-控制器（Input-Output-Controller）"><a href="#7-I-O-控制器（Input-Output-Controller）" class="headerlink" title="(7) I&#x2F;O 控制器（Input&#x2F;Output Controller）"></a><strong>(7) I&#x2F;O 控制器（Input&#x2F;Output Controller）</strong></h4><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理输入输出设备（如键盘、鼠标、打印机）的数据交互。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>确保数据传输的实时性和稳定性。</li>
+</ul>
+</li>
+</ul>
+<p>其中，操作控制器的功能是 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D.从主存取出指令，完成指令操作码译码，</span><br><span class="line">并产生相关的操作控制信号，以解释执行该指令</span><br></pre></td></tr></table></figure>
+
+<h2 id="7，同步控制是由统一时序信号控制的方式。"><a href="#7，同步控制是由统一时序信号控制的方式。" class="headerlink" title="7，同步控制是由统一时序信号控制的方式。"></a>7，同步控制是由统一时序信号控制的方式。</h2><h2 id="8，相容性与相斥性微操作"><a href="#8，相容性与相斥性微操作" class="headerlink" title="8，相容性与相斥性微操作"></a>8，相容性与相斥性微操作</h2><ul>
+<li><p><strong>相容性微操作（Compatible Micro-Operations）</strong>：是指可以在同一CPU周期内并行执行的微操作，因为它们之间没有资源冲突或数据依赖。</p>
+</li>
+<li><p><strong>相斥性微操作（Mutually Exclusive Micro-Operations）</strong>：是指由于资源冲突或数据依赖，不能在同一CPU周期内并行执行的微操作，它们必须按顺序执行。</p>
+</li>
+</ul>
+<p>compatible &#x2F;kəmˈpætəb(ə)l&#x2F; 兼容的；可共存的；</p>
+<p>mutually &#x2F;ˈmjuːtʃuəli&#x2F; 相互地，共同地</p>
+<h2 id="9，同步通信之所以比异步通信具有较高的传输频率是因为"><a href="#9，同步通信之所以比异步通信具有较高的传输频率是因为" class="headerlink" title="9，同步通信之所以比异步通信具有较高的传输频率是因为"></a>9，同步通信之所以比异步通信具有较高的传输频率是因为</h2><p>A.同步通信不需要应答信号且同步通信方式的总线长度较短</p>
+<p> B.同步通信用一个公共的时钟信号进行同步 </p>
+<p>C.同步通信中，各部件存取时间比较接近</p>
+<h2 id="某存储器芯片的存储容量为8K×1位，则它的地址线和数据线引脚相加的和为"><a href="#某存储器芯片的存储容量为8K×1位，则它的地址线和数据线引脚相加的和为" class="headerlink" title="某存储器芯片的存储容量为8K×1位，则它的地址线和数据线引脚相加的和为"></a>某存储器芯片的存储容量为8K×1位，则它的地址线和数据线引脚相加的和为</h2><p>key ：数据线只需要 1 根，$2^{13}$ 个内存，地址线 13 根 ，所以总共 14 根即可。</p>
+<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="汉字编码技术"><a href="#汉字编码技术" class="headerlink" title="汉字编码技术"></a>汉字编码技术</h2><p>1，汉字的.输入编码（或输入码） B.内码（或机内码）,字形码分别用于汉字输入、内部处理、输出三种不同用途的编码。</p>
+<p>2，区位码是 2354，机内码是 ？</p>
+<p>B7D6</p>
+<p>不知道为什么 ？学一下汉字编码技术吧。</p>
+<h2 id="主存储器的性能指标"><a href="#主存储器的性能指标" class="headerlink" title="主存储器的性能指标"></a>主存储器的性能指标</h2><p>存储容量、存取时间，存储周期，和存储器带宽。</p>
+<p>这题放到填空很唐。</p>
+<h2 id="DMA知识"><a href="#DMA知识" class="headerlink" title="DMA知识"></a>DMA知识</h2><p>直接内存访问中，DMA控制器从 CPU 完全接管对 <u>总线</u> 的控制，数据交换不经过 CPU，而直接在 <strong>内存</strong> 和 $I&#x2F;O$ 设备中进行。</p>
+<h2 id="组相联映像方式技术"><a href="#组相联映像方式技术" class="headerlink" title="组相联映像方式技术"></a>组相联映像方式技术</h2><p> 6.已知某计算机的Cache存储器容量为2K字，分成128块。主存为64K字。若采用组相联映像方式，每组2块，其主存字块标记是B 位。</p>
+<p>: 6</p>
+<p>不会，回头学一下吧。第三章没学。</p>
+<h2 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h2><p>一个定点数由A.______________和B._______________两部分组成，根据小数点位置不同，定点数有C._____________和D.______________两种表示方法。</p>
+<p>A. 符号位 B. 数值域 C. 纯小数 D. 纯整数</p>
+<h2 id="完全不知道"><a href="#完全不知道" class="headerlink" title="完全不知道"></a>完全不知道</h2><p>．某程序对主存块要求的序列为B2 B3 B4 B1 B5 B2 B4 B5 B3 B4 B5 B2。  设Cache容量为3块，假设开始时Cache为空。当使用LRU替换算法时，其命中率是           _____________%。</p>
+<p>答案 ： 25</p>
+<h2 id="还是内存"><a href="#还是内存" class="headerlink" title="还是内存"></a>还是内存</h2><p>主存容量为4MB，虚存容量为1GB，则物理页号的二进制位数为___________位。</p>
+<p>答案 ： 10</p>
+<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><p>见本地 word 文件。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/24/2024-11-24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -543,7 +781,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

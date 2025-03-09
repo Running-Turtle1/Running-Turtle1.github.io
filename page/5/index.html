@@ -163,6 +163,132 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/" class="post-title-link" itemprop="url">并发性和并行性的区别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-18 22:43:10" itemprop="dateCreated datePublished" datetime="2024-12-18T22:43:10+08:00">2024-12-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-19 18:32:20" itemprop="dateModified" datetime="2024-12-19T18:32:20+08:00">2024-12-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="并发性和并行性的区别"><a href="#并发性和并行性的区别" class="headerlink" title="并发性和并行性的区别"></a>并发性和并行性的区别</h2><p>  <strong>并发性</strong> 和 <strong>并行性</strong> 是操作系统和计算机领域中两个常见的概念，它们虽然听起来相似，但有本质区别：</p>
+<h3 id="1-并发性（Concurrency）"><a href="#1-并发性（Concurrency）" class="headerlink" title="1. 并发性（Concurrency）"></a><strong>1. 并发性（Concurrency）</strong></h3><ul>
+<li><p><strong>概念</strong>：并发指的是<strong>在同一时间段内</strong>，有多个任务在执行，但这些任务可能是交替执行的（并非同时进行）。</p>
+</li>
+<li><p><strong>特点</strong>：主要通过<strong>时间片轮转</strong>等方式在多个任务间快速切换，看起来像是“同时执行”。通常用于<strong>单核处理器</strong>，因为单核 CPU 在同一时刻只能执行一个任务，只是通过调度来实现任务的交替执行。并发强调的是<strong>任务之间的交替与协调</strong>，而不是“真正的同时进行”。</p>
+</li>
+<li><p><strong>例子</strong>：在操作系统中，同时打开多个程序，比如下载文件的同时浏览网页，CPU 在这些任务之间快速切换。多个线程在一个 CPU 核心上交替执行任务。</p>
+<h3 id="2-并行性（Parallelism）"><a href="#2-并行性（Parallelism）" class="headerlink" title="2. 并行性（Parallelism）"></a><strong>2. 并行性（Parallelism）</strong></h3></li>
+<li><p><strong>概念</strong>：并行指的是<strong>在同一时刻</strong>，有多个任务在<strong>真正地同时执行</strong>。</p>
+</li>
+<li><p><strong>特点</strong>：需要<strong>多核处理器</strong>或多个物理 CPU 支持，每个任务可以被分配到不同的处理器核心上执行。并行强调的是<strong>真正的同时运行</strong>，不需要任务之间的时间片轮换。并行性可以显著提升计算效率。</p>
+</li>
+<li><p><strong>例子</strong>：在一台四核 CPU 的电脑上，有四个任务分别在四个核心上同时执行。在大数据计算中，将数据分成多个部分，由多个处理器同时进行计算。</p>
+<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a><strong>对比总结</strong></h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>比较点</th>
+<th>并发性（Concurrency）</th>
+<th>并行性（Parallelism）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>概念</strong></td>
+<td>任务交替执行，看起来同时进行</td>
+<td>任务真正同时执行</td>
+</tr>
+<tr>
+<td><strong>执行环境</strong></td>
+<td>单核处理器或时间片轮转</td>
+<td>多核处理器或多个 CPU 支持</td>
+</tr>
+<tr>
+<td><strong>重点</strong></td>
+<td>任务之间的<strong>协调</strong>与交替</td>
+<td>任务之间的<strong>同时执行</strong></td>
+</tr>
+<tr>
+<td><strong>表现形式</strong></td>
+<td>虚假的“同时”，实际是交替执行</td>
+<td>真正的物理层面“同时执行”</td>
+</tr>
+<tr>
+<td><strong>例子</strong></td>
+<td>单核 CPU 多线程切换任务</td>
+<td>多核 CPU 多个线程同时执行</td>
+</tr>
+</tbody></table>
+<h3 id="简单记忆："><a href="#简单记忆：" class="headerlink" title="简单记忆："></a><strong>简单记忆</strong>：</h3><ul>
+<li><strong>并发</strong>：看起来同时（交替执行），<strong>单核</strong>可以实现。</li>
+<li><strong>并行</strong>：真正在同时执行，依赖<strong>多核</strong>或多处理器。<br><strong>一句话总结</strong>：<strong>并发是逻辑上的同时执行，并行是物理上的同时执行。</strong></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/15/%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1237,83 +1363,6 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/11/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/11/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">页面置换算法-CLOCK算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-11 20:45:10" itemprop="dateCreated datePublished" datetime="2024-12-11T20:45:10+08:00">2024-12-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-12 16:12:35" itemprop="dateModified" datetime="2024-12-12T16:12:35+08:00">2024-12-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="CLOCK算法"><a href="#CLOCK算法" class="headerlink" title="CLOCK算法"></a>CLOCK算法</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LZ421z7vJ/?vd_source=cdddf6b462dc99204224a6ed9c8e2636">Clock置换算法原理+例题讲解_哔哩哔哩_bilibili</a></p>
-<p>1，为每个页面设置一个访问位，当某页被访问时，将其访问位设为 1，指针位置不变。</p>
-<p>2，需要置换一个页面时，检查当前指针所在页的访问位，如果是 0，将该页换出，指针指向下一个位置 ；如果是 1，将访问位设为 0，指针指向下一个位置。</p>
-<p>3，初始时指针指向第一个空页面，装入新页面时，指针指向下一个位置。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1384,7 +1433,7 @@ species n. 物种，种类 （不区分单复数，a species , many species）</
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

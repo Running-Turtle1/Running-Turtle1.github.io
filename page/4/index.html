@@ -163,6 +163,213 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%B0%A2%E5%B8%8C%E4%BB%81%E7%AC%AC8%E7%89%88%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wei Pengchao">
+      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Running-Turtle">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%B0%A2%E5%B8%8C%E4%BB%81%E7%AC%AC8%E7%89%88%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" class="post-title-link" itemprop="url">计算机网络谢希仁第8版部分习题答案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-29 15:48:06" itemprop="dateCreated datePublished" datetime="2024-12-29T15:48:06+08:00">2024-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-30 14:25:13" itemprop="dateModified" datetime="2024-12-30T14:25:13+08:00">2024-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="4-19"><a href="#4-19" class="headerlink" title="4-19"></a>4-19</h2><blockquote>
+<p>某单位分配到一个地址块，129.250&#x2F;16。该单位有4000台机器，平均分布在16个不同的地点。试给每一个地点分配一个地址块，并算出每个地址块中IP地址的最小值和最大值</p>
+</blockquote>
+<p>给定的地址块是 129.250.0.0&#x2F;16，划分为 16 个子网，从主机号里面借 4 位，选择的子网掩码是 &#x2F;20，每个子网提供 4096 个地址。</p>
+<table>
+<thead>
+<tr>
+<th align="center">子网编号</th>
+<th align="center">子网地址</th>
+<th align="center">最小IP地址</th>
+<th align="center">最大IP地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">129.250.0.0&#x2F;20</td>
+<td align="center">129.250.0.0</td>
+<td align="center">129.250.15.255</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">129.250.16.0&#x2F;20</td>
+<td align="center">129.250.16.0</td>
+<td align="center">129.250.31.255</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">129.250.32.0&#x2F;20</td>
+<td align="center">129.250.32.0</td>
+<td align="center">129.250.47.255</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">129.250.48.0&#x2F;20</td>
+<td align="center">129.250.48.0</td>
+<td align="center">129.250.63.255</td>
+</tr>
+<tr>
+<td align="center">……</td>
+<td align="center">……</td>
+<td align="center">……</td>
+<td align="center">……</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">129.250.240.0&#x2F;20</td>
+<td align="center">129.250.240.0</td>
+<td align="center">129.250.255.255</td>
+</tr>
+</tbody></table>
+<h2 id="4-20"><a href="#4-20" class="headerlink" title="4-20"></a>4-20</h2><blockquote>
+<p>一个数据报长度4000字节（固定首部长度）。现在经过一个网络传送，但此网络能够传送的最大数据长度为1500字节。试问应该划分为几个短些的数据包片？各个数据报片的数据字段长度、片偏移字段长度和MF标志应为何值？</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据报片</th>
+<th>数据字段长度 (字节)</th>
+<th>片偏移 (单位：8字节)</th>
+<th>MF (More Fragments 标志)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1480</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1480</td>
+<td>185</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1020</td>
+<td>370</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h2 id="5-38"><a href="#5-38" class="headerlink" title="5-38"></a>5-38</h2><p>注意执行慢开始的时候，如果 $2\times cwnd &gt; ssthresh$ , 则下一个 RTT 后的  $\text{cwnd}$ 等于 $\text{ssthresh}$，而不等于 $2\times cwnd$ ，即 $\text{cwnd}$  不能越过 $\text{ssthresh}$ 值。</p>
+<table>
+<thead>
+<tr>
+<th>RTT</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cwnd</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>RTT</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>cwnd</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RTT</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td></td>
+<td>4</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/24/%E5%86%85%E6%A0%B8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%89%B9%E5%BE%81-%E9%93%BE%E6%8E%A5%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1010,132 +1217,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wei Pengchao">
-      <meta itemprop="description" content="十年饮冰，热血难凉，千载暗室，一灯即明。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Running-Turtle">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/18/%E5%B9%B6%E5%8F%91%E6%80%A7%E5%92%8C%E5%B9%B6%E8%A1%8C%E6%80%A7%E7%9A%84%E8%BE%A8%E6%9E%90/" class="post-title-link" itemprop="url">并发性和并行性的区别</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-18 22:43:10" itemprop="dateCreated datePublished" datetime="2024-12-18T22:43:10+08:00">2024-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-19 18:32:20" itemprop="dateModified" datetime="2024-12-19T18:32:20+08:00">2024-12-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="并发性和并行性的区别"><a href="#并发性和并行性的区别" class="headerlink" title="并发性和并行性的区别"></a>并发性和并行性的区别</h2><p>  <strong>并发性</strong> 和 <strong>并行性</strong> 是操作系统和计算机领域中两个常见的概念，它们虽然听起来相似，但有本质区别：</p>
-<h3 id="1-并发性（Concurrency）"><a href="#1-并发性（Concurrency）" class="headerlink" title="1. 并发性（Concurrency）"></a><strong>1. 并发性（Concurrency）</strong></h3><ul>
-<li><p><strong>概念</strong>：并发指的是<strong>在同一时间段内</strong>，有多个任务在执行，但这些任务可能是交替执行的（并非同时进行）。</p>
-</li>
-<li><p><strong>特点</strong>：主要通过<strong>时间片轮转</strong>等方式在多个任务间快速切换，看起来像是“同时执行”。通常用于<strong>单核处理器</strong>，因为单核 CPU 在同一时刻只能执行一个任务，只是通过调度来实现任务的交替执行。并发强调的是<strong>任务之间的交替与协调</strong>，而不是“真正的同时进行”。</p>
-</li>
-<li><p><strong>例子</strong>：在操作系统中，同时打开多个程序，比如下载文件的同时浏览网页，CPU 在这些任务之间快速切换。多个线程在一个 CPU 核心上交替执行任务。</p>
-<h3 id="2-并行性（Parallelism）"><a href="#2-并行性（Parallelism）" class="headerlink" title="2. 并行性（Parallelism）"></a><strong>2. 并行性（Parallelism）</strong></h3></li>
-<li><p><strong>概念</strong>：并行指的是<strong>在同一时刻</strong>，有多个任务在<strong>真正地同时执行</strong>。</p>
-</li>
-<li><p><strong>特点</strong>：需要<strong>多核处理器</strong>或多个物理 CPU 支持，每个任务可以被分配到不同的处理器核心上执行。并行强调的是<strong>真正的同时运行</strong>，不需要任务之间的时间片轮换。并行性可以显著提升计算效率。</p>
-</li>
-<li><p><strong>例子</strong>：在一台四核 CPU 的电脑上，有四个任务分别在四个核心上同时执行。在大数据计算中，将数据分成多个部分，由多个处理器同时进行计算。</p>
-<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a><strong>对比总结</strong></h3></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>比较点</th>
-<th>并发性（Concurrency）</th>
-<th>并行性（Parallelism）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>概念</strong></td>
-<td>任务交替执行，看起来同时进行</td>
-<td>任务真正同时执行</td>
-</tr>
-<tr>
-<td><strong>执行环境</strong></td>
-<td>单核处理器或时间片轮转</td>
-<td>多核处理器或多个 CPU 支持</td>
-</tr>
-<tr>
-<td><strong>重点</strong></td>
-<td>任务之间的<strong>协调</strong>与交替</td>
-<td>任务之间的<strong>同时执行</strong></td>
-</tr>
-<tr>
-<td><strong>表现形式</strong></td>
-<td>虚假的“同时”，实际是交替执行</td>
-<td>真正的物理层面“同时执行”</td>
-</tr>
-<tr>
-<td><strong>例子</strong></td>
-<td>单核 CPU 多线程切换任务</td>
-<td>多核 CPU 多个线程同时执行</td>
-</tr>
-</tbody></table>
-<h3 id="简单记忆："><a href="#简单记忆：" class="headerlink" title="简单记忆："></a><strong>简单记忆</strong>：</h3><ul>
-<li><strong>并发</strong>：看起来同时（交替执行），<strong>单核</strong>可以实现。</li>
-<li><strong>并行</strong>：真正在同时执行，依赖<strong>多核</strong>或多处理器。<br><strong>一句话总结</strong>：<strong>并发是逻辑上的同时执行，并行是物理上的同时执行。</strong></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1206,7 +1287,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
