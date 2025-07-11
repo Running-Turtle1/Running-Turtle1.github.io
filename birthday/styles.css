@@ -1,0 +1,1001 @@
+/* ===== 重置 & 基础 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth; /* 启用平滑滚动 */
+  }
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f5f2; /* 温暖的米白底色 */
+  }
+  
+  /* ===== 主题色 ===== */
+  :root {
+    /* 核心主题色：根据她的喜好调整，这里是柔和的暖色组合示例 */
+    --primary: #ff6b6b; /* 珊瑚粉红 (主色，用于按钮、高亮) */
+    --secondary: #feca57; /* 柔和阳光黄 */
+    --accent: #9c89b8; /* 薰衣草紫 (点缀) */
+    --light: #f9f5f2; /* 米白 (背景) */
+    --dark: #5c4b51; /* 深棕灰 (文字) */
+    --success: #1dd1a1; /* 成功绿 (可选) */
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-out;
+  }
+  
+  /* ===== 全局样式 ===== */
+  h1, h2, h3, h4 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-family: 'Pacifico', cursive; /* 标题用手写体更温馨 */
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2 i { /* 标题图标 */
+    margin-right: 0.8rem;
+    color: var(--primary);
+  }
+  
+  h2::after { /* 下划线装饰 */
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+  }
+  
+  .section {
+    padding: 5rem 2rem;
+    min-height: 100vh; /* 每部分至少一屏高 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .alt-bg {
+    background-color: rgba(255, 246, 238, 0.8); /* 更浅的黄白背景交替 */
+  }
+  
+  /* ===== 导航 ===== */
+  #main-nav {
+    display: none; /* 默认隐藏导航栏 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    padding: 1rem 2rem;
+  }
+  
+  #main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  #main-nav li {
+    margin: 0 1.5rem;
+  }
+  
+  #main-nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+  }
+  
+  #main-nav a:hover {
+    color: var(--primary);
+  }
+  
+  #main-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+  
+  #main-nav a:hover::after {
+    width: 100%;
+  }
+
+  /* ===== 音乐控制按钮 ===== */
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  z-index: 1001; /* 确保在导航栏之上 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.music-btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.1);
+}
+
+.music-btn i {
+  font-size: 1.5rem;
+}
+
+/* 密码模态框样式 */
+#passwordModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.password-modal {
+  background: linear-gradient(135deg, #87CEEB, #B0E0E6) !important; 
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.password-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 20%, white 10px, transparent 12px),
+    radial-gradient(circle at 80% 30%, white 15px, transparent 17px),
+    radial-gradient(circle at 40% 70%, white 12px, transparent 14px),
+    radial-gradient(circle at 60% 50%, white 18px, transparent 20px),
+    radial-gradient(circle at 30% 40%, white 14px, transparent 16px);
+  background-size: 200px 200px;
+  opacity: 0.6;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.password-image {
+  flex: 1;
+}
+
+.password-image img {
+  width: 20%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.password-input {
+  flex: 1;
+  text-align: center;
+}
+
+.password-input h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.password-input p {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.password-input input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.password-input button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.password-input button:hover {
+  background-color: #ff5252;
+  transform: translateY(-3px);
+}
+
+.error-message {
+  color: #ff3333;
+  font-weight: bold;
+  margin-top: 10px;
+  min-height: 20px;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .password-container {
+    flex-direction: column;
+  }
+  
+  .password-image img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+  
+  /* ===== Hero 欢迎区 (重点打造) ===== */
+  .hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(252, 228, 236, 0.8) 0%, rgba(255, 242, 210, 0.8) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* 背景效果示例 (可以选一个实现) */
+  /* 选项1: 纯CSS渐变动画背景 (更轻量) */
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%), 
+                radial-gradient(circle, var(--secondary) 0%, transparent 70%),
+                radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    background-position: 10% 10%, 90% 20%, 30% 80%; /* 调整光斑位置 */
+    background-size: 300px 300px;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    animation: floating 20s infinite ease-in-out;
+    z-index: -1;
+  }
+  
+  @keyframes floating {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-20px, -15px) rotate(5deg); }
+    50% { transform: translate(10px, 20px) rotate(-3deg); }
+    75% { transform: translate(15px, -10px) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  
+  /* 选项2: 用一张高质量、有氛围感的背景图 (更有冲击力) */
+  .hero-section {
+    background-image: url('images/birthdaycake.png'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 2;
+  }
+  
+  .hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .highlight {
+    color: var(--primary);
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #666;
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+  
+  .btn-explore {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    transition: var(--transition);
+    animation: pulse 2s infinite ease-in-out 1s;
+  }
+  
+  .btn-explore:hover {
+    background-color: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  }
+  
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+  }
+  
+  /* ===== 回忆相册 ===== */
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+  }
+  
+  .photo-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+  
+  .photo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: 300px; /* 固定高度，确保网格整齐 */
+    object-fit: cover; /* 关键！保持图片比例并覆盖容器 */
+    display: block;
+    transition: var(--transition);
+  }
+  
+  .photo-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transform: translateY(100%); /* 初始隐藏 */
+    transition: var(--transition);
+  }
+  
+  .photo-item:hover .photo-caption {
+    transform: translateY(0);
+  }
+  
+  /* ===== 祝福信 (信封效果) ===== */
+  .letter-container {
+    max-width: 800px;
+    width: 100%;
+    perspective: 1000px;
+  }
+
+/* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal > .modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: white; /* 仅应用于相册模态框 */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-caption {
+  margin-top: 15px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 添加信封样式 */
+.envelope-closed {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.envelope-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.5s ease;
+  transform-origin: bottom;
+  z-index: 2;
+}
+
+.envelope-front i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.envelope-closed:hover .envelope-front {
+  transform: translateY(-10px);
+}
+
+.envelope-open {
+  display: none;
+  width: 100%;
+  max-width: 800px;
+}
+
+.envelope-open.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* 信件解锁模态框 */
+#letterPasswordModal {
+  z-index: 3000; /* 高于其他模态框 */
+  /* display: none; */
+}
+
+#letterPasswordModal .password-modal {
+  background: linear-gradient(135deg, #9c89b8, #b8a9d6) !important;
+}
+
+#letterPasswordModal .password-modal::before {
+  background-image: 
+    radial-gradient(circle at 30% 20%, white 8px, transparent 10px),
+    radial-gradient(circle at 70% 40%, white 12px, transparent 14px),
+    radial-gradient(circle at 50% 70%, white 10px, transparent 12px);
+  opacity: 0.4;
+}
+  
+/* .envelope {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: var(--light);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  模拟信封纹理 
+  background-image: 
+    linear-gradient(90deg, rgba(200, 200, 200, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(200, 200, 200, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+} */
+
+.letter-paper {
+  height: 100%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  overflow-y: auto; /* 长信可滚动 */
+}
+
+.letter-paper h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--dark);
+  position: relative;
+  display: inline-block;
+  text-align: center; /* 保持居中 */
+  width: 100%; /* 确保占据整个宽度 */
+}
+
+/* 添加下划线效果，与其他标题一致 */
+.letter-paper h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+.letter-content {
+  line-height: 1.8;
+}
+
+.letter-content p {
+  font-family: 'KaiTi';
+  margin-bottom: 1rem;
+  text-indent: 2em; /* 首行缩进 */
+}
+
+/* 在styles.css中添加以下样式 */
+
+/* 日期模态框样式 */
+#dateModal {
+  background-color: rgba(0, 32, 0, 0.8); /* 暗绿色背景 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.date-modal {
+  background-image: url('images/special-date-bg.jpg'); /* 自定义背景图 */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  color: white; /* 文字颜色 */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 添加半透明覆盖层增强文字可读性 */
+.date-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.date-content {
+  position: relative;
+  z-index: 1;
+}
+
+.date-content h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffcc00; /* 金色标题 */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.date-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #ffdd88; /* 浅金色日期 */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  padding: 15px;
+  background: rgba(0, 60, 0, 0.5); /* 半透明暗绿色背景 */
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.date-content p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* 在styles.css中添加动画 */
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.date-modal.show {
+  animation: fadeScaleIn 0.5s ease-out forwards;
+}
+
+
+/* ===== 祝福墙 ===== */
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+}
+
+.wish-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.friend-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--light);
+}
+
+.friend-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wish-card h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.wish-card blockquote {
+  font-style: italic;
+  color: #666;
+  position: relative;
+}
+
+.wish-card blockquote::before,
+.wish-card blockquote::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: rgba(255, 107, 107, 0.2);
+  font-size: 1.8rem;
+}
+
+.wish-card blockquote::before {
+  content: "\f10d";
+  position: absolute;
+  top: -15px;
+  left: -25px;
+}
+
+.wish-card blockquote::after {
+  content: "\f10e";
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+}
+
+/* ===== 礼物盒 (带交互) ===== */
+.gift-box {
+  text-align: center;
+  max-width: 600px;
+}
+
+.gift-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto 3rem;
+  cursor: pointer;
+}
+
+.gift-wrap .lid {
+  position: absolute;
+  width: 100%;
+  height: 40px; /* 盖子高度 */
+  background-color: var(--primary);
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.5s ease;
+  top: 0;
+  z-index: 2;
+}
+
+.gift-wrap .box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px; /* 盒子主体高度 */
+  background-color: var(--secondary);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* JS控制：点击时添加 .open 类来触发开启动画 */
+.gift-wrap.open .lid {
+  transform: translateY(-40px) rotate(-10deg);
+}
+
+.gift-content.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+
+.gift-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gift-content img {
+  width: 10%;
+}
+
+.btn-redeem {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 25px;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.btn-redeem:hover {
+  background-color: #8575a8;
+  transform: scale(1.05);
+}
+
+/* ===== 响应式设计 (关键！) ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  .section { padding: 3rem 1.5rem; min-height: auto; } /* 手机不一定强制全屏高 */
+  #main-nav li { margin: 0 0.8rem; }
+  #main-nav a { font-size: 0.9rem; }
+  .gallery-container { grid-template-columns: 1fr; } /* 手机单列 */
+  .wishes-grid { grid-template-columns: 1fr; }
+  .letter-paper { padding: 1.5rem; }
+  .envelope { height: auto; }
+}
+
+/* 在文件末尾添加以下样式 */
+body.special-bg {
+  background-image: url('images/special-date-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out;
+}
+
+body.special-bg .section {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  padding: 3rem;
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+body.special-bg .alt-bg {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+body.special-bg #main-nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.special-bg footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== 倒计时样式 ===== */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-item span:first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-top: 5px;
+}
+
+/* 生日当天的显示样式 */
+.birthday-active #content-wrapper,
+.birthday-active #main-nav {
+  display: block;
+}
+
+.birthday-active .hero-section {
+  min-height: 60vh; /* 生日当天缩小欢迎区域高度 */
+}
+
+.birthday-message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
+}
+
+#content-wrapper {
+  display: none; /* 默认隐藏所有非欢迎页内容 */
+}
+
+/* 祝福卡片中的图片样式 */
+.wish-image-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.wish-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.wish-image:hover {
+  transform: scale(1.03);
+}
