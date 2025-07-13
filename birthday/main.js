@@ -1,4 +1,4 @@
-const birthDayIs = new Date('2025-07-11T11:53:00');
+const birthDayIs = new Date('2025-07-12T00:00:00');
 // 倒计时功能
 document.addEventListener('DOMContentLoaded', function() {
   // 生日日期：2025年8月1日
@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
       clearInterval(countdownInterval);
       
       // 显示生日消息
-      // countdownContainer.innerHTML = `
-      //   <div class="birthday-message">
-      //     <i class="fas fa-birthday-cake"></i>
-      //     Happy Birthday! 李晓华2
-      //     <i class="fas fa-birthday-cake"></i>
-      //   </div>
-      // `;
-      // return;
+      countdownContainer.innerHTML = `
+        <div class="birthday-message">
+          <i class="fas fa-birthday-cake"></i>
+          Happy Birthday! 李晓华
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+      `;
+      return;
     }
     
     // 计算剩余时间
@@ -257,7 +257,6 @@ const photoItems = document.querySelectorAll('.photo-item');
 
 
 photoItems.forEach(item => {
-	item.setAttribute('title', '点击有惊喜哦！');
     item.addEventListener('click', () => {
       // 获取预先存储的大图路径
       const largeImgSrc = item.getAttribute("data-large-img");
@@ -428,29 +427,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (countdown) countdown.remove();
     
     // 添加生日祝福
-    // const heroContent = document.querySelector('.hero-content');
-    // const birthdayMessage = document.createElement('div');
-    // birthdayMessage.className = 'birthday-message';
-    // birthdayMessage.innerHTML = `
-    //   <i class="fas fa-birthday-cake"></i>
-    //   Happy Birthday! 李晓华
-    //   <i class="fas fa-birthday-cake"></i>
-    // `;
-    // heroContent.appendChild(birthdayMessage);
-	const todayKey = 'birthdayMessageShown_' + new Date().toISOString().slice(0, 10);
-	if (!localStorage.getItem(todayKey)) {
-	  const heroContent = document.querySelector('.hero-content');
-	  const birthdayMessage = document.createElement('div');
-	  birthdayMessage.className = 'birthday-message';
-	  birthdayMessage.innerHTML = `
-	    <i class="fas fa-birthday-cake"></i>
-	    Happy Birthday! 李晓华
-	    <i class="fas fa-birthday-cake"></i>
-	  `;
-	  heroContent.appendChild(birthdayMessage);
-	  localStorage.setItem(todayKey, 'true');
-	}
-	
+    const heroContent = document.querySelector('.hero-content');
+    const birthdayMessage = document.createElement('div');
+    birthdayMessage.className = 'birthday-message';
+    birthdayMessage.innerHTML = `
+      <i class="fas fa-birthday-cake"></i>
+      Happy Birthday! 李晓华
+      <i class="fas fa-birthday-cake"></i>
+    `;
+    heroContent.appendChild(birthdayMessage);
+    
     // 显示导航栏
     document.getElementById('main-nav').style.display = 'block';
   }
@@ -521,10 +507,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // 每秒更新一次
     const countdownInterval = setInterval(updateCountdown, 1000);
   }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    alert('点击右上角音符按钮开启音乐！🎵\n点击礼物盒将有惊喜！🎁');
-  }, 1000);
 });
