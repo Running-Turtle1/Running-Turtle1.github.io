@@ -2176,3 +2176,9 @@ div.paginate-container li:nth-last-child(2) a:after {
   .codeforces span {
       background-color: #1f8acb;
   }
+  
+  #my-title a {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+  }
