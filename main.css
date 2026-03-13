@@ -704,7 +704,9 @@ pre>code {
 
 .shallow-bg {
     /* background-image: url("images/background/background1.JPG"); */
-    background-image: url("images/background/background_hkust_2.jpg");
+	
+	background-image: url("images/background/卫津路.jpg");
+    /* background-image: url("images/background/background_hkust_2.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
@@ -720,7 +722,7 @@ pre>code {
 .profile-wrapper {
     border-radius: 25px;
     position: relative;
-    top: 20%;
+    top: 5%;
     width: 600px;
     margin-left: auto;
     margin-right: auto
@@ -746,6 +748,7 @@ pre>code {
     background-color: rgba(150, 150, 150, 0.8)
 }
 
+ /* 头像 */
 .profile-col {
     float: left !important;
     margin-top: 30px;
@@ -764,6 +767,15 @@ pre>code {
     width: -webkit-calc(60% - (30px / 2));
     width: calc(60% - (30px / 2))
 }
+
+/* 单独移动头像 */
+#profile-avatar {
+    position: relative;
+    top: 24px;
+	left: 24px
+}
+
+
 
 @media screen and (max-width: 800px) {
 
@@ -2051,4 +2063,116 @@ div.paginate-container li:nth-last-child(2) a:after {
     width: 16px;
     height: 16px;
     margin-right: 4px;
+  }
+  
+  /* .social-media {
+      text-align: center;
+      margin-top: 12px;
+  } */
+  
+  .social-media {
+      text-align: center;
+      margin-top: 12px;
+      position: relative;
+      top: -12px;
+  }
+  
+  .more-links {
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.8;
+  }
+  
+  .more-links a {
+      display: inline-block;
+      margin: 4px 10px;
+      color: #555;
+      font-size: 15px;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+  }
+  
+  .more-links a:hover {
+      color: #111;
+      border-bottom-color: #111;
+      text-decoration: none;
+  }
+  
+  .xiaohongshu span {
+      background-color: #ff2442;
+  }
+  
+  .icon-button .icon-book {
+      color: #0077B5;
+  }
+  
+  .icon-button:hover .icon-book {
+      color: white;
+  }
+  
+  .icon-button {
+      position: relative;
+  }
+  
+  .icon-button .icon-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+  }
+  
+  .github-pin-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 12px;
+  }
+  
+  .github-pin-grid a {
+      display: inline-block;
+      text-decoration: none;
+  }
+  
+  .github-pin-grid img {
+      display: block;
+      width: 420px;
+      max-width: 100%;
+      border-radius: 8px;
+  }
+  
+  .linkedin span {
+      background-color: #0077B5;
+  }
+  
+  .github span {
+      background-color: #000;
+  }
+  
+  .zhihu span {
+      background-color: #0084ff;
+  }
+  
+  .xiaohongshu span {
+      background-color: #ff2442;
+  }
+  
+  .douyin span {
+      background-color: #000000;
+  }
+  
+  .csdn span {
+      background-color: #fc5531;
+  }
+  
+  .bilibili span {
+      background-color: #fb7299;
+  }
+  
+  .codeforces span {
+      background-color: #1f8acb;
   }

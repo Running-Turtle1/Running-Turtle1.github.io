@@ -1,1863 +1,689 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFR2GFKT75"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RFR2GFKT75');
-  </script> -->
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  })(window,document,'script','dataLayer','GTM-NC38VTD');</script> -->
-  <!-- End Google Tag Manager -->
-
+<html lang="zh-CN">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta http-equiv="refresh" content="0; URL=https://cs.stanford.edu/~leoyuan/"> -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	<!-- <meta name="google-site-verification" content="u_--0s_Uw50r4zCgRrzltkmFhNCduYOJwPGlKVTuNJU" /> -->
 
-  <title>Jun CEN</title>
-  <meta name="description" lang="en" content="This is an academic website for Will Hua">
-  <meta name="keywords" lang="en" content="Jun CEN" />
-  
+  <title>魏鹏超 | Pengchao Wei</title>
+  <meta name="description" lang="zh-CN" content="魏鹏超（Pengchao Wei）的个人学术主页。" />
+  <meta name="keywords" lang="zh-CN" content="魏鹏超, Pengchao Wei, Academic Website, Personal Homepage" />
 
-  <link rel="shortcut icon" href="images/J.jpeg">
+  <link rel="shortcut icon" href="images/icon.jpg">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/academicons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
-  <script src="js/jquery-2.1.3.min.js"> </script>
-
-  <!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-</script>
-<![endif]-->
-
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-        if(document.getElementById(divId).style.display == 'none') {
-            document.getElementById(divId).style.display='block';
-            document.getElementById(linkDivId).style.display='none'; // Hide the "read more" link
-        }
-        else {
-            document.getElementById(divId).style.display = 'none';
-        }
-    }
-  </script>
-
   <style>
-    /* 为所有列表项设置样式 */
     li.indented {
-        position: relative;
-        padding-left: 90px; /* 这是对齐效果的关键，可以根据实际内容调整这个值 */
+      position: relative;
+      padding-left: 90px;
     }
 
     li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
+      content: attr(data-date);
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+
+    .reviewer-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .reviewer-column {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+      padding-right: 20px;
+      font-size: 0.85em;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1em;
+      margin-bottom: 4px;
+    }
+
+    .reviewer-column::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .reviewer-column {
+        flex: 1 1 100%;
+      }
+    }
+
+    .reviewer-title {
+      margin-top: 12px;
+      font-weight: bold;
     }
   </style>
-  
-
-  
 </head>
 
-
 <body>
+  <header class="site-header">
+    <div class="wrapper">
+      <nav class="site-nav">
+        <a href="#" class="menu-icon">
+          <svg viewBox="0 0 18 15">
+            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+          </svg>
+        </a>
 
-    <!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC38VTD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-
-    <header class="site-header">
-
-  <div class="wrapper">
-<nav class="site-nav">
-  <a href="#" class="menu-icon">
-    <svg viewBox="0 0 18 15">
-      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-    </svg>
-  </a>
-
-  <div class="trigger">
-    <a class="page-link" href="#bio"><b>Biography</b></a>
-    <a class="page-link" href="#timeline"><b>Experiences</b></a>
-    <a class="page-link" href="#publications"><b>Publications</b></a>
-    <a class="page-link" href="#codebase"><b>GitHub</b></a>
-    <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
-    <a class="page-link" href="#academicservices"><b>Academic Services </b></a>
-    <!--<a class="page-link" href="#otherprojects">Projects</a>-->
-    <!-- Button for Posts -->
-  </div>
-</nav>
-  </div>
-</header>
-
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
+        <div class="trigger">
+          <a class="page-link" href="#bio"><b>Biography</b></a>
+          <a class="page-link" href="#timeline"><b>Experiences</b></a>
+          <a class="page-link" href="#publications"><b>Publications</b></a>
+          <a class="page-link" href="#codebase"><b>GitHub</b></a>
+          <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
+          <a class="page-link" href="#academicservices"><b>Services</b></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+	
+	<!-- 大头照 | 简历照 -->
+  <div id="profile-cover" class="cover shallow-bg img-responsive">
     <div id="profile-namecard" class="profile-wrapper wrapper-light">
       <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="circle-img border-dark"-/>
-      </div>
+        <!-- <img id="profile-avatar" src="images/myself2.jpg" alt="Pengchao Wei" class="circle-img border-dark" /> -->
+		<img
+		  id="profile-avatar"
+		  src="images/myself.jpg"
+		  alt="魏鹏超"
+		  class="circle-img border-dark"
+		  style="width: 170px; height: 170px; object-fit: cover; object-position: center 20%; border-radius: 50%;"
+		/>
+	  </div>
+
       <div id="my-contact" class="profile-col profile-col-2">
         <div id="my-name" class="text-grey-dark">
-          Jun CEN<br>
+          Pengchao Wei<br>
         </div>
         <div id="my-title" class="text-grey">
-          JD Explore Academy
+          Tianjin University | <a href="https://tjuxlab.github.io/team.html" target="_blank">X-Lab</a>
         </div>
         <div id="my-email" class="text-grey-light">
-          jcenaa [at] connect.ust.hk
-        </div>
-
-	</div>
-        <div class="social-media">
-          <a href="https://scholar.google.com/citations?user=7SKAhBwAAAAJ&hl=en" target="_blank" class="icon-button linkedin">
-          <i class="ai ai-google-scholar-square icon-linkedin"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/Jun-CEN" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-         
-          <!-- <a href="work/Resume_Jun_CEN.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a> -->
-          <a href="https://www.xiaohongshu.com/user/profile/616ae887000000000201f2fa" class="icon-button xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer">
-            <i> <img src="https://cdn.simpleicons.org/xiaohongshu/FF2D55" alt="" width="45" height="45" style="vertical-align:middle;"> </i>
-            <span></span>
-          </a>
-
-          <a href="mailto:jcenaa@connect.ust.hk" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-envelope icon-linkedin"></i>
-            <span></span>
-          </a>
+          wei954327649 [AT] gmail.com
         </div>
       </div>
 
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
+
+	  <div class="social-media">	  
+	    <!-- Google Scholar -->
+	    <!-- <a href="你的GoogleScholar链接" target="_blank" class="icon-button linkedin" title="Google Scholar">
+	      <i class="ai ai-google-scholar-square icon-linkedin"></i>
+	      <span></span>
+	    </a> -->
+		<a class="icon-button linkedin" title="Coming Soon">
+		  <i class="ai ai-google-scholar-square icon-linkedin"></i>
+		  <span></span>
+		</a>
+	  
+	    <!-- GitHub -->
+	    <a href="https://github.com/Running-Turtle1" target="_blank" class="icon-button github" title="GitHub">
+	      <i class="fa fa-github icon-github"></i>
+	      <span></span>
+	    </a>
+	  
+	    <!-- Zhihu -->
+	    <a href="https://www.zhihu.com/people/92-64-51-48-85" target="_blank" class="icon-button zhihu" title="知乎">
+	      <img src="images/icon/zhihu.png" class="icon-img">
+	      <span></span>
+	    </a>
+	  
+	    <!-- Xiaohongshu -->
+	    <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" class="icon-button xiaohongshu" title="小红书">
+	      <img src="images/icon/xiaohongshu.png" class="icon-img">
+	      <span></span>
+	    </a>
+		
+		<br>
+	  
+	    <!-- Douyin -->
+	    <a href="https://www.douyin.com/user/MS4wLjABAAAAfe3VbtAio4XBQ8_O9AWWc6wxEbe28YJ8DHqkWnm4gtc" target="_blank" class="icon-button douyin" title="抖音">
+	      <img src="images/icon/douyin.png" class="icon-img">
+	      <span></span>
+	    </a>
+	  
+	    <!-- CSDN -->
+	    <a href="https://blog.csdn.net/2301_78527293" target="_blank" class="icon-button csdn" title="CSDN">
+	      <img src="images/icon/csdn.png" class="icon-img">
+	      <span></span>
+	    </a>
+	  
+	    <!-- Bilibili -->
+	    <a href="https://space.bilibili.com/3546379267869027" target="_blank" class="icon-button bilibili" title="Bilibili">
+	      <img src="images/icon/bilibili.jpeg" class="icon-img">
+	      <span></span>
+	    </a>
+	  
+	    <!-- Codeforces -->
+	    <a href="https://codeforces.com/profile/running_Turtle" target="_blank" class="icon-button codeforces" title="Codeforces">
+	      <img src="images/icon/codeforces.png" class="icon-img">
+	      <span></span>
+	    </a>
+	  
+	  </div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="wrapper">
+
+      <div id="bio" class="bio">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-id-card" aria-hidden="true"></i>
+          About
+        </h1>
+
+        <div class="bio-body" style="overflow:hidden;">
+          <p>
+            Hello! I am <strong>Pengchao Wei (魏鹏超)</strong>.<br><br>
+            Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, projects, and academic services.<br><br>
+            My current research focuses on demoiré removal in Low-Level Computer Vision. <br><br>
+            If you would like to contact me, please send an email to
+            <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.
+          </p>
+		  
+		  <br>
+
+          <div style="width: 50%; float:left">
+            <h3>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <strong>Research Interests</strong>
+            </h3>
+            <ul>
+              <li>
+                <b>Low-Level Computer Vision</b><br>
+               <!-- [<a href="#">Demoiré</a>]
+                [<a href="#">Image Restoration</a>]
+                [<a href="#">Computational Photography</a>] -->
+              </li>
+            
+              <!-- <li>
+                <b>Image Enhancement</b><br>
+                [<a href="#">Low-Light Enhancement</a>]
+                [<a href="#">Super-Resolution</a>]
+              </li>
+            
+              <li>
+                <b>Pattern Removal</b><br>
+                [<a href="#">Demoiré Removal</a>]
+                [<a href="#">Rain Removal</a>]
+                [<a href="#">Artifact Reduction</a>]
+              </li>
+            
+              <li>
+                <b>Related Topics</b><br>
+                [<a href="#">Image Restoration Survey</a>]
+                [<a href="#">LLCV Project</a>]
+              </li> -->
+            </ul>
+          </div>
+
+          <!-- <div style="width: 50%; float:right">
+            <h3>
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <strong>Education</strong>
+            </h3>
+
+            <b>Your University Name</b><br>
+            <ul>
+              <li>Ph.D / M.Sc / B.Eng, Year - Year</li>
+              <li>Advisor: Your Advisor Name</li>
+            </ul>
+
+            <b>Your University Name</b><br>
+            <ul>
+              <li>Degree, Year - Year</li>
+              <li>Advisor: Your Advisor Name</li>
+            </ul>
+          </div> -->
+		  <div style="width: 50%; float:right">
+		    <h3>
+		      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+		      <strong>Education</strong>
+		    </h3>
+		  
+		    <b>Tianjin University</b><br>
+		    <ul>
+		      <li>M.Eng. in Computer Science, 2025 - Present</li>
+		      <li>Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank">Prof. Xiaojie Guo</a></li>
+		    </ul>
+		  
+		    <b>Qingdao University of Science and Technology</b><br>
+		    <ul>
+		      <li>B.Eng. in Computer Science, 2022 - Present</li>
+			  <li>GPA: 4.16/5.00 | Rank: 1/131</li>
+		    </ul>
+		  </div>
         </div>
-        <div id="my-desc-content">
-          I enjoy running, traveling, hiking, movies, music and so much more<br>
+      </div>
+
+      <div id="timeline" class="timeline-brief">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-tasks" aria-hidden="true"></i>
+          Experiences
+        </h1>
+
+        <!-- <div class="timeline-body">
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <img class="social-icon" src="images/jd_2.png"/>
+              2026 - Present
+            </div>
+            <div class="timeline-title">
+              Your Position @ <a href="#" target="_blank">Your Organization</a>
+            </div>
+            <div class="timeline-desc">
+              <b>Your work description here.</b>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <img class="social-icon" src="images/damo_logo_2.avif"/>
+              2024 - 2026
+            </div>
+            <div class="timeline-title">
+              Your Previous Position @ <a href="#" target="_blank">Your Previous Organization</a>
+            </div>
+            <div class="timeline-desc">
+              <b>Your work description here.</b>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <img class="social-icon" src="images/MSRA_3.jpg"/>
+              2023 - 2024
+            </div>
+            <div class="timeline-title">
+              Internship / Visiting / Research Experience
+            </div>
+            <div class="timeline-desc">
+              <div class="timeline-host">
+                Supervisor: Your Supervisor Name
+              </div>
+            </div>
+          </div>
         </div>
       </div> -->
-    </div>
-  </div>
-  <!-- <script type="text/javascript">
-    function deepFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/deep-me.jpg');
-      $('#profile-avatar').removeClass('border-dark');
-      $('#profile-avatar').addClass('border-bright');
+	  
+	  <div class="timeline-body">
+	    <div class="timeline-item">
+	      <div class="timeline-date">
+	        <!-- <img class="social-icon" src="images/jd_2.png"/> -->
+	        Coming Soon
+	      </div>
+	      <div class="timeline-title">
+	        Experience Not Started Yet
+	      </div>
+	      <div class="timeline-desc">
+	        <b>To be updated.</b>
+	      </div>
+	    </div>
+	  </div>
 
-      $('#profile-cover').removeClass('shallow-bg');
-      $('#profile-cover').addClass('deep-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-light');
-      $('#profile-namecard').addClass('wrapper-dark');
-      
-      $('#my-desc').removeClass('hide');
-      $('#my-contact').addClass('hide');    
-      // console.log('Move in now...');
-    }
+      <div id="publications" class="publications">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-file" aria-hidden="true"></i>
+          Publications<!--  我现在的实力还不用挑选代表作
+          (<button class="custom-button" id="show-selected-btn">Show Representative</button> /
+          <button class="custom-button" id="show-all-btn">Show All</button>) -->
+        </h1>
 
-    function shallowFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/me.jpg');
-      $('#profile-avatar').removeClass('border-bright');
-      $('#profile-avatar').addClass('border-dark');
+       <!-- <div class="pub-list">
 
-      $('#profile-cover').removeClass('deep-bg');
-      $('#profile-cover').addClass('shallow-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-dark');
-      $('#profile-namecard').addClass('wrapper-light');
-      
-      $('#my-contact').removeClass('hide');
-      $('#my-desc').addClass('hide');
-      // console.log('Move out now...');
-    }
-
-    $(function() { 
-      $('#my-pic').hover(deepFeature, shallowFeature);
-    })
-
-  </script> -->
-
-<div class="page-content">
-<div class="wrapper">
-<div id="bio" class="bio">
-
-  <h1 class="md-heading text-left">
-    <i class="fa fa-id-card" aria-hidden="true"></i>
-    About
-  </h1>
-  <div class="bio-body" style="overflow:hidden;">
-    <p>
-      I am an researcher in <a href="https://baike.baidu.com/item/%E4%BA%AC%E4%B8%9C%E6%8E%A2%E7%B4%A2%E7%A0%94%E7%A9%B6%E9%99%A2/58115352" target="_blank">JD Explore Academy</a>, where I focus on embodied AI.
-I got my Ph.D. at the <a href="http://ri.ust.hk" target="_blank">Robotics Institute</a>, <a href="https://www.ust.hk" target="_blank">The Hong Kong University of Science and Technology</a>, where I work on computer vision and autonomous driving under the supervision of <a href="https://cqf.io/" target="_blank">Prof. Qifeng Chen</a> and <a href="https://scholar.google.com/citations?user=Oo7c22wAAAAJ&hl=zh-CN" target="_blank">Prof. Michael Yu Wang</a>.
- 
-I'm always looking for related colaboration. If you are interested to chat with me, feel free to drop me an <a href="mailto:jcenaa@connect.ust.hk" target="_blank">email</a>.
-
-      <br>
-    </p>
-
-    <div style="width: 50%; float:left">
-			<h3>
-		    <i class="fa fa-star" aria-hidden="true"></i>
-		    <strong>Interests</strong>
-			</h3>
-      <ul>
-        <!-- <li><b>Multi-modality</b></li> -->
-        <li><b>Embodied AI, Multi-modality LLM</b></li>
-        <a href="https://arxiv.org/pdf/2511.17502" target="_blank">[RynnVLA-002]</a><a href="https://arxiv.org/pdf/2506.21539" target="_blank">[WorldVLA]</a><a href="https://arxiv.org/pdf/2509.15212" target="_blank">[RynnVLA-001]</a><a href="https://neurips.cc/virtual/2025/poster/120127" target="_blank">[HiMaCon]</a><a href="https://arxiv.org/pdf/2509.19460" target="_blank">[SEIL]</a><a href="https://arxiv.org/pdf/2503.03464" target="_blank">[Survey]</a><a href="https://arxiv.org/abs/2402.10534" target="_blank">[VLP]</a><a href="https://ieeexplore.ieee.org/abstract/document/9681231" target="_blank">[VPN]</a>
-        <li><b>Autonomous Driving</b></li>
-        <a href="https://arxiv.org/abs/2403.13261" target="_blank">[STC]</a><a href="https://arxiv.org/abs/2207.01452" target="_blank">[REAL]</a><a href="https://arxiv.org/abs/2108.04562" target="_blank">[DML]</a><a href="https://arxiv.org/abs/2112.01135" target="_blank">[MLUC]</a>
-        <li><b>3D Segmentation</b></li>
-        <a href="https://arxiv.org/abs/2409.08083" target="_blank">[SimMAT]</a><a href="https://arxiv.org/abs/2403.17010" target="_blank">[Calib3D]</a><a href="https://arxiv.org/abs/2305.14207" target="_blank">[Segment Any RGBD]</a><a href="https://arxiv.org/abs/2306.09347" target="_blank">[Segment Any Point Cloud]</a><a href="https://arxiv.org/abs/2405.10305" target="_blank">[PSG-4D]</a><a href="https://arxiv.org/abs/2307.04091" target="_blank">[CMDFusion]</a>
-        <li><b>Open-set Recognition</b></li>
-        <a href="https://openreview.net/forum?id=xLr0I_xYGAs" target="_blank">[UOSR]</a><a href="https://arxiv.org/abs/2303.15467" target="_blank">[PSL]</a>
-        <li><b>Continual Learning</b></li>
-        <a href="https://arxiv.org/abs/2403.08568" target="_blank">[CPrompt]</a><a href="https://arxiv.org/abs/2211.00833" target="_blank">[FrameMaker]</a><a href="https://ieeexplore.ieee.org/abstract/document/9665922" target="_blank">[KD-TIL]</a>
-      </ul>
-    </div>
-
-    <div style="width: 50%; float:right">
-			<h3>
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				<strong>Education</strong>
-			</h3>
-			<b>The Hong Kong University of Science and Technology</b><br>
-			<ul>
-        <li>Ph.D in Robotics, Sep. 2020 - Oct. 2024</li>
-        <li>Mentor: <a href="https://cqf.io/" target="_blank">Prof. Qifeng Chen</a> and <a href="https://scholar.google.com/citations?user=Oo7c22wAAAAJ&hl=zh-CN" target="_blank">Prof. Michael Yu Wang</a> </li>
-      </ul>
-      <b>The Hong Kong University of Science and Technology</b><br>
-        <ul>
-          <li>M.Sc in Mechanical Engineering, Sep. 2019 - Oct. 2020</li>
-          <li>Mentor: <a href="https://seng.hkust.edu.hk/about/people/faculty/lilong-cai" target="_blank">Prof. Lilong Cai</a></li>
-        </ul>
-      <b>Zhejiang University</b><br>
-      <ul>
-        <li>B.Eng in Mechatronics Engineering, Sep. 2015 - Oct. 2019</li>
-        <li>Mentor: <a href="http://me.zju.edu.cn/meenglish/2016/1129/c15493a734703/page.htm" target="_blank">Prof. Jinghua Xu</a></li>
-      </ul>
-    </div>
-  
-  </div>
-</div>
-
-<!-- <div id="news" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-tasks" aria-hidden="true"></i>
-    News
-  </h1>  
-  <ul>
-    	<li class="indented" data-date="[Feb, 2024]"> Give a talk on <a href="https://arxiv.org/pdf/2402.03675.pdf">protein-protein interaction prediction</a> to <a href="https://jian-tang.com/students/">Jian Tang's group</a>. [<a href="files/ppiretrieval.pdf">Slide</a>]</li>
-	<li class="indented" data-date="[Dec, 2023]"> Give a talk on <a href="https://arxiv.org/pdf/2304.14621.pdf">structure-based molecule design</a> at LoG2023 Montreal. [<a href="files/mudiff.pdf">Slide</a>][<a href="https://www.youtube.com/watch?v=Z5l-gaV-DUo">Video</a>]</li>
-    	<li class="indented" data-date="[Nov, 2023]"> One paper accepted to 2nd Learning on Graphs Conference.</li>
-    	<li class="indented" data-date="[Oct, 2023]"> One paper accepted to 37th Conference on Neural Information Processing Systems.</li>
-    	<li class="indented" data-date="[Sep, 2023]"> One paper accepted to 12th International Conference on Complex Networks and their Applications.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> One paper accepted to 36th Conference on Neural Information Processing Systems, GLFrontiers, and selected for <b><span style="color: red;">Oral</span></b> presentation.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> Two papers accepted to 36th Conference on Neural Information Processing Systems, and one paper selected for <b><span style="color: red;">Spotlight</span></b> presentation.</li>
-  </ul>
-</div> -->
-
-<!-- <div class="wrapper"> -->
-  <div id="timeline" class="timeline-brief">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Experiences
-    </h1>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/jd_2.png"/>
-          Feb, 2026 - Now
-        </div>
-        <div class="timeline-title">
-          Researcher @ <a href="https://baike.baidu.com/item/%E4%BA%AC%E4%B8%9C%E6%8E%A2%E7%B4%A2%E7%A0%94%E7%A9%B6%E9%99%A2/58115352" target="_blank">JD Explore Academy</a>
-        </div>
-        <div class="timeline-desc">
-          <b> Focus on Embodied AI and VLA models. </b>
-          <div class="timeline-host">
-            <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-          </div>
-        </div>
-      </div>
-    
-  
-    <div class="timeline-body">
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/damo_logo_2.avif"/>
-          Aug, 2024 - Jan, 2026
-        </div>
-        <div class="timeline-title">
-          Algorithm Expert @ <a href="https://damo.alibaba.com/?language=zh" target="_blank">DAMO Academy, Alibaba</a>
-        </div>
-        <div class="timeline-desc">
-          <b> Join as <img class="social-icon" src="images/alistar.png" style="width:20px; height:20px; vertical-align:middle; position:relative; top:-2px;"/>&#8201<a href="https://talent.alibaba.com/activity/ali-star?lang=zh" target="_blank">AliStar,</a> focus on Embodied AI and VLA models. </b>
-          <div class="timeline-host">
-            <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/MSRA_3.jpg"/>
-          Aug, 2023 - May, 2024
-        </div>
-        <div class="timeline-title">
-          Research Intern @ <a href="https://www.msra.cn/" target="_blank">MSRA</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            Supervisor: <a href="https://chenfei-wu.github.io//" target="_blank">Dr. Chenfei Wu</a>, <a href="https://nanduan.github.io//" target="_blank">Dr. Nan Duan</a>
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/SUSTech_3.png"/>
-          Aug, 2023 - July, 2024
-        </div>
-        <div class="timeline-title">
-          Visiting Student @ <a href="https://www.sustech.edu.cn/en/" target="_blank">SUSTech</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            Supervisor: <a href="https://www.sustech.edu.cn/en/faculties/zhangjianguo.html" target="_blank">Prof. Jianguo Zhang</a>
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/ntu_logo_2.png"/>
-          Mar, 2023 - Sep, 2023
-        </div>
-        <div class="timeline-title">
-          Visiting Student @ <a href="https://www.mmlab-ntu.com/" target="_blank">MMLab, NTU</a>
-        </div>
-        <div class="timeline-desc">
-        <div class="timeline-host">
-          Supervisor: <a href="https://liuziwei7.github.io/" target="_blank">Prof. Ziwei Liu</a>
-        </div>
-      </div>
-      </div>
-  
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/tongyi.png"/>
-            Mar, 2022 - Mar, 2023
-          </div>
-          <div class="timeline-title">
-            Research Intern @ <a href="https://tongyi.aliyun.com/welcome" target="_blank">Tongyi Lab, Alibaba</a>
-          </div>
-          <div class="timeline-desc">
-            <div class="timeline-host">
-              Supervisor: <a href="https://scholar.google.com/citations?user=ZO3OQ-8AAAAJ&hl=en" target="_blank">Dr. Shiwei Zhang</a> 
+          <div class="pub" data-selected="true">
+            <div class="pub-left">
+              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
             </div>
-          </div>
-        </div>
-  
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/hikvision.jpg"/>
-              Mar, 2020 - July, 2020
-            </div>
-            <div class="timeline-title">
-              Algorithm Intern @ <a href="https://www.hikvision.com/en/" target="_blank">HIKVISION</a>
-            </div>
-            <div class="timeline-desc">
-              <div class="timeline-host">
-                Supervisor: <a href="https://ieeexplore.ieee.org/author/37088529015" target="_blank"> Dr. Yushi Zhu</a>
+            <div class="pub-right">
+              <div class="title">
+                Your Representative Paper Title
+              </div>
+              <div class="authors">
+                <font style="font-size: 11pt;">
+                  <b>Pengchao Wei</b>, Coauthor A, Coauthor B
+                </font>
+              </div>
+              <div class="publish">
+                <span class="place">Conference / Journal, Year</span>
+              </div>
+              <div class="tags">
+                [<a class="tag" href="#" target="_blank">Paper</a>]
+                [<a class="tag" href="#" target="_blank">Code</a>]
+                [<a class="tag" href="#" target="_blank">Project Page</a>]
               </div>
             </div>
-          </div>
-      
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/cuhk_logo.png"/>
-              Nov, 2019 - Feb, 2020
+          </div> -->
+
+         <!-- <div class="pub" data-selected="false">
+            <div class="pub-left">
+              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
             </div>
-            <div class="timeline-title">
-              Research Assistant @ <a href="https://www.cuhk.edu.cn/en" target="_blank">CUHK(SZ)</a>
-            </div>
-            <div class="timeline-desc">
-              <div class="timeline-host">
-                Supervisor: <a href="https://sites.google.com/view/zhouliguang" target="_blank">Dr. Liguang Zhou</a>, <a href="https://sites.google.com/site/lamtinlun" target="_blank">Prof. Tin Lun Lam</a>
+            <div class="pub-right">
+              <div class="title">
+                Another Paper Title
+              </div>
+              <div class="authors">
+                <font style="font-size: 11pt;">
+                  Author A, <b>Pengchao Wei</b>, Author C
+                </font>
+              </div>
+              <div class="publish">
+                <span class="place">Conference / Journal, Year</span>
+              </div>
+              <div class="tags">
+                [<a class="tag" href="#" target="_blank">Paper</a>]
+                [<a class="tag" href="#" target="_blank">Code</a>]
               </div>
             </div>
-          </div>
-  
-    <br>
-  </div>
-  </div>
+          </div> -->
 
-
-<div id="publications" class="publications">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-file" aria-hidden="true"></i>
-    Publications (<button class="custom-button" id="show-selected-btn"> Show Representative </button> / <button class="custom-button" id="show-all-btn"> Show All </button>)
-  </h1>
-
-
-
-  <div class="pub-list">
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/rynnvla002.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          RynnVLA-002: A Unified Vision-Language-Action and World Model
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            <b>Jun Cen*</b>, Siteng Huang*, Yuqian Yuan*, Kehan Li*, Hangjie Yuan, Chaohui Yu, Yuming Jiang, Jiayan Guo, Xin Li, Hao Luo, Fan Wang, Deli Zhao, Hao Chen
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2511.17502" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">Code (Star 800+)</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/worldvla.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          WorldVLA: Towards Autoregressive Action World Model
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            <b>Jun Cen</b>, Chaohui Yu, Hangjie Yuan, Yuming Jiang, Siteng Huang, Jiayan Guo, Xin Li, Yibing Song, Hao Luo, Fan Wang, Deli Zhao, Hao Chen
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2506.21539" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">Code (Star 800+)</a>]
+          <!-- <div class="pub" data-selected="false">
+            <div class="pub-left">
+              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
+            </div>
+            <div class="pub-right">
+              <div class="title">
+                Third Paper Title
+              </div>
+              <div class="authors">
+                <font style="font-size: 11pt;">
+                  <b>Pengchao Wei</b>, Author A, Author B
+                </font>
+              </div>
+              <div class="publish">
+                <span class="place">ArXiv / Conference / Journal, Year</span>
+              </div>
+              <div class="tags">
+                [<a class="tag" href="#" target="_blank">Paper</a>]
+              </div>
+            </div>
+          </div> -->
+			
+			<div class="pub" data-selected="false">
+			  <div class="pub-left">
+			    <!-- <img class="intro-img frame" src="images/placeholder.png" alt="publication cover"> -->
+			  </div>
+			  <div class="pub-right">
+			    <div class="title">
+			      Coming Soon
+			    </div>
+			    <!-- <div class="authors">
+			      <font style="font-size: 11pt;">
+			        <b>Pengchao Wei</b>
+			      </font>
+			    </div> -->
+			    <div class="publish">
+			      <span class="place">To be updated</span>
+			    </div>
+			    <!-- <div class="tags">
+			      [<a class="tag" href="javascript:void(0)">Coming Soon</a>]
+			    </div> -->
+			  </div>
+			</div>
+			
         </div>
       </div>
-    </div>
 
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/RynnVLA-001.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yuming Jiang, Siteng Huang, Shengke Xue, Yaxi Zhao, <b>Jun Cen</b>, Sicong Leng, Kehan Li, Jiayan Guo, Kexiang Wang, Mingxiu Chen, Fan Wang, Deli Zhao, Xin Li
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2509.15212" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/RynnVLA-001" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/token_merge.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Token Expand-Merge: Training-Free Token Compression for Vision-Language-Action Models
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yifan Ye*, Jiaqi Ma*, <b>Jun Cen</b>, Zhihe Lu
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/abs/2512.09927" target="_blank">Paper</a>]
-          [<a class="tag" href="hhttps://github.com/Jasper-aaa/TEAM-VLA" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/self-evolve.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Self-evolved Imitation Learning in Simulated World
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yifan Ye, <b>Jun Cen</b>, Jing Chen, Zhihe Lu
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2509.19460" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/Jasper-aaa/SEIL" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/vla_ad.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Vision-Language-Action Models for Autonomous Driving: Past, Present, and Future
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-           Tianshuai Hu, Xiaolu Liu, Song Wang, Yiyao Zhu, Ao Liang, Lingdong Kong, Guoyang Zhao, Zeying Gong, <b>Jun Cen</b>, Zhiyu Huang, Xiaoshuai Hao, Linfeng Li, Hang Song, Xiangtai Li, Jun Ma, Shaojie Shen, Jianke Zhu, Dacheng Tao, Ziwei Liu, Junwei Liang
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/abs/2512.16760" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/worldbench/awesome-vla-for-ad" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/Himacon.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Ruizhe Liu, Pei Zhou, Qian Luo, Li Sun, <b>Jun Cen</b>, Yibing Song, Yanchao Yang
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">NeurIPS 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="" target="_blank">Paper</a>]
-          [<a class="tag" href="" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/survey.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Generative Artificial Intelligence in Robotic Manipulation: A Survey
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Kun Zhang*, Peng Yun*, <b>Jun Cen</b>, Junhao Cai, Didi Zhu, Hangjie Yuan, Chao Zhao, Tao Feng, Michael Yu Wang, Qifeng Chen, Jia Pan, Bo Yang†, Hua Chen†
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2503.03464" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/lumos.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Lumos-1: On Autoregressive Video Generation from a Unified Model Perspective
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Hangjie Yuan, Weihua Chen, <b>Jun Cen</b>, Hu Yu, Jingyun Liang, Shuning Chang, Zhihui Lin, Tao Feng, Pengwei Liu, Jiazheng Xing, Hao Luo, Jiasheng Tang, Fan Wang, Yi Yang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICLR 2026</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2507.08801" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/alibaba-damo-academy/Lumos" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/wacv25.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Calib3D: Calibrating Model Preferences for Reliable 3D Scene Understanding
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Lingdong Kong*, Xiang Xu*, <b>Jun Cen</b>, Wenwei Zhang, Liang Pan, Kai Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">WACV 2025 oral</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2403.17010" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/ldkong1205/Calib3D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/samcl.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Continual Learning for Segment Anything Model Adaptation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jinglong Yang, Yichen Wu, <b>Jun Cen</b>, Wenjian Huang, Hong Wang, Jianguo Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2412.06418" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/yangjl1215/CoSAM" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/simcmf.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              SimCMF: A Simple Cross-modal Fine-tuning Strategy from Vision Foundation Models to Any Imaging Modality
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Chenyang Lei*, Liyi Chen*, <b>Jun Cen</b>, Xiao Chen, Zhen Lei, Felix Heide, Qifeng Chen, Zhaoxiang Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2411.18669" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/mt-cly/SimCMF" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/mm24.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              iControl3D: An Interactive System for Controllable 3D Scene Generation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Xingyi Li, Yizheng Wu, <b>Jun Cen</b>, Juewen Peng, Kewei Wang, Ke Xian, Zhe Wang, Zhiguo Cao, Guosheng Lin
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ACMMM 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2408.01678" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/xingyi-li/iControl3D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/VLP.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Using Left and Right Brains Together: Towards Vision and Language Planning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen*</b>, Chenfei Wu*, Xiao Liu, Shengming Yin, Yixuan Pei, Jinglong Yang, Qifeng Chen, Nan Duan, Jianguo Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICML 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2402.10534" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr24-mp.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Self-Supervised Class-Agnostic Motion Prediction with Spatial and Temporal Consistency Regularizations
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Kewei Wang, Yizheng Wu, <b>Jun Cen</b>, Zhiyu Pan, Xingyi Li, Zhe Wang, Zhiguo Cao, Guosheng Lin
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2403.13261" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/kwwcv/SelfMotion" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr24-il.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Consistent Prompting for Rehearsal-Free Continual Learning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Zhanxin Gao, <b>Jun Cen</b>, Xiaobin Chang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2403.08568" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Zhanxin-Gao/CPrompt" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iros_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              CMDFusion: Bidirectional Fusion Network with Cross-modality Knowledge Distillation for LIDAR Semantic Segmentation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Shiwei Zhang, Yixuan Pei, Kun Li, Hang Zheng, Maochun Luo, Yingya Zhang, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">RA-L 2023</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2307.04091" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/CMDFusion" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/logo_sad.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              SAD: Segment Any RGBD
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Yizheng Wu, Kewei Wang, Xingyi Li, Jingkang Yang, Yixuan Pei, Lingdong Kong, Ziwei Liu, Qifeng Chen
-                <br>
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 workshop</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2305.14207" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/SegmentAnyRGBD" target="_blank">Code (Star 800+)</a>]
-              [<a class="tag" href="https://twitter.com/liuziwei7/status/1651461200956514306?s=46&t=MqA7wuLxDqLOBW0TfTNOMA" target="_blank">Twitter</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/seg_pt.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Segment Any Point Cloud Sequences by Distilling Vision Foundation Models
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Youquan Liu*, Lingdong Kong*, <b>Jun Cen</b>, Runnan Chen, Wenwei Zhang, Liang Pan, Kai Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 Spotlight</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2306.09347" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/youquanl/Segment-Any-Point-Cloud" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/psg4d.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              4D Panoptic Scene Graph Generation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jingkang Yang, <b>Jun Cen</b>, Wenxuan Peng, Shuai Liu, Fangzhou Hong, Xiangtai Li, Kaiyang Zhou, Qifeng Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 Spotlight</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2405.10305" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jingkang50/PSG4D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/CLIPFSAR_arch.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              CLIP-guided Prototype Modulating for Few-shot Action Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Xiang Wang, Shiwei Zhang, <b>Jun Cen</b>, Changxin Gao, Yingya Zhang, Deli Zhao, Nong Sang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IJCV 2023</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2303.02982" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/alibaba-mmai-research/CLIP-FSAR" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Enlarge Instance-specific and Class-specific Information for Open-set Action Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Shiwei Zhang, Xiang Wang, Yixuan Pei, Zhiwu Qing, Yingya Zhang, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2023</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2303.15467" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/PSL" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iclr_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              The Devil is in the Wrongly-classified Samples: Towards Unified Open-set Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen*</b>, Di Luan*, Shiwei Zhang, Yixuan Pei, Yingya Zhang, Deli Zhao, Shaojie Shen, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICLR 2023</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://openreview.net/forum?id=xLr0I_xYGAs" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Unified_Open_Set_Recognition" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/nips2022.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Learning a Condensed Frame for Memory-Efficient Video Class-Incremental Learning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Yixuan Pei*, Zhiwu Qing*, <b>Jun Cen</b>, Xiang Wang, Shiwei Zhang, Yaxiong Wang, Mingqian Tang, Nong Sang, Xueming Qian
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2211.00833" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/eccv2022_2.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Open-world Semantic Segmentation for LIDAR Point Clouds
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Peng Yun, Shiwei Zhang, Junhao Cai, Di Luan, Michael Yu Wang, Ming Liu, Mingqian Tang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ECCV 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2207.01452" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Open_world_3D_semantic_segmentation" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/ral2022.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Real-Time Collision-Free Grasp Pose Detection With Geometry-Aware Refinement Using High-Resolution Volume
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Junhao Cai, <b>Jun Cen</b>, Haokun Wang, Michael Yu Wang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">RA-L with ICRA 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ieeexplore.ieee.org/abstract/document/9681231" target="_blank">Paper</a>]
-              [<a class="tag" href="https://sites.google.com/view/vpn-icra2022" target="_blank">Project Page and Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/3dv_2021.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Open-set 3D Object Detection
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Peng Yun, Junhao Cai, Michael Yu Wang, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">3DV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2112.01135" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/3dv_il.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Conflicts between Likelihood and Knowledge Distillation in Task Incremental Learning for 3D Object Detection
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Peng Yun, <b>Jun Cen</b>, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">3DV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ieeexplore.ieee.org/abstract/document/9665922" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/head_3.jpg">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Deep Metric Learning for Open World Semantic Segmentation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Jun Cen</b>, Peng Yun, Junhao Cai, Michael Yu Wang, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICCV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2108.04562" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation" target="_blank">Code</a>]
-              [<a class="tag" href="https://youtu.be/t1vl7MzGb2Q" target="_blank">Video</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iros2021.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              BORM: Bayesian Object Relation Model for Indoor Scene Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Liguang Zhou, <b>Jun Cen</b>, Xingchao Wang, Zhenglong Sun, Tin Lun Lam, Yangsheng Xu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IROS 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2108.00397" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/BORM" target="_blank">Code</a>]
-              [<a class="tag" href="https://www.youtube.com/watch?v=8lHP-sdNRJ8" target="_blank">Video</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/printer.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Precision forward design for 3D printing using kinematic sensitivity via Jacobian matrix considering uncertainty
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jinghua Xu, Xueqing Feng, <b>Jun Cen</b>, Shuyou Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IJAMT 2020</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://link.springer.com/article/10.1007/s00170-020-05940-4" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        
-    
-
-	    
-	      
-      </div>
-    </div>
-
-    
-
-  </div>
-</div>
-</div>
-	
-<!-- JavaScript to handle button clicks -->
-<script>
-  // Get the buttons and publications
-  const showSelectedBtn = document.getElementById('show-selected-btn');
-  const showAllBtn = document.getElementById('show-all-btn');
-  const publications = document.querySelectorAll('.pub');
-
-  // Add event listener to 'Show Selected Publication' button
-  showSelectedBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      if (pub.getAttribute('data-selected') === 'true') {
-        pub.style.display = 'block';  // Show selected publication
-      } else {
-        pub.style.display = 'none';  // Hide other publications
-      }
-    });
-  });
-
-  // Add event listener to 'Show All' button
-  showAllBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      pub.style.display = 'block';  // Show all publications
-    });
-  });
-</script>
-
-<script>
-  const repos = [
-    { owner: "alibaba-damo-academy", repo: "WorldVLA", starId: "star-count", forkId: "fork-count" },
-    { owner: "GAI4Manipulation", repo: "AwesomeGAIManipulation", starId: "star-count-2", forkId: "fork-count-2" },
-    { owner: "Jun-CEN", repo: "CMDFusion", starId: "star-count-3", forkId: "fork-count-3" },
-    { owner: "Jun-CEN", repo: "SegmentAnyRGBD", starId: "star-count-4", forkId: "fork-count-4" },
-    { owner: "Jun-CEN", repo: "PSL", starId: "star-count-5", forkId: "fork-count-5" },
-    { owner: "Jun-CEN", repo: "Unified-Open-Set-Recognition", starId: "star-count-6", forkId: "fork-count-6" },
-    { owner: "Jun-CEN", repo: "Open-world-3D-semantic-segmentation", starId: "star-count-7", forkId: "fork-count-7" },
-    { owner: "Jun-CEN", repo: "Open-World-Semantic-Segmentation", starId: "star-count-8", forkId: "fork-count-8" },
-    { owner: "Jingkang50", repo: "PSG4D", starId: "star-count-9", forkId: "fork-count-9" },
-    { owner: "youquanl", repo: "Segment-Any-Point-Cloud", starId: "star-count-10", forkId: "fork-count-10" }
-  ];
-
-  async function loadGitHubStats() {
-    for (const { owner, repo, starId, forkId } of repos) {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-        if (!res.ok) throw new Error("GitHub API error");
-        const data = await res.json();
-        document.getElementById(starId).innerText = data.stargazers_count ?? "–";
-        document.getElementById(forkId).innerText = data.forks_count ?? "–";
-      } catch (e) {
-        console.error(`Failed to load stats for ${owner}/${repo}`, e);
-        document.getElementById(starId).innerText = "–";
-        document.getElementById(forkId).innerText = "–";
-      }
-    }
-  }
-
-  loadGitHubStats();
-</script>
-
-
-<div class="wrapper">
-  <div id="codebase" class="bio">
-    <div class="bio-body" style="overflow:hidden;">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
-        GitHub
-      </h1>  
-      <div class="card-container">
-
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">
-              alibaba-damo-academy/<strong>WorldVLA</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            WorldVLA: Towards Autoregressive Action World Model.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/alibaba-damo-academy/WorldVLA/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;  <span id="star-count">–</span>
-            </a>
-            <a href="https://github.com/alibaba-damo-academy/WorldVLA/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp; <span id="fork-count">–</span>
-            </a>
-          </div>
-        </div>
-        
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation" target="_blank">
-              GAI4Manipulation/<strong>AwesomeGAIManipulation</strong>
-            </a>
-            <span class="label">Awesome List</span>
-          </div>
-          <div class="description">
-            Generative Artificial Intelligence in Robotic Manipulation: A Survey.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Markdown</div>
-            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-2">–</span>
-            </a>
-            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-2">–</span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/SegmentAnyRGBD" target="_blank">
-              Jun-CEN/<strong>SegmentAnyRGBD</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            SegmentAnyRGBD.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-4">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-4">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 9 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jingkang50/PSG4D" target="_blank">
-              Jingkang50/<strong>PSG4D</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [NeurIPS 2023] 4D Panoptic Scene Graph Generation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jingkang50/PSG4D/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-9">–</span>
-            </a>
-            <a href="https://github.com/Jingkang50/PSG4D/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-9">–</span>
-            </a>
-          </div>
-        </div>
-
-
-        <!-- Card 10 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/youquanl/Segment-Any-Point-Cloud" target="_blank">
-              youquanl/<strong>Segment-Any-Point-Cloud</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [NeurIPS 2023] Segment Any Point Cloud Sequences by Distilling Vision Foundation Models.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-10">–</span>
-            </a>
-            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-10">–</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/CMDFusion" target="_blank">
-              Jun-CEN/<strong>CMDFusion</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [RA-L 2023] CMDFusion: Bidirectional Fusion Network with Cross-modality Knowledge Distillation for LIDAR Semantic Segmentation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/CMDFusion/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-3">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/CMDFusion/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-3">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/PSL" target="_blank">
-              Jun-CEN/<strong>PSL</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [CVPR 2023] Enlarge Instance-specific and Class-specific Information for Open-set Action Recognition.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/PSL/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-5">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/PSL/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-5">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition" target="_blank">
-              Jun-CEN/<strong>Unified-Open-Set-Recognition</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ICLR 2023] The Devil is in the Wrongly-classified Samples: Towards Unified Open-set Recognition.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-6">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-6">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation" target="_blank">
-              Jun-CEN/<strong>Open-world-3D-semantic-segmentation</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ECCV 2022] Open-world Semantic Segmentation for LIDAR Point Clouds.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-7">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-7">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation" target="_blank">
-              Jun-CEN/<strong>Open-World-Semantic-Segmentation</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ICCV 2021] Deep Metric Learning for Open World Semantic Segmentation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-8">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-8">–</span>
-            </a>
-          </div>
-        </div>
-
-        
-        </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div id="awards" class="bio">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Selected Honors & Awards
-    </h1>
-    <ul>
-  	<li> <a href="images/RI.jpeg" target="_blank">Outstanding Research Intern, Alibaba Group, 2023.</a> (15 candidates per year)</li>
-	<li> Overseas Research Award, HKUST, 2023.</li>
-	<li> Postgraduate Studentship, HKUST, 2020-2024.</li>
-	<li> School of Engineering Excellent Student Scholarship, HKUST, 2019-2020.</li>
-	<li> School of Engineering Entrance Scholarship, HKUST, 2019-2020.</li>
-    </ul>
-  </div>
-</div>
-
-<style>
-  .reviewer-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-
-  .reviewer-column {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-    padding-right: 20px;
-    font-size: 0.85em; /* 字体略微变小 */
-    line-height: 1.6;
-    position: relative;
-    padding-left: 1em;
-    margin-bottom: 4px;
-  }
-
-  .reviewer-column::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #555;
-  }
-
-  @media (max-width: 600px) {
-    .reviewer-column {
-      flex: 1 1 100%;
-    }
-  }
-
-  .reviewer-title {
-    margin-top: 12px;
-    font-weight: bold;
-  }
-</style>
-
-<div class="wrapper">
-  <div id="academicservices" class="bio">
-    <div class="bio-body" style="overflow:hidden;">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
-        Academic Services
-      </h1>  
-
-      <div class="reviewer-title">Conference Reviewer:</div>
-      <div class="reviewer-section">
-        <div class="reviewer-column">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
-        <div class="reviewer-column">International Conference on Computer Vision (ICCV)</div>
-        <div class="reviewer-column">European Conference on Computer Vision (ECCV)</div>
-        <div class="reviewer-column">Conference on Neural Information Processing Systems (NeurIPS)</div>
-        <div class="reviewer-column">International Conference on Learning Representations (ICLR)</div>
-        <div class="reviewer-column">International Conference on Machine Learning (ICML)</div>
-        <div class="reviewer-column">International Conference on Robotics and Automation (ICRA)</div>
-        <div class="reviewer-column">International Conference on Intelligent Robots and Systems (IROS)</div>
-      </div>
-
-      <div class="reviewer-title">Journal Reviewer:</div>
-      <div class="reviewer-section">
-        <div class="reviewer-column">International Journal of Computer Vision (IJCV)</div>
-        <div class="reviewer-column">Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</div>
-        <div class="reviewer-column">Transactions on Neural Networks and Learning Systems (TNNLS)</div>
-        <div class="reviewer-column">Transactions on Circuits and Systems for Video Technology (TCSVT)</div>
-        <div class="reviewer-column">Transactions on Multimedia (TMM)</div>
-        <div class="reviewer-column">Robotics and Automation Letters (RA-L)</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="max-width: 400px; width: 100%;">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
-  </div>
-</div>
-
-
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>Personal Email:</li>
-          <li><a href="mailto:">jcenaa [at] connect.ust.hk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
-          <a href="https://scholar.google.com/citations?user=7SKAhBwAAAAJ&hl=en" target="_blank" class="icon-button github">
-          <i class="ai ai-google-scholar-square icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/Jun-CEN" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-         
-          <!-- <a href="work/Resume_Jun_CEN.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a> -->
-          <a href="https://www.xiaohongshu.com/user/profile/616ae887000000000201f2fa" class="icon-button xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer">
-            <i> <img src="https://cdn.simpleicons.org/xiaohongshu/FF2D55" alt="" width="45" height="45" style="vertical-align:middle;"> </i>
-            <span></span>
-          </a>
-      </div>
-	<div class="footer-col footer-col-3">
-    	<!--<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwillhua127.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-	<!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?user=Lxe71v4AAAAJ&hl=en&url=https%3A%2F%2Fscholar.google.com%2Fcitations&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-		<p class="text">Last updated: Feb, 2026.<br>The style of this website is borrowed from <a href='https://leoyuan.site/' target="_blank">Zeqing Yuan's</a>.</p>
-	</div>
-  </div>
-  </div>
-
-</footer>
-    <div class="back-to-top">Top</div>
-
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-    
-        }
-    });
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
-  </body>
-
-<!--
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    const showSelectedBtn = document.getElementById('show-selected-btn');
+    const showAllBtn = document.getElementById('show-all-btn');
+    const publications = document.querySelectorAll('.pub');
 
-  ga('create', 'UA-60071442-1', 'auto');
-  ga('send', 'pageview');
-</script>
--->
+    if (showSelectedBtn && showAllBtn) {
+      showSelectedBtn.addEventListener('click', function() {
+        publications.forEach(pub => {
+          if (pub.getAttribute('data-selected') === 'true') {
+            pub.style.display = 'block';
+          } else {
+            pub.style.display = 'none';
+          }
+        });
+      });
 
-<!--<script src="custom-pub.js"></script>-->
+      showAllBtn.addEventListener('click', function() {
+        publications.forEach(pub => {
+          pub.style.display = 'block';
+        });
+      });
+    }
+  </script>
+  
+
+  
+  <div class="wrapper">
+    <div id="codebase" class="bio">
+      <div class="bio-body" style="overflow:hidden;">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-github" aria-hidden="true"></i>
+          GitHub
+        </h1>
+  
+        <div class="github-pin-grid">
+          <a href="https://github.com/Running-Turtle1/MCM-ICM" target="_blank">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=Running-Turtle1&repo=MCM-ICM&theme=default&cache_seconds=100" alt="MCM-ICM Repo Card" />
+          </a>
+  
+          <a href="https://github.com/Running-Turtle1/jittor-retinanet" target="_blank">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=Running-Turtle1&repo=jittor-retinanet&theme=default&cache_seconds=10" alt="jittor-retinanet Repo Card" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- <div class="wrapper">
+    <div id="codebase" class="bio">
+      <div class="bio-body" style="overflow:hidden;">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-github" aria-hidden="true"></i>
+          GitHub
+        </h1>
+
+        <div class="card-container">
+			
+			
+          <div class="github-card">
+            <div>
+              <a class="repo-link" href="#" target="_blank">
+                Running-Turtle1/<strong>MCM-ICM</strong>
+              </a>
+              <span class="label">Project</span>
+            </div>
+            <div class="description">
+              2004-2025 美赛O奖论文
+            </div>
+            <div class="meta">
+              <div class="dot"></div>
+              <div>MATLAB</div>
+            </div>
+          </div>
+
+          <div class="github-card">
+            <div>
+              <a class="repo-link" href="#" target="_blank">
+                Running-Turtle1/<strong>rhttps://github.com/Running-Turtle1/MCM-ICM</strong>
+              </a>
+              <span class="label">Project</span>
+            </div>
+            <div class="description">
+              Brief description of your repository.
+            </div>
+            <div class="meta">
+              <div class="dot"></div>
+              <div>Code</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+<!-- 荣誉奖项 -->
+  <div class="wrapper">
+    <div id="awards" class="bio">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-tasks" aria-hidden="true"></i>
+        Selected Honors
+      </h1>
+      <ul>
+		  <li>2026: Outstanding Graduate, QUST</li>
+		  <li>2025: President’s Scholarship, QUST - 5,000 CNY</li>
+		  <li>2025: <a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank">
+		      Top Ten Outstanding Students of Qingdao University of Science and Technology 
+		    </a> </li>
+		  <li>2025: Shandong Provincial Government Scholarship – 6,000 CNY</li>
+		<li>
+		    2024: <a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank">
+		      National Scholarship 
+		    </a>  – 10,000 CNY
+		  </li>
+		<li>
+			2023: Qingdao Bank Scholarship
+		</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="wrapper">
+    <div id="competitions" class="bio">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+        Competitions
+      </h1>
+      <ul>
+		<li>2025: RAICOM Robot Developer Competition, National Finals (Programming Skills Track) — First Prize</li>
+		<li>2025: Chuanzhi Cup Programming Challenge, National Finals (Programming Skills Track) — First Prize</li>
+        <li>2024: ACM-ICPC Asia Shanghai Regional Contest — Bronze Medal</li>
+        <li>2024: ACM-ICPC Asia Hangzhou Regional Contest — Bronze Medal</li>
+        <li>2024: Baidu Star Programming Contest — Silver Medal</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div id="academicservices" class="bio">
+      <div class="bio-body" style="overflow:hidden;">
+        <h1 class="md-heading text-left">
+          <i class="fa fa-tasks" aria-hidden="true"></i>
+          Services
+        </h1>
+		Coming soon
+    <!--    <div class="reviewer-title">Conference Reviewer:</div>
+        <div class="reviewer-section">
+          <div class="reviewer-column">Conference / Reviewer Service 1</div>
+          <div class="reviewer-column">Conference / Reviewer Service 2</div>
+          <div class="reviewer-column">Conference / Reviewer Service 3</div>
+          <div class="reviewer-column">Conference / Reviewer Service 4</div>
+        </div>
+
+        <div class="reviewer-title">Journal Reviewer:</div>
+        <div class="reviewer-section">
+          <div class="reviewer-column">Journal / Reviewer Service 1</div>
+          <div class="reviewer-column">Journal / Reviewer Service 2</div>
+          <div class="reviewer-column">Journal / Reviewer Service 3</div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- <div style="display: flex; justify-content: center; align-items: center;">
+    <div style="max-width: 400px; width: 100%;">
+      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
+    </div>
+  </div> -->
+  
+  <br>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Personal Email:</li>
+            <li><a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <div class="social-media footer-social-media">
+
+        
+            <a href="https://github.com/Running-Turtle1" target="_blank" class="icon-button github" title="GitHub">
+              <i class="fa fa-github icon-github"></i>
+              <span></span>
+            </a>
+        
+            <a href="https://www.zhihu.com/people/92-64-51-48-85" target="_blank" class="icon-button zhihu" title="知乎">
+              <img src="images/icon/zhihu.png" class="icon-img" alt="知乎">
+              <span></span>
+            </a>
+        
+            <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" class="icon-button xiaohongshu" title="小红书">
+              <img src="images/icon/xiaohongshu.png" class="icon-img" alt="小红书">
+              <span></span>
+            </a>
+        
+
+        
+          </div>
+        </div>
+
+        <div class="footer-col footer-col-3" >
+          <p class="text">
+            Last updated: Mar, 2026.<br>
+            Personal homepage of Pengchao Wei.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">Top</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      const offset = 220;
+
+      if (!backToTop) return;
+
+      function updateBackToTop() {
+        if (window.scrollY > offset) {
+          backToTop.style.display = 'block';
+          backToTop.style.opacity = '1';
+        } else {
+          backToTop.style.opacity = '0';
+          backToTop.style.display = 'none';
+        }
+      }
+
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+      backToTop.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      updateBackToTop();
+    });
+  </script>
+</body>
 </html>
