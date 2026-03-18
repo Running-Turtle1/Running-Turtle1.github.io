@@ -14,13 +14,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-
   <style>
     li.indented {
       position: relative;
       padding-left: 90px;
     }
-
     li.indented::before {
       content: attr(data-date);
       position: absolute;
@@ -28,13 +26,11 @@
       top: 0;
       white-space: nowrap;
     }
-
     .reviewer-section {
       display: flex;
       flex-wrap: wrap;
       margin-top: 8px;
     }
-
     .reviewer-column {
       flex: 1 1 50%;
       box-sizing: border-box;
@@ -45,20 +41,17 @@
       padding-left: 1em;
       margin-bottom: 4px;
     }
-
     .reviewer-column::before {
       content: "•";
       position: absolute;
       left: 0;
       color: #555;
     }
-
     @media (max-width: 600px) {
       .reviewer-column {
         flex: 1 1 100%;
       }
     }
-
     .reviewer-title {
       margin-top: 12px;
       font-weight: bold;
@@ -77,7 +70,6 @@
             <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
           </svg>
         </a>
-
         <div class="trigger">
           <a class="page-link" href="#bio"><b>Biography</b></a>
           <a class="page-link" href="#timeline"><b>Experiences</b></a>
@@ -89,21 +81,13 @@
       </nav>
     </div>
   </header>
-	
-	<!-- 大头照 | 简历照 -->
+
+  <!-- 大头照 | 简历照 -->
   <div id="profile-cover" class="cover shallow-bg img-responsive">
     <div id="profile-namecard" class="profile-wrapper wrapper-light">
       <div id="my-pic" class="profile-col profile-col-1">
-        <!-- <img id="profile-avatar" src="images/myself2.jpg" alt="Pengchao Wei" class="circle-img border-dark" /> -->
-		<img
-		  id="profile-avatar"
-		  src="images/myself.jpg"
-		  alt="魏鹏超"
-		  class="circle-img border-dark"
-		  style="width: 170px; height: 170px; object-fit: cover; object-position: center 20%; border-radius: 50%;"
-		/>
-	  </div>
-
+        <img id="profile-avatar" src="images/myself.jpg" alt="魏鹏超" class="circle-img border-dark" />
+      </div>
       <div id="my-contact" class="profile-col profile-col-2">
         <div id="my-name" class="text-grey-dark">
           Pengchao Wei<br>
@@ -114,517 +98,195 @@
         <div id="my-email" class="text-grey-light">
           wei954327649 [AT] gmail.com
         </div>
+        <div class="social-media">
+          <a class="icon-button linkedin" title="Coming Soon">
+            <i class="ai ai-google-scholar-square icon-linkedin"></i>
+            <span></span>
+          </a>
+          <a href="https://github.com/Running-Turtle1" target="_blank" class="icon-button github" title="GitHub">
+            <i class="fa fa-github icon-github"></i>
+            <span></span>
+          </a>
+          <a href="https://www.zhihu.com/people/92-64-51-48-85" target="_blank" class="icon-button zhihu" title="知乎">
+            <img src="images/icon/zhihu.png" class="icon-img" alt="知乎">
+            <span></span>
+          </a>
+          <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" class="icon-button xiaohongshu" title="小红书">
+            <img src="images/icon/xiaohongshu.png" class="icon-img" alt="小红书">
+            <span></span>
+          </a>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAfe3VbtAio4XBQ8_O9AWWc6wxEbe28YJ8DHqkWnm4gtc" target="_blank" class="icon-button douyin" title="抖音">
+            <img src="images/icon/douyin.png" class="icon-img" alt="抖音">
+            <span></span>
+          </a>
+          <a href="https://blog.csdn.net/2301_78527293" target="_blank" class="icon-button csdn" title="CSDN">
+            <img src="images/icon/csdn.png" class="icon-img" alt="CSDN">
+            <span></span>
+          </a>
+          <a href="https://space.bilibili.com/3546379267869027" target="_blank" class="icon-button bilibili" title="Bilibili">
+            <img src="images/icon/bilibili.jpeg" class="icon-img" alt="Bilibili">
+            <span></span>
+          </a>
+          <a href="https://codeforces.com/profile/running_Turtle" target="_blank" class="icon-button codeforces" title="Codeforces">
+            <img src="images/icon/codeforces.png" class="icon-img" alt="Codeforces">
+            <span></span>
+          </a>
+        </div>
       </div>
-
-
-	  <div class="social-media">	  
-	    <!-- Google Scholar -->
-	    <!-- <a href="你的GoogleScholar链接" target="_blank" class="icon-button linkedin" title="Google Scholar">
-	      <i class="ai ai-google-scholar-square icon-linkedin"></i>
-	      <span></span>
-	    </a> -->
-		<a class="icon-button linkedin" title="Coming Soon">
-		  <i class="ai ai-google-scholar-square icon-linkedin"></i>
-		  <span></span>
-		</a>
-	  
-	    <!-- GitHub -->
-	    <a href="https://github.com/Running-Turtle1" target="_blank" class="icon-button github" title="GitHub">
-	      <i class="fa fa-github icon-github"></i>
-	      <span></span>
-	    </a>
-	  
-	    <!-- Zhihu -->
-	    <a href="https://www.zhihu.com/people/92-64-51-48-85" target="_blank" class="icon-button zhihu" title="知乎">
-	      <img src="images/icon/zhihu.png" class="icon-img">
-	      <span></span>
-	    </a>
-	  
-	    <!-- Xiaohongshu -->
-	    <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" class="icon-button xiaohongshu" title="小红书">
-	      <img src="images/icon/xiaohongshu.png" class="icon-img">
-	      <span></span>
-	    </a>
-		
-		<br>
-	  
-	    <!-- Douyin -->
-	    <a href="https://www.douyin.com/user/MS4wLjABAAAAfe3VbtAio4XBQ8_O9AWWc6wxEbe28YJ8DHqkWnm4gtc" target="_blank" class="icon-button douyin" title="抖音">
-	      <img src="images/icon/douyin.png" class="icon-img">
-	      <span></span>
-	    </a>
-	  
-	    <!-- CSDN -->
-	    <a href="https://blog.csdn.net/2301_78527293" target="_blank" class="icon-button csdn" title="CSDN">
-	      <img src="images/icon/csdn.png" class="icon-img">
-	      <span></span>
-	    </a>
-	  
-	    <!-- Bilibili -->
-	    <a href="https://space.bilibili.com/3546379267869027" target="_blank" class="icon-button bilibili" title="Bilibili">
-	      <img src="images/icon/bilibili.jpeg" class="icon-img">
-	      <span></span>
-	    </a>
-	  
-	    <!-- Codeforces -->
-	    <a href="https://codeforces.com/profile/running_Turtle" target="_blank" class="icon-button codeforces" title="Codeforces">
-	      <img src="images/icon/codeforces.png" class="icon-img">
-	      <span></span>
-	    </a>
-	  
-	  </div>
     </div>
   </div>
 
   <div class="page-content">
     <div class="wrapper">
-
-      <div id="bio" class="bio">
+      <!-- About / Biography -->
+      <section id="bio" class="bio">
         <h1 class="md-heading text-left">
           <i class="fa fa-id-card" aria-hidden="true"></i>
           About
         </h1>
-
-        <div class="bio-body" style="overflow:hidden;">
+        <div class="bio-body">
           <p>
             Hello! I am <strong>Pengchao Wei (魏鹏超)</strong>.<br><br>
             Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, projects, and academic services.<br><br>
-            My current research focuses on demoiré removal in Low-Level Computer Vision. <br><br>
+            My current research focuses on demoiré removal in Low-Level Computer Vision.<br><br>
             If you would like to contact me, please send an email to
             <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.
           </p>
-		  
-		  <br>
-
-          <div style="width: 50%; float:left">
-            <h3>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <strong>Research Interests</strong>
-            </h3>
-            <ul>
-              <li>
-                <b>Low-Level Computer Vision</b><br>
-               <!-- [<a href="#">Demoiré</a>]
-                [<a href="#">Image Restoration</a>]
-                [<a href="#">Computational Photography</a>] -->
-              </li>
-            
-              <!-- <li>
-                <b>Image Enhancement</b><br>
-                [<a href="#">Low-Light Enhancement</a>]
-                [<a href="#">Super-Resolution</a>]
-              </li>
-            
-              <li>
-                <b>Pattern Removal</b><br>
-                [<a href="#">Demoiré Removal</a>]
-                [<a href="#">Rain Removal</a>]
-                [<a href="#">Artifact Reduction</a>]
-              </li>
-            
-              <li>
-                <b>Related Topics</b><br>
-                [<a href="#">Image Restoration Survey</a>]
-                [<a href="#">LLCV Project</a>]
-              </li> -->
-            </ul>
+          <div class="bio-columns">
+            <div class="bio-col bio-col-half">
+              <h3>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <strong>Research Interests</strong>
+              </h3>
+              <ul>
+                <li><b>Low-Level Computer Vision</b></li>
+              </ul>
+            </div>
+            <div class="bio-col bio-col-half">
+              <h3>
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <strong>Education</strong>
+              </h3>
+              <b>Tianjin University</b><br>
+              <ul>
+                <li>M.Eng. in Computer Science, 2025 - Present</li>
+                <li>Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank">Prof. Xiaojie Guo</a></li>
+              </ul>
+              <b>Qingdao University of Science and Technology</b><br>
+              <ul>
+                <li>B.Eng. in Computer Science, 2022 - Present</li>
+                <li>GPA: 4.16/5.00 | Rank: 1/131</li>
+              </ul>
+            </div>
           </div>
-
-          <!-- <div style="width: 50%; float:right">
-            <h3>
-              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-              <strong>Education</strong>
-            </h3>
-
-            <b>Your University Name</b><br>
-            <ul>
-              <li>Ph.D / M.Sc / B.Eng, Year - Year</li>
-              <li>Advisor: Your Advisor Name</li>
-            </ul>
-
-            <b>Your University Name</b><br>
-            <ul>
-              <li>Degree, Year - Year</li>
-              <li>Advisor: Your Advisor Name</li>
-            </ul>
-          </div> -->
-		  <div style="width: 50%; float:right">
-		    <h3>
-		      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-		      <strong>Education</strong>
-		    </h3>
-		  
-		    <b>Tianjin University</b><br>
-		    <ul>
-		      <li>M.Eng. in Computer Science, 2025 - Present</li>
-		      <li>Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank">Prof. Xiaojie Guo</a></li>
-		    </ul>
-		  
-		    <b>Qingdao University of Science and Technology</b><br>
-		    <ul>
-		      <li>B.Eng. in Computer Science, 2022 - Present</li>
-			  <li>GPA: 4.16/5.00 | Rank: 1/131</li>
-		    </ul>
-		  </div>
         </div>
-      </div>
+      </section>
 
-      <div id="timeline" class="timeline-brief">
+      <!-- Experiences -->
+      <section id="timeline" class="timeline-brief">
         <h1 class="md-heading text-left">
           <i class="fa fa-tasks" aria-hidden="true"></i>
           Experiences
         </h1>
-
-        <!-- <div class="timeline-body">
+        <div class="timeline-body">
           <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/jd_2.png"/>
-              2026 - Present
-            </div>
-            <div class="timeline-title">
-              Your Position @ <a href="#" target="_blank">Your Organization</a>
-            </div>
-            <div class="timeline-desc">
-              <b>Your work description here.</b>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/damo_logo_2.avif"/>
-              2024 - 2026
-            </div>
-            <div class="timeline-title">
-              Your Previous Position @ <a href="#" target="_blank">Your Previous Organization</a>
-            </div>
-            <div class="timeline-desc">
-              <b>Your work description here.</b>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/MSRA_3.jpg"/>
-              2023 - 2024
-            </div>
-            <div class="timeline-title">
-              Internship / Visiting / Research Experience
-            </div>
-            <div class="timeline-desc">
-              <div class="timeline-host">
-                Supervisor: Your Supervisor Name
-              </div>
-            </div>
+            <div class="timeline-date">Coming Soon</div>
+            <div class="timeline-title">Experience Not Started Yet</div>
+            <div class="timeline-desc"><b>To be updated.</b></div>
           </div>
         </div>
-      </div> -->
-	  
-	  <div class="timeline-body">
-	    <div class="timeline-item">
-	      <div class="timeline-date">
-	        <!-- <img class="social-icon" src="images/jd_2.png"/> -->
-	        Coming Soon
-	      </div>
-	      <div class="timeline-title">
-	        Experience Not Started Yet
-	      </div>
-	      <div class="timeline-desc">
-	        <b>To be updated.</b>
-	      </div>
-	    </div>
-	  </div>
+      </section>
 
-      <div id="publications" class="publications">
+      <!-- Publications -->
+      <section id="publications" class="publications">
         <h1 class="md-heading text-left">
           <i class="fa fa-file" aria-hidden="true"></i>
-          Publications<!--  我现在的实力还不用挑选代表作
-          (<button class="custom-button" id="show-selected-btn">Show Representative</button> /
-          <button class="custom-button" id="show-all-btn">Show All</button>) -->
+          Publications
         </h1>
-
-       <!-- <div class="pub-list">
-
-          <div class="pub" data-selected="true">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
-            </div>
+        <div class="pub-list">
+          <div class="pub" data-selected="false">
+            <div class="pub-left"></div>
             <div class="pub-right">
-              <div class="title">
-                Your Representative Paper Title
-              </div>
-              <div class="authors">
-                <font style="font-size: 11pt;">
-                  <b>Pengchao Wei</b>, Coauthor A, Coauthor B
-                </font>
-              </div>
+              <div class="title">Coming Soon</div>
               <div class="publish">
-                <span class="place">Conference / Journal, Year</span>
-              </div>
-              <div class="tags">
-                [<a class="tag" href="#" target="_blank">Paper</a>]
-                [<a class="tag" href="#" target="_blank">Code</a>]
-                [<a class="tag" href="#" target="_blank">Project Page</a>]
+                <span class="place">To be updated</span>
               </div>
             </div>
-          </div> -->
-
-         <!-- <div class="pub" data-selected="false">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
-            </div>
-            <div class="pub-right">
-              <div class="title">
-                Another Paper Title
-              </div>
-              <div class="authors">
-                <font style="font-size: 11pt;">
-                  Author A, <b>Pengchao Wei</b>, Author C
-                </font>
-              </div>
-              <div class="publish">
-                <span class="place">Conference / Journal, Year</span>
-              </div>
-              <div class="tags">
-                [<a class="tag" href="#" target="_blank">Paper</a>]
-                [<a class="tag" href="#" target="_blank">Code</a>]
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="pub" data-selected="false">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/placeholder.png" alt="publication cover">
-            </div>
-            <div class="pub-right">
-              <div class="title">
-                Third Paper Title
-              </div>
-              <div class="authors">
-                <font style="font-size: 11pt;">
-                  <b>Pengchao Wei</b>, Author A, Author B
-                </font>
-              </div>
-              <div class="publish">
-                <span class="place">ArXiv / Conference / Journal, Year</span>
-              </div>
-              <div class="tags">
-                [<a class="tag" href="#" target="_blank">Paper</a>]
-              </div>
-            </div>
-          </div> -->
-			
-			<div class="pub" data-selected="false">
-			  <div class="pub-left">
-			    <!-- <img class="intro-img frame" src="images/placeholder.png" alt="publication cover"> -->
-			  </div>
-			  <div class="pub-right">
-			    <div class="title">
-			      Coming Soon
-			    </div>
-			    <!-- <div class="authors">
-			      <font style="font-size: 11pt;">
-			        <b>Pengchao Wei</b>
-			      </font>
-			    </div> -->
-			    <div class="publish">
-			      <span class="place">To be updated</span>
-			    </div>
-			    <!-- <div class="tags">
-			      [<a class="tag" href="javascript:void(0)">Coming Soon</a>]
-			    </div> -->
-			  </div>
-			</div>
-			
+          </div>
         </div>
-      </div>
-
+      </section>
     </div>
   </div>
 
-  <script>
-    const showSelectedBtn = document.getElementById('show-selected-btn');
-    const showAllBtn = document.getElementById('show-all-btn');
-    const publications = document.querySelectorAll('.pub');
-
-    if (showSelectedBtn && showAllBtn) {
-      showSelectedBtn.addEventListener('click', function() {
-        publications.forEach(pub => {
-          if (pub.getAttribute('data-selected') === 'true') {
-            pub.style.display = 'block';
-          } else {
-            pub.style.display = 'none';
-          }
-        });
-      });
-
-      showAllBtn.addEventListener('click', function() {
-        publications.forEach(pub => {
-          pub.style.display = 'block';
-        });
-      });
-    }
-  </script>
-  
-
-  
+  <!-- GitHub -->
   <div class="wrapper">
-    <div id="codebase" class="bio">
-      <div class="bio-body" style="overflow:hidden;">
-        <h1 class="md-heading text-left">
-          <i class="fa fa-github" aria-hidden="true"></i>
-          GitHub
-        </h1>
-  
+    <section id="codebase" class="bio">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-github" aria-hidden="true"></i>
+        GitHub
+      </h1>
+      <div class="bio-body">
         <div class="github-pin-grid">
           <a href="https://github.com/Running-Turtle1/MCM-ICM" target="_blank">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=Running-Turtle1&repo=MCM-ICM&theme=default&cache_seconds=100" alt="MCM-ICM Repo Card" />
           </a>
-  
           <a href="https://github.com/Running-Turtle1/jittor-retinanet" target="_blank">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=Running-Turtle1&repo=jittor-retinanet&theme=default&cache_seconds=10" alt="jittor-retinanet Repo Card" />
           </a>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
- <!-- <div class="wrapper">
-    <div id="codebase" class="bio">
-      <div class="bio-body" style="overflow:hidden;">
-        <h1 class="md-heading text-left">
-          <i class="fa fa-github" aria-hidden="true"></i>
-          GitHub
-        </h1>
-
-        <div class="card-container">
-			
-			
-          <div class="github-card">
-            <div>
-              <a class="repo-link" href="#" target="_blank">
-                Running-Turtle1/<strong>MCM-ICM</strong>
-              </a>
-              <span class="label">Project</span>
-            </div>
-            <div class="description">
-              2004-2025 美赛O奖论文
-            </div>
-            <div class="meta">
-              <div class="dot"></div>
-              <div>MATLAB</div>
-            </div>
-          </div>
-
-          <div class="github-card">
-            <div>
-              <a class="repo-link" href="#" target="_blank">
-                Running-Turtle1/<strong>rhttps://github.com/Running-Turtle1/MCM-ICM</strong>
-              </a>
-              <span class="label">Project</span>
-            </div>
-            <div class="description">
-              Brief description of your repository.
-            </div>
-            <div class="meta">
-              <div class="dot"></div>
-              <div>Code</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-<!-- 荣誉奖项 -->
+  <!-- Honors & Awards -->
   <div class="wrapper">
-    <div id="awards" class="bio">
+    <section id="awards" class="bio">
       <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
+        <i class="fa fa-trophy" aria-hidden="true"></i>
         Selected Honors
       </h1>
       <ul>
-		  <li>2026: Outstanding Graduate, QUST</li>
-		  <li>2025: President’s Scholarship, QUST - 5,000 CNY</li>
-		  <li>2025: <a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank">
-		      Top Ten Outstanding Students of Qingdao University of Science and Technology 
-		    </a> </li>
-		  <li>2025: Shandong Provincial Government Scholarship – 6,000 CNY</li>
-		<li>
-		    2024: <a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank">
-		      National Scholarship 
-		    </a>  – 10,000 CNY
-		  </li>
-		<li>
-			2023: Qingdao Bank Scholarship
-		</li>
+        <li>2026: Outstanding Graduate, QUST</li>
+        <li>2025: President's Scholarship, QUST - 5,000 CNY</li>
+        <li>2025: <a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank">Top Ten Outstanding Students of Qingdao University of Science and Technology</a></li>
+        <li>2025: Shandong Provincial Government Scholarship – 6,000 CNY</li>
+        <li>2024: <a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank">National Scholarship</a> – 10,000 CNY</li>
+        <li>2023: Qingdao Bank Scholarship</li>
       </ul>
-    </div>
+    </section>
   </div>
-  
+
+  <!-- Competitions -->
   <div class="wrapper">
-    <div id="competitions" class="bio">
+    <section id="competitions" class="bio">
       <h1 class="md-heading text-left">
         <i class="fa fa-trophy" aria-hidden="true"></i>
         Competitions
       </h1>
-      <!-- <ul>
-		<li>2025.08: RAICOM Robot Developer Competition, National Finals, Programming Skills Track — First Prize</li>
-		<li>2025.06: Chuanzhi Cup Programming Challenge, National Finals, Programming Skills Track — First Prize</li>
-        <li>2024.11: ACM-ICPC Asia Shanghai Regional Contest — Bronze Medal</li>
-        <li>2024.11: ACM-ICPC Asia Hangzhou Regional Contest — Bronze Medal</li>
-        <li>2024.08: Baidu Star Programming Contest — Silver Medal</li>
-		<li>2024.06: Lanqiao Cup C/C++ Programming Contest, National Finals — Second Prize </li>
-		<li>2024.05: China Collegiate Computer Competition, Team Programming Ladder Tournament (GPLT), National Finals — Second Prize (Team) </li>
-      </ul> -->
-	  
-	  <ul>
-	    <li>Aug 2025: RAICOM Robot Developer Competition, National Finals (Programming Skills Track) — First Prize</li>
-	    <li>Jun 2025: Chuanzhi Cup Programming Challenge, National Finals (Programming Skills Track) — First Prize</li>
-	    <li>Nov 2024: ICPC Asia Shanghai Regional Contest — Bronze Medal</li>
-	    <li>Nov 2024: ICPC Asia Hangzhou Regional Contest — Bronze Medal</li>
-	    <li>Aug 2024: Baidu Star Programming Contest — Silver Medal</li>
-	    <li>Jun 2024: Lanqiao Cup C/C++ Programming Contest, National Finals, University Group B — Second Prize</li>
-	    <li>May 2024: China Collegiate Computer Competition, Team Programming Ladder Tournament (GPLT), National Finals, Huashan Division — Second Prize (Team)</li>
-	  </ul>
-    </div>
+      <ul>
+        <li>Aug 2025: RAICOM Robot Developer Competition, National Finals (Programming Skills Track) — First Prize</li>
+        <li>Jun 2025: Chuanzhi Cup Programming Challenge, National Finals (Programming Skills Track) — First Prize</li>
+        <li>Nov 2024: ICPC Asia Shanghai Regional Contest — Bronze Medal</li>
+        <li>Nov 2024: ICPC Asia Hangzhou Regional Contest — Bronze Medal</li>
+        <li>Aug 2024: Baidu Star Programming Contest — Silver Medal</li>
+        <li>Jun 2024: Lanqiao Cup C/C++ Programming Contest, National Finals, University Group B — Second Prize</li>
+        <li>May 2024: China Collegiate Computer Competition, Team Programming Ladder Tournament (GPLT), National Finals, Huashan Division — Second Prize (Team)</li>
+      </ul>
+    </section>
   </div>
 
-
+  <!-- Services -->
   <div class="wrapper">
-    <div id="academicservices" class="bio">
-      <div class="bio-body" style="overflow:hidden;">
-        <h1 class="md-heading text-left">
-          <i class="fa fa-tasks" aria-hidden="true"></i>
-          Services
-        </h1>
-		Coming soon
-    <!--    <div class="reviewer-title">Conference Reviewer:</div>
-        <div class="reviewer-section">
-          <div class="reviewer-column">Conference / Reviewer Service 1</div>
-          <div class="reviewer-column">Conference / Reviewer Service 2</div>
-          <div class="reviewer-column">Conference / Reviewer Service 3</div>
-          <div class="reviewer-column">Conference / Reviewer Service 4</div>
-        </div>
-
-        <div class="reviewer-title">Journal Reviewer:</div>
-        <div class="reviewer-section">
-          <div class="reviewer-column">Journal / Reviewer Service 1</div>
-          <div class="reviewer-column">Journal / Reviewer Service 2</div>
-          <div class="reviewer-column">Journal / Reviewer Service 3</div>
-        </div>
+    <section id="academicservices" class="bio">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-tasks" aria-hidden="true"></i>
+        Services
+      </h1>
+      <div class="bio-body">
+        <p>Coming soon</p>
       </div>
-    </div> -->
+    </section>
   </div>
-
-  <!-- <div style="display: flex; justify-content: center; align-items: center;">
-    <div style="max-width: 400px; width: 100%;">
-      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
-    </div>
-  </div> -->
-  
-  <br>
 
   <footer class="site-footer">
     <div class="wrapper">
@@ -635,32 +297,23 @@
             <li><a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a></li>
           </ul>
         </div>
-
         <div class="footer-col footer-col-2">
           <div class="social-media footer-social-media">
-
-        
             <a href="https://github.com/Running-Turtle1" target="_blank" class="icon-button github" title="GitHub">
               <i class="fa fa-github icon-github"></i>
               <span></span>
             </a>
-        
             <a href="https://www.zhihu.com/people/92-64-51-48-85" target="_blank" class="icon-button zhihu" title="知乎">
               <img src="images/icon/zhihu.png" class="icon-img" alt="知乎">
               <span></span>
             </a>
-        
             <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" class="icon-button xiaohongshu" title="小红书">
               <img src="images/icon/xiaohongshu.png" class="icon-img" alt="小红书">
               <span></span>
             </a>
-        
-
-        
           </div>
         </div>
-
-        <div class="footer-col footer-col-3" >
+        <div class="footer-col footer-col-3">
           <p class="text">
             Last updated: Mar, 2026.<br>
             Personal homepage of Pengchao Wei.
@@ -674,28 +327,46 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const backToTop = document.querySelector('.back-to-top');
-      const offset = 220;
+      var backToTop = document.querySelector('.back-to-top');
+      var menuIcon = document.querySelector('.site-nav .menu-icon');
+      var trigger = document.querySelector('.site-nav .trigger');
+      var offset = 220;
 
-      if (!backToTop) return;
-
-      function updateBackToTop() {
-        if (window.scrollY > offset) {
-          backToTop.style.display = 'block';
-          backToTop.style.opacity = '1';
-        } else {
-          backToTop.style.opacity = '0';
-          backToTop.style.display = 'none';
+      if (backToTop) {
+        function updateBackToTop() {
+          if (window.scrollY > offset) {
+            backToTop.style.display = 'block';
+            backToTop.style.opacity = '1';
+          } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.display = 'none';
+          }
         }
+        window.addEventListener('scroll', updateBackToTop, { passive: true });
+        backToTop.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        updateBackToTop();
       }
 
-      window.addEventListener('scroll', updateBackToTop, { passive: true });
-      backToTop.addEventListener('click', function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      updateBackToTop();
+      if (menuIcon && trigger) {
+        menuIcon.addEventListener('click', function (e) {
+          e.preventDefault();
+          var isOpen = trigger.style.display === 'block';
+          trigger.style.display = isOpen ? 'none' : 'block';
+        });
+        document.querySelectorAll('.site-nav .page-link').forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (window.innerWidth <= 600) trigger.style.display = 'none';
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.site-nav') && trigger.style.display === 'block') {
+            trigger.style.display = 'none';
+          }
+        });
+      }
     });
   </script>
 </body>

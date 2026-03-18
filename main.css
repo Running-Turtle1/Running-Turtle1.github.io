@@ -28,6 +28,10 @@ hr {
     border-width: 1px
 }
 
+html {
+    scroll-behavior: smooth
+}
+
 body,
 html {
     height: 100%
@@ -772,7 +776,21 @@ pre>code {
 #profile-avatar {
     position: relative;
     top: 24px;
-	left: 24px
+    left: 24px;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    #profile-avatar {
+        width: 120px;
+        height: 120px;
+        top: 16px;
+        left: 0;
+    }
 }
 
 
@@ -1642,6 +1660,15 @@ div.paginate-container li:nth-last-child(2) a:after {
     margin-right: auto
 }
 
+.pub-left:empty {
+    display: none
+}
+
+.pub-left:empty + .pub-right {
+    float: none;
+    width: 100%
+}
+
 /* .pub-left>.intro-img {
     width: 280px;
     border-style: solid;
@@ -1756,6 +1783,33 @@ div.paginate-container li:nth-last-child(2) a:after {
 .bio-body {
     margin: 5px;
     padding: 0px
+}
+
+/* Bio two-column layout - responsive */
+.bio-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.bio-col {
+    flex: 1 1 280px;
+    min-width: 0;
+}
+
+@media screen and (min-width: 641px) {
+    .bio-col-half {
+        flex: 1 1 calc(50% - 12px);
+        max-width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bio-col-half {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 .posts {
@@ -2075,6 +2129,10 @@ div.paginate-container li:nth-last-child(2) a:after {
       margin-top: 12px;
       position: relative;
       top: -12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 8px;
   }
   
   .more-links {
@@ -2144,6 +2202,16 @@ div.paginate-container li:nth-last-child(2) a:after {
       max-width: 100%;
       border-radius: 8px;
   }
+
+@media screen and (max-width: 480px) {
+    .github-pin-grid {
+        gap: 12px;
+    }
+    .github-pin-grid img {
+        width: 100%;
+        min-width: 0;
+    }
+}
   
   .linkedin span {
       background-color: #0077B5;
