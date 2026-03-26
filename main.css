@@ -2036,9 +2036,11 @@ div.paginate-container li:nth-last-child(2) a:after {
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 4px 2px;  /* row gap 24px, column gap 32px */
+    gap: 16px;
     flex-wrap: wrap;
-    width: 940px; /* 控制最大宽度，2列布局 */
+    max-width: 940px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
   }
   
@@ -2048,7 +2050,10 @@ div.paginate-container li:nth-last-child(2) a:after {
     padding: 16px;
     background-color: white;
     margin-bottom: 2px;
-    width: 430px;
+    flex: 1 1 300px;
+    max-width: 430px;
+    width: 100%;
+    box-sizing: border-box;
     font-family: system-ui, sans-serif;
     font-size: 14px;
     color: #333;
@@ -2089,10 +2094,12 @@ div.paginate-container li:nth-last-child(2) a:after {
     margin-top: 12px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
     font-size: 13px;
     color: #6b7280;
   }
-  
+
   .github-card .dot {
     display: inline-block;
     width: 10px;
@@ -2107,6 +2114,14 @@ div.paginate-container li:nth-last-child(2) a:after {
     align-items: center;
     margin-left: 16px;
     color: #6b7280;
+  }
+
+  .github-card .meta .github-card-shield {
+    margin-left: auto;
+  }
+
+  .github-card .meta .github-card-shield img {
+    display: block;
   }
   
   .github-card .meta a:hover {
