@@ -262,12 +262,11 @@
                   <img
                     class="project-preview-image"
                     src="images/tjudate-homepage.jpg"
-                    data-live-src="https://image.thum.io/get/width/1200/https://tjudate.com"
                     alt="TJU Date homepage preview">
                 </a>
               </div>
             </div>
-            <!-- <p class="project-preview-note">Homepage preview with dynamic refresh attempt and local fallback for compatibility.</p> -->
+            <p class="project-preview-note">Homepage preview image stored locally in this repository.</p>
           </div>
         </div>
       </div>
@@ -450,30 +449,6 @@
         });
       }
 
-      document.querySelectorAll('.project-preview-image[data-live-src]').forEach(function (img) {
-        var liveSrc = img.getAttribute('data-live-src');
-        if (!liveSrc) return;
-
-        var liveImage = new Image();
-        var didSwap = false;
-        var timer = setTimeout(function () {
-          liveImage.onload = null;
-          liveImage.onerror = null;
-        }, 5000);
-
-        liveImage.onload = function () {
-          if (didSwap) return;
-          clearTimeout(timer);
-          didSwap = true;
-          img.src = liveSrc;
-        };
-
-        liveImage.onerror = function () {
-          clearTimeout(timer);
-        };
-
-        liveImage.src = liveSrc;
-      });
     });
   </script>
 </body>
