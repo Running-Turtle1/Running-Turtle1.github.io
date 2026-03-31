@@ -2128,11 +2128,231 @@ div.paginate-container li:nth-last-child(2) a:after {
     color: #2563eb;
   }
   
-  .github-card svg {
+.github-card svg {
     width: 16px;
     height: 16px;
     margin-right: 4px;
   }
+
+.project-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+    gap: 28px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.project-copy {
+    min-width: 0;
+}
+
+.project-kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background: #e8f1ff;
+    color: #174ea6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.project-name {
+    margin: 0 0 12px;
+    font-size: 30px;
+    line-height: 1.15;
+}
+
+.project-name a {
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.project-name a:hover {
+    color: #2563eb;
+}
+
+.project-summary {
+    margin: 0 0 16px;
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border: 1px solid #dbe4f0;
+    border-radius: 9999px;
+    background: #fff;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.project-points {
+    margin: 0 0 22px 18px;
+    color: #475569;
+    line-height: 1.9;
+}
+
+.project-points li {
+    margin-bottom: 6px;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 148px;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.project-button:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.project-button.primary {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+}
+
+.project-button.primary:hover {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.project-button.secondary {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #1e293b;
+}
+
+.project-button.secondary:hover {
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.project-preview {
+    min-width: 0;
+}
+
+.project-browser {
+    overflow: hidden;
+    border: 1px solid #dbe4f0;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.project-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5edf8;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.project-browser-dots {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 10px;
+    background:
+        radial-gradient(circle at 5px 5px, #fb7185 0 4px, transparent 4.5px),
+        radial-gradient(circle at 21px 5px, #fbbf24 0 4px, transparent 4.5px),
+        radial-gradient(circle at 37px 5px, #4ade80 0 4px, transparent 4.5px);
+}
+
+.project-browser-url {
+    overflow: hidden;
+    color: #64748b;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.project-browser-frame {
+    position: relative;
+    background: #fff;
+    aspect-ratio: 4 / 3;
+}
+
+.project-preview-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-preview-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.project-preview-note {
+    margin: 10px 4px 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 900px) {
+    .project-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .project-name {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .project-showcase {
+        gap: 20px;
+    }
+
+    .project-summary {
+        font-size: 15px;
+    }
+
+    .project-points {
+        margin-left: 16px;
+    }
+
+    .project-button {
+        width: 100%;
+    }
+
+    .project-browser {
+        border-radius: 14px;
+    }
+}
   
   /* .social-media {
       text-align: center;

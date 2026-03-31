@@ -74,6 +74,7 @@
           <a class="page-link" href="#bio"><b>Biography</b></a>
           <a class="page-link" href="#timeline"><b>Experiences</b></a>
           <a class="page-link" href="#publications"><b>Publications</b></a>
+          <a class="page-link" href="#project"><b>Project</b></a>
           <a class="page-link" href="#codebase"><b>GitHub</b></a>
           <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
           <a class="page-link" href="#academicservices"><b>Services</b></a>
@@ -216,6 +217,61 @@
         </div>
       </section>
     </div>
+  </div>
+
+  <!-- Project -->
+  <div class="wrapper">
+    <section id="project" class="bio">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        Project
+      </h1>
+      <div class="bio-body">
+        <div class="project-showcase">
+          <div class="project-copy">
+            <div class="project-kicker">Featured Website</div>
+            <h2 class="project-name">
+              <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer">TJU Date</a>
+            </h2>
+            <p class="project-summary">
+              TJU Date is a campus matching platform built for Tianjin University students. Instead of endless swiping, it uses a questionnaire-based workflow and scheduled matching to help users meet more compatible people.
+            </p>
+            <!-- <div class="project-tags">
+              <span class="project-tag">Campus Matching</span>
+              <span class="project-tag">Questionnaire Driven</span>
+              <span class="project-tag">@tju.edu.cn Only</span>
+            </div> -->
+            <!-- <ul class="project-points">
+              <li>Designed specifically for the Tianjin University community with campus email verification.</li>
+              <li>Focuses on weekly matching and profile compatibility rather than high-frequency browsing.</li>
+              <li>The preview on the right uses a homepage snapshot and will try to refresh with a live thumbnail when available.</li>
+            </ul> -->
+            <div class="project-actions">
+              <a class="project-button primary" href="https://tjudate.com" target="_blank" rel="noopener noreferrer">Open Website</a>
+              <!-- <a class="project-button secondary" href="https://tjudate.com" target="_blank" rel="noopener noreferrer">View Homepage</a> -->
+            </div>
+          </div>
+          <div class="project-preview">
+            <div class="project-browser">
+              <div class="project-browser-bar">
+                <span class="project-browser-dots" aria-hidden="true"></span>
+                <span class="project-browser-url">https://tjudate.com</span>
+              </div>
+              <div class="project-browser-frame">
+                <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer" class="project-preview-link">
+                  <img
+                    class="project-preview-image"
+                    src="images/tjudate-homepage.jpg"
+                    data-live-src="https://image.thum.io/get/width/1200/https://tjudate.com"
+                    alt="TJU Date homepage preview">
+                </a>
+              </div>
+            </div>
+            <!-- <p class="project-preview-note">Homepage preview with dynamic refresh attempt and local fallback for compatibility.</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- GitHub -->
@@ -393,6 +449,31 @@
           }
         });
       }
+
+      document.querySelectorAll('.project-preview-image[data-live-src]').forEach(function (img) {
+        var liveSrc = img.getAttribute('data-live-src');
+        if (!liveSrc) return;
+
+        var liveImage = new Image();
+        var didSwap = false;
+        var timer = setTimeout(function () {
+          liveImage.onload = null;
+          liveImage.onerror = null;
+        }, 5000);
+
+        liveImage.onload = function () {
+          if (didSwap) return;
+          clearTimeout(timer);
+          didSwap = true;
+          img.src = liveSrc;
+        };
+
+        liveImage.onerror = function () {
+          clearTimeout(timer);
+        };
+
+        liveImage.src = liveSrc;
+      });
     });
   </script>
 </body>
