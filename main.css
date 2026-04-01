@@ -2146,9 +2146,15 @@ div.paginate-container li:nth-last-child(2) a:after {
     min-width: 0;
 }
 
+.project-kickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
 .project-kicker {
     display: inline-block;
-    margin-bottom: 10px;
     padding: 4px 10px;
     border-radius: 9999px;
     background: #e8f1ff;
