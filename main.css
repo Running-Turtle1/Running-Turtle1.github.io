@@ -241,6 +241,33 @@ pre>code {
     margin-left: 20px
 }
 
+.language-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 20px;
+    vertical-align: middle
+}
+
+.lang-button {
+    border: 1px solid #9b3022;
+    border-radius: 4px;
+    background: transparent;
+    color: #9b3022;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 4px 8px
+}
+
+.lang-button:hover,
+.lang-button.active {
+    background: #9b3022;
+    color: #fff
+}
+
 @media screen and (max-width: 600px) {
     .site-nav {
         position: absolute;
@@ -285,6 +312,17 @@ pre>code {
         font-weight: 400;
         display: block;
         padding: 5px 10px
+    }
+
+    .language-switch {
+        display: flex;
+        justify-content: flex-end;
+        margin: 6px 10px 8px
+    }
+
+    .lang-button {
+        font-size: 12px;
+        padding: 3px 7px
     }
 }
 
