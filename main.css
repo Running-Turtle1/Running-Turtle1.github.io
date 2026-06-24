@@ -2174,10 +2174,10 @@ div.paginate-container li:nth-last-child(2) a:after {
 
 .project-showcase {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+    gap: 22px;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .project-copy {
@@ -2187,25 +2187,25 @@ div.paginate-container li:nth-last-child(2) a:after {
 .project-kickers {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 8px;
 }
 
 .project-kicker {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 3px 9px;
     border-radius: 9999px;
     background: #e8f1ff;
     color: #174ea6;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: .04em;
     text-transform: uppercase;
 }
 
 .project-name {
-    margin: 0 0 12px;
-    font-size: 30px;
+    margin: 0 0 10px;
+    font-size: 24px;
     line-height: 1.15;
 }
 
@@ -2219,10 +2219,10 @@ div.paginate-container li:nth-last-child(2) a:after {
 }
 
 .project-summary {
-    margin: 0 0 16px;
+    margin: 0 0 14px;
     color: #475569;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 .project-tags {
@@ -2257,18 +2257,18 @@ div.paginate-container li:nth-last-child(2) a:after {
 .project-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .project-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 148px;
-    padding: 10px 18px;
+    min-width: 126px;
+    padding: 8px 15px;
     border-radius: 9999px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
 }
@@ -2281,7 +2281,7 @@ div.paginate-container li:nth-last-child(2) a:after {
 .project-button.primary {
     background: #2563eb;
     color: #fff;
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.16);
 }
 
 .project-button.primary:hover {
@@ -2307,16 +2307,16 @@ div.paginate-container li:nth-last-child(2) a:after {
 .project-browser {
     overflow: hidden;
     border: 1px solid #dbe4f0;
-    border-radius: 18px;
+    border-radius: 14px;
     background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10);
 }
 
 .project-browser-bar {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
+    gap: 10px;
+    padding: 9px 13px;
     border-bottom: 1px solid #e5edf8;
     background: rgba(255, 255, 255, 0.85);
 }
@@ -2324,18 +2324,18 @@ div.paginate-container li:nth-last-child(2) a:after {
 .project-browser-dots {
     position: relative;
     display: inline-block;
-    width: 42px;
-    height: 10px;
+    width: 36px;
+    height: 9px;
     background:
-        radial-gradient(circle at 5px 5px, #fb7185 0 4px, transparent 4.5px),
-        radial-gradient(circle at 21px 5px, #fbbf24 0 4px, transparent 4.5px),
-        radial-gradient(circle at 37px 5px, #4ade80 0 4px, transparent 4.5px);
+        radial-gradient(circle at 5px 4.5px, #fb7185 0 3.5px, transparent 4px),
+        radial-gradient(circle at 18px 4.5px, #fbbf24 0 3.5px, transparent 4px),
+        radial-gradient(circle at 31px 4.5px, #4ade80 0 3.5px, transparent 4px);
 }
 
 .project-browser-url {
     overflow: hidden;
     color: #64748b;
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -2372,17 +2372,17 @@ div.paginate-container li:nth-last-child(2) a:after {
     }
 
     .project-name {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .project-showcase {
-        gap: 20px;
+        gap: 16px;
     }
 
     .project-summary {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .project-points {
@@ -2394,7 +2394,9 @@ div.paginate-container li:nth-last-child(2) a:after {
     }
 
     .project-browser {
-        border-radius: 14px;
+        border-radius: 12px;
+        max-width: 340px;
+        margin: 0 auto;
     }
 }
   
