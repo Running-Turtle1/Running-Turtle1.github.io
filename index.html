@@ -209,20 +209,32 @@
           <i class="fa fa-file" aria-hidden="true"></i>
           <span data-i18n="heading_publications">论文发表</span>
         </h1>
-        <div class="publication-cards">
-          <article class="publication-card">
-            <a class="publication-main" href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer">
-              <span class="publication-mark" aria-hidden="true">P</span>
-              <span class="publication-content">
-                <span class="publication-title" data-i18n="prism_title">PRISM | Fabric Image Demoireing Benchmark</span>
-                <span class="publication-desc" data-i18n="prism_desc">面向织物图像去摩尔纹的评测基准。</span>
-              </span>
-              <i class="fa fa-external-link publication-icon" aria-hidden="true"></i>
-            </a>
-            <div class="publication-actions">
-              <a href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer" data-i18n="project_page">项目页面</a>
+        <div class="pub-list">
+          <div class="pub">
+            <div class="pub-left">
+              <img class="intro-img frame" src="images/prism-synthesis-pipeline.webp" alt="PRISM synthesis pipeline" loading="lazy" decoding="async">
             </div>
-          </article>
+            <div class="pub-right">
+              <div class="title" data-i18n="prism_title">PRISM | Fabric Image Demoireing Benchmark</div>
+              <div class="authors">
+                <font style="font-size: 11pt;">
+                  <b>Pengchao Wei</b>, Xiaojie Guo
+                </font>
+              </div>
+              <div class="publish">
+                <span class="place">ECCV 2026</span>
+              </div>
+              <div class="desc">
+                <p data-i18n="prism_desc">面向织物图像去摩尔纹的评测基准。</p>
+              </div>
+              <div class="tags">
+                [<a class="tag" href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer" data-i18n="project_page">项目主页</a>]
+                [<a class="tag" href="https://arxiv.org/abs/2606.24072" target="_blank" rel="noopener noreferrer" data-i18n="paper_link">论文</a>]
+                [<a class="tag" href="https://github.com/Running-Turtle1/Fabric-Demoireing" target="_blank" rel="noopener noreferrer" data-i18n="code_link">代码</a>]
+                [<a class="tag" href="https://huggingface.co/datasets/running-Turtle/PRISM" target="_blank" rel="noopener noreferrer" data-i18n="dataset_link">数据集</a>]
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -490,7 +502,10 @@
           to_be_updated_short: '待更新',
           prism_title: 'PRISM | Fabric Image Demoireing Benchmark',
           prism_desc: '面向织物图像去摩尔纹的评测基准。',
-          project_page: '项目页面',
+          paper_link: '论文',
+          code_link: '代码',
+          dataset_link: '数据集',
+          project_page: '项目主页',
           heading_project: '项目',
           featured_website: '代表网站',
           project_founder: '项目创始人',
@@ -554,6 +569,9 @@
           to_be_updated_short: 'To be updated',
           prism_title: 'PRISM | Fabric Image Demoireing Benchmark',
           prism_desc: 'A benchmark for fabric image demoiréing.',
+          paper_link: 'Paper',
+          code_link: 'Code',
+          dataset_link: 'Dataset',
           project_page: 'Project Page',
           heading_project: 'Project',
           featured_website: 'Featured Website',
