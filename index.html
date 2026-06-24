@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>魏鹏超 | Pengchao Wei</title>
+  <title>魏鹏超</title>
   <meta name="description" lang="zh-CN" content="魏鹏超（Pengchao Wei）的个人学术主页。" />
   <meta name="keywords" lang="zh-CN" content="魏鹏超, Pengchao Wei, Academic Website, Personal Homepage" />
 
-  <link rel="shortcut icon" href="images/icon.jpg">
+  <link rel="shortcut icon" href="images/favicon.jpg">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -95,8 +95,8 @@
         <img id="profile-avatar" src="images/myself.jpg" alt="魏鹏超" class="circle-img border-dark" />
       </div>
       <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Pengchao Wei<br>
+        <div id="my-name" class="text-grey-dark" data-i18n="profile_name">
+          魏鹏超
         </div>
         <div id="my-title" class="text-grey">
           <span data-i18n-html="profile_title">天津大学 | <a href="https://tjuxlab.github.io/team.html" target="_blank">X-Lab</a></span>
@@ -152,7 +152,7 @@
         </h1>
         <div class="bio-body">
           <p data-i18n-html="bio_intro">
-            你好！我是<strong>魏鹏超（Pengchao Wei）</strong>。<br><br>
+            你好！我是<strong>魏鹏超</strong>。<br><br>
             欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表、项目和学术服务。<br><br>
             我目前的研究方向聚焦于底层计算机视觉中的图像去摩尔纹。<br><br>
             如需联系我，请发送邮件至
@@ -175,8 +175,8 @@
               </h3>
               <b data-i18n="tianjin_university">天津大学</b><br>
               <ul>
-                <li data-i18n="tju_degree">计算机科学与技术专业硕士，2025 - 至今</li>
-                <li data-i18n-html="advisor">导师：<a href="https://sites.google.com/view/xjguo" target="_blank">郭晓捷教授</a></li>
+                <li data-i18n="tju_degree">计算机科学与技术专业硕士[推免]，2025.11 - 至今</li>
+                <li data-i18n-html="advisor">导师：<a href="https://sites.google.com/view/xjguo" target="_blank">郭晓杰教授</a></li>
               </ul>
               <b data-i18n="qust">青岛科技大学</b><br>
               <ul>
@@ -209,16 +209,20 @@
           <i class="fa fa-file" aria-hidden="true"></i>
           <span data-i18n="heading_publications">论文发表</span>
         </h1>
-        <div class="pub-list">
-          <div class="pub" data-selected="false">
-            <div class="pub-left"></div>
-            <div class="pub-right">
-              <div class="title" data-i18n="coming_soon">即将更新</div>
-              <div class="publish">
-                <span class="place" data-i18n="to_be_updated_short">待更新</span>
-              </div>
+        <div class="publication-cards">
+          <article class="publication-card">
+            <a class="publication-main" href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer">
+              <span class="publication-mark" aria-hidden="true">P</span>
+              <span class="publication-content">
+                <span class="publication-title" data-i18n="prism_title">PRISM | Fabric Image Demoireing Benchmark</span>
+                <span class="publication-desc" data-i18n="prism_desc">面向织物图像去摩尔纹的评测基准。</span>
+              </span>
+              <i class="fa fa-external-link publication-icon" aria-hidden="true"></i>
+            </a>
+            <div class="publication-actions">
+              <a href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer" data-i18n="project_page">项目页面</a>
             </div>
-          </div>
+          </article>
         </div>
       </section>
     </div>
@@ -386,9 +390,27 @@
         <span data-i18n="heading_links">友链</span>
       </h1>
       <div class="bio-body">
-        <div class="more-links">
-          <a href="https://dutianle.ltd/" target="_blank" rel="noopener noreferrer">杜天乐 | Tianle Du</a>
-          <a href="https://xiangyuli-bio.github.io/" target="_blank" rel="noopener noreferrer">Xiangyu Li</a>
+        <div class="friend-links">
+          <a class="friend-card" href="https://dutianle.ltd/" target="_blank" rel="noopener noreferrer">
+            <span class="friend-card-mark" aria-hidden="true">
+              <img src="images/icon/dutianle-favicon.png" alt="" loading="lazy" decoding="async">
+            </span>
+            <span class="friend-card-body">
+              <span class="friend-card-name" data-i18n="friend_tianle_du">杜天乐</span>
+              <span class="friend-card-url">dutianle.ltd</span>
+            </span>
+            <i class="fa fa-external-link friend-card-icon" aria-hidden="true"></i>
+          </a>
+          <a class="friend-card" href="https://xiangyuli-bio.github.io/" target="_blank" rel="noopener noreferrer">
+            <span class="friend-card-mark" aria-hidden="true">
+              <img src="images/icon/xiangyuli-favicon.png" alt="" loading="lazy" decoding="async">
+            </span>
+            <span class="friend-card-body">
+              <span class="friend-card-name" data-i18n="friend_xiangyu_li">李翔宇</span>
+              <span class="friend-card-url">xiangyuli-bio.github.io</span>
+            </span>
+            <i class="fa fa-external-link friend-card-icon" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -447,15 +469,16 @@
           nav_awards: '荣誉奖项',
           nav_services: '学术服务',
           nav_links: '友链',
+          profile_name: '魏鹏超',
           profile_title: '天津大学 | <a href="https://tjuxlab.github.io/team.html" target="_blank">X-Lab</a>',
           heading_about: '个人简介',
-          bio_intro: '你好！我是<strong>魏鹏超（Pengchao Wei）</strong>。<br><br>欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表、项目和学术服务。<br><br>我目前的研究方向聚焦于底层计算机视觉中的图像去摩尔纹。<br><br>如需联系我，请发送邮件至 <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>。',
+          bio_intro: '你好！我是<strong>魏鹏超</strong>。<br><br>欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表、项目和学术服务。<br><br>我目前的研究方向聚焦于底层计算机视觉中的图像去摩尔纹。<br><br>如需联系我，请发送邮件至 <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>。',
           research_interests: '研究兴趣',
           research_low_level_cv: '底层计算机视觉',
           education: '教育经历',
           tianjin_university: '天津大学',
-          tju_degree: '计算机科学与技术专业硕士，2025 - 至今',
-          advisor: '导师：<a href="https://sites.google.com/view/xjguo" target="_blank">郭晓捷教授</a>',
+          tju_degree: '计算机科学与技术专业硕士[推免]，2025.11 - 至今',
+          advisor: '导师：<a href="https://sites.google.com/view/xjguo" target="_blank">郭晓杰教授</a>',
           qust: '青岛科技大学',
           qust_degree: '计算机科学与技术专业本科，2022 - 至今',
           gpa_rank: 'GPA：4.16/5.00 | 排名：1/131',
@@ -465,6 +488,9 @@
           to_be_updated: '待更新。',
           heading_publications: '论文发表',
           to_be_updated_short: '待更新',
+          prism_title: 'PRISM | Fabric Image Demoireing Benchmark',
+          prism_desc: '面向织物图像去摩尔纹的评测基准。',
+          project_page: '项目页面',
           heading_project: '项目',
           featured_website: '代表网站',
           project_founder: '项目创始人',
@@ -491,6 +517,8 @@
           competition_gplt: '2024 年 5 月：中国高校计算机大赛，团体程序设计天梯赛全国总决赛，华山赛区二等奖（团队）',
           heading_services: '学术服务',
           heading_links: '友链',
+          friend_tianle_du: '杜天乐',
+          friend_xiangyu_li: '李翔宇',
           personal_email: '个人邮箱：',
           last_updated: '最后更新：2026 年 6 月。',
           footer_homepage: '魏鹏超的个人主页。',
@@ -505,14 +533,15 @@
           nav_awards: 'Honors & Awards',
           nav_services: 'Services',
           nav_links: 'Links',
+          profile_name: 'Pengchao Wei',
           profile_title: 'Tianjin University | <a href="https://tjuxlab.github.io/team.html" target="_blank">X-Lab</a>',
           heading_about: 'About',
-          bio_intro: 'Hello! I am <strong>Pengchao Wei (魏鹏超)</strong>.<br><br>Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, projects, and academic services.<br><br>My current research focuses on demoiré removal in Low-Level Computer Vision.<br><br>If you would like to contact me, please send an email to <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.',
+          bio_intro: 'Hello! I am <strong>Pengchao Wei</strong>.<br><br>Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, projects, and academic services.<br><br>My current research focuses on demoiré removal in Low-Level Computer Vision.<br><br>If you would like to contact me, please send an email to <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.',
           research_interests: 'Research Interests',
           research_low_level_cv: 'Low-Level Computer Vision',
           education: 'Education',
           tianjin_university: 'Tianjin University',
-          tju_degree: 'M.Eng. in Computer Science, 2025 - Present',
+          tju_degree: 'Recommended Admission M.Eng. in Computer Science, Nov. 2025 - Present',
           advisor: 'Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank">Prof. Xiaojie Guo</a>',
           qust: 'Qingdao University of Science and Technology',
           qust_degree: 'B.Eng. in Computer Science, 2022 - Present',
@@ -523,6 +552,9 @@
           to_be_updated: 'To be updated.',
           heading_publications: 'Publications',
           to_be_updated_short: 'To be updated',
+          prism_title: 'PRISM | Fabric Image Demoireing Benchmark',
+          prism_desc: 'A benchmark for fabric image demoiréing.',
+          project_page: 'Project Page',
           heading_project: 'Project',
           featured_website: 'Featured Website',
           project_founder: 'Project Founder',
@@ -549,6 +581,8 @@
           competition_gplt: 'May 2024: China Collegiate Computer Competition, Team Programming Ladder Tournament (GPLT), National Finals, Huashan Division - Second Prize (Team)',
           heading_services: 'Services',
           heading_links: 'Links',
+          friend_tianle_du: 'Tianle Du',
+          friend_xiangyu_li: 'Xiangyu Li',
           personal_email: 'Personal Email:',
           last_updated: 'Last updated: Jun, 2026.',
           footer_homepage: 'Personal homepage of Pengchao Wei.',
@@ -559,7 +593,7 @@
       function applyLanguage(lang) {
         var current = translations[lang] ? lang : 'zh';
         document.documentElement.lang = current === 'zh' ? 'zh-CN' : 'en';
-        document.title = current === 'zh' ? '魏鹏超 | Pengchao Wei' : 'Pengchao Wei | 魏鹏超';
+        document.title = current === 'zh' ? '魏鹏超' : 'Pengchao Wei';
 
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
           var key = el.getAttribute('data-i18n');

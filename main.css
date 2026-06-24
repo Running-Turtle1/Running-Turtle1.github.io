@@ -1802,6 +1802,121 @@ div.paginate-container li:nth-last-child(2) a:after {
     }
 }
 
+.publication-cards {
+    display: grid;
+    gap: 14px;
+    margin: 6px auto 0;
+    max-width: 860px;
+}
+
+.publication-card {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.publication-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    color: #1f2937;
+    text-decoration: none;
+}
+
+.publication-main:hover {
+    color: #111827;
+    text-decoration: none;
+}
+
+.publication-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background: #9b3022;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.publication-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.publication-title {
+    color: #111827;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.publication-desc {
+    margin-top: 4px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.publication-icon {
+    flex: 0 0 auto;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.publication-card:hover {
+    border-color: #9b3022;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+}
+
+.publication-card:hover .publication-icon {
+    color: #9b3022;
+}
+
+.publication-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 16px;
+    border-top: 1px solid #edf2f7;
+    background: #f8fafc;
+}
+
+.publication-actions a {
+    color: #174ea6;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication-actions a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .publication-main {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    .publication-title {
+        font-size: 15px;
+    }
+
+    .publication-actions {
+        justify-content: flex-start;
+        padding: 10px 14px;
+    }
+}
+
 .bio {
     max-width: -webkit-calc(100% - (30px / 2));
     max-width: calc(100% - (30px / 2));
@@ -2434,6 +2549,93 @@ div.paginate-container li:nth-last-child(2) a:after {
       color: #111;
       border-bottom-color: #111;
       text-decoration: none;
+  }
+
+  .friend-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 12px auto 0;
+      max-width: 760px;
+  }
+
+  .friend-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 64px;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+      color: #1f2937;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  }
+
+  .friend-card:hover {
+      border-color: #9b3022;
+      box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+      color: #111827;
+      text-decoration: none;
+      transform: translateY(-1px);
+  }
+
+  .friend-card-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #fff;
+  }
+
+  .friend-card-mark img {
+      display: block;
+      max-width: 28px;
+      max-height: 28px;
+      object-fit: contain;
+  }
+
+  .friend-card-body {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      min-width: 0;
+  }
+
+  .friend-card-name {
+      overflow: hidden;
+      color: #111827;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  .friend-card-url {
+      overflow: hidden;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.4;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  .friend-card-icon {
+      flex: 0 0 auto;
+      color: #9ca3af;
+      font-size: 13px;
+  }
+
+  .friend-card:hover .friend-card-icon {
+      color: #9b3022;
   }
   
   .xiaohongshu span {
