@@ -1810,8 +1810,13 @@ div.paginate-container li:nth-last-child(2) a:after {
 }
 
 @media screen and (max-width: 600px) {
+    .pub-right>.publish {
+        float: none;
+        margin: 4px 0
+    }
+
     .pub-right>.publish>.place {
-        display: none
+        display: inline
     }
 }
 
