@@ -1220,6 +1220,16 @@ hr.soft {
     font-weight: 200
 }
 
+.timeline-desc a {
+    color: #1756a9;
+    font-weight: 400
+}
+
+.timeline-desc a:hover,
+.timeline-desc a:focus {
+    color: #123f7a
+}
+
 .timeline-host {
     font-size: 14px;
     font-weight: 400
