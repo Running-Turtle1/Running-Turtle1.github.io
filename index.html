@@ -29,6 +29,7 @@
         </button>
         <div class="trigger" id="site-navigation">
           <a class="page-link" href="#bio"><b data-i18n="nav_bio">个人简介</b></a>
+          <a class="page-link" href="#news"><b data-i18n="nav_news">最新动态</b></a>
           <a class="page-link" href="#timeline"><b data-i18n="nav_experiences">经历</b></a>
           <a class="page-link" href="#publications"><b data-i18n="nav_publications">论文发表</b></a>
           <a class="page-link" href="#project"><b data-i18n="nav_project">项目</b></a>
@@ -128,6 +129,22 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section id="news" class="news content-section">
+        <h2 class="md-heading text-left">
+          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          <span data-i18n="heading_news">最新动态</span>
+        </h2>
+        <div class="news-list">
+          <article class="news-item">
+            <time class="news-date" datetime="2026-08-20">2026.08.20</time>
+            <p data-i18n-html="news_baai_eccv">
+              参加 <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">智源社区 ECCV 2026 预讲会</a>。
+            </p>
+          </article>
         </div>
       </section>
 
@@ -374,7 +391,7 @@
         </div>
         <div class="footer-col footer-col-3">
           <p class="text">
-            <span data-i18n="last_updated">最后更新：2026 年 8 月 29 日。</span><br>
+            <span data-i18n="last_updated">最后更新：2026 年 9 月 1 日。</span><br>
             <span data-i18n="footer_homepage">魏鹏超的个人主页。</span>
           </p>
         </div>
@@ -393,6 +410,7 @@
       var translations = {
         zh: {
           nav_bio: '个人简介',
+          nav_news: '最新动态',
           nav_experiences: '经历',
           nav_publications: '论文发表',
           nav_project: '项目',
@@ -404,6 +422,8 @@
           profile_title: '天津大学 | <a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab</a>',
           heading_about: '个人简介',
           bio_intro: '你好！我是<strong>魏鹏超</strong>。<br><br>欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表和项目。<br><br>我目前的研究方向主要包括图像生成和图像修复。<br><br>如需联系我，请发送邮件至 <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>。',
+          heading_news: '最新动态',
+          news_baai_eccv: '参加 <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">智源社区 ECCV 2026 预讲会</a>。',
           research_interests: '研究兴趣',
           research_image_generation: '图像生成',
           research_image_restoration: '图像修复',
@@ -455,12 +475,13 @@
           friend_tianle_du: '杜天乐',
           friend_xiangyu_li: '李翔宇',
           personal_email: '个人邮箱：',
-          last_updated: '最后更新：2026 年 8 月 29 日。',
+          last_updated: '最后更新：2026 年 9 月 1 日。',
           footer_homepage: '魏鹏超的个人主页。',
           back_to_top: '顶部'
         },
         en: {
           nav_bio: 'Biography',
+          nav_news: 'News',
           nav_experiences: 'Experiences',
           nav_publications: 'Publications',
           nav_project: 'Project',
@@ -472,6 +493,8 @@
           profile_title: 'Tianjin University | <a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab</a>',
           heading_about: 'About',
           bio_intro: 'Hello! I am <strong>Pengchao Wei</strong>.<br><br>Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, and projects.<br><br>My current research primarily focuses on image generation and image restoration.<br><br>If you would like to contact me, please send an email to <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.',
+          heading_news: 'News',
+          news_baai_eccv: 'Participated in the <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">BAAI Community ECCV 2026 Preview Seminar</a>.',
           research_interests: 'Research Interests',
           research_image_generation: 'Image Generation',
           research_image_restoration: 'Image Restoration',
@@ -523,7 +546,7 @@
           friend_tianle_du: 'Tianle Du',
           friend_xiangyu_li: 'Xiangyu Li',
           personal_email: 'Personal Email:',
-          last_updated: 'Last updated: Aug. 29, 2026.',
+          last_updated: 'Last updated: Sep. 1, 2026.',
           footer_homepage: 'Personal homepage of Pengchao Wei.',
           back_to_top: 'Top'
         }
@@ -590,7 +613,7 @@
         });
         document.querySelectorAll('.site-nav .page-link').forEach(function (link) {
           link.addEventListener('click', function () {
-            if (window.innerWidth <= 900) setMenuOpen(false);
+            if (window.innerWidth <= 960) setMenuOpen(false);
           });
         });
         document.addEventListener('click', function (e) {
@@ -605,7 +628,7 @@
           }
         });
         window.addEventListener('resize', function () {
-          if (window.innerWidth > 900) setMenuOpen(false);
+          if (window.innerWidth > 960) setMenuOpen(false);
         });
       }
 
