@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>魏鹏超</title>
-  <meta name="description" lang="zh-CN" content="魏鹏超（Pengchao Wei）的个人学术主页。" />
-  <meta name="keywords" lang="zh-CN" content="魏鹏超, Pengchao Wei, Academic Website, Personal Homepage" />
+  <title>Pengchao Wei</title>
+  <meta name="description" content="Personal academic homepage of Pengchao Wei." />
+  <meta name="keywords" content="Pengchao Wei, Academic Website, Personal Homepage" />
 
   <link rel="shortcut icon" href="images/favicon.jpg">
   <link rel="stylesheet" href="main.css">
@@ -17,554 +17,415 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="wrapper">
-      <nav class="site-nav">
-        <button type="button" class="menu-icon" aria-label="打开导航菜单" aria-expanded="false" aria-controls="site-navigation">
-          <svg viewBox="0 0 18 15">
-            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-          </svg>
-        </button>
-        <div class="trigger" id="site-navigation">
-          <a class="page-link" href="#bio"><b data-i18n="nav_bio">个人简介</b></a>
-          <a class="page-link" href="#news"><b data-i18n="nav_news">最新动态</b></a>
-          <a class="page-link" href="#timeline"><b data-i18n="nav_experiences">经历</b></a>
-          <a class="page-link" href="#publications"><b data-i18n="nav_publications">论文发表</b></a>
-          <a class="page-link" href="#project"><b data-i18n="nav_project">项目</b></a>
-          <a class="page-link" href="#codebase"><b data-i18n="nav_github">GitHub</b></a>
-          <a class="page-link" href="#awards"><b data-i18n="nav_awards">荣誉奖项</b></a>
-          <a class="page-link" href="#competitions"><b data-i18n="nav_competitions">竞赛经历</b></a>
-          <a class="page-link" href="#service"><b data-i18n="nav_service">学术服务</b></a>
-          <span class="language-switch" aria-label="Language switch">
-            <button class="lang-button active" type="button" data-set-lang="zh">中文</button>
-            <button class="lang-button" type="button" data-set-lang="en">EN</button>
-          </span>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- 大头照 | 简历照 -->
-  <div id="profile-cover" class="cover shallow-bg img-responsive">
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="images/myself.jpg" alt="魏鹏超" class="circle-img border-dark" />
-      </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <h1 id="my-name" class="text-grey-dark" data-i18n="profile_name">
-          魏鹏超
-        </h1>
-        <div id="my-title" class="text-grey">
-          <span data-i18n-html="profile_title">天津大学 | <a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab</a></span>
-        </div>
-        <div id="my-email" class="text-grey-light">
-          wei954327649 [AT] gmail.com
-        </div>
-        <div class="social-media">
-          <a href="https://scholar.google.com/citations?user=wj1AfUsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="icon-button linkedin" title="Google Scholar" aria-label="Google Scholar">
-            <i class="ai ai-google-scholar-square icon-linkedin"></i>
-            <span></span>
-          </a>
-          <a href="https://github.com/Running-Turtle1" target="_blank" rel="noopener noreferrer" class="icon-button github" title="GitHub" aria-label="GitHub">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-          <a href="https://www.xiaohongshu.com/user/profile/62d0c086000000000200230d" target="_blank" rel="noopener noreferrer" class="icon-button xiaohongshu" title="小红书" aria-label="小红书">
-            <img src="images/icon/xiaohongshu.png" class="icon-img" alt="小红书">
-            <span></span>
-          </a>
-          <a href="https://www.douyin.com/user/MS4wLjABAAAAfe3VbtAio4XBQ8_O9AWWc6wxEbe28YJ8DHqkWnm4gtc" target="_blank" rel="noopener noreferrer" class="icon-button douyin" title="抖音" aria-label="抖音">
-            <img src="images/icon/douyin.png" class="icon-img" alt="抖音">
-            <span></span>
-          </a>
+  <div class="site-layout">
+    <aside class="profile-sidebar" aria-label="Profile">
+      <!-- Profile photo -->
+      <div id="profile-cover" class="profile">
+        <div id="profile-namecard" class="profile-wrapper">
+          <div id="my-pic" class="profile-col profile-col-1">
+            <img id="profile-avatar" src="images/profile-portrait.jpg" alt="Portrait of Pengchao Wei" class="profile-photo" width="1600" height="1200" />
+          </div>
+          <div id="my-contact" class="profile-col profile-col-2">
+            <h1 id="my-name" class="text-grey-dark">
+              Pengchao Wei
+            </h1>
+            <div id="my-title" class="text-grey">
+              <span><a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab @ TJU</a></span>
+            </div>
+            <div class="social-media">
+              <a href="https://scholar.google.com/citations?user=wj1AfUsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="icon-button linkedin" title="Google Scholar" aria-label="Google Scholar">
+                <i class="ai ai-google-scholar-square icon-linkedin"></i>
+                <span></span>
+              </a>
+              <a href="https://github.com/Running-Turtle1" target="_blank" rel="noopener noreferrer" class="icon-button github" title="GitHub" aria-label="GitHub">
+                <i class="fa fa-github icon-github"></i>
+                <span></span>
+              </a>
+              <a href="mailto:wei954327649@gmail.com" class="icon-button email" title="Email" aria-label="Email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <header class="site-header">
+        <div class="wrapper">
+          <nav class="site-nav" aria-label="Quick Links">
+            <span class="nav-label">Quick Links</span>
+            <button type="button" class="menu-icon" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">
+              <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+              </svg>
+            </button>
+            <div class="trigger" id="site-navigation">
+              <a class="page-link" href="#bio"><b>About me</b></a>
+              <a class="page-link" href="#education"><b>Education</b></a>
+              <a class="page-link" href="#news"><b>News</b></a>
+              <a class="page-link" href="#timeline"><b>Experiences</b></a>
+              <a class="page-link" href="#publications"><b>Publications</b></a>
+              <a class="page-link" href="#project"><b>Project</b></a>
+              <a class="page-link" href="#awards"><b>Honours</b></a>
+              <a class="page-link" href="#contests"><b>Contests</b></a>
+              <a class="page-link" href="#competitions"><b>Programming</b></a>
+              <a class="page-link" href="#languages"><b>Languages</b></a>
+              <a class="page-link" href="#service"><b>Services</b></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="profile-welcome">
+        <p><strong>Welcome to my homepage!</strong></p>
+        <p><strong>I'm always open to collaborations and new friendships! : )</strong></p>
+      </div>
+    </aside>
 
-  <main>
-  <div class="page-content">
-    <div class="wrapper">
-      <!-- About / Biography -->
-      <section id="bio" class="bio content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-id-card" aria-hidden="true"></i>
-          <span data-i18n="heading_about">个人简介</span>
-        </h2>
-        <div class="bio-body">
-          <p data-i18n-html="bio_intro">
-            你好！我是<strong>魏鹏超</strong>。<br><br>
-            欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表和项目。<br><br>
-            我目前的研究方向主要包括图像生成和图像修复。<br><br>
-            如需联系我，请发送邮件至
-            <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>。
-          </p>
-          <div class="bio-columns">
-            <div class="bio-col bio-col-half">
-              <h3>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <strong data-i18n="research_interests">研究兴趣</strong>
-              </h3>
+    <main>
+      <div class="page-content">
+        <div class="wrapper">
+          <!-- About / Biography -->
+          <section id="bio" class="bio content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-id-card" aria-hidden="true"></i>
+              <span>About me</span>
+            </h2>
+            <div class="bio-body">
+              <p>
+                I am a first-year master's student at Tianjin University. I began my research in 2026, with a particular focus on computer vision.
+              </p>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section id="education" class="content-section">
+            <h2 class="md-heading text-left">Education</h2>
+            <div class="education-body">
+              <b>Tianjin University · Master's</b>
               <ul>
-                <li><b data-i18n="research_image_generation">图像生成</b></li>
-                <li><b data-i18n="research_image_restoration">图像修复</b></li>
+                <li>Computer Science and Technology [推免], Sep. 2026 – Present</li>
+                <li>Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank" rel="noopener noreferrer">Prof. Xiaojie Guo</a></li>
+              </ul>
+              <b>Qingdao University of Science and Technology · Bachelor's</b>
+              <ul>
+                <li>Computer Science and Technology [ACM 班], Sep. 2022 – Jun. 2026</li>
+                <li>GPA: 4.16/5.00 | Rank: 1/131</li>
               </ul>
             </div>
-            <div class="bio-col bio-col-half">
-              <h3>
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                <strong data-i18n="education">教育经历</strong>
-              </h3>
-              <b data-i18n="tianjin_university">天津大学 - 硕士</b><br>
-              <ul>
-                <li data-i18n="tju_degree">计算机科学与技术【推免】，2026.09 - 2029.06（预计）</li>
-                <li data-i18n-html="advisor">导师：<a href="https://sites.google.com/view/xjguo" target="_blank" rel="noopener noreferrer">郭晓杰教授</a></li>
-              </ul>
-              <b data-i18n="qust">青岛科技大学 - 本科</b><br>
-              <ul>
-                <li data-i18n="qust_degree">计算机科学与技术，2022.09 - 2026.06</li>
-                <li data-i18n="gpa_rank">GPA：4.16/5.00 | 排名：1/131</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- News -->
-      <section id="news" class="news content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-          <span data-i18n="heading_news">最新动态</span>
-        </h2>
-        <div class="news-list">
-          <article class="news-item">
-            <time class="news-date" datetime="2026-09-07">2026.09.07–09.12</time>
-            <p data-i18n-html="news_eccv_malmo">参加 <a href="https://eccv.ecva.net/Conferences/2026" target="_blank" rel="noopener noreferrer">ECCV 2026 @ Malmö, Sweden</a>。</p>
-          </article>
-          <article class="news-item">
-            <time class="news-date" datetime="2026-08-20">2026.08.20</time>
-            <p data-i18n-html="news_baai_eccv">
-              参加 <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">智源社区 ECCV 2026 预讲会</a>。
-            </p>
-          </article>
-        </div>
-      </section>
+          <!-- News -->
+          <section id="news" class="news content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+              <span>News</span>
+            </h2>
+            <div class="news-list">
+              <article class="news-item">
+                <time class="news-date" datetime="2026-09-07">2026.09.07–09.12</time>
+                <p>Attending <a href="https://eccv.ecva.net/Conferences/2026" target="_blank" rel="noopener noreferrer">ECCV 2026 @ Malmö, Sweden</a>.</p>
+              </article>
+              <article class="news-item">
+                <time class="news-date" datetime="2026-08-20">2026.08.20</time>
+                <p>
+                  Participated in the <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">BAAI Community ECCV 2026 Preview Seminar, Beijing</a>.
+                </p>
+              </article>
+            </div>
+          </section>
 
-      <!-- Experiences -->
-      <section id="timeline" class="timeline-brief content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-tasks" aria-hidden="true"></i>
-          <span data-i18n="heading_experiences">经历</span>
-        </h2>
-        <div class="timeline-body">
-          <div class="timeline-item">
-            <div class="timeline-date timeline-date-with-logo">
-              <img class="social-icon" src="images/icon/amigos-robot.png" alt="Amigos Robot">
-              <span data-i18n="amigos_date">2026.04 - 2026.07</span>
+          <!-- Experiences -->
+          <section id="timeline" class="timeline-brief content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-tasks" aria-hidden="true"></i>
+              <span>Experiences</span>
+            </h2>
+            <div class="timeline-body">
+              <div class="timeline-item">
+                <img class="timeline-logo" src="images/amigos-robot-company.png" alt="Amigos Robot" width="1448" height="1086">
+                <div class="timeline-copy">
+                  <div class="timeline-title">Algorithm Intern @ <a href="https://amigos-robot.com/" target="_blank" rel="noopener noreferrer">Amigos Robot</a></div>
+                  <div class="timeline-date">Apr. 2026 – Jul. 2026</div>
+                </div>
+              </div>
             </div>
-            <div class="timeline-title" data-i18n-html="amigos_title"><a href="https://weipengchao.top/amigos-demo/" target="_blank" rel="noopener noreferrer">算法实习生</a> @ <a href="https://amigos-robot.com/" target="_blank" rel="noopener noreferrer">阿米奥机器人</a></div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- Publications -->
-      <section id="publications" class="publications content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-file" aria-hidden="true"></i>
-          <span data-i18n="heading_publications">论文发表</span>
-        </h2>
-        <div class="pub-list">
-          <div class="pub">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/prism-synthesis-pipeline.webp" alt="PRISM synthesis pipeline" loading="lazy" decoding="async">
-            </div>
-            <div class="pub-right">
-              <h3 class="title" data-i18n="prism_title">Fabric Image Demoiréing Benchmark from Synthesis to Restoration</h3>
-              <div class="authors">
-                <strong>Pengchao Wei</strong>, Xiaojie Guo
-                <span class="corresponding-author" title="通讯作者 / Corresponding author" aria-label="通讯作者 / Corresponding author">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="publish">
-                <span class="place">ECCV 2026</span>
-              </div>
-              <div class="tags">
-                <a class="tag" href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer" data-i18n="project_page">项目主页</a>
-                <a class="tag" href="https://arxiv.org/abs/2606.24072" target="_blank" rel="noopener noreferrer" data-i18n="paper_link">论文</a>
-                <a class="tag" href="https://github.com/Running-Turtle1/Fabric-Demoireing" target="_blank" rel="noopener noreferrer" data-i18n="code_link">代码</a>
-                <a class="tag" href="https://huggingface.co/datasets/running-Turtle/PRISM" target="_blank" rel="noopener noreferrer" data-i18n="dataset_link">数据集</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <!-- Project -->
-  <div class="wrapper">
-    <section id="project" class="bio content-section">
-      <h2 class="md-heading text-left">
-        <i class="fa fa-globe" aria-hidden="true"></i>
-        <span data-i18n="heading_project">项目</span>
-      </h2>
-      <div class="bio-body">
-        <div class="project-showcase">
-          <div class="project-copy">
-            <h3 class="project-name">
-              <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer">TJU Date</a>
-            </h3>
-            <div class="project-kickers">
-              <div class="project-kicker" data-i18n="featured_website">代表网站</div>
-              <div class="project-kicker" data-i18n="project_founder">项目创始人</div>
-            </div>
-            
-            <p class="project-summary" data-i18n-html="project_summary">
-              TJU Date 是一个面向天津大学学生的校园匹配平台，旨在通过问卷收集、兴趣画像与定期匹配机制，帮助校内同学认识更合适的人，拓展真实、友好且可信的校园社交关系。截至 2026.08.28，TJU Date 已吸引 2,500+ 名注册用户，平台已连续开展 23 期匹配活动，累计完成 9,734 人次成功配对，已经成为天津大学校园内具有影响力的社交匹配平台。
-            </p>
-            <!-- <div class="project-tags">
-              <span class="project-tag">Campus Matching</span>
-              <span class="project-tag">Questionnaire Driven</span>
-              <span class="project-tag">@tju.edu.cn Only</span>
-            </div> -->
-            <!-- <ul class="project-points">
-              <li>Designed specifically for the Tianjin University community with campus email verification.</li>
-              <li>Focuses on weekly matching and profile compatibility rather than high-frequency browsing.</li>
-              <li>The preview on the right uses a homepage snapshot and will try to refresh with a live thumbnail when available.</li>
-            </ul> -->
-            <div class="project-actions">
-              <a class="project-button primary" href="https://tjudate.com" target="_blank" rel="noopener noreferrer" data-i18n="open_website">打开网站</a>
-              <a class="project-button secondary" href="https://tjudate.com/announcements" target="_blank" rel="noopener noreferrer" data-i18n="work_report">工作报告</a>
-            </div>
-          </div>
-          <div class="project-preview">
-            <div class="project-browser">
-              <div class="project-browser-bar">
-                <span class="project-browser-dots" aria-hidden="true"></span>
-                <span class="project-browser-url">https://tjudate.com</span>
-              </div>
-              <div class="project-browser-frame">
-                <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer" class="project-preview-link">
-                  <img
-                    class="project-preview-image"
-                    src="images/tjudate-homepage.jpg"
-                    alt="TJU Date homepage preview">
-                </a>
+          <!-- Publications -->
+          <section id="publications" class="publications content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-file" aria-hidden="true"></i>
+              <span>Publications</span>
+            </h2>
+            <div class="pub-list">
+              <div class="pub">
+                <div class="pub-left">
+                  <img class="intro-img frame" src="images/prism-synthesis-pipeline.webp" alt="PRISM synthesis pipeline" loading="lazy" decoding="async">
+                </div>
+                <div class="pub-right">
+                  <h3 class="title">Fabric Image Demoiréing Benchmark from Synthesis to Restoration</h3>
+                  <div class="authors">
+                    <strong>Pengchao Wei</strong>, Xiaojie Guo
+                    <span class="corresponding-author" title="Corresponding author" aria-label="Corresponding author">
+                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <div class="publish">
+                    <span class="place">ECCV 2026</span>
+                  </div>
+                  <div class="tags">
+                    <a class="tag" href="https://weipengchao.top/PRISM-page" target="_blank" rel="noopener noreferrer">Project Page</a>
+                    <a class="tag" href="https://arxiv.org/abs/2606.24072" target="_blank" rel="noopener noreferrer">Paper</a>
+                    <a class="tag" href="https://github.com/Running-Turtle1/Fabric-Demoireing" target="_blank" rel="noopener noreferrer">Code</a>
+                    <a class="tag" href="https://huggingface.co/datasets/running-Turtle/PRISM" target="_blank" rel="noopener noreferrer">Dataset</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- <p class="project-preview-note">Homepage preview image stored locally in this repository.</p> -->
-          </div>
+          </section>
         </div>
       </div>
-    </section>
-  </div>
 
-  <!-- GitHub -->
-  <div class="wrapper">
-    <section id="codebase" class="bio content-section">
-      <h2 class="md-heading text-left">
-        <i class="fa fa-github" aria-hidden="true"></i>
-        GitHub
-      </h2>
-      <div class="bio-body">
-        <div class="card-container github-repo-cards">
-          <article class="github-card">
-            <div>
-              <a class="repo-link" href="https://github.com/Running-Turtle1/MCM-ICM" target="_blank" rel="noopener noreferrer">
-                Running-Turtle1/<strong>MCM-ICM</strong>
-              </a>
-              <span class="label" data-i18n="repo_label_project">项目</span>
-              <span class="label owner-label" data-i18n="repo_label_owner">所有者</span>
+      <!-- Project -->
+      <div class="wrapper">
+        <section id="project" class="bio content-section">
+          <h2 class="md-heading text-left">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <span>Project</span>
+          </h2>
+          <div class="bio-body">
+            <div class="project-showcase">
+              <div class="project-copy">
+                <h3 class="project-name">
+                  <span>Project Founder</span> @ <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer">TJU Date</a>
+                </h3>
+                <p class="project-summary">
+                  TJU Date is a campus dating platform for Tianjin University students, with nearly 3,000 registered users participating in our matching activities.
+                </p>
+                <!-- <div class="project-tags">
+                  <span class="project-tag">Campus Matching</span>
+                  <span class="project-tag">Questionnaire Driven</span>
+                  <span class="project-tag">@tju.edu.cn Only</span>
+                </div> -->
+                <!-- <ul class="project-points">
+                  <li>Designed specifically for the Tianjin University community with campus email verification.</li>
+                  <li>Focuses on weekly matching and profile compatibility rather than high-frequency browsing.</li>
+                  <li>The preview on the right uses a homepage snapshot and will try to refresh with a live thumbnail when available.</li>
+                </ul> -->
+              </div>
+              <div class="project-preview">
+                <div class="project-browser">
+                  <div class="project-browser-bar">
+                    <span class="project-browser-dots" aria-hidden="true"></span>
+                    <span class="project-browser-url">https://tjudate.com</span>
+                  </div>
+                  <div class="project-browser-frame">
+                    <a href="https://tjudate.com" target="_blank" rel="noopener noreferrer" class="project-preview-link">
+                      <img
+                        class="project-preview-image"
+                        src="images/tjudate-homepage.jpg"
+                        alt="TJU Date homepage preview">
+                    </a>
+                  </div>
+                </div>
+                <!-- <p class="project-preview-note">Homepage preview image stored locally in this repository.</p> -->
+              </div>
             </div>
-            <p class="description" data-i18n="mcm_description">MCM / ICM 竞赛资料与代码。</p>
-            <div class="meta">
-              <span class="dot" aria-hidden="true"></span>
-              <span>MATLAB</span>
-              <a href="https://github.com/Running-Turtle1/MCM-ICM/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="MCM-ICM GitHub stars">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <span class="github-star-count">378</span>
-                <span class="github-star-label">stars</span>
-              </a>
+          </div>
+          <div id="codebase" class="project-repositories">
+            <div class="card-container github-repo-cards">
+              <article class="github-card">
+                <div>
+                  <a class="repo-link" href="https://github.com/Running-Turtle1/MCM-ICM" target="_blank" rel="noopener noreferrer">
+                    Running-Turtle1/<strong>MCM-ICM</strong>
+                  </a>
+                  <span class="label">Resources</span>
+                  <span class="label owner-label">Owner</span>
+                </div>
+                <p class="description">MCM / ICM contest materials.</p>
+                <div class="meta">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>MATLAB</span>
+                  <a href="https://github.com/Running-Turtle1/MCM-ICM/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="MCM-ICM GitHub stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="github-star-count" data-github-repo="Running-Turtle1/MCM-ICM">397</span>
+                    <span class="github-star-label">stars</span>
+                  </a>
+                </div>
+              </article>
+              <article class="github-card">
+                <div>
+                  <a class="repo-link" href="https://github.com/Running-Turtle1/jittor-retinanet" target="_blank" rel="noopener noreferrer">
+                    Running-Turtle1/<strong>jittor-retinanet</strong>
+                  </a>
+                  <span class="label">Project</span>
+                  <span class="label owner-label">Owner</span>
+                </div>
+                <p class="description">RetinaNet object detection with the Jittor framework.</p>
+                <div class="meta">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>Python</span>
+                  <a href="https://github.com/Running-Turtle1/jittor-retinanet/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="jittor-retinanet GitHub stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="github-star-count" data-github-repo="Running-Turtle1/jittor-retinanet">170</span>
+                    <span class="github-star-label">stars</span>
+                  </a>
+                </div>
+              </article>
+              <article class="github-card">
+                <div>
+                  <a class="repo-link" href="https://github.com/Running-Turtle1/Fabric-Demoireing" target="_blank" rel="noopener noreferrer">
+                    Running-Turtle1/<strong>Fabric-Demoireing</strong>
+                  </a>
+                  <span class="label">Research</span>
+                  <span class="label owner-label">Owner</span>
+                </div>
+                <p class="description">Official implementation of the ECCV 2026 fabric image demoiréing benchmark.</p>
+                <div class="meta">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>Python</span>
+                  <a href="https://github.com/Running-Turtle1/Fabric-Demoireing/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="Fabric-Demoireing GitHub stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="github-star-count" data-github-repo="Running-Turtle1/Fabric-Demoireing">25</span>
+                    <span class="github-star-label">stars</span>
+                  </a>
+                </div>
+              </article>
+              <article class="github-card">
+                <div>
+                  <a class="repo-link" href="https://github.com/Running-Turtle1/QUST-CS-2022" target="_blank" rel="noopener noreferrer">
+                    Running-Turtle1/<strong>QUST-CS-2022</strong>
+                  </a>
+                  <span class="label">Course Materials</span>
+                  <span class="label owner-label">Owner</span>
+                </div>
+                <p class="description">Computer science course materials from my undergraduate studies.</p>
+                <div class="meta">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>Python</span>
+                  <a href="https://github.com/Running-Turtle1/QUST-CS-2022/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="QUST-CS-2022 GitHub stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="github-star-count" data-github-repo="Running-Turtle1/QUST-CS-2022">18</span>
+                    <span class="github-star-label">stars</span>
+                  </a>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="github-card">
-            <div>
-              <a class="repo-link" href="https://github.com/Running-Turtle1/jittor-retinanet" target="_blank" rel="noopener noreferrer">
-                Running-Turtle1/<strong>jittor-retinanet</strong>
-              </a>
-              <span class="label" data-i18n="repo_label_project">项目</span>
-              <span class="label owner-label" data-i18n="repo_label_owner">所有者</span>
-            </div>
-            <p class="description" data-i18n="retinanet_description">基于 Jittor 框架的 RetinaNet 目标检测实现。</p>
-            <div class="meta">
-              <span class="dot" aria-hidden="true"></span>
-              <span>Python</span>
-              <a href="https://github.com/Running-Turtle1/jittor-retinanet/stargazers" target="_blank" rel="noopener noreferrer" class="github-star-pill" aria-label="jittor-retinanet GitHub stars">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <span class="github-star-count">170</span>
-                <span class="github-star-label">stars</span>
-              </a>
-            </div>
-          </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Honors, Awards & Competitions -->
+      <div class="wrapper">
+        <div class="achievements-grid">
+          <section id="awards" class="bio content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-trophy" aria-hidden="true"></i>
+              <span>Honours</span>
+            </h2>
+            <p class="honours-group"><strong>At TJU:</strong></p>
+            <ul class="achievement-list">
+              <li>None</li>
+            </ul>
+            <p class="honours-group"><strong>At QUST:</strong></p>
+            <ul class="achievement-list">
+              <li><strong>2025</strong> · <a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank" rel="noopener noreferrer">Top Ten Outstanding Students</a></li>
+              <li><strong>2025</strong> · President's Scholarship</li>
+              <li><strong>2024</strong> · National Scholarship</li>
+              <li><strong>2025</strong> · Shandong Provincial Government Scholarship</li>
+              <li><strong>2023</strong> · Qingdao Bank Scholarship</li>
+              <li><strong>2026</strong> · Outstanding Graduate</li>
+            </ul>
+          </section>
+
+          <section id="contests" class="bio content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-trophy" aria-hidden="true"></i>
+              <span>Contests</span>
+            </h2>
+            <ul class="achievement-list">
+              <li>Eighth Place, LoViF AIGC Image Compression Challenge @ ECCV 2026 <a href="https://openreview.net/forum?id=41hfEpLx7Z" target="_blank" rel="noopener noreferrer">[Paper]</a></li>
+            </ul>
+          </section>
+
+          <section id="competitions" class="bio content-section">
+            <h2 class="md-heading text-left">
+              <i class="fa fa-code" aria-hidden="true"></i>
+              <span>Programming</span>
+            </h2>
+            <ul class="achievement-list">
+              <li><strong>Online Contests</strong>: <a href="https://codeforces.com/profile/running_Turtle" target="_blank" rel="noopener noreferrer">Codeforces</a> — Candidate Master (1909); <a href="https://ac.nowcoder.com/acm/contest/profile/869502418" target="_blank" rel="noopener noreferrer">Nowcoder</a> — Rating 1978</li>
+              <li><strong>ACM-ICPC Asia Regional Contests</strong>: Bronze Medal in Shanghai (2024.11) and Hangzhou (2024.12)</li>
+              <li><strong>RoboCom Robot Developer Competition</strong>: National First Prize (2025.08); National Second Prize (2024.08, 2023.07)</li>
+              <li><strong>Chuanzhi Cup Programming Challenge</strong>: National First Prize (2025.06)</li>
+              <li><strong>Lanqiao Cup C/C++ Programming Contest</strong>: National Second Prize (2024.06, 2025.06); National Third Prize (2023.06)</li>
+              <li><strong>Team Programming Ladder Competition</strong>: National Second Prize (2024.04, 2025.05)</li>
+              <li><strong>Baidu Star Programming Contest</strong>: Finals Day 1 Warm-up Champion; Day 2 Bronze Medal (2024.08)</li>
+            </ul>
+          </section>
         </div>
       </div>
-    </section>
-  </div>
 
-  <!-- Honors, Awards & Competitions -->
-  <div class="wrapper">
-    <div class="achievements-grid">
-      <section id="awards" class="bio content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-trophy" aria-hidden="true"></i>
-          <span data-i18n="heading_honors">荣誉奖项</span>
-        </h2>
-        <ul class="achievement-list">
-          <li data-i18n="award_2026_outstanding">2026：青岛科技大学优秀毕业生</li>
-          <li data-i18n="award_2025_president">2025：青岛科技大学校长奖学金</li>
-          <li data-i18n-html="award_2025_topten">2025：<a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank" rel="noopener noreferrer">青岛科技大学十大优秀学生</a></li>
-          <li data-i18n="award_2025_shandong">2025：山东省政府奖学金</li>
-          <li data-i18n-html="award_2024_national">2024：<a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank" rel="noopener noreferrer">国家奖学金</a></li>
-          <li data-i18n="award_2023_qingdao_bank">2023：青岛银行奖学金</li>
-        </ul>
-      </section>
-
-      <section id="competitions" class="bio content-section">
-        <h2 class="md-heading text-left">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          <span data-i18n="heading_competitions">竞赛经历</span>
-        </h2>
-        <ul class="achievement-list">
-          <li data-i18n="competition_robocom">2025 年 8 月：睿抗机器人开发者大赛（Robocom），全国总决赛一等奖</li>
-          <li data-i18n="competition_chuanzhi">2025 年 6 月：传智杯程序设计挑战赛，全国总决赛一等奖</li>
-          <li data-i18n="competition_icpc_shanghai">2024 年 11 月：ACM-ICPC 亚洲区域赛（上海站），铜牌</li>
-          <li data-i18n="competition_icpc_hangzhou">2024 年 11 月：ACM-ICPC 亚洲区域赛（杭州站），铜牌</li>
-          <li data-i18n="competition_baidu">2024 年 8 月：百度之星程序设计大赛，银牌</li>
-          <li data-i18n="competition_lanqiao">2024 年 6 月：蓝桥杯 C/C++ 程序设计大赛，全国总决赛二等奖</li>
-        </ul>
-      </section>
-    </div>
-  </div>
-
-  <!-- Academic Service -->
-  <div class="wrapper">
-    <section id="service" class="bio content-section">
-      <h2 class="md-heading text-left">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <span data-i18n="heading_service">学术服务</span>
-      </h2>
-      <ul class="achievement-list">
-        <li data-i18n="service_wacv27">WACV 2027 Workshop Reviewer</li>
-      </ul>
-    </section>
-  </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrapper">
-      <div class="footer-col-wrapper footer-col-wrapper-no-social">
-        <div class="footer-col footer-col-1">
-          <ul class="contact-list">
-            <li data-i18n="personal_email">个人邮箱：</li>
-            <li><a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a></li>
+      <!-- Languages -->
+      <div class="wrapper">
+        <section id="languages" class="bio content-section">
+          <h2 class="md-heading text-left">
+            <i class="fa fa-language" aria-hidden="true"></i>
+            <span>Languages</span>
+          </h2>
+          <ul class="achievement-list">
+            <li><strong>English Proficiency</strong>: CET-4, CET-6 (573)</li>
+            <li><strong>National English Competition for College Students (NECCS)</strong>: National Second Prize (2024.05, 2025.05)</li>
+            <li><strong>National Business English Competition</strong>: National First Prize (2024.05)</li>
           </ul>
-        </div>
-        <div class="footer-col footer-col-3">
-          <p class="text">
-            <span data-i18n="last_updated">最后更新：2026 年 9 月 8 日。</span><br>
-            <span data-i18n="footer_homepage">魏鹏超的个人主页。</span>
-          </p>
+        </section>
+      </div>
+
+      <!-- Services -->
+      <div class="wrapper">
+        <section id="service" class="bio content-section">
+          <h2 class="md-heading text-left">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span>Services</span>
+          </h2>
+          <ul class="achievement-list services-list">
+            <li>
+              <strong>Workshop Reviewer</strong><br>
+              <span><a href="https://hour-workshop.github.io/wacv2027/" target="_blank" rel="noopener noreferrer">First Workshop on Human-Centric Open-World Understanding and Reasoning (HOUR)</a>, WACV 2027</span>
+            </li>
+            <li>
+              <strong>Other Roles</strong><br>
+              <span>Team Captain, QUST ACM Training Team: 2024</span><br>
+              <span>Former Member, <a href="https://www.zhihu.com/people/L.M.Sherlock" target="_blank" rel="noopener noreferrer">Thoughts Memo Chinese Localization Team</a>: 2024</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrapper">
+        <div class="footer-col-wrapper footer-col-wrapper-no-social">
+          <div class="footer-col footer-col-3">
+            <p class="text">
+              <span>Last updated: Sep. 8, 2026.</span><br>
+              <span>Personal homepage of Pengchao Wei.</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <button class="back-to-top" type="button" data-i18n="back_to_top">顶部</button>
+  <button class="back-to-top" type="button">Top</button>
 
+  <script src="js/github-stars.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backToTop = document.querySelector('.back-to-top');
       var menuIcon = document.querySelector('.site-nav .menu-icon');
       var trigger = document.querySelector('.site-nav .trigger');
       var offset = 220;
-      var translations = {
-        zh: {
-          nav_bio: '个人简介',
-          nav_news: '最新动态',
-          nav_experiences: '经历',
-          nav_publications: '论文发表',
-          nav_project: '项目',
-          nav_github: 'GitHub',
-          nav_awards: '荣誉奖项',
-          nav_competitions: '竞赛经历',
-          nav_service: '学术服务',
-          profile_name: '魏鹏超',
-          profile_title: '天津大学 | <a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab</a>',
-          heading_about: '个人简介',
-          bio_intro: '你好！我是<strong>魏鹏超</strong>。<br><br>欢迎来到我的个人学术主页。本页面用于介绍我的背景、研究兴趣、论文发表和项目。<br><br>我目前的研究方向主要包括图像生成和图像修复。<br><br>如需联系我，请发送邮件至 <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>。',
-          heading_news: '最新动态',
-          news_eccv_malmo: '参加 <a href="https://eccv.ecva.net/Conferences/2026" target="_blank" rel="noopener noreferrer">ECCV 2026 @ Malmö, Sweden</a>。',
-          news_baai_eccv: '参加 <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">智源社区 ECCV 2026 预讲会</a>。',
-          research_interests: '研究兴趣',
-          research_image_generation: '图像生成',
-          research_image_restoration: '图像修复',
-          education: '教育经历',
-          tianjin_university: '天津大学 - 硕士',
-          tju_degree: '计算机科学与技术【推免】，2026.09 - 2029.06（预计）',
-          advisor: '导师：<a href="https://sites.google.com/view/xjguo" target="_blank" rel="noopener noreferrer">郭晓杰教授</a>',
-          qust: '青岛科技大学 - 本科',
-          qust_degree: '计算机科学与技术，2022.09 - 2026.06',
-          gpa_rank: 'GPA：4.16/5.00 | 排名：1/131',
-          heading_experiences: '经历',
-          amigos_date: '2026.04 - 2026.07',
-          amigos_title: '<a href="https://weipengchao.top/amigos-demo/" target="_blank" rel="noopener noreferrer">算法实习生</a> @ <a href="https://amigos-robot.com/" target="_blank" rel="noopener noreferrer">阿米奥机器人</a>',
-          coming_soon: '即将更新',
-          experience_not_started: '经历暂未开始',
-          to_be_updated: '待更新。',
-          heading_publications: '论文发表',
-          to_be_updated_short: '待更新',
-          prism_title: 'Fabric Image Demoiréing Benchmark from Synthesis to Restoration',
-          paper_link: '论文',
-          code_link: '代码',
-          dataset_link: '数据集',
-          project_page: '项目主页',
-          heading_project: '项目',
-          featured_website: '代表网站',
-          project_founder: '项目创始人',
-          project_summary: 'TJU Date 是一个面向天津大学学生的校园匹配平台，旨在通过问卷收集、兴趣画像与定期匹配机制，帮助校内同学认识更合适的人，拓展真实、友好且可信的校园社交关系。截至 2026.08.28，TJU Date 已吸引 2,500+ 名注册用户，平台已连续开展 23 期匹配活动，累计完成 9,734 人次成功配对，已经成为天津大学校园内具有影响力的社交匹配平台。',
-          open_website: '打开网站',
-          work_report: '工作报告',
-          repo_label_project: '项目',
-          repo_label_owner: '所有者',
-          mcm_description: 'MCM / ICM 竞赛资料与代码。',
-          retinanet_description: '基于 Jittor 框架的 RetinaNet 目标检测实现。',
-          heading_honors: '荣誉奖项',
-          award_2026_outstanding: '2026：青岛科技大学优秀毕业生',
-          award_2025_president: '2025：青岛科技大学校长奖学金',
-          award_2025_topten: '2025：<a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank" rel="noopener noreferrer">青岛科技大学十大优秀学生</a>',
-          award_2025_shandong: '2025：山东省政府奖学金',
-          award_2024_national: '2024：<a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank" rel="noopener noreferrer">国家奖学金</a>',
-          award_2023_qingdao_bank: '2023：青岛银行奖学金',
-          heading_competitions: '竞赛经历',
-          competition_robocom: '2025 年 8 月：睿抗机器人开发者大赛（Robocom），全国总决赛一等奖',
-          competition_chuanzhi: '2025 年 6 月：传智杯程序设计挑战赛，全国总决赛一等奖',
-          competition_icpc_shanghai: '2024 年 11 月：ACM-ICPC 亚洲区域赛（上海站），铜牌',
-          competition_icpc_hangzhou: '2024 年 11 月：ACM-ICPC 亚洲区域赛（杭州站），铜牌',
-          competition_baidu: '2024 年 8 月：百度之星程序设计大赛，银牌',
-          competition_lanqiao: '2024 年 6 月：蓝桥杯 C/C++ 程序设计大赛，全国总决赛二等奖',
-          heading_service: '学术服务',
-          service_wacv27: 'WACV 2027 Workshop Reviewer',
-          personal_email: '个人邮箱：',
-          last_updated: '最后更新：2026 年 9 月 8 日。',
-          footer_homepage: '魏鹏超的个人主页。',
-          back_to_top: '顶部'
-        },
-        en: {
-          nav_bio: 'Biography',
-          nav_news: 'News',
-          nav_experiences: 'Experiences',
-          nav_publications: 'Publications',
-          nav_project: 'Project',
-          nav_github: 'GitHub',
-          nav_awards: 'Honors & Awards',
-          nav_competitions: 'Competitions',
-          nav_service: 'Service',
-          profile_name: 'Pengchao Wei',
-          profile_title: 'Tianjin University | <a href="https://tjuxlab.github.io/team.html" target="_blank" rel="noopener noreferrer">X-Lab</a>',
-          heading_about: 'About',
-          bio_intro: 'Hello! I am <strong>Pengchao Wei</strong>.<br><br>Welcome to my personal academic homepage. This page is used to introduce my background, research interests, publications, and projects.<br><br>My current research primarily focuses on image generation and image restoration.<br><br>If you would like to contact me, please send an email to <a href="mailto:wei954327649@gmail.com">wei954327649@gmail.com</a>.',
-          heading_news: 'News',
-          news_eccv_malmo: 'Attending <a href="https://eccv.ecva.net/Conferences/2026" target="_blank" rel="noopener noreferrer">ECCV 2026 @ Malmö, Sweden</a>.',
-          news_baai_eccv: 'Participated in the <a href="https://hub.baai.ac.cn/view/57245" target="_blank" rel="noopener noreferrer">BAAI Community ECCV 2026 Preview Seminar</a>.',
-          research_interests: 'Research Interests',
-          research_image_generation: 'Image Generation',
-          research_image_restoration: 'Image Restoration',
-          education: 'Education',
-          tianjin_university: "Tianjin University - Master's",
-          tju_degree: 'Computer Science and Technology (Recommended Admission), Sep. 2026 - Jun. 2029 (Expected)',
-          advisor: 'Advisor: <a href="https://sites.google.com/view/xjguo" target="_blank" rel="noopener noreferrer">Prof. Xiaojie Guo</a>',
-          qust: "Qingdao University of Science and Technology - Bachelor's",
-          qust_degree: 'Computer Science and Technology, Sep. 2022 - Jun. 2026',
-          gpa_rank: 'GPA: 4.16/5.00 | Rank: 1/131',
-          heading_experiences: 'Experiences',
-          amigos_date: 'Apr. 2026 - Jul. 2026',
-          amigos_title: '<a href="https://weipengchao.top/amigos-demo/" target="_blank" rel="noopener noreferrer">Algorithm Intern</a> @ <a href="https://amigos-robot.com/" target="_blank" rel="noopener noreferrer">Amigos Robot</a>',
-          coming_soon: 'Coming Soon',
-          experience_not_started: 'Experience Not Started Yet',
-          to_be_updated: 'To be updated.',
-          heading_publications: 'Publications',
-          to_be_updated_short: 'To be updated',
-          prism_title: 'Fabric Image Demoiréing Benchmark from Synthesis to Restoration',
-          paper_link: 'Paper',
-          code_link: 'Code',
-          dataset_link: 'Dataset',
-          project_page: 'Project Page',
-          heading_project: 'Project',
-          featured_website: 'Featured Website',
-          project_founder: 'Project Founder',
-          project_summary: 'TJU Date is a campus matching platform for Tianjin University students. It is designed to help students meet more compatible people and build real, friendly, and trusted campus social connections through questionnaires, interest profiles, and scheduled matching. As of August 28, 2026, TJU Date has attracted 2,500+ registered users, has run 23 consecutive matching rounds, and has completed 9,734 successful match participations. It has become an influential social matching platform on the Tianjin University campus.',
-          open_website: 'Open Website',
-          work_report: 'Work Report',
-          repo_label_project: 'Project',
-          repo_label_owner: 'Owner',
-          mcm_description: 'MCM / ICM contest materials and code.',
-          retinanet_description: 'RetinaNet object detection with the Jittor framework.',
-          heading_honors: 'Selected Honors',
-          award_2026_outstanding: '2026: Outstanding Graduate, QUST',
-          award_2025_president: "2025: President's Scholarship, QUST",
-          award_2025_topten: '2025: <a href="https://mp.weixin.qq.com/s/QnHselWfNVI5WKfayeVoLQ" target="_blank" rel="noopener noreferrer">Top Ten Outstanding Students of Qingdao University of Science and Technology</a>',
-          award_2025_shandong: '2025: Shandong Provincial Government Scholarship',
-          award_2024_national: '2024: <a href="https://mp.weixin.qq.com/s/A2uOEpn39Ks78er4li1j9g" target="_blank" rel="noopener noreferrer">National Scholarship</a>',
-          award_2023_qingdao_bank: '2023: Qingdao Bank Scholarship',
-          heading_competitions: 'Competitions',
-          competition_robocom: 'Aug 2025: RoboCom Robot Developer Competition, National Finals - First Prize',
-          competition_chuanzhi: 'Jun 2025: Chuanzhi Cup Programming Challenge, National Finals - First Prize',
-          competition_icpc_shanghai: 'Nov 2024: ACM-ICPC Asia Regional Contest (Shanghai) - Bronze Medal',
-          competition_icpc_hangzhou: 'Nov 2024: ACM-ICPC Asia Regional Contest (Hangzhou) - Bronze Medal',
-          competition_baidu: 'Aug 2024: Baidu Star Programming Contest - Silver Medal',
-          competition_lanqiao: 'Jun 2024: Lanqiao Cup C/C++ Programming Contest, National Finals - Second Prize',
-          heading_service: 'Service',
-          service_wacv27: 'WACV 2027 Workshop Reviewer',
-          personal_email: 'Personal Email:',
-          last_updated: 'Last updated: Sep. 8, 2026.',
-          footer_homepage: 'Personal homepage of Pengchao Wei.',
-          back_to_top: 'Top'
-        }
-      };
-
-      function applyLanguage(lang) {
-        var current = translations[lang] ? lang : 'zh';
-        document.documentElement.lang = current === 'zh' ? 'zh-CN' : 'en';
-        document.title = current === 'zh' ? '魏鹏超' : 'Pengchao Wei';
-        if (menuIcon) {
-          menuIcon.setAttribute('aria-label', current === 'zh' ? '切换导航菜单' : 'Toggle navigation menu');
-        }
-
-        document.querySelectorAll('[data-i18n]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n');
-          if (translations[current][key]) el.textContent = translations[current][key];
-        });
-        document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n-html');
-          if (translations[current][key]) el.innerHTML = translations[current][key];
-        });
-        document.querySelectorAll('[data-set-lang]').forEach(function (button) {
-          var isActive = button.getAttribute('data-set-lang') === current;
-          button.classList.toggle('active', isActive);
-          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        });
-      }
-
-      document.querySelectorAll('[data-set-lang]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          applyLanguage(button.getAttribute('data-set-lang'));
-        });
-      });
-
-      applyLanguage('zh');
 
       if (backToTop) {
         function updateBackToTop() {
@@ -579,10 +440,40 @@
         window.addEventListener('scroll', updateBackToTop, { passive: true });
         backToTop.addEventListener('click', function (e) {
           e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
         updateBackToTop();
       }
+
+      var navigationLinks = Array.from(document.querySelectorAll('.site-nav .page-link'));
+      var sections = navigationLinks.map(function (link) {
+        return document.querySelector(link.getAttribute('href'));
+      });
+      var navigationPending = false;
+
+      function updateNavigation() {
+        var activeSection = sections[0];
+        sections.forEach(function (section) {
+          if (section && section.getBoundingClientRect().top <= 100) activeSection = section;
+        });
+        if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+          activeSection = sections[sections.length - 1];
+        }
+        navigationLinks.forEach(function (link, index) {
+          if (sections[index] === activeSection) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        navigationPending = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!navigationPending) {
+          navigationPending = true;
+          window.requestAnimationFrame(updateNavigation);
+        }
+      }, { passive: true });
+      window.addEventListener('resize', updateNavigation);
+      updateNavigation();
 
       if (menuIcon && trigger) {
         function setMenuOpen(isOpen) {
