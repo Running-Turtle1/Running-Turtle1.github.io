@@ -93,7 +93,7 @@ ul {
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: right center;
+  object-position: center top;
 }
 
 #my-name {
