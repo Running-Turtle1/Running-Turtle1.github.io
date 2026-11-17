@@ -87,6 +87,23 @@ ul {
   scrollbar-width: thin;
 }
 
+.desktop-return {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.desktop-return:hover {
+  color: var(--link);
+  background: #f5f7f8;
+  text-decoration: none;
+}
+
 #profile-avatar {
   display: block;
   width: 186px;
